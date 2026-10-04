@@ -31,11 +31,12 @@ export default function ProblemFeatureSection() {
   // Motion: Headline scales from 1.08 down to smaller and fades to 0
   // 4 Cards glide from outer corners to EXACT DEAD CENTER (0, 0)
   // =========================================================================
+  // Exact Figma cropped corners: positioned so outer 50px bleeds outside container
   const corners = [
-    { x: -360, y: -160, rot: -7 },  // Card 1: Kuburan Catatan (Top-Left)
-    { x: 360, y: -160, rot: 7 },    // Card 2: Overwhelmed (Top-Right)
-    { x: -360, y: 160, rot: -5 },   // Card 3: Puluhan Grup (Bottom-Left)
-    { x: 360, y: 160, rot: 5 },     // Card 4: Distraksi Medsos (Bottom-Right)
+    { x: -585, y: -265, rot: 0 },  // Card 1: Kuburan Catatan (Top-Left)
+    { x: 585,  y: -265, rot: 0 },  // Card 2: Overwhelmed (Top-Right)
+    { x: -585, y: 265,  rot: 0 },  // Card 3: Puluhan Grup (Bottom-Left)
+    { x: 585,  y: 265,  rot: 0 },  // Card 4: Distraksi Medsos (Bottom-Right)
   ];
 
   let part1Opacity = 1.0;
@@ -123,13 +124,13 @@ export default function ProblemFeatureSection() {
       style={{ height: '340vh' }}
     >
       {/* Sticky Pinned Viewport */}
-      <div className="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden select-none px-6">
+      <div className="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden select-none">
         
-        {/* Centered Staging Area */}
-        <div className="relative w-full max-w-[960px] h-[520px] flex items-center justify-center">
+        {/* Staging Area (Figma Frame 2: 1280px max-width with overflow-hidden to crop corner cards) */}
+        <div className="relative w-full max-w-[1280px] h-[100dvh] max-h-[720px] min-h-[520px] flex items-center justify-center overflow-hidden">
           
           {/* ============================================================== */}
-          {/* PART 1: "Tata Semua Jadwalmu!" (Orange Text) + 4 Converging Cards */}
+          {/* PART 1: "Tata Semua Jadwalmu!" (Orange Text) + 4 Bleeding Cards */}
           {/* ============================================================== */}
           <div
             className="absolute inset-0 flex items-center justify-center pointer-events-none"
@@ -137,25 +138,25 @@ export default function ProblemFeatureSection() {
               opacity: part1Opacity,
             }}
           >
-            {/* Center Orange Headline with Motion */}
+            {/* Center Orange Headline: Satoshi Medium 500, massive scale (Figma 191px) */}
             <div
-              className="text-center z-10 will-change-transform"
+              className="text-center z-10 will-change-transform px-4"
               style={{
                 transform: `scale(${headlineScale})`,
                 opacity: headlineOpacity,
               }}
             >
-              <h2 className="font-satoshi font-black text-[#F0441E] text-[52px] sm:text-[72px] md:text-[84px] leading-[1.04] tracking-tight">
+              <h2 className="font-satoshi font-medium text-[#F0441E] text-[58px] sm:text-[96px] md:text-[135px] lg:text-[165px] xl:text-[191px] leading-[0.91] tracking-[-0.04em] text-center select-none whitespace-nowrap">
                 Tata Semua<br />
                 Jadwalmu!
               </h2>
             </div>
 
-            {/* 4 Cards Gliding to Dead Center */}
+            {/* 4 Cards Gliding to Dead Center (Exact Figma sizes: ~200-224px, rounded-[12px], no tilt) */}
             <div
-              className="absolute left-1/2 top-1/2 shadow-xl rounded-2xl overflow-hidden pointer-events-none w-[150px] sm:w-[170px]"
+              className="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[170px] sm:w-[200px] md:w-[219px]"
               style={{
-                transform: `translate(-50%, -50%) translate3d(${cardsInterp[0].x}px, ${cardsInterp[0].y}px, 0) rotate(${cardsInterp[0].rot}deg)`,
+                transform: `translate(-50%, -50%) translate3d(${cardsInterp[0].x}px, ${cardsInterp[0].y}px, 0)`,
                 zIndex: 25,
               }}
             >
@@ -167,9 +168,9 @@ export default function ProblemFeatureSection() {
             </div>
 
             <div
-              className="absolute left-1/2 top-1/2 shadow-xl rounded-2xl overflow-hidden pointer-events-none w-[145px] sm:w-[165px]"
+              className="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[155px] sm:w-[180px] md:w-[193px]"
               style={{
-                transform: `translate(-50%, -50%) translate3d(${cardsInterp[1].x}px, ${cardsInterp[1].y}px, 0) rotate(${cardsInterp[1].rot}deg)`,
+                transform: `translate(-50%, -50%) translate3d(${cardsInterp[1].x}px, ${cardsInterp[1].y}px, 0)`,
                 zIndex: 24,
               }}
             >
@@ -181,9 +182,9 @@ export default function ProblemFeatureSection() {
             </div>
 
             <div
-              className="absolute left-1/2 top-1/2 shadow-xl rounded-2xl overflow-hidden pointer-events-none w-[150px] sm:w-[170px]"
+              className="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[160px] sm:w-[185px] md:w-[200px]"
               style={{
-                transform: `translate(-50%, -50%) translate3d(${cardsInterp[2].x}px, ${cardsInterp[2].y}px, 0) rotate(${cardsInterp[2].rot}deg)`,
+                transform: `translate(-50%, -50%) translate3d(${cardsInterp[2].x}px, ${cardsInterp[2].y}px, 0)`,
                 zIndex: 23,
               }}
             >
@@ -195,9 +196,9 @@ export default function ProblemFeatureSection() {
             </div>
 
             <div
-              className="absolute left-1/2 top-1/2 shadow-xl rounded-2xl overflow-hidden pointer-events-none w-[145px] sm:w-[165px]"
+              className="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[175px] sm:w-[205px] md:w-[224px]"
               style={{
-                transform: `translate(-50%, -50%) translate3d(${cardsInterp[3].x}px, ${cardsInterp[3].y}px, 0) rotate(${cardsInterp[3].rot}deg)`,
+                transform: `translate(-50%, -50%) translate3d(${cardsInterp[3].x}px, ${cardsInterp[3].y}px, 0)`,
                 zIndex: 22,
               }}
             >
@@ -207,6 +208,16 @@ export default function ProblemFeatureSection() {
                 className="w-full h-auto block"
               />
             </div>
+          </div>
+
+          {/* Figma Scroll Indicator Track (Frame 20 / 21) */}
+          <div className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-3 sm:w-3.5 h-[340px] sm:h-[480px] rounded-full border border-stone-200/80 bg-white/70 p-0.5 hidden md:flex flex-col pointer-events-none z-40">
+            <div
+              className="w-full h-14 rounded-full bg-stone-700/60 transition-transform duration-75"
+              style={{
+                transform: `translateY(${p * 380}px)`,
+              }}
+            />
           </div>
 
           {/* ============================================================== */}

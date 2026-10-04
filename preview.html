@@ -343,45 +343,50 @@
   <!-- 3. COMPONENT 8 SECTION: CHOREOGRAPHY & POP-UP SHOW (Figma 59:26233) -->
   <!-- Stepper bar DELETED. Strictly clean like Figma.                -->
   <!-- ============================================================== -->
-  <section id="protoSection" class="relative w-full bg-[#FFFAF7]" style="height: 340vh;">
-    <div id="protoStickyContainer" class="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden select-none px-6">
+  <section id="protoSection" class="relative w-full bg-[#FFFFFF]" style="height: 340vh;">
+    <div id="protoStickyContainer" class="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden select-none">
       
-      <!-- Staging Area (Dead Center) -->
-      <div class="relative w-full max-w-[960px] h-[520px] flex items-center justify-center">
+      <!-- Staging Area (Figma Frame 2 59:25537: 1136px / 1280px, overflow-hidden to crop corner cards) -->
+      <div id="protoStagingArea" class="relative w-full max-w-[1280px] h-[100dvh] max-h-[720px] min-h-[520px] flex items-center justify-center overflow-hidden">
         
         <!-- ============================================================== -->
-        <!-- PART 1: "Tata Semua Jadwalmu!" (Orange Text) + 4 Converging Cards -->
+        <!-- PART 1: "Tata Semua Jadwalmu!" (Orange Text) + 4 Bleeding/Cropped Cards -->
         <!-- ============================================================== -->
         <div id="part1Container" class="absolute inset-0 flex items-center justify-center pointer-events-none">
           
-          <!-- Center Orange Headline (Motion: Scales from 1.08 down to smaller and dissolves) -->
-          <div id="centerHeadlineWrapper" class="text-center z-10 transition-transform will-change-transform">
-            <h2 id="centerHeadline" class="font-satoshi font-black text-[#F0441E] text-[52px] sm:text-[72px] md:text-[84px] leading-[1.04] tracking-tight">
+          <!-- Center Headline (Figma: Satoshi Medium 500, 191.47px massive size, #F0441E) -->
+          <div id="centerHeadlineWrapper" class="text-center z-10 transition-transform will-change-transform px-4">
+            <h2 id="centerHeadline" class="font-satoshi font-medium text-[#F0441E] text-[58px] sm:text-[96px] md:text-[135px] lg:text-[165px] xl:text-[191px] leading-[0.91] tracking-[-0.04em] text-center select-none whitespace-nowrap">
               Tata Semua<br />
               Jadwalmu!
             </h2>
           </div>
 
-          <!-- 4 Pain Cards (Anchored left-1/2 top-1/2, glides to EXACT DEAD CENTER) -->
-          <!-- Card 1: Kuburan Catatan (Top-Left) -->
-          <div id="painCard1" class="absolute left-1/2 top-1/2 shadow-xl rounded-2xl overflow-hidden pointer-events-none w-[150px] sm:w-[170px]" style="z-index: 25; will-change: transform, opacity;">
+          <!-- 4 Pain Cards (Exact Figma sizes: ~200-224px, rounded-[12px], no tilt, cropped at edges) -->
+          <!-- Card 1: Kuburan Catatan (Top-Left: Frame 25 219x192px) -->
+          <div id="painCard1" class="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[170px] sm:w-[200px] md:w-[219px]" style="z-index: 25; will-change: transform, opacity;">
             <img src="public/assets/proto/card-kuburan-catatan.png" alt="Kuburan Catatan" class="w-full h-auto block" />
           </div>
 
-          <!-- Card 2: Overwhelmed (Top-Right) -->
-          <div id="painCard2" class="absolute left-1/2 top-1/2 shadow-xl rounded-2xl overflow-hidden pointer-events-none w-[145px] sm:w-[165px]" style="z-index: 24; will-change: transform, opacity;">
+          <!-- Card 2: Overwhelmed (Top-Right: Frame 26 193x192px) -->
+          <div id="painCard2" class="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[155px] sm:w-[180px] md:w-[193px]" style="z-index: 24; will-change: transform, opacity;">
             <img src="public/assets/proto/card-overwhelmed.png" alt="Overwhelmed" class="w-full h-auto block" />
           </div>
 
-          <!-- Card 3: Puluhan Grup (Bottom-Left) -->
-          <div id="painCard3" class="absolute left-1/2 top-1/2 shadow-xl rounded-2xl overflow-hidden pointer-events-none w-[150px] sm:w-[170px]" style="z-index: 23; will-change: transform, opacity;">
+          <!-- Card 3: Puluhan Grup (Bottom-Left: Frame 27 200x194px) -->
+          <div id="painCard3" class="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[160px] sm:w-[185px] md:w-[200px]" style="z-index: 23; will-change: transform, opacity;">
             <img src="public/assets/proto/card-puluhan-grup.png" alt="Puluhan Grup" class="w-full h-auto block" />
           </div>
 
-          <!-- Card 4: Distraksi Medsos (Bottom-Right) -->
-          <div id="painCard4" class="absolute left-1/2 top-1/2 shadow-xl rounded-2xl overflow-hidden pointer-events-none w-[145px] sm:w-[165px]" style="z-index: 22; will-change: transform, opacity;">
+          <!-- Card 4: Distraksi Medsos (Bottom-Right: Frame 28 224x206px) -->
+          <div id="painCard4" class="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[175px] sm:w-[205px] md:w-[224px]" style="z-index: 22; will-change: transform, opacity;">
             <img src="public/assets/proto/card-distraksi-medsos.png" alt="Distraksi Medsos" class="w-full h-auto block" />
           </div>
+        </div>
+
+        <!-- Figma Scroll Indicator Track (Frame 20 / 21: 16x572px with capsule thumb) -->
+        <div class="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-3 sm:w-3.5 h-[340px] sm:h-[480px] rounded-full border border-stone-200/80 bg-white/70 p-0.5 hidden md:flex flex-col pointer-events-none z-40">
+          <div id="protoScrollThumb" class="w-full h-14 rounded-full bg-stone-700/60 transition-transform duration-75"></div>
         </div>
 
         <!-- ============================================================== -->
@@ -1202,13 +1207,23 @@
     }
     requestAnimationFrame(raf);
 
-    // Initial outer corner coordinates (relative to dead center 0,0)
-    const corners = [
-      { x: -360, y: -160, rot: -7 },  // Card 1: Kuburan Catatan (Top-Left)
-      { x: 360, y: -160, rot: 7 },    // Card 2: Overwhelmed (Top-Right)
-      { x: -360, y: 160, rot: -5 },   // Card 3: Puluhan Grup (Bottom-Left)
-      { x: 360, y: 160, rot: 5 },     // Card 4: Distraksi Medsos (Bottom-Right)
-    ];
+    // Responsive corner coordinates so cards bleed outside container and crop at edges (Figma spec)
+    function getCornerCoords() {
+      const staging = document.getElementById('protoStagingArea') || document.getElementById('protoStickyContainer');
+      const w = staging ? staging.clientWidth : Math.min(1280, window.innerWidth);
+      const h = staging ? staging.clientHeight : Math.min(720, window.innerHeight);
+
+      // On 1280x700, offsetX is ~585px (cards width ~210px -> outer ~55px is cropped at the edge)
+      const offsetX = Math.max(240, (w / 2) - 55);
+      const offsetY = Math.max(160, (h / 2) - 80);
+
+      return [
+        { x: -offsetX, y: -offsetY, rot: 0 }, // Card 1: Top-Left (Kuburan Catatan)
+        { x: offsetX,  y: -offsetY, rot: 0 }, // Card 2: Top-Right (Overwhelmed)
+        { x: -offsetX, y: offsetY,  rot: 0 }, // Card 3: Bottom-Left (Puluhan Grup)
+        { x: offsetX,  y: offsetY,  rot: 0 }, // Card 4: Bottom-Right (Distraksi Medsos)
+      ];
+    }
 
     // DOM Elements
     const p1 = document.getElementById('painCard1');
@@ -1220,6 +1235,7 @@
     const part1Container = document.getElementById('part1Container');
     const centerHeadline = document.getElementById('centerHeadline');
     const centerHeadlineWrapper = document.getElementById('centerHeadlineWrapper');
+    const protoScrollThumb = document.getElementById('protoScrollThumb');
 
     const featPill1 = document.getElementById('featPill1');
     const featPill2 = document.getElementById('featPill2');
@@ -1228,6 +1244,11 @@
     // CONTINUOUS CHOREOGRAPHY RENDER
     function renderChoreography(progress) {
       const p = Math.max(0, Math.min(1, progress));
+      if (protoScrollThumb) {
+        // Move scroll thumb inside track (track height ~480px minus thumb 56px = ~420px range)
+        const trackRange = protoScrollThumb.parentElement ? (protoScrollThumb.parentElement.clientHeight - 56) : 380;
+        protoScrollThumb.style.transform = `translateY(${p * Math.max(0, trackRange)}px)`;
+      }
 
       // ==============================================================
       // PART 1: "Tata Semua Jadwalmu!" (0.00 -> 0.44)
@@ -1237,21 +1258,23 @@
       if (p < 0.44) {
         part1Container.style.opacity = '1.0';
 
-        // 1. Motion on "Tata Semua Jadwalmu!": Scale from larger down to smaller until gone
+        // 1. Motion on "Tata Semua Jadwalmu!": Scales smoothly and dissolves
         const tHead = Math.min(1, p / 0.28);
-        const scaleHead = Math.max(0, 1.08 - 0.58 * tHead); // 1.08 -> 0.50
-        const opHead = Math.max(0, 1.0 - tHead * 1.15);     // 1.0 -> 0.0
+        const scaleHead = Math.max(0, 1.0 - 0.45 * tHead);
+        const opHead = Math.max(0, 1.0 - tHead * 1.25);
         centerHeadlineWrapper.style.transform = `scale(${scaleHead})`;
         centerHeadlineWrapper.style.opacity = opHead;
 
+        const currentCorners = getCornerCoords();
+
         if (p < 0.30) {
-          // Cards gliding smoothly from corners to EXACT DEAD CENTER (0, 0)
+          // Cards gliding smoothly from cropped corners to EXACT DEAD CENTER (0, 0)
           const tCard = p / 0.30;
+          const easeCard = tCard * tCard * (3 - 2 * tCard); // smooth easeInOut
           for (let i = 0; i < 4; i++) {
-            const cx = corners[i].x * (1 - tCard);
-            const cy = corners[i].y * (1 - tCard);
-            const cr = corners[i].rot * (1 - tCard);
-            painCards[i].style.transform = `translate(-50%, -50%) translate3d(${cx}px, ${cy}px, 0) rotate(${cr}deg)`;
+            const cx = currentCorners[i].x * (1 - easeCard);
+            const cy = currentCorners[i].y * (1 - easeCard);
+            painCards[i].style.transform = `translate(-50%, -50%) translate3d(${cx}px, ${cy}px, 0)`;
             painCards[i].style.opacity = '1.0';
           }
         } else if (p < 0.38) {
