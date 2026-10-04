@@ -15,58 +15,50 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-3 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-300">
+    <header className="fixed top-4 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-300">
+      {/* Figma Container:margin (42:10352: 1136x60px, rounded-[12px], glass effect) */}
       <div
-        className={`pointer-events-auto w-[92%] max-w-[1136px] h-[52px] sm:h-[58px] rounded-full px-5 sm:px-6 flex items-center justify-between transition-all duration-300 ${
+        className={`pointer-events-auto w-[92%] max-w-[1136px] h-[54px] sm:h-[60px] rounded-[12px] px-4 sm:px-6 flex items-center justify-between transition-all duration-300 ${
           scrolled
             ? 'bg-white/85 backdrop-blur-xl border border-stone-200/80 shadow-[0_8px_24px_rgba(0,0,0,0.06)] text-[#1F1B16]'
-            : 'bg-white/20 backdrop-blur-xl border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.08)] text-white'
+            : 'bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-none'
         }`}
       >
-        {/* Brand Logo */}
-        <Link href="#hero" className="flex items-center gap-2 select-none group">
+        {/* Brand Logo (Frame 22: Logo Mark + Nataku font Source Serif 4) */}
+        <Link href="#hero" className="flex items-center gap-2.5 select-none group">
           <img
-            src="/assets/nataku-logo.png"
-            alt="Nataku Logo"
-            className={`h-7 sm:h-8 w-auto object-contain transition-all duration-300 ${
-              scrolled
-                ? 'brightness-100 drop-shadow-sm'
-                : 'brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]'
-            } group-hover:scale-105`}
+            src="/assets/figma_exports/logo-footer-subtract.svg"
+            alt="Nataku Logo Mark"
+            className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
           />
+          <span
+            className="font-serif font-medium text-xl sm:text-[26px] leading-[30px] tracking-[-0.03em] text-[#FFF4F2]"
+            style={{ fontFamily: "'Source Serif 4', serif" }}
+          >
+            Nataku
+          </span>
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <nav
-          className={`hidden md:flex items-center gap-6 text-xs sm:text-sm font-medium transition-colors ${
-            scrolled ? 'text-[#44403C]' : 'text-white/90'
-          }`}
-        >
-          <a href="#hero" className="hover:text-[#F0441E] transition-colors">
+        {/* Clean Nav Links (Figma 42:10363: gap 28px, Satoshi 400/500, NOT BOLD) */}
+        <nav className="hidden md:flex items-center gap-7 font-satoshi font-normal sm:font-medium text-[14px] sm:text-[15px] leading-[20px] text-[#FFF4F2]/90 tracking-[-0.01em]">
+          <Link href="#hero" className="hover:text-white transition-colors">
             Beranda
-          </a>
-          <a href="#protoSection" className="hover:text-[#F0441E] transition-colors">
-            Alur Solusi
-          </a>
-          <a href="#quote" className="hover:text-[#F0441E] transition-colors">
+          </Link>
+          <Link href="#quote" className="hover:text-white transition-colors">
             Tentang
-          </a>
-          <a href="#sistem-inti" className="hover:text-[#F0441E] transition-colors">
+          </Link>
+          <Link href="#sistem-inti" className="hover:text-white transition-colors">
             Sistem Inti
-          </a>
+          </Link>
         </nav>
 
-        {/* CTA Button */}
-        <a
+        {/* CTA Button (Figma 42:10369: rounded-[6px], bg-white/10, NO SHADOW, NOT full rounded) */}
+        <Link
           href="#waitlist"
-          className={`h-8 sm:h-9 px-4 sm:px-5 rounded-full text-xs font-semibold tracking-wide transition-all shadow-sm flex items-center justify-center whitespace-nowrap ${
-            scrolled
-              ? 'bg-[#F0441E] hover:bg-[#D93815] text-white shadow-orange-500/20'
-              : 'bg-white/25 hover:bg-white text-white hover:text-[#FF5000] border border-white/40 hover:border-white'
-          }`}
+          className="h-9 px-4 rounded-[6px] bg-white/10 hover:bg-white/20 border border-white/20 text-[#FFF4F2] hover:text-white font-satoshi font-medium text-[15px] tracking-[-0.01em] transition-all duration-200 flex items-center justify-center whitespace-nowrap shadow-none"
         >
-          Akses Beta
-        </a>
+          Daftar Antrean
+        </Link>
       </div>
     </header>
   );

@@ -185,9 +185,22 @@
     .container-section {
       width: 100%;
       max-width: 1280px;
-      margin: 0 auto;
-      padding-left: clamp(20px, 4vw, 72px);
-      padding-right: clamp(20px, 4vw, 72px);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @media (min-width: 640px) {
+      .container-section {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .container-section {
+        padding-left: 72px;
+        padding-right: 72px;
+      }
     }
 
     .hero-bg {
@@ -233,32 +246,37 @@
   <!-- ========================================== -->
   <!-- 1. FLOATING NAVBAR (Figma 42:10352)         -->
   <!-- ========================================== -->
-  <header class="fixed top-3 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-300">
-    <div id="navContainer" class="pointer-events-auto w-[92%] max-w-[1136px] h-[52px] sm:h-[58px] bg-white/20 backdrop-blur-xl border border-white/30 rounded-full px-5 sm:px-6 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 text-white">
-      <a href="#hero" class="flex items-center gap-2 select-none group">
+  <header class="fixed top-4 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-300">
+    <!-- Figma Container:margin (42:10352: 1136x60px, rounded-[12px], glass effect) -->
+    <div id="navContainer" class="pointer-events-auto w-[92%] max-w-[1136px] h-[54px] sm:h-[60px] bg-white/10 backdrop-blur-md border border-white/20 rounded-[12px] px-4 sm:px-6 flex items-center justify-between transition-all duration-300 text-white shadow-none">
+      <a href="#hero" class="flex items-center gap-2.5 select-none group">
         <img
-          id="navLogo"
-          src="public/assets/nataku-logo.png"
-          alt="Nataku Logo"
-          class="h-7 sm:h-8 w-auto object-contain brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)] transition-all duration-300 group-hover:scale-105"
+          src="public/assets/figma_exports/logo-footer-subtract.svg"
+          alt="Nataku Logo Mark"
+          class="w-7 h-7 sm:w-8 sm:h-8 object-contain"
         />
+        <span
+          class="font-serif font-medium text-xl sm:text-[26px] leading-[30px] tracking-[-0.03em] text-[#FFF4F2]"
+          style="font-family: 'Source Serif 4', serif;"
+        >
+          Nataku
+        </span>
       </a>
 
-      <nav id="navLinks" class="hidden md:flex items-center gap-6 text-xs sm:text-sm font-medium text-white/90 transition-colors duration-300">
-        <a href="#hero" class="hover:text-[#F0441E] transition-colors">Beranda</a>
-        <a href="#protoSection" class="hover:text-[#F0441E] transition-colors">Alur Solusi</a>
-        <a href="#quote" class="hover:text-[#F0441E] transition-colors">Tentang</a>
-        <a href="#sistem-inti" class="hover:text-[#F0441E] transition-colors">Sistem Inti</a>
-        <a href="#pricing" class="hover:text-[#F0441E] transition-colors">Pilihan Akses</a>
-        <a href="#faq" class="hover:text-[#F0441E] transition-colors">Tanya Jawab</a>
+      <!-- Clean Nav Links (Figma 42:10363: gap 28px, Satoshi 400/500, NOT BOLD) -->
+      <nav id="navLinks" class="hidden md:flex items-center gap-7 font-satoshi font-normal sm:font-medium text-[14px] sm:text-[15px] leading-[20px] text-[#FFF4F2]/90 tracking-[-0.01em]">
+        <a href="#hero" class="hover:text-white transition-colors">Beranda</a>
+        <a href="#quote" class="hover:text-white transition-colors">Tentang</a>
+        <a href="#sistem-inti" class="hover:text-white transition-colors">Sistem Inti</a>
       </nav>
 
+      <!-- CTA Button (Figma 42:10369: rounded-[6px], bg-white/10, NO SHADOW, NOT full rounded) -->
       <a
         id="navCta"
         href="#waitlist"
-        class="h-8 sm:h-9 px-4 sm:px-5 bg-white/25 hover:bg-white text-white hover:text-[#FF5000] border border-white/40 hover:border-white rounded-full text-xs font-semibold tracking-wide transition-all duration-300 shadow-sm flex items-center justify-center whitespace-nowrap"
+        class="h-9 px-4 rounded-[6px] bg-white/10 hover:bg-white/20 border border-white/20 text-[#FFF4F2] hover:text-white font-satoshi font-medium text-[15px] tracking-[-0.01em] transition-all duration-200 flex items-center justify-center whitespace-nowrap shadow-none"
       >
-        Akses Beta
+        Daftar Antrean
       </a>
     </div>
   </header>
@@ -267,7 +285,7 @@
   <!-- 2. HERO SECTION (Figma Desktop - 2 42:9087) -->
   <!-- 2-Column Exact Layout: Left Text, Right 3 Phones -->
   <!-- ========================================== -->
-  <section id="hero" class="hero-bg relative h-[100dvh] w-full flex items-center justify-center overflow-hidden select-none">
+  <section id="hero" class="hero-bg relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden select-none">
     <div
       class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
       style="background-image: url('public/assets/hero-bg.png'); background-position: center; background-repeat: no-repeat;"
@@ -278,45 +296,41 @@
       style="background: radial-gradient(circle at 75% 45%, #FF7A3D 0%, #FF5000 45%, #E63B00 80%, #C92B00 100%);"
     ></div>
 
-    <div class="w-full max-w-[1280px] mx-auto px-6 sm:px-10 md:px-[72px] relative z-10 pt-16 sm:pt-20">
+    <!-- 2-Column Exact Figma Container: max-w-[1280px], 72px padding on desktop, locked 1136px grid -->
+    <div class="w-full max-w-[1280px] mx-auto px-5 sm:px-9 lg:px-[72px] relative z-10 pt-24 sm:pt-28 pb-12">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
         
-        <!-- Left Column (Frame 1 42:9088: 582px width in Figma) -->
+        <!-- Left Column (Figma Frame 1 42:9088: 582px width) -->
         <div class="lg:col-span-6 flex flex-col justify-center text-left">
-          <h1 class="font-satoshi font-bold text-white text-[42px] sm:text-[54px] md:text-[64px] lg:text-[72px] leading-[1.06] tracking-tight mb-4 sm:mb-6">
+          <!-- H1: Satoshi Semi-Bold (500/600), NOT bold, 97.7px / lh:88px in Figma -->
+          <h1 class="font-satoshi font-medium sm:font-semibold text-white text-[44px] sm:text-[60px] md:text-[76px] lg:text-[90px] xl:text-[97.7px] leading-[0.92] tracking-[-0.04em] mb-5 sm:mb-6">
             Beres tugas<br />
             tanpa pusing!
           </h1>
 
-          <p class="text-[#FFF4F2] font-satoshi font-normal text-sm sm:text-base md:text-[20px] leading-[1.4] max-w-[500px] mb-6 sm:mb-8 opacity-95">
+          <!-- Subtitle (Figma 42:9090: Satoshi 400 18px / lh:28px, max-w 406px) -->
+          <p class="text-[#FFF4F2] font-satoshi font-normal text-sm sm:text-base md:text-[18px] leading-[28px] max-w-[420px] mb-6 sm:mb-8 opacity-95">
             Nataku menyatukan jadwal kuliah dan tugas ke dalam satu alur rapi. Cukup lewat WhatsApp, bereskan tugas tanpa ribet buka-tutup aplikasi.
           </p>
 
+          <!-- CTA Button (Figma Frame 3 42:9091: 176x36px, rounded-[6px], bg-white/10, NO SHADOW) -->
           <div>
             <a
               href="#waitlist"
-              class="btn-frosted px-6 py-3 text-sm tracking-wide gap-2 group cursor-pointer inline-flex items-center"
+              class="inline-flex items-center justify-center px-4 py-2 rounded-[6px] bg-white/10 hover:bg-white/20 border border-white/20 text-white font-satoshi font-medium text-[16px] leading-[24px] tracking-[-0.01em] transition-colors select-none no-underline shadow-none"
             >
-              <span>Amankan Akses Awal</span>
-              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 5l7 7-7 7"></path>
-              </svg>
+              Amankan Akses Awal
             </a>
           </div>
         </div>
 
-        <!-- Right Column (Frame 2 42:9093: 522px width in Figma) -->
+        <!-- Right Column (Figma Frame 2 42:9093: 522px width) -->
         <div class="lg:col-span-6 relative flex items-center justify-center lg:justify-end">
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full pointer-events-none"
-            style="background: radial-gradient(circle, rgba(255, 185, 130, 0.4) 0%, rgba(255, 120, 50, 0.15) 50%, transparent 75%); filter: blur(40px);"
-          ></div>
-
           <div class="relative w-full max-w-[522px] flex items-center justify-center">
             <img
               src="public/assets/hero-right-phones.png"
               alt="Tampilan Antarmuka Nataku di 3 Smartphone"
-              class="w-full h-auto object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.3)] select-none"
+              class="w-full h-auto object-contain select-none"
             />
           </div>
         </div>
