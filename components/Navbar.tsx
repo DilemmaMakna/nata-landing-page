@@ -55,7 +55,11 @@ export default function Navbar() {
         {/* CTA Button (Figma 42:10369: rounded-[6px], bg-white/10, NO SHADOW, NOT full rounded) */}
         <Link
           href="#waitlist"
-          className="h-9 px-4 rounded-[6px] bg-white/10 hover:bg-white/20 border border-white/20 text-[#FFF4F2] hover:text-white font-satoshi font-medium text-[15px] tracking-[-0.01em] transition-all duration-200 flex items-center justify-center whitespace-nowrap shadow-none"
+          className={`h-9 px-4 rounded-[6px] font-satoshi font-medium text-[15px] tracking-[-0.01em] transition-all duration-200 flex items-center justify-center whitespace-nowrap shadow-none ${
+            scrolled
+              ? 'bg-[#F0441E] hover:bg-[#D93815] text-white'
+              : 'bg-white/10 hover:bg-white/20 border border-white/20 text-[#FFF4F2] hover:text-white'
+          }`}
         >
           Daftar Antrean
         </Link>

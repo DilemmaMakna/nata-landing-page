@@ -303,7 +303,7 @@
         <!-- Left Column (Figma Frame 1 42:9088: 582px width) -->
         <div class="lg:col-span-6 flex flex-col justify-center text-left">
           <!-- H1: Satoshi Semi-Bold (500/600), NOT bold, 97.7px / lh:88px in Figma -->
-          <h1 class="font-satoshi font-medium sm:font-semibold text-white text-[44px] sm:text-[60px] md:text-[76px] lg:text-[90px] xl:text-[97.7px] leading-[0.92] tracking-[-0.04em] mb-5 sm:mb-6">
+          <h1 class="font-satoshi font-medium text-white text-[44px] sm:text-[60px] md:text-[76px] lg:text-[90px] xl:text-[97.7px] leading-[0.92] tracking-[-0.04em] mb-5 sm:mb-6">
             Beres tugas<br />
             tanpa pusing!
           </h1>
@@ -1353,15 +1353,15 @@
       const navCta = document.getElementById('navCta');
 
       if (window.scrollY > 80) {
-        navContainer.className = 'pointer-events-auto w-[92%] max-w-[1136px] h-[52px] sm:h-[58px] bg-white/90 backdrop-blur-xl border border-stone-200/90 rounded-full px-5 sm:px-6 flex items-center justify-between shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300 text-[#1F1B16]';
-        navLogo.className = 'h-7 sm:h-8 w-auto object-contain brightness-100 drop-shadow-sm transition-all duration-300 group-hover:scale-105';
-        navLinks.className = 'hidden md:flex items-center gap-6 text-xs sm:text-sm font-medium text-[#44403C] transition-colors duration-300';
-        navCta.className = 'h-8 sm:h-9 px-4 sm:px-5 bg-[#F0441E] hover:bg-[#D93815] text-white rounded-full text-xs font-semibold tracking-wide transition-all duration-300 shadow-sm flex items-center justify-center whitespace-nowrap';
+        navContainer.className = 'pointer-events-auto w-[92%] max-w-[1136px] h-[54px] sm:h-[60px] bg-white/90 backdrop-blur-xl border border-stone-200/90 rounded-[12px] px-4 sm:px-6 flex items-center justify-between shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300 text-[#1F1B16]';
+        if (navLogo) navLogo.className = 'w-7 h-7 sm:w-8 sm:h-8 object-contain transition-all duration-300 group-hover:scale-105';
+        if (navLinks) navLinks.className = 'hidden md:flex items-center gap-7 font-satoshi font-normal sm:font-medium text-[14px] sm:text-[15px] leading-[20px] text-[#44403C] tracking-[-0.01em] transition-colors duration-300';
+        if (navCta) navCta.className = 'h-9 px-4 rounded-[6px] bg-[#F0441E] hover:bg-[#D93815] text-white font-satoshi font-medium text-[15px] tracking-[-0.01em] transition-all duration-200 flex items-center justify-center whitespace-nowrap shadow-none';
       } else {
-        navContainer.className = 'pointer-events-auto w-[92%] max-w-[1136px] h-[52px] sm:h-[58px] bg-white/20 backdrop-blur-xl border border-white/30 rounded-full px-5 sm:px-6 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 text-white';
-        navLogo.className = 'h-7 sm:h-8 w-auto object-contain brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)] transition-all duration-300 group-hover:scale-105';
-        navLinks.className = 'hidden md:flex items-center gap-6 text-xs sm:text-sm font-medium text-white/90 transition-colors duration-300';
-        navCta.className = 'h-8 sm:h-9 px-4 sm:px-5 bg-white/25 hover:bg-white text-white hover:text-[#FF5000] border border-white/40 hover:border-white rounded-full text-xs font-semibold tracking-wide transition-all duration-300 shadow-sm flex items-center justify-center whitespace-nowrap';
+        navContainer.className = 'pointer-events-auto w-[92%] max-w-[1136px] h-[54px] sm:h-[60px] bg-white/10 backdrop-blur-md border border-white/20 rounded-[12px] px-4 sm:px-6 flex items-center justify-between transition-all duration-300 text-white shadow-none';
+        if (navLogo) navLogo.className = 'w-7 h-7 sm:w-8 sm:h-8 object-contain transition-all duration-300 group-hover:scale-105';
+        if (navLinks) navLinks.className = 'hidden md:flex items-center gap-7 font-satoshi font-normal sm:font-medium text-[14px] sm:text-[15px] leading-[20px] text-[#FFF4F2]/90 tracking-[-0.01em] transition-colors duration-300';
+        if (navCta) navCta.className = 'h-9 px-4 rounded-[6px] bg-white/10 hover:bg-white/20 border border-white/20 text-[#FFF4F2] hover:text-white font-satoshi font-medium text-[15px] tracking-[-0.01em] transition-all duration-200 flex items-center justify-center whitespace-nowrap shadow-none';
       }
     }
 

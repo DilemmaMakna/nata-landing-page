@@ -30,7 +30,7 @@ export default function HeroSection() {
           {/* Left Column (Figma Frame 1 42:9088: 582px width) */}
           <div className="lg:col-span-6 flex flex-col justify-center text-left">
             {/* H1: Satoshi Semi-Bold (500/600), NOT bold, 97.7px / lh:88px in Figma */}
-            <h1 className="font-satoshi font-medium sm:font-semibold text-white text-[44px] sm:text-[60px] md:text-[76px] lg:text-[90px] xl:text-[97.7px] leading-[0.92] tracking-[-0.04em] mb-5 sm:mb-6">
+            <h1 className="font-satoshi font-medium text-white text-[44px] sm:text-[60px] md:text-[76px] lg:text-[90px] xl:text-[97.7px] leading-[0.92] tracking-[-0.04em] mb-5 sm:mb-6">
               Beres tugas<br />
               tanpa pusing!
             </h1>
