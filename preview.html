@@ -654,117 +654,131 @@
   <!-- ========================================== -->
   <!-- 6. WAITLIST / EARLY ACCESS (Figma Desktop - 6 63:29441) -->
   <!-- ========================================== -->
-  <section id="waitlist" class="w-full bg-[#FFFFFF] py-20 md:py-28 relative">
-    <div class="container-section">
-      <div class="max-w-[1136px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+  <section id="waitlist" class="w-full bg-[#FFFFFF] py-12 sm:py-16 lg:py-0 lg:h-[100dvh] lg:min-h-[700px] flex items-center justify-center relative overflow-hidden select-none">
+    <div class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-[72px] flex items-center justify-center">
+      <div class="w-full max-w-[1136px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-[42px]">
         
-        <!-- Left Coral Card -->
-        <div class="lg:col-span-6 bg-[#F0441E] rounded-[28px] p-8 sm:p-10 md:p-12 flex flex-col justify-between text-white shadow-md min-h-[380px] lg:min-h-[560px]">
-          <div>
-            <h2 class="font-satoshi font-bold text-3xl sm:text-4xl md:text-[46px] leading-[1.18] tracking-tight text-[#FFF4F2] mb-6">
+        <!-- Left Coral Card (Figma Frame 1 73:32151: 598.3x572px, r=24px, #F0441E) -->
+        <div class="w-full lg:w-[598px] h-full min-h-[460px] lg:h-[572px] bg-[#F0441E] rounded-[24px] px-6 sm:px-7 md:px-[27px] py-6 sm:py-7 md:py-[24px] flex flex-col justify-between text-white shadow-none select-none flex-shrink-0">
+          
+          <!-- Visual Artwork: Asset.svg (Figma Frame 53 73:32153: 544x376px) -->
+          <div class="w-full h-auto max-h-[340px] sm:max-h-[376px] flex items-center justify-center overflow-hidden flex-shrink-0">
+            <img
+              src="public/assets/Asset.svg"
+              alt="Nataku Early Access Visual"
+              class="w-full max-w-[515px] h-auto max-h-[350px] object-contain block mx-auto select-none pointer-events-none"
+            />
+          </div>
+
+          <!-- Bottom Text Container (Figma Frame 54: gap 8px) -->
+          <div class="flex flex-col gap-2 sm:gap-2.5 text-left flex-shrink-0 mt-3 sm:mt-4 lg:mt-0">
+            <h2 class="font-satoshi font-bold text-2xl sm:text-3xl md:text-[38px] lg:text-[44px] xl:text-[48px] leading-[1.14] tracking-[-0.035em] text-[#FFF4F2]">
               Jadilah yang pertama mencoba Nataku.
             </h2>
-            <p class="font-satoshi font-normal text-base sm:text-lg md:text-[20px] leading-[1.38] text-[#E7E5E4] max-w-[440px]">
+            <p class="font-satoshi font-normal text-sm sm:text-base md:text-[18px] lg:text-[20px] leading-[1.3] text-[#E7E5E4] tracking-[-0.02em] max-w-[523px]">
               Kami membuka akses Android secara bertahap melalui jalur pengujian khusus agar pengalaman pengguna tetap lancar.
             </p>
           </div>
-
-          <div class="pt-8">
-            <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/20 text-xs sm:text-sm font-medium text-white">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Batch Beta Terbatas untuk 100 Mahasiswa Pertama</span>
-            </div>
-          </div>
         </div>
 
-        <!-- Right Form -->
-        <div class="lg:col-span-6 flex flex-col justify-center">
-          <form id="waitlistForm" onsubmit="handleWaitlistSubmit(event)" class="flex flex-col gap-4">
-            <div class="flex flex-col gap-1.5">
-              <label class="font-satoshi font-medium text-sm md:text-base text-[#44403C]">
-                Nama panggilan kamu
-              </label>
-              <input
-                type="text"
-                id="formName"
-                required
-                placeholder="Zaid"
-                class="w-full h-11 px-3.5 bg-white border border-[#D6D3D1] rounded-lg text-sm text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
-              />
+        <!-- Right Form (Figma Frame 6 73:32185: 495.7x572px, gap 52px) -->
+        <div class="w-full lg:w-[496px] h-full min-h-[480px] lg:h-[572px] flex flex-col justify-between flex-shrink-0">
+          <form id="waitlistForm" onsubmit="handleWaitlistSubmit(event)" class="h-full flex flex-col justify-between gap-4 lg:gap-0">
+            
+            <!-- 5 Form Fields (Figma Frame 2: gap 16px) -->
+            <div class="flex flex-col gap-3.5 sm:gap-4">
+              <!-- Field 1: Nama -->
+              <div class="flex flex-col gap-1.5 sm:gap-2">
+                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[20px] leading-[26px] tracking-[-0.02em] text-[#44403C]">
+                  Nama panggilan kamu
+                </label>
+                <input
+                  type="text"
+                  id="formName"
+                  required
+                  placeholder="Zaid"
+                  class="w-full h-10 sm:h-10 px-3.5 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
+                />
+              </div>
+
+              <!-- Field 2: Email -->
+              <div class="flex flex-col gap-1.5 sm:gap-2">
+                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[20px] leading-[26px] tracking-[-0.02em] text-[#44403C]">
+                  Email Aktif
+                </label>
+                <input
+                  type="email"
+                  id="formEmail"
+                  required
+                  placeholder="zaid.mujahid1504@gmail.com"
+                  class="w-full h-10 sm:h-10 px-3.5 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
+                />
+              </div>
+
+              <!-- Field 3: WhatsApp -->
+              <div class="flex flex-col gap-1.5 sm:gap-2">
+                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[20px] leading-[26px] tracking-[-0.02em] text-[#44403C]">
+                  Nomor WhatsApp aktif
+                </label>
+                <input
+                  type="tel"
+                  id="formWa"
+                  required
+                  placeholder="089745638278"
+                  class="w-full h-10 sm:h-10 px-3.5 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
+                />
+              </div>
+
+              <!-- Field 4: Kampus -->
+              <div class="flex flex-col gap-1.5 sm:gap-2">
+                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[20px] leading-[26px] tracking-[-0.02em] text-[#44403C]">
+                  Kampus / Universitas (opsional)
+                </label>
+                <input
+                  type="text"
+                  id="formUni"
+                  placeholder="IPB University"
+                  class="w-full h-10 sm:h-10 px-3.5 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
+                />
+              </div>
+
+              <!-- Field 5: Harapan -->
+              <div class="flex flex-col gap-1.5 sm:gap-2">
+                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[20px] leading-[26px] tracking-[-0.02em] text-[#44403C]">
+                  Bagikan Harapanmu pada Nataku
+                </label>
+                <textarea
+                  id="formExpect"
+                  rows="2"
+                  placeholder="Aku ingin produktif"
+                  class="w-full h-[76px] sm:h-[80px] p-3 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all resize-none"
+                ></textarea>
+              </div>
             </div>
 
-            <div class="flex flex-col gap-1.5">
-              <label class="font-satoshi font-medium text-sm md:text-base text-[#44403C]">
-                Email Aktif
-              </label>
-              <input
-                type="email"
-                id="formEmail"
-                required
-                placeholder="zaid.mujahid1504@gmail.com"
-                class="w-full h-11 px-3.5 bg-white border border-[#D6D3D1] rounded-lg text-sm text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
-              />
-            </div>
-
-            <div class="flex flex-col gap-1.5">
-              <label class="font-satoshi font-medium text-sm md:text-base text-[#44403C]">
-                Nomor WhatsApp aktif
-              </label>
-              <input
-                type="tel"
-                id="formWa"
-                required
-                placeholder="089745638278"
-                class="w-full h-11 px-3.5 bg-white border border-[#D6D3D1] rounded-lg text-sm text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
-              />
-            </div>
-
-            <div class="flex flex-col gap-1.5">
-              <label class="font-satoshi font-medium text-sm md:text-base text-[#44403C]">
-                Kampus / Universitas (opsional)
-              </label>
-              <input
-                type="text"
-                id="formUni"
-                placeholder="IPB University"
-                class="w-full h-11 px-3.5 bg-white border border-[#D6D3D1] rounded-lg text-sm text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
-              />
-            </div>
-
-            <div class="flex flex-col gap-1.5">
-              <label class="font-satoshi font-medium text-sm md:text-base text-[#44403C]">
-                Bagikan Harapanmu pada Nataku
-              </label>
-              <textarea
-                id="formExpect"
-                rows="3"
-                placeholder="Aku ingin produktif"
-                class="w-full p-3 bg-white border border-[#D6D3D1] rounded-lg text-sm text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all resize-none"
-              ></textarea>
-            </div>
-
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-              <p class="font-satoshi font-medium text-xs sm:text-[13px] text-[#78716C] max-w-[320px]">
+            <!-- Bottom Row (Figma Frame 3: gap 27px, height 40px) -->
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-stone-100 lg:border-t-0">
+              <p class="font-satoshi font-medium text-[12px] sm:text-[13px] md:text-[14px] leading-[18px] sm:leading-[20px] text-[#78716C] max-w-[290px]">
                 Privasi aman. Nomor WhatsApp hanya untuk akses aplikasi dan pengujian resmi.
               </p>
               <button
                 type="submit"
-                class="w-full sm:w-auto px-6 py-3 bg-[#F0441E] hover:bg-[#D93815] text-white font-satoshi font-medium text-sm sm:text-base rounded-md shadow-sm transition-all flex items-center justify-center gap-2 whitespace-nowrap active:scale-[0.98]"
+                class="w-full sm:w-auto h-10 px-5 sm:px-6 bg-[#F0441E] hover:bg-[#D93815] text-white font-satoshi font-medium text-sm sm:text-[16px] leading-[24px] tracking-[-0.01em] rounded-[6px] transition-all flex items-center justify-center whitespace-nowrap shadow-none active:scale-[0.98]"
               >
                 <span>Amankan Tempatmu</span>
-                <span>→</span>
               </button>
             </div>
           </form>
 
-          <div id="waitlistSuccess" class="hidden bg-[#FFF4F2] border border-[#F0441E]/30 rounded-2xl p-8 text-center">
-            <div class="w-12 h-12 rounded-full bg-[#F0441E] text-white flex items-center justify-center mx-auto mb-4 text-2xl">
+          <!-- Success State -->
+          <div id="waitlistSuccess" class="hidden bg-[#FFF4F2] border border-[#F0441E]/30 rounded-[20px] p-8 text-center my-auto">
+            <div class="w-12 h-12 rounded-full bg-[#F0441E] text-white flex items-center justify-center mx-auto mb-4 text-2xl shadow-none">
               ✓
             </div>
             <h3 class="font-satoshi font-bold text-2xl text-[#1F1B16] mb-2">
               Tempatmu Sudah Diamankan!
             </h3>
-            <p class="text-sm text-[#5C5346] leading-relaxed">
+            <p class="text-sm sm:text-base text-[#5C5346] leading-relaxed">
               Terima kasih! Tim Nataku akan menghubungimu via WhatsApp saat batch pengujian siap dibuka.
             </p>
           </div>
