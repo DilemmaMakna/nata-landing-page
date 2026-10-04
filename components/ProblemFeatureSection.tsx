@@ -2,6 +2,12 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
+const QUOTE_WORDS = [
+  "Setiap", "pagi,", "Nataku", "Hadir", "Mengingatkan",
+  "daftar", "tugas", "penting.", "Cukup", "Balas", "chat,",
+  "dan", "langsung", "tercatat!"
+];
+
 export default function ProblemFeatureSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState<number>(0);
@@ -45,36 +51,36 @@ export default function ProblemFeatureSection() {
   const offsetY = Math.max(180, (viewportDims.h / 2) - 48);
 
   const corners = [
-    { x: -offsetX, y: -offsetY, rot: 0 },  // Card 1: Kuburan Catatan (Top-Left)
-    { x: offsetX,  y: -offsetY, rot: 0 },  // Card 2: Overwhelmed (Top-Right)
-    { x: -offsetX, y: offsetY,  rot: 0 },  // Card 3: Puluhan Grup (Bottom-Left)
-    { x: offsetX,  y: offsetY,  rot: 0 },  // Card 4: Distraksi Medsos (Bottom-Right)
+    { x: -offsetX, y: -offsetY, rot: 0 },
+    { x: offsetX,  y: -offsetY, rot: 0 },
+    { x: -offsetX, y: offsetY,  rot: 0 },
+    { x: offsetX,  y: offsetY,  rot: 0 },
   ];
 
   // =========================================================================
-  // PART 1: "Tata Semua Jadwalmu!" (0.00 -> 0.40)
+  // PART 1: "Tata Semua Jadwalmu!" (0.00 -> 0.26)
   // =========================================================================
   let part1Opacity = 1.0;
   let headlineScale = 1.0;
   let headlineOpacity = 1.0;
   let cardsInterp = corners;
 
-  if (p < 0.40) {
+  if (p < 0.26) {
     part1Opacity = 1.0;
 
-    const tHead = Math.min(1, p / 0.28);
+    const tHead = Math.min(1, p / 0.18);
     headlineScale = Math.max(0, 1.0 - 0.45 * tHead);
-    headlineOpacity = Math.max(0, 1.0 - tHead * 1.25);
+    headlineOpacity = Math.max(0, 1.0 - tHead * 1.3);
 
-    if (p < 0.28) {
-      const tCard = p / 0.28;
+    if (p < 0.20) {
+      const tCard = p / 0.20;
       const easeCard = tCard * tCard * (3 - 2 * tCard);
       cardsInterp = corners.map((c) => ({
         x: c.x * (1 - easeCard),
         y: c.y * (1 - easeCard),
         rot: 0,
       }));
-    } else if (p < 0.35) {
+    } else if (p < 0.23) {
       cardsInterp = [
         { x: 0, y: 0, rot: 0 },
         { x: 0, y: 0, rot: 0 },
@@ -82,7 +88,7 @@ export default function ProblemFeatureSection() {
         { x: 0, y: 0, rot: 0 },
       ];
     } else {
-      const tDissolve = (p - 0.35) / 0.05;
+      const tDissolve = (p - 0.23) / 0.03;
       part1Opacity = Math.max(0, 1.0 - tDissolve);
       cardsInterp = [
         { x: 0, y: 0, rot: 0 },
@@ -97,7 +103,7 @@ export default function ProblemFeatureSection() {
   }
 
   // =========================================================================
-  // PART 2: Feature Dynamic Group Re-Centering (0.40 -> 0.82)
+  // PART 2: Feature Dynamic Group Re-Centering (0.26 -> 0.60)
   // Step distance S = 118px (~86px height + ~32px clear gap)
   // =========================================================================
   const S = 118;
@@ -107,22 +113,22 @@ export default function ProblemFeatureSection() {
   let part2Opacity = 1.0;
   let part2Scale = 1.0;
 
-  if (p < 0.40) {
+  if (p < 0.26) {
     op1 = 0; op2 = 0; op3 = 0;
-  } else if (p < 0.52) {
-    const t1 = Math.max(0, Math.min(1, (p - 0.40) / 0.12));
+  } else if (p < 0.36) {
+    const t1 = Math.max(0, Math.min(1, (p - 0.26) / 0.10));
     const ease1 = 1 - Math.pow(1 - t1, 3);
     y1 = (1 - ease1) * 150;
     op1 = ease1;
-  } else if (p < 0.64) {
-    const t2 = Math.max(0, Math.min(1, (p - 0.52) / 0.12));
+  } else if (p < 0.46) {
+    const t2 = Math.max(0, Math.min(1, (p - 0.36) / 0.10));
     const ease2 = 1 - Math.pow(1 - t2, 3);
     y1 = -ease2 * (S / 2);
     op1 = 1;
     y2 = (1 - ease2) * 180 + ease2 * (S / 2);
     op2 = ease2;
-  } else if (p < 0.76) {
-    const t3 = Math.max(0, Math.min(1, (p - 0.64) / 0.12));
+  } else if (p < 0.55) {
+    const t3 = Math.max(0, Math.min(1, (p - 0.46) / 0.09));
     const ease3 = 1 - Math.pow(1 - t3, 3);
     y1 = -(S / 2) - ease3 * (S / 2);
     op1 = 1;
@@ -130,13 +136,13 @@ export default function ProblemFeatureSection() {
     op2 = 1;
     y3 = (1 - ease3) * 210 + ease3 * S;
     op3 = ease3;
-  } else if (p < 0.82) {
+  } else if (p < 0.60) {
     y1 = -S; op1 = 1;
     y2 = 0;  op2 = 1;
     y3 = S;  op3 = 1;
   } else {
-    // Fade out during Iris expansion (0.82 -> 0.90)
-    const tPillFade = Math.min(1, (p - 0.82) / 0.08);
+    // Fade out during Iris expansion (0.60 -> 0.70)
+    const tPillFade = Math.min(1, (p - 0.60) / 0.08);
     part2Opacity = Math.max(0, 1 - tPillFade * 1.4);
     part2Scale = 1 - tPillFade * 0.06;
     y1 = -S; op1 = 1;
@@ -145,53 +151,51 @@ export default function ProblemFeatureSection() {
   }
 
   // =========================================================================
-  // PART 3: Orange Iris Expansion (0.82 -> 0.91)
+  // PART 3: Orange Iris Expansion (0.60 -> 0.70)
   // =========================================================================
   let irisRadius = 0;
   let irisOpacity = 0;
 
-  if (p >= 0.82 && p < 0.91) {
-    const tIris = (p - 0.82) / 0.09;
+  if (p >= 0.60 && p < 0.70) {
+    const tIris = (p - 0.60) / 0.10;
     const easeIris = tIris * tIris * (3 - 2 * tIris);
     irisRadius = easeIris * 150;
     irisOpacity = 1;
-  } else if (p >= 0.91) {
+  } else if (p >= 0.70) {
     irisRadius = 150;
     irisOpacity = 1;
   }
 
   // Scroll indicator track opacity
   let trackOpacity = 1.0;
-  if (p >= 0.82 && p < 0.90) {
-    const tTrack = (p - 0.82) / 0.08;
+  if (p >= 0.60 && p < 0.68) {
+    const tTrack = (p - 0.60) / 0.08;
     trackOpacity = Math.max(0, 1 - tTrack * 1.5);
-  } else if (p >= 0.90) {
+  } else if (p >= 0.68) {
     trackOpacity = 0;
   }
 
   // =========================================================================
-  // PART 4: Option A — Editorial Kinetic Split & Blur-to-Focus (0.88 -> 0.97)
+  // PART 4: Scroll-Driven Word-by-Word Reading Highlight ("Typescript")
+  // Entrance: 0.68 -> 0.73, Scrub: 0.73 -> 0.92, Hold: 0.92 -> 1.00
   // =========================================================================
-  let xBracketLeft = 40;
-  let xBracketRight = -40;
-  let yQuoteText = 36;
-  let blurQuoteText = 10;
-  let quoteOpacity = 0;
+  let xBracketLeft = 36;
+  let xBracketRight = -36;
+  let yQuoteText = 24;
+  let quoteContainerOpacity = 0;
 
-  if (p >= 0.88 && p < 0.97) {
-    const tQuote = (p - 0.88) / 0.09;
-    const easeQuote = 1 - Math.pow(1 - tQuote, 3);
-    xBracketLeft = (1 - easeQuote) * 40;
-    xBracketRight = -(1 - easeQuote) * 40;
-    yQuoteText = (1 - easeQuote) * 36;
-    blurQuoteText = (1 - easeQuote) * 10;
-    quoteOpacity = easeQuote;
-  } else if (p >= 0.97) {
+  if (p >= 0.68 && p < 0.73) {
+    const tIn = (p - 0.68) / 0.05;
+    const easeIn = 1 - Math.pow(1 - tIn, 3);
+    xBracketLeft = (1 - easeIn) * 36;
+    xBracketRight = -(1 - easeIn) * 36;
+    yQuoteText = (1 - easeIn) * 24;
+    quoteContainerOpacity = easeIn;
+  } else if (p >= 0.73) {
     xBracketLeft = 0;
     xBracketRight = 0;
     yQuoteText = 0;
-    blurQuoteText = 0;
-    quoteOpacity = 1;
+    quoteContainerOpacity = 1;
   }
 
   return (
@@ -199,10 +203,10 @@ export default function ProblemFeatureSection() {
       ref={containerRef}
       id="protoSection"
       className="relative bg-[#FFFFFF]"
-      style={{ height: '480vh' }}
+      style={{ height: '600vh' }}
     >
       {/* Smooth scroll anchor for navbar "Tentang" (#quote) */}
-      <div id="quote" className="absolute pointer-events-none" style={{ top: '86%', width: 1, height: 1 }} />
+      <div id="quote" className="absolute pointer-events-none" style={{ top: '75%', width: 1, height: 1 }} />
 
       {/* Sticky Pinned Viewport */}
       <div className="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden select-none">
@@ -367,8 +371,9 @@ export default function ProblemFeatureSection() {
           </div>
 
           {/* ============================================================== */}
-          {/* PART 4: QUOTE BANNER CONTINUUM (Figma Desktop - 4 73:32098)   */}
-          {/* Opsi A: Kinetic Split & Blur-to-Focus                         */}
+          {/* PART 4: QUOTE BANNER CONTINUUM (Figma Desktop - 4 73:32098)   -->
+          {/* Scroll-Driven Word-by-Word Reading Highlight ("Typescript")   -->
+          {/* Refined Regular/Medium font weight (Satoshi 400/500)          -->
           {/* ============================================================== */}
           <div
             className="absolute inset-0 flex items-center justify-center pointer-events-none z-40 px-4 sm:px-8"
@@ -379,7 +384,7 @@ export default function ProblemFeatureSection() {
               <div
                 className="flex-shrink-0 flex items-center justify-center select-none pointer-events-none will-change-transform"
                 style={{
-                  opacity: quoteOpacity,
+                  opacity: quoteContainerOpacity,
                   transform: `translateX(${xBracketLeft}px)`,
                 }}
               >
@@ -390,23 +395,45 @@ export default function ProblemFeatureSection() {
                 />
               </div>
 
-              {/* Statement Typography */}
+              {/* Statement Typography: Word-by-Word Scroll Highlight */}
               <h2
-                className="flex-1 font-satoshi font-medium text-white text-[24px] sm:text-[34px] md:text-[46px] lg:text-[56px] xl:text-[64px] leading-[1.125] tracking-[-0.04em] text-left max-w-[786px] will-change-[transform,opacity,filter]"
+                className="flex-1 font-satoshi font-normal sm:font-medium text-white text-[24px] sm:text-[34px] md:text-[44px] lg:text-[52px] xl:text-[58px] leading-[1.18] tracking-[-0.025em] text-left max-w-[800px] select-none will-change-transform"
                 style={{
-                  opacity: quoteOpacity,
+                  opacity: quoteContainerOpacity,
                   transform: `translateY(${yQuoteText}px)`,
-                  filter: `blur(${blurQuoteText}px)`,
                 }}
               >
-                Setiap pagi, Nataku Hadir Mengingatkan daftar tugas penting. Cukup Balas chat, dan langsung tercatat!
+                {QUOTE_WORDS.map((w, idx) => {
+                  const scrubRange = 0.92 - 0.73; // 0.19
+                  const wStart = 0.73 + (idx / QUOTE_WORDS.length) * scrubRange;
+                  const wEnd = wStart + 0.025;
+                  let wordOp = 0.28;
+                  if (p >= wEnd) {
+                    wordOp = 1.0;
+                  } else if (p >= wStart) {
+                    const tw = (p - wStart) / (wEnd - wStart);
+                    wordOp = 0.28 + tw * 0.72;
+                  }
+
+                  return (
+                    <span
+                      key={idx}
+                      className="inline-block mr-[0.26em] transition-opacity duration-75"
+                      style={{
+                        opacity: quoteContainerOpacity > 0 ? wordOp : 0,
+                      }}
+                    >
+                      {w}
+                    </span>
+                  );
+                })}
               </h2>
 
               {/* Right Bracket */}
               <div
                 className="flex-shrink-0 flex items-center justify-center select-none pointer-events-none will-change-transform"
                 style={{
-                  opacity: quoteOpacity,
+                  opacity: quoteContainerOpacity,
                   transform: `translateX(${xBracketRight}px)`,
                 }}
               >

@@ -343,9 +343,9 @@
   <!-- 3. COMPONENT 8 SECTION: CHOREOGRAPHY & POP-UP SHOW (Figma 59:26233) -->
   <!-- + DESKTOP - 4 QUOTE BANNER CONTINUUM (Figma 73:32098)          -->
   <!-- ============================================================== -->
-  <section id="protoSection" class="relative w-full bg-[#FFFFFF]" style="height: 480vh;">
+  <section id="protoSection" class="relative w-full bg-[#FFFFFF]" style="height: 600vh;">
     <!-- Smooth scroll anchor for navbar "Tentang" (#quote) -->
-    <div id="quote" class="absolute pointer-events-none" style="top: 86%; width: 1px; height: 1px;"></div>
+    <div id="quote" class="absolute pointer-events-none" style="top: 75%; width: 1px; height: 1px;"></div>
 
     <div id="protoStickyContainer" class="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden select-none">
       
@@ -445,7 +445,8 @@
 
         <!-- ============================================================== -->
         <!-- PART 4: QUOTE BANNER CONTINUUM (Figma Desktop - 4 73:32098)   -->
-        <!-- Opsi A: Kinetic Split & Blur-to-Focus                         -->
+        <!-- Scroll-Driven Word-by-Word Reading Highlight ("Typescript")   -->
+        <!-- Refined Regular/Medium font weight (Satoshi 400/500)          -->
         <!-- ============================================================== -->
         <div
           id="part3QuoteContainer"
@@ -457,7 +458,7 @@
             <div
               id="quoteBracketLeft"
               class="flex-shrink-0 flex items-center justify-center select-none pointer-events-none will-change-transform"
-              style="opacity: 0; transform: translateX(40px);"
+              style="opacity: 0; transform: translateX(36px);"
             >
               <img
                 src="public/assets/figma_exports/quote-bracket-left.svg"
@@ -466,20 +467,33 @@
               />
             </div>
 
-            <!-- Statement Typography (Figma 73:32107: Satoshi Medium 500, 64px lh:72px, -0.04em, max-w 786px) -->
+            <!-- Statement Typography: Word-by-word scroll-scrubbed highlight -->
             <h2
               id="quoteText"
-              class="flex-1 font-satoshi font-medium text-white text-[24px] sm:text-[34px] md:text-[46px] lg:text-[56px] xl:text-[64px] leading-[1.125] tracking-[-0.04em] text-left max-w-[786px] will-change-[transform,opacity,filter]"
-              style="opacity: 0; transform: translateY(36px); filter: blur(10px);"
+              class="flex-1 font-satoshi font-normal sm:font-medium text-white text-[24px] sm:text-[34px] md:text-[44px] lg:text-[52px] xl:text-[58px] leading-[1.18] tracking-[-0.025em] text-left max-w-[800px] select-none will-change-transform"
+              style="opacity: 0; transform: translateY(24px);"
             >
-              Setiap pagi, Nataku Hadir Mengingatkan daftar tugas penting. Cukup Balas chat, dan langsung tercatat!
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">Setiap</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">pagi,</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">Nataku</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">Hadir</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">Mengingatkan</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">daftar</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">tugas</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">penting.</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">Cukup</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">Balas</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">chat,</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">dan</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">langsung</span>
+              <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">tercatat!</span>
             </h2>
 
             <!-- Right Bracket (Figma Frame 45 73:32108: Vector SVG) -->
             <div
               id="quoteBracketRight"
               class="flex-shrink-0 flex items-center justify-center select-none pointer-events-none will-change-transform"
-              style="opacity: 0; transform: translateX(-40px);"
+              style="opacity: 0; transform: translateX(-36px);"
             >
               <img
                 src="public/assets/figma_exports/quote-bracket-right.svg"
@@ -1309,41 +1323,36 @@
       }
 
       // ==============================================================
-      // PART 1: "Tata Semua Jadwalmu!" (0.00 -> 0.40)
-      // Motion: Headline scales from 1.08 down to smaller and fades to 0
-      // 4 Cards glide from outer corners to EXACT DEAD CENTER (0, 0)
+      // PART 1: "Tata Semua Jadwalmu!" (0.00 -> 0.26)
       // ==============================================================
-      if (p < 0.40) {
+      if (p < 0.26) {
         part1Container.style.opacity = '1.0';
 
         // 1. Motion on "Tata Semua Jadwalmu!": Scales smoothly and dissolves
-        const tHead = Math.min(1, p / 0.28);
+        const tHead = Math.min(1, p / 0.18);
         const scaleHead = Math.max(0, 1.0 - 0.45 * tHead);
-        const opHead = Math.max(0, 1.0 - tHead * 1.25);
+        const opHead = Math.max(0, 1.0 - tHead * 1.3);
         centerHeadlineWrapper.style.transform = `scale(${scaleHead})`;
         centerHeadlineWrapper.style.opacity = opHead;
 
         const currentCorners = getCornerCoords();
 
-        if (p < 0.28) {
-          // Cards gliding smoothly from cropped corners to EXACT DEAD CENTER (0, 0)
-          const tCard = p / 0.28;
-          const easeCard = tCard * tCard * (3 - 2 * tCard); // smooth easeInOut
+        if (p < 0.20) {
+          const tCard = p / 0.20;
+          const easeCard = tCard * tCard * (3 - 2 * tCard);
           for (let i = 0; i < 4; i++) {
             const cx = currentCorners[i].x * (1 - easeCard);
             const cy = currentCorners[i].y * (1 - easeCard);
             painCards[i].style.transform = `translate(-50%, -50%) translate3d(${cx}px, ${cy}px, 0)`;
             painCards[i].style.opacity = '1.0';
           }
-        } else if (p < 0.35) {
-          // Held merged exactly at DEAD CENTER (0, 0)
+        } else if (p < 0.23) {
           for (let i = 0; i < 4; i++) {
             painCards[i].style.transform = 'translate(-50%, -50%) translate3d(0px, 0px, 0) rotate(0deg)';
             painCards[i].style.opacity = '1.0';
           }
         } else {
-          // Dissolving away the merged stack
-          const tDissolve = (p - 0.35) / 0.05;
+          const tDissolve = (p - 0.23) / 0.03;
           const opStack = Math.max(0, 1.0 - tDissolve);
           for (let i = 0; i < 4; i++) {
             painCards[i].style.transform = `translate(-50%, -50%) scale(${1.0 - 0.08 * tDissolve})`;
@@ -1355,13 +1364,12 @@
       }
 
       // ==============================================================
-      // PART 2: DYNAMIC RE-CENTERING PILL ANIMATION (0.40 -> 0.82)
+      // PART 2: DYNAMIC RE-CENTERING PILL ANIMATION (0.26 -> 0.60)
       // Step distance S = 118px (~86px card height + ~32px clear gap)
       // ==============================================================
       const S = 118; // step distance
 
-      if (p < 0.40) {
-        // Not yet active
+      if (p < 0.26) {
         featPill1.style.opacity = '0';
         featPill1.style.transform = 'translate(-50%, -50%) translate3d(0, 150px, 0)';
         featPill2.style.opacity = '0';
@@ -1373,9 +1381,9 @@
           part2Container.style.transform = 'scale(1)';
         }
       }
-      else if (p < 0.52) {
-        // Phase 1: Card 1 slides up from 150px to DEAD CENTER (y = 0)
-        const t1 = Math.max(0, Math.min(1, (p - 0.40) / 0.12));
+      else if (p < 0.36) {
+        // Phase 1: Card 1 slides up to DEAD CENTER (y = 0)
+        const t1 = Math.max(0, Math.min(1, (p - 0.26) / 0.10));
         const ease1 = 1 - Math.pow(1 - t1, 3);
         const y1 = (1 - ease1) * 150;
         featPill1.style.opacity = ease1;
@@ -1390,9 +1398,9 @@
           part2Container.style.transform = 'scale(1)';
         }
       }
-      else if (p < 0.64) {
-        // Phase 2: Card 2 enters from below; Card 1 shifts UP from 0 to -S/2 (-59px)
-        const t2 = Math.max(0, Math.min(1, (p - 0.52) / 0.12));
+      else if (p < 0.46) {
+        // Phase 2: Card 2 enters; Card 1 shifts to -59px
+        const t2 = Math.max(0, Math.min(1, (p - 0.36) / 0.10));
         const ease2 = 1 - Math.pow(1 - t2, 3);
         
         const y1 = -ease2 * (S / 2);
@@ -1410,9 +1418,9 @@
           part2Container.style.transform = 'scale(1)';
         }
       }
-      else if (p < 0.76) {
-        // Phase 3: Card 3 enters; Card 1 shifts to -S (-118px), Card 2 shifts to 0px
-        const t3 = Math.max(0, Math.min(1, (p - 0.64) / 0.12));
+      else if (p < 0.55) {
+        // Phase 3: Card 3 enters; Card 1 to -118px, Card 2 to 0px
+        const t3 = Math.max(0, Math.min(1, (p - 0.46) / 0.09));
         const ease3 = 1 - Math.pow(1 - t3, 3);
 
         const y1 = - (S / 2) - ease3 * (S / 2);
@@ -1431,12 +1439,12 @@
           part2Container.style.transform = 'scale(1)';
         }
       }
-      else if (p < 0.82) {
+      else if (p < 0.60) {
         // RHYTHM HOLD: 3 pills cleanly centered
         featPill1.style.opacity = '1';
         featPill1.style.transform = `translate(-50%, -50%) translate3d(0, ${-S}px, 0)`;
         featPill2.style.opacity = '1';
-        featPill2.style.transform = `translate(-50%, -50%) translate3d(0, 0px, 0)`;
+        featPill2.style.transform = 'translate(-50%, -50%) translate3d(0, 0px, 0)`;
         featPill3.style.opacity = '1';
         featPill3.style.transform = `translate(-50%, -50%) translate3d(0, ${S}px, 0)`;
         if (part2Container) {
@@ -1445,14 +1453,14 @@
         }
       }
       else {
-        // Fading out during Iris expansion (0.82 -> 0.90)
-        const tPillFade = Math.min(1, (p - 0.82) / 0.08);
+        // Fading out during Iris expansion (0.60 -> 0.70)
+        const tPillFade = Math.min(1, (p - 0.60) / 0.08);
         const opPills = Math.max(0, 1 - tPillFade * 1.4);
         const scalePills = 1 - tPillFade * 0.06;
         featPill1.style.opacity = '1';
         featPill1.style.transform = `translate(-50%, -50%) translate3d(0, ${-S}px, 0)`;
         featPill2.style.opacity = '1';
-        featPill2.style.transform = `translate(-50%, -50%) translate3d(0, 0px, 0)`;
+        featPill2.style.transform = 'translate(-50%, -50%) translate3d(0, 0px, 0)`;
         featPill3.style.opacity = '1';
         featPill3.style.transform = `translate(-50%, -50%) translate3d(0, ${S}px, 0)`;
         if (part2Container) {
@@ -1462,15 +1470,15 @@
       }
 
       // ==============================================================
-      // PART 3: ORANGE CIRCULAR EXPANSION (IRIS REVEAL) (0.82 -> 0.91)
+      // PART 3: ORANGE CIRCULAR EXPANSION (IRIS REVEAL) (0.60 -> 0.70)
       // ==============================================================
       if (orangeCircleIris) {
-        if (p < 0.82) {
+        if (p < 0.60) {
           orangeCircleIris.style.clipPath = 'circle(0% at 50% 50%)';
           orangeCircleIris.style.opacity = '0';
-        } else if (p < 0.91) {
-          const tIris = (p - 0.82) / 0.09;
-          const easeIris = tIris * tIris * (3 - 2 * tIris); // smooth easeInOut
+        } else if (p < 0.70) {
+          const tIris = (p - 0.60) / 0.10;
+          const easeIris = tIris * tIris * (3 - 2 * tIris);
           const radius = easeIris * 150;
           orangeCircleIris.style.opacity = '1';
           orangeCircleIris.style.clipPath = `circle(${radius}% at 50% 50%)`;
@@ -1481,43 +1489,69 @@
       }
 
       // ==============================================================
-      // PART 4: OPSI A — EDITORIAL KINETIC SPLIT & BLUR-TO-FOCUS (0.88 -> 0.97)
+      // PART 4: SCROLL-DRIVEN WORD-BY-WORD READING HIGHLIGHT ("TYPESCRIPT")
+      // Generous runway: 0.68 -> 0.92, Hold: 0.92 -> 1.00
       // ==============================================================
+      const quoteWords = document.querySelectorAll('#quoteText .quote-word');
       if (quoteBracketLeft && quoteBracketRight && quoteText) {
-        if (p < 0.88) {
+        if (p < 0.68) {
           quoteBracketLeft.style.opacity = '0';
-          quoteBracketLeft.style.transform = 'translateX(40px)';
+          quoteBracketLeft.style.transform = 'translateX(36px)';
           quoteBracketRight.style.opacity = '0';
-          quoteBracketRight.style.transform = 'translateX(-40px)';
+          quoteBracketRight.style.transform = 'translateX(-36px)';
           quoteText.style.opacity = '0';
-          quoteText.style.transform = 'translateY(36px)';
-          quoteText.style.filter = 'blur(10px)';
-        } else if (p < 0.97) {
-          const tQuote = (p - 0.88) / 0.09;
-          const easeQuote = 1 - Math.pow(1 - tQuote, 3); // easeOutCubic
+          quoteText.style.transform = 'translateY(24px)';
+          if (quoteWords) quoteWords.forEach(w => w.style.opacity = '0.28');
+        } else if (p < 0.73) {
+          // Base entrance: brackets split into position, words appear in dim baseline state (0.28)
+          const tIn = (p - 0.68) / 0.05;
+          const easeIn = 1 - Math.pow(1 - tIn, 3);
+          const xL = (1 - easeIn) * 36;
+          const xR = -(1 - easeIn) * 36;
+          quoteBracketLeft.style.opacity = String(easeIn);
+          quoteBracketLeft.style.transform = `translateX(${xL}px)`;
+          quoteBracketRight.style.opacity = String(easeIn);
+          quoteBracketRight.style.transform = `translateX(${xR}px)`;
 
-          const xLeft = (1 - easeQuote) * 40;
-          const xRight = -(1 - easeQuote) * 40;
-          quoteBracketLeft.style.opacity = easeQuote;
-          quoteBracketLeft.style.transform = `translateX(${xLeft}px)`;
-
-          quoteBracketRight.style.opacity = easeQuote;
-          quoteBracketRight.style.transform = `translateX(${xRight}px)`;
-
-          const yText = (1 - easeQuote) * 36;
-          const blurText = (1 - easeQuote) * 10;
-          quoteText.style.opacity = easeQuote;
-          quoteText.style.transform = `translateY(${yText}px)`;
-          quoteText.style.filter = `blur(${blurText}px)`;
-        } else {
-          // RHYTHM HOLD: Fully sharp and resting (0.97 -> 1.00)
+          const yT = (1 - easeIn) * 24;
+          quoteText.style.opacity = String(easeIn);
+          quoteText.style.transform = `translateY(${yT}px)`;
+          if (quoteWords) quoteWords.forEach(w => w.style.opacity = '0.28');
+        } else if (p < 0.92) {
+          // Settled resting frame
           quoteBracketLeft.style.opacity = '1';
           quoteBracketLeft.style.transform = 'translateX(0px)';
           quoteBracketRight.style.opacity = '1';
           quoteBracketRight.style.transform = 'translateX(0px)';
           quoteText.style.opacity = '1';
           quoteText.style.transform = 'translateY(0px)';
-          quoteText.style.filter = 'blur(0px)';
+
+          // Word-by-word scroll illumination across 0.73 -> 0.92
+          if (quoteWords && quoteWords.length > 0) {
+            const totalWords = quoteWords.length;
+            const scrubRange = 0.92 - 0.73; // 0.19
+            quoteWords.forEach((wordEl, idx) => {
+              const wStart = 0.73 + (idx / totalWords) * scrubRange;
+              const wEnd = wStart + 0.025;
+              if (p >= wEnd) {
+                wordEl.style.opacity = '1.0';
+              } else if (p >= wStart) {
+                const tw = (p - wStart) / (wEnd - wStart);
+                wordEl.style.opacity = String(0.28 + tw * 0.72);
+              } else {
+                wordEl.style.opacity = '0.28';
+              }
+            });
+          }
+        } else {
+          // RHYTHM HOLD (0.92 -> 1.00): All words 100% white and sharp
+          quoteBracketLeft.style.opacity = '1';
+          quoteBracketLeft.style.transform = 'translateX(0px)';
+          quoteBracketRight.style.opacity = '1';
+          quoteBracketRight.style.transform = 'translateX(0px)';
+          quoteText.style.opacity = '1';
+          quoteText.style.transform = 'translateY(0px)';
+          if (quoteWords) quoteWords.forEach(w => w.style.opacity = '1.0');
         }
       }
     }
@@ -1530,12 +1564,12 @@
 
       if (window.scrollY > 80) {
         navContainer.className = 'pointer-events-auto w-[92%] max-w-[1136px] h-[54px] sm:h-[60px] bg-white/90 backdrop-blur-xl border border-stone-200/90 rounded-[12px] px-4 sm:px-6 flex items-center justify-between shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300 text-[#1F1B16]';
-        if (navLogo) navLogo.className = 'h-7 sm:h-[30px] w-auto transition-colors duration-300 text-[#F0441E]';
+        if (navLogo) navLogo.setAttribute('class', 'h-7 sm:h-[30px] w-auto transition-colors duration-300 text-[#F0441E]');
         if (navLinks) navLinks.className = 'hidden md:flex items-center gap-7 font-satoshi font-normal sm:font-medium text-[14px] sm:text-[15px] leading-[20px] text-[#44403C] tracking-[-0.01em] transition-colors duration-300';
         if (navCta) navCta.className = 'h-9 px-4 rounded-[6px] bg-[#F0441E] hover:bg-[#D93815] text-white font-satoshi font-medium text-[15px] tracking-[-0.01em] transition-all duration-200 flex items-center justify-center whitespace-nowrap shadow-none';
       } else {
         navContainer.className = 'pointer-events-auto w-[92%] max-w-[1136px] h-[54px] sm:h-[60px] bg-white/10 backdrop-blur-md border border-white/20 rounded-[12px] px-4 sm:px-6 flex items-center justify-between transition-all duration-300 text-white shadow-none';
-        if (navLogo) navLogo.className = 'h-7 sm:h-[30px] w-auto transition-colors duration-300 text-[#FFF4F2]';
+        if (navLogo) navLogo.setAttribute('class', 'h-7 sm:h-[30px] w-auto transition-colors duration-300 text-[#FFF4F2]');
         if (navLinks) navLinks.className = 'hidden md:flex items-center gap-7 font-satoshi font-normal sm:font-medium text-[14px] sm:text-[15px] leading-[20px] text-[#FFF4F2]/90 tracking-[-0.01em] transition-colors duration-300';
         if (navCta) navCta.className = 'h-9 px-4 rounded-[6px] bg-white/10 hover:bg-white/20 border border-white/20 text-[#FFF4F2] hover:text-white font-satoshi font-medium text-[15px] tracking-[-0.01em] transition-all duration-200 flex items-center justify-center whitespace-nowrap shadow-none';
       }
