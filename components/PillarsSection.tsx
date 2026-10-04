@@ -26,15 +26,15 @@ export default function PillarsSection() {
 
   const p = progress;
 
-  // Card 2 slides up over Card 1 (0.12 -> 0.48), resting neatly at translateY(20px)
+  // Card 2 slides up over Card 1 (0.12 -> 0.48), resting at Figma 24px step
   const t2 = Math.max(0, Math.min(1, (p - 0.12) / 0.34));
   const ease2 = 1 - Math.pow(1 - t2, 3);
-  const y2 = (1 - ease2) * 620 + ease2 * 20;
+  const y2 = (1 - ease2) * 640 + ease2 * 24;
 
-  // Card 3 slides up over Card 2 (0.52 -> 0.88), resting neatly at translateY(40px)
+  // Card 3 slides up over Card 2 (0.52 -> 0.88), resting at Figma 48px step
   const t3 = Math.max(0, Math.min(1, (p - 0.52) / 0.34));
   const ease3 = 1 - Math.pow(1 - t3, 3);
-  const y3 = (1 - ease3) * 620 + ease3 * 40;
+  const y3 = (1 - ease3) * 640 + ease3 * 48;
 
   return (
     <section
@@ -44,126 +44,126 @@ export default function PillarsSection() {
       style={{ height: '320vh' }}
     >
       {/* Sticky Pinned Viewport (Fills 100dvh with clean vertical padding and optical centering) */}
-      <div className="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 lg:px-[72px] pt-16 sm:pt-20 lg:pt-20 pb-6 sm:pb-8 lg:pb-10 select-none">
+      <div className="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 lg:px-[72px] pt-14 sm:pt-16 lg:pt-16 pb-6 sm:pb-8 lg:pb-10 select-none">
         
         {/* Section Header */}
         <div className="w-full max-w-[1136px] mx-auto mb-3 sm:mb-4 lg:mb-5 text-left flex-shrink-0">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#FFE4DE] text-[#F86D52] font-satoshi font-medium text-[13px] sm:text-[14px] leading-[18px] mb-2 select-none">
             Sistem Terpadu
           </div>
-          <h2 className="font-satoshi font-medium text-2xl sm:text-3xl md:text-[36px] lg:text-[40px] leading-[1.14] text-[#0F172A] tracking-[-0.03em] mb-1.5">
+          <h2 className="font-satoshi font-bold text-2xl sm:text-3xl md:text-[38px] lg:text-[44px] xl:text-[48px] leading-[1.12] text-[#0F172A] tracking-[-0.03em] mb-1.5 sm:mb-2">
             3 Sistem Terpadu Untuk Harimu.
           </h2>
-          <p className="font-satoshi text-xs sm:text-sm md:text-[16px] leading-[1.45] text-[#57534E] max-w-[840px]">
+          <p className="font-satoshi font-normal text-sm sm:text-base md:text-[18px] lg:text-[20px] leading-[1.38] text-[#57534E] max-w-[840px]">
             Setiap awal semester selalu bikin to-do list baru. Tiga hari pertama rajin mencatat, setelah itu aplikasinya berdebu di folder HP.
           </p>
         </div>
 
-        {/* 3 Overlapping Cards Deck Container (Height calibrated to fit viewport with zero overflow) */}
-        <div className="relative w-full max-w-[1136px] h-[400px] sm:h-[430px] md:h-[460px] lg:h-[480px]">
+        {/* 3 Overlapping Cards Deck Container */}
+        <div className="relative w-full max-w-[1136px] h-[430px] sm:h-[460px] md:h-[480px] lg:h-[490px]">
           
-          {/* Card 1: Today's Focus (Red-Orange #F0441E) - Flat, No Shadow, Fitted Padding */}
+          {/* Card 1: Today's Focus (Red-Orange #F0441E) - Flat, No Shadow, Maximized Content */}
           <div
-            className="absolute inset-x-0 top-0 w-full h-[calc(100%-40px)] rounded-[22px] sm:rounded-[26px] bg-[#F0441E] text-white overflow-hidden will-change-transform select-none shadow-none"
+            className="absolute inset-x-0 top-0 w-full h-[calc(100%-48px)] rounded-[24px] sm:rounded-[28px] bg-[#F0441E] text-white overflow-hidden will-change-transform select-none shadow-none"
             style={{ zIndex: 10 }}
           >
             {/* Inner Dashed Border Frame */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 p-2.5 sm:p-3.5" preserveAspectRatio="none">
-              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="18" fill="none" stroke="#9BA2B8" strokeWidth="1.5" strokeDasharray="10 10" strokeOpacity="0.75" />
+            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 p-3 sm:p-4 lg:p-5" preserveAspectRatio="none">
+              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="22" fill="none" stroke="#9BA2B8" strokeWidth="1.5" strokeDasharray="12 12" strokeOpacity="0.85" />
             </svg>
 
-            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-8 items-center h-full px-5 sm:px-8 md:px-10 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-6">
+            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-3.5 sm:py-5 lg:py-5">
               <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
-                <h3 className="font-satoshi font-medium text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] leading-[1.16] tracking-tight mb-1.5 sm:mb-2 text-white">
+                <h3 className="font-satoshi font-medium text-white text-[28px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
                   Today's Focus
                 </h3>
-                <h4 className="font-satoshi font-normal text-sm sm:text-base md:text-[18px] lg:text-[19px] text-[#FFF4F2] leading-[1.3] mb-2.5 sm:mb-3">
+                <h4 className="font-satoshi font-normal text-[#FFF4F2] text-[15px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
                   Maksimal 3 hal terpenting setiap hari.
                 </h4>
-                <p className="font-satoshi font-normal text-xs sm:text-sm md:text-[15px] text-[#FFF4F2]/90 leading-[1.55] max-w-[460px]">
+                <p className="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[13px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px]">
                   Layar utama Nataku memangkas kekacauan tugasmu dan hanya menampilkan hal yang paling wajib beres hari ini, sehingga energimu tidak habis karena overwhelmed.
                 </p>
               </div>
               <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
-                <div className="relative w-full max-w-[450px] rounded-[16px] overflow-hidden bg-black/10 border border-white/15 flex items-center justify-center p-1 sm:p-1.5 shadow-none">
+                <div className="relative w-full max-w-[500px] flex items-center justify-center">
                   <img
                     src="/assets/figma_exports/card1_visual_container.png"
                     alt="Today's Focus UI Preview"
-                    className="w-full h-auto max-h-[240px] sm:max-h-[270px] md:max-h-[290px] lg:max-h-[310px] object-contain block"
+                    className="w-full h-auto max-h-[250px] sm:max-h-[290px] md:max-h-[320px] lg:max-h-[350px] object-contain block select-none"
                   />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Card 2: Calendar Integrated (Emerald Green #047857) - Flat, No Shadow, Fitted Padding */}
+          {/* Card 2: Calendar Integrated (Emerald Green #047857) - Flat, No Shadow, Maximized Content */}
           <div
-            className="absolute inset-x-0 top-0 w-full h-[calc(100%-40px)] rounded-[22px] sm:rounded-[26px] bg-[#047857] text-white overflow-hidden will-change-transform select-none shadow-none"
+            className="absolute inset-x-0 top-0 w-full h-[calc(100%-48px)] rounded-[24px] sm:rounded-[28px] bg-[#047857] text-white overflow-hidden will-change-transform select-none shadow-none"
             style={{
               zIndex: 20,
               transform: `translateY(${y2}px)`,
             }}
           >
             {/* Inner Dashed Border Frame */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 p-2.5 sm:p-3.5" preserveAspectRatio="none">
-              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="18" fill="none" stroke="#9BA2B8" strokeWidth="1.5" strokeDasharray="10 10" strokeOpacity="0.75" />
+            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 p-3 sm:p-4 lg:p-5" preserveAspectRatio="none">
+              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="22" fill="none" stroke="#9BA2B8" strokeWidth="1.5" strokeDasharray="12 12" strokeOpacity="0.85" />
             </svg>
 
-            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-8 items-center h-full px-5 sm:px-8 md:px-10 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-6">
+            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-3.5 sm:py-5 lg:py-5">
               <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
-                <h3 className="font-satoshi font-medium text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] leading-[1.16] tracking-tight mb-1.5 sm:mb-2 text-white">
+                <h3 className="font-satoshi font-medium text-white text-[28px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
                   Calendar Integrated
                 </h3>
-                <h4 className="font-satoshi font-normal text-sm sm:text-base md:text-[18px] lg:text-[19px] text-[#FFF4F2] leading-[1.3] mb-2.5 sm:mb-3">
+                <h4 className="font-satoshi font-normal text-[#FFF4F2] text-[15px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
                   Bebas panik H-1 jam pengumpulan tugas.
                 </h4>
-                <p className="font-satoshi font-normal text-xs sm:text-sm md:text-[15px] text-[#FFF4F2]/90 leading-[1.55] max-w-[460px]">
+                <p className="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[13px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px]">
                   Indikator visual hitung mundur dengan warna jelas (kuning untuk hari ini, merah untuk mendesak). Kamu selalu tahu berapa sisa waktumu sebelum terlambat.
                 </p>
               </div>
               <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
-                <div className="relative w-full max-w-[450px] rounded-[16px] overflow-hidden bg-black/10 border border-white/15 flex items-center justify-center p-1 sm:p-1.5 shadow-none">
+                <div className="relative w-full max-w-[500px] flex items-center justify-center">
                   <img
                     src="/assets/figma_exports/card2_visual_container.png"
                     alt="Calendar Integrated UI Preview"
-                    className="w-full h-auto max-h-[240px] sm:max-h-[270px] md:max-h-[290px] lg:max-h-[310px] object-contain block"
+                    className="w-full h-auto max-h-[250px] sm:max-h-[290px] md:max-h-[320px] lg:max-h-[350px] object-contain block select-none"
                   />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Card 3: WhatsApp Daily (Blue #0369A1) - Flat, No Shadow, Fitted Padding */}
+          {/* Card 3: WhatsApp Daily (Blue #0369A1) - Flat, No Shadow, Maximized Content */}
           <div
-            className="absolute inset-x-0 top-0 w-full h-[calc(100%-40px)] rounded-[22px] sm:rounded-[26px] bg-[#0369A1] text-white overflow-hidden will-change-transform select-none shadow-none"
+            className="absolute inset-x-0 top-0 w-full h-[calc(100%-48px)] rounded-[24px] sm:rounded-[28px] bg-[#0369A1] text-white overflow-hidden will-change-transform select-none shadow-none"
             style={{
               zIndex: 30,
               transform: `translateY(${y3}px)`,
             }}
           >
             {/* Inner Dashed Border Frame */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 p-2.5 sm:p-3.5" preserveAspectRatio="none">
-              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="18" fill="none" stroke="#9BA2B8" strokeWidth="1.5" strokeDasharray="10 10" strokeOpacity="0.75" />
+            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 p-3 sm:p-4 lg:p-5" preserveAspectRatio="none">
+              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="22" fill="none" stroke="#9BA2B8" strokeWidth="1.5" strokeDasharray="12 12" strokeOpacity="0.85" />
             </svg>
 
-            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-8 items-center h-full px-5 sm:px-8 md:px-10 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-6">
+            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-3.5 sm:py-5 lg:py-5">
               <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
-                <h3 className="font-satoshi font-medium text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] leading-[1.16] tracking-tight mb-1.5 sm:mb-2 text-white">
+                <h3 className="font-satoshi font-medium text-white text-[28px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
                   WhatsApp Daily &amp;<br className="hidden sm:inline" /> Quick Action
                 </h3>
-                <h4 className="font-satoshi font-normal text-sm sm:text-base md:text-[18px] lg:text-[19px] text-[#FFF4F2] leading-[1.3] mb-2.5 sm:mb-3">
+                <h4 className="font-satoshi font-normal text-[#FFF4F2] text-[15px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
                   Asisten harian langsung di chat pribadimu.
                 </h4>
-                <p className="font-satoshi font-normal text-xs sm:text-sm md:text-[15px] text-[#FFF4F2]/90 leading-[1.55] max-w-[460px]">
+                <p className="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[13px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px]">
                   Terima rangkuman pagi setiap jam 7. Balas chat untuk mencoret tugas atau menambah agenda baru tanpa perlu menyentuh aplikasi.
                 </p>
               </div>
               <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
-                <div className="relative w-full max-w-[450px] rounded-[16px] overflow-hidden bg-black/10 border border-white/15 flex items-center justify-center p-1 sm:p-1.5 shadow-none">
+                <div className="relative w-full max-w-[500px] flex items-center justify-center">
                   <img
                     src="/assets/figma_exports/card3_visual_container.png"
                     alt="WhatsApp Daily & Quick Action Preview"
-                    className="w-full h-auto max-h-[240px] sm:max-h-[270px] md:max-h-[290px] lg:max-h-[310px] object-contain block"
+                    className="w-full h-auto max-h-[250px] sm:max-h-[290px] md:max-h-[320px] lg:max-h-[350px] object-contain block select-none"
                   />
                 </div>
               </div>
