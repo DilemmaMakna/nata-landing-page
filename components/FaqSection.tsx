@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 
 interface FaqItem {
   question: string;
@@ -33,8 +32,7 @@ const faqs: FaqItem[] = [
 
 export default function FaqSection() {
   // Aturan interaktif: Awalnya tertutup semua (null)
-  // Klik item terbuka -> menutup kembali
-  // Klik item lain -> menutup yang sebelumnya, membuka yang baru (maksimal 1 aktif)
+  // Maksimal 1 aktif bergantian
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   const toggle = (idx: number) => {
@@ -44,24 +42,23 @@ export default function FaqSection() {
   return (
     <section
       id="faq"
-      className="w-full bg-[#FFFFFF] py-16 lg:py-[46px] relative overflow-hidden flex items-center min-h-[640px] lg:min-h-[700px]"
+      className="w-full bg-[#FFFFFF] py-20 lg:py-24 relative overflow-hidden"
     >
-      <div className="container-nataku w-full">
-        <div className="max-w-[1136px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-[98px] items-center">
+      <div className="w-full max-w-[1136px] mx-auto px-4 sm:px-6 lg:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
           
-          {/* Sisi Kiri: Header + Accordion (Figma Frame 5: 519px) */}
-          <div className="lg:col-span-6 flex flex-col justify-center max-w-[519px]">
-            {/* Header Frame 1: Title + Subtitle */}
-            <div className="mb-10">
-              <h2 className="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#F0441E] mb-3">
-                Tanya Jawab
-              </h2>
-              <p className="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-[#23211F] tracking-[-0.02em]">
-                Setiap awal semester selalu bikin to-do list baru. Tiga hari pertama rajin mencatat, setelah itu aplikasinya berdebu di folder HP.
-              </p>
-            </div>
+          {/* Sisi Kiri: Header (Figma Frame 1: 552px) */}
+          <div className="lg:col-span-6 flex flex-col justify-start max-w-[552px]">
+            <h2 className="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#F0441E] mb-3">
+              Tanya Jawab
+            </h2>
+            <p className="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-[#23211F] tracking-[-0.02em]">
+              Setiap awal semester selalu bikin to-do list baru. Tiga hari pertama rajin mencatat, setelah itu aplikasinya berdebu di folder HP.
+            </p>
+          </div>
 
-            {/* Accordion Frame 4: Single active item */}
+          {/* Sisi Kanan: Accordion (Figma Frame 4: 552px, Single active item) */}
+          <div className="lg:col-span-6 flex flex-col max-w-[552px] w-full">
             <div className="border border-[#E7E5E4] rounded-[12px] overflow-hidden divide-y divide-[#E7E5E4] bg-white shadow-sm">
               {faqs.map((faq, idx) => {
                 const isOpen = openIdx === idx;
@@ -115,17 +112,6 @@ export default function FaqSection() {
                   </div>
                 );
               })}
-            </div>
-          </div>
-
-          {/* Sisi Kanan: Visual Illustration Frame (Frame 57, 519x506px) */}
-          <div className="lg:col-span-6 flex items-center justify-center lg:justify-end">
-            <div className="w-full max-w-[519px] h-auto lg:h-[506px] aspect-[519/506] rounded-[12px] overflow-hidden flex items-center justify-center">
-              <img
-                src="/assets/figma_exports/faq_illustration.png"
-                alt="Nataku Tanya Jawab Visual"
-                className="w-full h-full object-cover block rounded-[12px]"
-              />
             </div>
           </div>
 

@@ -6,51 +6,118 @@
   <title>Nataku — Beres tugas tanpa pusing! (Figma Landing Page)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com">
-    // FAQ Accordion Interactivity (Single active item rule)
-    let activeFaqIndex = null; // Awalnya semua tertutup
-
-    function toggleFaq(index) {
-      const items = document.querySelectorAll('#faqAccordion .faq-item');
-      if (!items || !items[index]) return;
-
-      if (activeFaqIndex === index) {
-        // Klik item yang sedang aktif -> tutup kembali
-        const panel = items[index].querySelector('.faq-panel');
-        const icon = items[index].querySelector('.faq-icon-wrapper');
-        const trigger = items[index].querySelector('.faq-trigger');
-        if (panel) panel.style.gridTemplateRows = '0fr';
-        if (icon) icon.style.transform = 'rotate(0deg)';
-        if (trigger) trigger.setAttribute('aria-expanded', 'false');
-        activeFaqIndex = null;
-      } else {
-        // Tutup item sebelumnya jika ada
-        if (activeFaqIndex !== null && items[activeFaqIndex]) {
-          const prevPanel = items[activeFaqIndex].querySelector('.faq-panel');
-          const prevIcon = items[activeFaqIndex].querySelector('.faq-icon-wrapper');
-          const prevTrigger = items[activeFaqIndex].querySelector('.faq-trigger');
-          if (prevPanel) prevPanel.style.gridTemplateRows = '0fr';
-          if (prevIcon) prevIcon.style.transform = 'rotate(0deg)';
-          if (prevTrigger) prevTrigger.setAttribute('aria-expanded', 'false');
-        }
-
-        // Buka item yang baru diklik
-        const panel = items[index].querySelector('.faq-panel');
-        const icon = items[index].querySelector('.faq-icon-wrapper');
-        const trigger = items[index].querySelector('.faq-trigger');
-        if (panel) panel.style.gridTemplateRows = '1fr';
-        if (icon) icon.style.transform = 'rotate(180deg)';
-        if (trigger) trigger.setAttribute('aria-expanded', 'true');
-        activeFaqIndex = index;
-      }
-    }
-
-  </script>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600;1,8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lenis Smooth Scroll (sama persis dengan solusigrafiz.vercel.app) -->
   <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js">
     // FAQ Accordion Interactivity (Single active item rule)
     let activeFaqIndex = null; // Awalnya semua tertutup
+
+    
+    // Pricing Interactivity (Bulanan vs Tahunan & Mulai Dulu vs On Track)
+    let currentPricingCycle = 'monthly';
+    let currentSelectedTier = 'mulai-dulu';
+
+    function setPricingCycle(cycle) {
+      currentPricingCycle = cycle;
+      const btnM = document.getElementById('btnMonthly');
+      const btnY = document.getElementById('btnYearly');
+      const iconM = document.getElementById('iconMonthly');
+      const iconY = document.getElementById('iconYearly');
+
+      if (cycle === 'monthly') {
+        btnM.className = 'flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-[#F0441E] text-white shadow-sm font-bold transition-all duration-200 cursor-pointer';
+        iconM.className = 'w-5 h-5 brightness-0 invert';
+        btnY.className = 'flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-transparent text-[#57534E] hover:text-[#23211F] font-normal transition-all duration-200 cursor-pointer';
+        iconY.className = 'w-5 h-5 opacity-70';
+      } else {
+        btnY.className = 'flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-[#F0441E] text-white shadow-sm font-bold transition-all duration-200 cursor-pointer';
+        iconY.className = 'w-5 h-5 brightness-0 invert';
+        btnM.className = 'flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-transparent text-[#57534E] hover:text-[#23211F] font-normal transition-all duration-200 cursor-pointer';
+        iconM.className = 'w-5 h-5 opacity-70';
+      }
+    }
+
+    function selectPricingTier(tier) {
+      currentSelectedTier = tier;
+      const cardM = document.getElementById('pricingCardMulai');
+      const cardO = document.getElementById('pricingCardOnTrack');
+      const flagMCont = document.getElementById('flagMulaiContainer');
+      const flagOCont = document.getElementById('flagOnTrackContainer');
+      const flagMIcon = document.getElementById('flagMulaiIcon');
+      const flagOIcon = document.getElementById('flagOnTrackIcon');
+      const titleM = document.getElementById('titleMulai');
+      const titleO = document.getElementById('titleOnTrack');
+      const taglineM = document.getElementById('taglineMulai');
+      const taglineO = document.getElementById('taglineOnTrack');
+      const descM = document.getElementById('descMulai');
+      const descO = document.getElementById('descOnTrack');
+      const priceM = document.getElementById('priceMulai');
+      const priceO = document.getElementById('priceOnTrack');
+      const divM = document.getElementById('dividerMulai');
+      const divO = document.getElementById('dividerOnTrack');
+      const featHM = document.getElementById('featureHeaderMulai');
+      const featHO = document.getElementById('featureHeaderOnTrack');
+      const featsM = document.getElementById('featuresMulaiList');
+      const featsO = document.getElementById('featuresOnTrackList');
+      const btnM = document.getElementById('btnCtaMulai');
+      const btnO = document.getElementById('btnCtaOnTrack');
+
+      if (tier === 'mulai-dulu') {
+        // Mulai Dulu Active
+        cardM.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]';
+        flagMCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#FFE4DE]';
+        flagMIcon.src = 'public/assets/figma_exports/icon-flag-active.svg';
+        titleM.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-white';
+        taglineM.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]';
+        descM.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
+        priceM.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]';
+        divM.className = 'mt-6 border-t border-[#FFF4F2]/40';
+        featHM.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#FFF4F2]';
+        featsM.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
+        btnM.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm';
+
+        // On Track Inactive
+        cardO.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40';
+        flagOCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#E7E5E4]';
+        flagOIcon.src = 'public/assets/figma_exports/icon-flag-inactive.svg';
+        titleO.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-[#44403C]';
+        taglineO.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]';
+        descO.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
+        priceO.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#44403C]';
+        divO.className = 'mt-6 border-t border-[#57534E]/30';
+        featHO.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#44403C]';
+        featsO.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
+        btnO.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300';
+      } else {
+        // On Track Active
+        cardO.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]';
+        flagOCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#FFE4DE]';
+        flagOIcon.src = 'public/assets/figma_exports/icon-flag-active.svg';
+        titleO.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-white';
+        taglineO.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]';
+        descO.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
+        priceO.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]';
+        divO.className = 'mt-6 border-t border-[#FFF4F2]/40';
+        featHO.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#FFF4F2]';
+        featsO.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
+        btnO.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm';
+
+        // Mulai Dulu Inactive
+        cardM.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40';
+        flagMCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#E7E5E4]';
+        flagMIcon.src = 'public/assets/figma_exports/icon-flag-inactive.svg';
+        titleM.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-[#44403C]';
+        taglineM.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]';
+        descM.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
+        priceM.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#44403C]';
+        divM.className = 'mt-6 border-t border-[#57534E]/30';
+        featHM.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#44403C]';
+        featsM.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
+        btnM.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300';
+      }
+    }
 
     function toggleFaq(index) {
       const items = document.querySelectorAll('#faqAccordion .faq-item');
@@ -182,6 +249,7 @@
         <a href="#protoSection" class="hover:text-[#F0441E] transition-colors">Alur Solusi</a>
         <a href="#quote" class="hover:text-[#F0441E] transition-colors">Tentang</a>
         <a href="#sistem-inti" class="hover:text-[#F0441E] transition-colors">Sistem Inti</a>
+        <a href="#pricing" class="hover:text-[#F0441E] transition-colors">Pilihan Akses</a>
         <a href="#faq" class="hover:text-[#F0441E] transition-colors">Tanya Jawab</a>
       </nav>
 
@@ -393,9 +461,9 @@
       
       <!-- Section Header -->
       <div class="w-full max-w-[1136px] mx-auto mb-6 sm:mb-8 text-left">
-        <span class="inline-block text-xs md:text-sm font-semibold tracking-wider text-[#0F172A] uppercase mb-2">
-          Sistem Inti
-        </span>
+        <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-[6px] bg-[#FFE4DE] text-[#F86D52] font-satoshi font-medium text-[14px] leading-[20px] mb-3 select-none">
+          Sistem Terpadu
+        </div>
         <h2 class="font-satoshi font-bold text-2xl sm:text-3xl md:text-[42px] leading-[1.15] text-[#0F172A] tracking-tight mb-2">
           3 Sistem Terpadu Untuk Harimu.
         </h2>
@@ -641,26 +709,290 @@
   </section>
 
 <!-- ========================================== -->
-  <!-- 7. TANYA JAWAB (Q&A) (Figma Desktop - 9 73:34498) -->
+  <!-- 7. PILIHAN AKSES / PRICING (Figma Desktop - 13 100:2784) -->
   <!-- ========================================== -->
-  <section id="faq" class="w-full bg-[#FFFFFF] py-16 lg:py-[46px] relative overflow-hidden flex items-center min-h-[640px] lg:min-h-[700px]">
-    <div class="container-section w-full">
-      <div class="max-w-[1136px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-[98px] items-center">
+  <section id="pricing" class="w-full bg-[#FAFAFA] py-20 lg:py-24 relative overflow-hidden">
+    <div class="w-full max-w-[1136px] mx-auto px-4 sm:px-6 lg:px-0">
+      
+      <!-- Header (Figma Frame 1) -->
+      <div class="mb-10 text-left">
+        <!-- Frame 56 Badge -->
+        <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-[6px] bg-[#FFE4DE] text-[#F86D52] font-satoshi font-medium text-[14px] leading-[20px] mb-3 select-none">
+          Pilihan Akses
+        </div>
+
+        <h2 class="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#0F172A] mb-3">
+          Mulai gratis, upgrade saat kamu butuh asisten.
+        </h2>
         
-        <!-- Left Column: Header (Frame 1) + Accordion (Frame 4) -->
-        <div class="lg:col-span-6 flex flex-col justify-center max-w-[519px]">
-          <!-- Frame 1: Title + Subtitle (gap: 12px) -->
-          <div class="mb-10">
-            <h2 class="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#F0441E] mb-3">
-              Tanya Jawab
-            </h2>
-            <p class="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-[#23211F] tracking-[-0.02em]">
-              Setiap awal semester selalu bikin to-do list baru. Tiga hari pertama rajin mencatat, setelah itu aplikasinya berdebu di folder HP.
-            </p>
+        <p class="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-[#23211F] tracking-[-0.01em] max-w-[900px]">
+          Paket standar membantumu manajemen tugas, namun asisten WhatsApp yang memastikan seluruh deadline kamu tuntas.
+        </p>
+      </div>
+
+      <!-- Billing Toggle (Frame 57: 325x60px) -->
+      <div class="inline-flex items-center p-1.5 rounded-[8px] bg-[#FFF4F2] border border-[#FFE4DE] gap-2.5 mb-10 select-none">
+        <button
+          id="btnMonthly"
+          type="button"
+          onclick="setPricingCycle('monthly')"
+          class="flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-[#F0441E] text-white shadow-sm font-bold transition-all duration-200 cursor-pointer"
+        >
+          <img
+            src="public/assets/figma_exports/icon-calendar.svg"
+            alt=""
+            id="iconMonthly"
+            class="w-5 h-5 brightness-0 invert"
+          />
+          <span class="font-satoshi text-base sm:text-[20px] leading-[26px] tracking-[-0.02em]">
+            Bulanan
+          </span>
+        </button>
+
+        <button
+          id="btnYearly"
+          type="button"
+          onclick="setPricingCycle('yearly')"
+          class="flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-transparent text-[#57534E] hover:text-[#23211F] font-normal transition-all duration-200 cursor-pointer"
+        >
+          <img
+            src="public/assets/figma_exports/icon-layer.svg"
+            alt=""
+            id="iconYearly"
+            class="w-5 h-5 opacity-70"
+          />
+          <span class="font-satoshi text-base sm:text-[20px] leading-[26px] tracking-[-0.02em]">
+            Tahunan
+          </span>
+        </button>
+      </div>
+
+      <!-- Cards Container (Frame 4: 1136x688px) -->
+      <div class="w-full rounded-[24px] bg-[#F5F5F4] border border-[#E7E5E4] p-4 sm:p-5 lg:p-6 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        
+        <!-- CARD 1: Paket Mulai Dulu (Frame 2) -->
+        <div
+          id="pricingCardMulai"
+          onclick="selectPricingTier('mulai-dulu')"
+          class="rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]"
+        >
+          <div>
+            <!-- Header Info (Frame 60) -->
+            <div class="mb-6">
+              <div
+                id="flagMulaiContainer"
+                class="w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#FFE4DE]"
+              >
+                <img
+                  id="flagMulaiIcon"
+                  src="public/assets/figma_exports/icon-flag-active.svg"
+                  alt=""
+                  class="w-5 h-5"
+                />
+              </div>
+
+              <h3
+                id="titleMulai"
+                class="font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-white"
+              >
+                Paket Mulai Dulu
+              </h3>
+
+              <p
+                id="taglineMulai"
+                class="font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]"
+              >
+                Gratis untuk Mahasiswa
+              </p>
+
+              <p
+                id="descMulai"
+                class="font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]"
+              >
+                Untuk kamu yang ingin merapikan tugas dan memantau deadline secara mandiri di ponsel Android.
+              </p>
+            </div>
+
+            {/* Price Display */}
+            <div class="my-6">
+              <div
+                id="priceMulai"
+                class="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]"
+              >
+                Rp.XX.000,00
+              </div>
+              <div
+                id="dividerMulai"
+                class="mt-6 border-t border-[#FFF4F2]/40"
+              />
+            </div>
+
+            <!-- Feature List (Frame 61) -->
+            <div class="mb-8">
+              <h4
+                id="featureHeaderMulai"
+                class="font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#FFF4F2]"
+              >
+                Yang kamu dapatkan:
+              </h4>
+              <ul
+                id="featuresMulaiList"
+                class="space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]"
+              >
+                <li class="flex items-start gap-2.5">
+                  <span class="opacity-75">•</span>
+                  <span>Akses aplikasi Android Nataku</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="opacity-75">•</span>
+                  <span>Dashboard Today's Focus</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="opacity-75">•</span>
+                  <span>Hitung mundur batas waktu tugas</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="opacity-75">•</span>
+                  <span>Pelacakan Skor Produktivitas harian</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <!-- Accordion Container (Frame 4, Single active item rule: default all closed, mutual exclusivity) -->
-          <div id="faqAccordion" class="border border-[#E7E5E4] rounded-[12px] overflow-hidden divide-y divide-[#E7E5E4] bg-white">
+          <!-- CTA Button (Frame 62) -->
+          <a
+            id="btnCtaMulai"
+            href="#waitlist"
+            class="w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm"
+          >
+            Daftar Akses Dasar
+          </a>
+        </div>
+
+        <!-- CARD 2: Paket On Track (Frame 5) -->
+        <div
+          id="pricingCardOnTrack"
+          onclick="selectPricingTier('on-track')"
+          class="rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40"
+        >
+          <div>
+            <!-- Header Info (Frame 60) -->
+            <div class="mb-6">
+              <div
+                id="flagOnTrackContainer"
+                class="w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#E7E5E4]"
+              >
+                <img
+                  id="flagOnTrackIcon"
+                  src="public/assets/figma_exports/icon-flag-inactive.svg"
+                  alt=""
+                  class="w-5 h-5"
+                />
+              </div>
+
+              <h3
+                id="titleOnTrack"
+                class="font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-[#44403C]"
+              >
+                Paket On Track
+              </h3>
+
+              <p
+                id="taglineOnTrack"
+                class="font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]"
+              >
+                Paling Pas untuk Mahasiswa Aktif
+              </p>
+
+              <p
+                id="descOnTrack"
+                class="font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]"
+              >
+                Untuk kamu yang punya jadwal padat dan butuh asisten yang menyapa dan mencatat langsung dari WhatsApp.
+              </p>
+            </div>
+
+            <!-- Price Display -->
+            <div class="my-6">
+              <div
+                id="priceOnTrack"
+                class="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#44403C]"
+              >
+                Rp.XX.000,00
+              </div>
+              <div
+                id="dividerOnTrack"
+                class="mt-6 border-t border-[#57534E]/30"
+              />
+            </div>
+
+            <!-- Feature List (Frame 61) -->
+            <div class="mb-8">
+              <h4
+                id="featureHeaderOnTrack"
+                class="font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#44403C]"
+              >
+                Yang kamu dapatkan:
+              </h4>
+              <ul
+                id="featuresOnTrackList"
+                class="space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]"
+              >
+                <li class="flex items-start gap-2.5">
+                  <span class="opacity-75">•</span>
+                  <span>Semua fitur Paket Mulai Dulu</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="opacity-75">•</span>
+                  <span>Pengiriman pesan WhatsApp Daily Digest setiap pagi</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="opacity-75">•</span>
+                  <span>Balas chat WhatsApp untuk coret dan tambah tugas</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="opacity-75">•</span>
+                  <span>Pengingat batas waktu mendesak langsung ke nomor pribadimu</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- CTA Button (Frame 62) -->
+          <a
+            id="btnCtaOnTrack"
+            href="#waitlist"
+            class="w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300"
+          >
+            Daftar Akses On Track
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 8. TANYA JAWAB (Q&A) (Figma Desktop - 9 73:34498) -->
+  <!-- ========================================== -->
+  <section id="faq" class="w-full bg-[#FFFFFF] py-20 lg:py-24 relative overflow-hidden">
+    <div class="w-full max-w-[1136px] mx-auto px-4 sm:px-6 lg:px-0">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
+        
+        <!-- Left Column: Header (Frame 1: 552px) -->
+        <div class="lg:col-span-6 flex flex-col justify-start max-w-[552px]">
+          <h2 class="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#F0441E] mb-3">
+            Tanya Jawab
+          </h2>
+          <p class="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-[#23211F] tracking-[-0.02em]">
+            Setiap awal semester selalu bikin to-do list baru. Tiga hari pertama rajin mencatat, setelah itu aplikasinya berdebu di folder HP.
+          </p>
+        </div>
+
+        <!-- Right Column: Accordion (Frame 4: 552px, Single active item rule) -->
+        <div class="lg:col-span-6 flex flex-col max-w-[552px] w-full">
+          <div id="faqAccordion" class="border border-[#E7E5E4] rounded-[12px] overflow-hidden divide-y divide-[#E7E5E4] bg-white shadow-sm">
             
             <!-- Item 1 -->
             <div class="faq-item group">
@@ -769,55 +1101,72 @@
           </div>
         </div>
 
-        <!-- Right Column: Visual Illustration Frame (Frame 57, 519x506px) -->
-        <div class="lg:col-span-6 flex items-center justify-center lg:justify-end">
-          <div class="w-full max-w-[519px] h-auto lg:h-[506px] aspect-[519/506] rounded-[12px] overflow-hidden flex items-center justify-center">
-            <img
-              src="public/assets/figma_exports/faq_illustration.png"
-              alt="Nataku Tanya Jawab Visual"
-              class="w-full h-full object-cover block rounded-[12px]"
-            />
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- ========================================== -->
-  <!-- 7. BRAND FOOTER                           -->
+  <!-- 9. BRAND FOOTER (Figma Desktop - 11 74:34559) -->
   <!-- ========================================== -->
-  <footer class="bg-[#1F1B16] text-[#998E7D] py-14 border-t border-[#3D362D] text-sm">
-    <div class="container-section">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-[#3D362D]">
-        <div class="flex flex-col items-center md:items-start text-center md:text-left">
-          <div class="flex items-center gap-2 mb-2">
+  <footer class="relative w-full bg-[#D93510] text-[#FFF4F2] overflow-hidden py-16 sm:py-20 select-none">
+    <!-- Giant Background Watermark Text (Figma 103:2977: Source Serif 4 700 398px, #D93F1C) -->
+    <div
+      class="absolute bottom-[-15%] left-1/2 -translate-x-1/2 pointer-events-none select-none font-bold text-[180px] sm:text-[280px] md:text-[340px] lg:text-[398px] leading-none text-[#D93F1C] tracking-[-0.04em] whitespace-nowrap opacity-90 z-0"
+      style="font-family: 'Source Serif 4', serif;"
+    >
+      Nataku
+    </div>
+
+    <!-- Main Content Grid (Figma 74:34559: 1136px width, 2 columns gap 32px) -->
+    <div class="relative z-10 w-full max-w-[1136px] mx-auto px-4 sm:px-6 lg:px-0">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
+        
+        <!-- Left Column (Frame 1: 552px) -->
+        <div class="lg:col-span-6 flex flex-col justify-start max-w-[552px]">
+          <!-- Logo Mark + Title -->
+          <div class="flex items-center gap-3 mb-2">
             <img
-              src="public/assets/nataku-logo.png"
-              alt="Nataku"
-              class="h-8 w-auto object-contain brightness-0 invert"
+              src="public/assets/figma_exports/logo-footer-subtract.svg"
+              alt="Nataku Logo Mark"
+              class="w-10 h-10 object-contain"
             />
+            <span
+              class="font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[56px] text-[#FFF4F2] tracking-[-0.04em]"
+              style="font-family: 'Source Serif 4', serif;"
+            >
+              Nataku
+            </span>
           </div>
-          <p class="text-xs text-[#7A7061] max-w-sm mt-1">
-            Sistem manajemen tugas dan jadwal kuliah terintegrasi WhatsApp. Beres tugas tanpa pusing!
+
+          <p class="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-white tracking-[-0.02em] max-w-[520px]">
+            Nataku adalah produk digital mandiri yang dikembangkan dengan penuh perhatian oleh Lemma Studio (PT Masih Dilemma Makna).
           </p>
         </div>
 
-        <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-[#DCD6CC]">
-          <a href="#hero" class="hover:text-white transition-colors">Beranda</a>
-          <a href="#protoSection" class="hover:text-white transition-colors">Alur Solusi</a>
-          <a href="#quote" class="hover:text-white transition-colors">Tentang</a>
-          <a href="#sistem-inti" class="hover:text-white transition-colors">Sistem Inti</a>
-          <a href="#waitlist" class="hover:text-white transition-colors">Daftar Tunggu</a>
-        </div>
-      </div>
+        <!-- Right Column (Frame 4: 552px) -->
+        <div class="lg:col-span-6 flex flex-col justify-between max-w-[552px] h-full pt-1 lg:pt-2">
+          <div>
+            <span class="font-satoshi font-light text-xs sm:text-[14px] leading-[20px] tracking-[0.005em] text-[#FFF4F2]/90 block mb-3">
+              Tautan Pendukung:
+            </span>
+            <div class="flex flex-col gap-2 font-satoshi font-light text-xs sm:text-[14px] leading-[20px] tracking-[0.005em] text-[#FFF4F2]">
+              <a href="#waitlist" class="hover:underline transition-all">
+                Kebijakan Privasi
+              </a>
+              <a href="#waitlist" class="hover:underline transition-all">
+                Syarat dan Ketentuan
+              </a>
+              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="hover:underline transition-all">
+                Hubungi Tim Nataku
+              </a>
+            </div>
+          </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7A7061]">
-        <p>© 2026 Nataku. Seluruh hak cipta dilindungi undang-undang.</p>
-        <p class="font-medium text-[#998E7D]">
-          Dibangun dengan bangga oleh{' '}
-          <span class="text-[#FF9575]">Lemma Studio (PT Masih Dilemma Makna)</span>
-        </p>
+          <div class="mt-8 font-satoshi font-light text-xs sm:text-[14px] leading-[20px] tracking-[0.005em] text-[#FFF4F2]/80">
+            © 2026 Lemma Bermakna. Hak Cipta Dilindungi.
+          </div>
+        </div>
+
       </div>
     </div>
   </footer>
@@ -1065,6 +1414,111 @@
   
     // FAQ Accordion Interactivity (Single active item rule)
     let activeFaqIndex = null; // Awalnya semua tertutup
+
+    
+    // Pricing Interactivity (Bulanan vs Tahunan & Mulai Dulu vs On Track)
+    let currentPricingCycle = 'monthly';
+    let currentSelectedTier = 'mulai-dulu';
+
+    function setPricingCycle(cycle) {
+      currentPricingCycle = cycle;
+      const btnM = document.getElementById('btnMonthly');
+      const btnY = document.getElementById('btnYearly');
+      const iconM = document.getElementById('iconMonthly');
+      const iconY = document.getElementById('iconYearly');
+
+      if (cycle === 'monthly') {
+        btnM.className = 'flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-[#F0441E] text-white shadow-sm font-bold transition-all duration-200 cursor-pointer';
+        iconM.className = 'w-5 h-5 brightness-0 invert';
+        btnY.className = 'flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-transparent text-[#57534E] hover:text-[#23211F] font-normal transition-all duration-200 cursor-pointer';
+        iconY.className = 'w-5 h-5 opacity-70';
+      } else {
+        btnY.className = 'flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-[#F0441E] text-white shadow-sm font-bold transition-all duration-200 cursor-pointer';
+        iconY.className = 'w-5 h-5 brightness-0 invert';
+        btnM.className = 'flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-transparent text-[#57534E] hover:text-[#23211F] font-normal transition-all duration-200 cursor-pointer';
+        iconM.className = 'w-5 h-5 opacity-70';
+      }
+    }
+
+    function selectPricingTier(tier) {
+      currentSelectedTier = tier;
+      const cardM = document.getElementById('pricingCardMulai');
+      const cardO = document.getElementById('pricingCardOnTrack');
+      const flagMCont = document.getElementById('flagMulaiContainer');
+      const flagOCont = document.getElementById('flagOnTrackContainer');
+      const flagMIcon = document.getElementById('flagMulaiIcon');
+      const flagOIcon = document.getElementById('flagOnTrackIcon');
+      const titleM = document.getElementById('titleMulai');
+      const titleO = document.getElementById('titleOnTrack');
+      const taglineM = document.getElementById('taglineMulai');
+      const taglineO = document.getElementById('taglineOnTrack');
+      const descM = document.getElementById('descMulai');
+      const descO = document.getElementById('descOnTrack');
+      const priceM = document.getElementById('priceMulai');
+      const priceO = document.getElementById('priceOnTrack');
+      const divM = document.getElementById('dividerMulai');
+      const divO = document.getElementById('dividerOnTrack');
+      const featHM = document.getElementById('featureHeaderMulai');
+      const featHO = document.getElementById('featureHeaderOnTrack');
+      const featsM = document.getElementById('featuresMulaiList');
+      const featsO = document.getElementById('featuresOnTrackList');
+      const btnM = document.getElementById('btnCtaMulai');
+      const btnO = document.getElementById('btnCtaOnTrack');
+
+      if (tier === 'mulai-dulu') {
+        // Mulai Dulu Active
+        cardM.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]';
+        flagMCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#FFE4DE]';
+        flagMIcon.src = 'public/assets/figma_exports/icon-flag-active.svg';
+        titleM.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-white';
+        taglineM.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]';
+        descM.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
+        priceM.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]';
+        divM.className = 'mt-6 border-t border-[#FFF4F2]/40';
+        featHM.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#FFF4F2]';
+        featsM.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
+        btnM.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm';
+
+        // On Track Inactive
+        cardO.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40';
+        flagOCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#E7E5E4]';
+        flagOIcon.src = 'public/assets/figma_exports/icon-flag-inactive.svg';
+        titleO.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-[#44403C]';
+        taglineO.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]';
+        descO.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
+        priceO.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#44403C]';
+        divO.className = 'mt-6 border-t border-[#57534E]/30';
+        featHO.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#44403C]';
+        featsO.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
+        btnO.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300';
+      } else {
+        // On Track Active
+        cardO.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]';
+        flagOCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#FFE4DE]';
+        flagOIcon.src = 'public/assets/figma_exports/icon-flag-active.svg';
+        titleO.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-white';
+        taglineO.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]';
+        descO.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
+        priceO.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]';
+        divO.className = 'mt-6 border-t border-[#FFF4F2]/40';
+        featHO.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#FFF4F2]';
+        featsO.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
+        btnO.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm';
+
+        // Mulai Dulu Inactive
+        cardM.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40';
+        flagMCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#E7E5E4]';
+        flagMIcon.src = 'public/assets/figma_exports/icon-flag-inactive.svg';
+        titleM.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-[#44403C]';
+        taglineM.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]';
+        descM.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
+        priceM.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#44403C]';
+        divM.className = 'mt-6 border-t border-[#57534E]/30';
+        featHM.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#44403C]';
+        featsM.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
+        btnM.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300';
+      }
+    }
 
     function toggleFaq(index) {
       const items = document.querySelectorAll('#faqAccordion .faq-item');

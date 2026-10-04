@@ -48,9 +48,9 @@ export default function PillarsSection() {
         
         {/* Section Header */}
         <div className="w-full max-w-[1136px] mx-auto mb-6 sm:mb-8 text-left">
-          <span className="inline-block text-xs md:text-sm font-semibold tracking-wider text-[#0F172A] uppercase mb-2">
-            Sistem Inti
-          </span>
+          <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-[6px] bg-[#FFE4DE] text-[#F86D52] font-satoshi font-medium text-[14px] leading-[20px] mb-3 select-none">
+            Sistem Terpadu
+          </div>
           <h2 className="font-satoshi font-bold text-2xl sm:text-3xl md:text-[42px] leading-[1.15] text-[#0F172A] tracking-tight mb-2">
             3 Sistem Terpadu Untuk Harimu.
           </h2>
