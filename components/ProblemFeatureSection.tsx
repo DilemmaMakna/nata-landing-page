@@ -31,12 +31,29 @@ export default function ProblemFeatureSection() {
   // Motion: Headline scales from 1.08 down to smaller and fades to 0
   // 4 Cards glide from outer corners to EXACT DEAD CENTER (0, 0)
   // =========================================================================
-  // Exact Figma cropped corners: positioned so outer 50px bleeds outside container
+  // Exact Figma cropped corners: anchored to full viewport edges (no artificial top/bottom padding)
+  const [viewportDims, setViewportDims] = useState({ w: 1280, h: 800 });
+
+  useEffect(() => {
+    const updateDims = () => {
+      setViewportDims({
+        w: Math.min(1280, window.innerWidth),
+        h: window.innerHeight,
+      });
+    };
+    updateDims();
+    window.addEventListener('resize', updateDims);
+    return () => window.removeEventListener('resize', updateDims);
+  }, []);
+
+  const offsetX = Math.max(240, (viewportDims.w / 2) - 55);
+  const offsetY = Math.max(180, (viewportDims.h / 2) - 48);
+
   const corners = [
-    { x: -585, y: -265, rot: 0 },  // Card 1: Kuburan Catatan (Top-Left)
-    { x: 585,  y: -265, rot: 0 },  // Card 2: Overwhelmed (Top-Right)
-    { x: -585, y: 265,  rot: 0 },  // Card 3: Puluhan Grup (Bottom-Left)
-    { x: 585,  y: 265,  rot: 0 },  // Card 4: Distraksi Medsos (Bottom-Right)
+    { x: -offsetX, y: -offsetY, rot: 0 },  // Card 1: Kuburan Catatan (Top-Left)
+    { x: offsetX,  y: -offsetY, rot: 0 },  // Card 2: Overwhelmed (Top-Right)
+    { x: -offsetX, y: offsetY,  rot: 0 },  // Card 3: Puluhan Grup (Bottom-Left)
+    { x: offsetX,  y: offsetY,  rot: 0 },  // Card 4: Distraksi Medsos (Bottom-Right)
   ];
 
   let part1Opacity = 1.0;
@@ -126,8 +143,8 @@ export default function ProblemFeatureSection() {
       {/* Sticky Pinned Viewport */}
       <div className="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden select-none">
         
-        {/* Staging Area (Figma Frame 2: 1280px max-width with overflow-hidden to crop corner cards) */}
-        <div className="relative w-full max-w-[1280px] h-[100dvh] max-h-[720px] min-h-[520px] flex items-center justify-center overflow-hidden">
+        {/* Staging Area (Full Viewport Height: h-[100dvh], fills viewport with no top/bottom padding cutoff) */}
+        <div className="relative w-full max-w-[1280px] h-[100dvh] flex items-center justify-center">
           
           {/* ============================================================== */}
           {/* PART 1: "Tata Semua Jadwalmu!" (Orange Text) + 4 Bleeding Cards */}

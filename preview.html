@@ -346,8 +346,8 @@
   <section id="protoSection" class="relative w-full bg-[#FFFFFF]" style="height: 340vh;">
     <div id="protoStickyContainer" class="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden select-none">
       
-      <!-- Staging Area (Figma Frame 2 59:25537: 1136px / 1280px, overflow-hidden to crop corner cards) -->
-      <div id="protoStagingArea" class="relative w-full max-w-[1280px] h-[100dvh] max-h-[720px] min-h-[520px] flex items-center justify-center overflow-hidden">
+      <!-- Staging Area (Full Viewport Height: h-[100dvh], fills viewport with no top/bottom padding cutoff) -->
+      <div id="protoStagingArea" class="relative w-full max-w-[1280px] h-[100dvh] flex items-center justify-center">
         
         <!-- ============================================================== -->
         <!-- PART 1: "Tata Semua Jadwalmu!" (Orange Text) + 4 Bleeding/Cropped Cards -->
@@ -1207,15 +1207,16 @@
     }
     requestAnimationFrame(raf);
 
-    // Responsive corner coordinates so cards bleed outside container and crop at edges (Figma spec)
+    // Responsive corner coordinates anchored to the true full viewport edges (no artificial top/bottom padding)
     function getCornerCoords() {
-      const staging = document.getElementById('protoStagingArea') || document.getElementById('protoStickyContainer');
-      const w = staging ? staging.clientWidth : Math.min(1280, window.innerWidth);
-      const h = staging ? staging.clientHeight : Math.min(720, window.innerHeight);
+      const w = Math.min(1280, window.innerWidth);
+      const h = window.innerHeight;
 
-      // On 1280x700, offsetX is ~585px (cards width ~210px -> outer ~55px is cropped at the edge)
+      // Cards bleed off the actual outer edges:
+      // Card width ~215px (half = 107px) -> offsetX puts ~55px of the card outside left/right boundary
+      // Card height ~195px (half = 97px) -> offsetY puts ~48px of the card outside top/bottom boundary
       const offsetX = Math.max(240, (w / 2) - 55);
-      const offsetY = Math.max(160, (h / 2) - 80);
+      const offsetY = Math.max(180, (h / 2) - 48);
 
       return [
         { x: -offsetX, y: -offsetY, rot: 0 }, // Card 1: Top-Left (Kuburan Catatan)
