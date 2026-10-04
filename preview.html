@@ -654,28 +654,33 @@
   <!-- ========================================== -->
   <!-- 6. WAITLIST / EARLY ACCESS (Figma Desktop - 6 63:29441) -->
   <!-- ========================================== -->
-  <section id="waitlist" class="w-full bg-[#FFFFFF] py-12 sm:py-16 lg:py-0 lg:h-[100dvh] lg:min-h-[700px] flex items-center justify-center relative overflow-hidden select-none">
-    <div class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-[72px] flex items-center justify-center">
-      <div class="w-full max-w-[1136px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-[42px]">
+    <!-- ========================================== -->
+  <!-- 7. WAITLIST / EARLY ACCESS (Figma Desktop - 6 73:32150) -->
+  <!-- Viewport-Fit Section with Left Coral Card + Asset.svg -->
+  <!-- Cleared below floating navbar (pt-24 lg:pt-20)        -->
+  <!-- ========================================== -->
+  <section id="waitlist" class="w-full bg-[#FFFFFF] pt-24 pb-14 sm:pt-28 sm:pb-16 lg:py-0 lg:h-[100dvh] lg:min-h-[720px] flex items-center justify-center relative overflow-hidden select-none">
+    <div class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-[72px] flex items-center justify-center lg:pt-14">
+      <div class="w-full max-w-[1136px] mx-auto flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-[42px]">
         
         <!-- Left Coral Card (Figma Frame 1 73:32151: 598.3x572px, r=24px, #F0441E) -->
         <div class="w-full lg:w-[598px] h-full min-h-[460px] lg:h-[572px] bg-[#F0441E] rounded-[24px] px-6 sm:px-7 md:px-[27px] py-6 sm:py-7 md:py-[24px] flex flex-col justify-between text-white shadow-none select-none flex-shrink-0">
           
           <!-- Visual Artwork: Asset.svg (Figma Frame 53 73:32153: 544x376px) -->
-          <div class="w-full h-auto max-h-[340px] sm:max-h-[376px] flex items-center justify-center overflow-hidden flex-shrink-0">
+          <div class="w-full h-auto max-h-[300px] sm:max-h-[330px] flex items-center justify-center overflow-hidden flex-shrink-0">
             <img
               src="public/assets/Asset.svg"
               alt="Nataku Early Access Visual"
-              class="w-full max-w-[515px] h-auto max-h-[350px] object-contain block mx-auto select-none pointer-events-none"
+              class="w-full max-w-[500px] h-auto max-h-[320px] object-contain block mx-auto select-none pointer-events-none"
             />
           </div>
 
           <!-- Bottom Text Container (Figma Frame 54: gap 8px) -->
           <div class="flex flex-col gap-2 sm:gap-2.5 text-left flex-shrink-0 mt-3 sm:mt-4 lg:mt-0">
-            <h2 class="font-satoshi font-bold text-2xl sm:text-3xl md:text-[38px] lg:text-[44px] xl:text-[48px] leading-[1.14] tracking-[-0.035em] text-[#FFF4F2]">
+            <h2 class="font-satoshi font-bold text-2xl sm:text-3xl md:text-[36px] lg:text-[40px] xl:text-[44px] leading-[1.15] tracking-[-0.035em] text-[#FFF4F2]">
               Jadilah yang pertama mencoba Nataku.
             </h2>
-            <p class="font-satoshi font-normal text-sm sm:text-base md:text-[18px] lg:text-[20px] leading-[1.3] text-[#E7E5E4] tracking-[-0.02em] max-w-[523px]">
+            <p class="font-satoshi font-normal text-sm sm:text-base md:text-[17px] lg:text-[18px] leading-[1.35] text-[#E7E5E4] tracking-[-0.015em] max-w-[523px]">
               Kami membuka akses Android secara bertahap melalui jalur pengujian khusus agar pengalaman pengguna tetap lancar.
             </p>
           </div>
@@ -686,10 +691,10 @@
           <form id="waitlistForm" onsubmit="handleWaitlistSubmit(event)" class="h-full flex flex-col justify-between gap-4 lg:gap-0">
             
             <!-- 5 Form Fields (Figma Frame 2: gap 16px) -->
-            <div class="flex flex-col gap-3.5 sm:gap-4">
+            <div class="flex flex-col gap-3 sm:gap-3.5">
               <!-- Field 1: Nama -->
-              <div class="flex flex-col gap-1.5 sm:gap-2">
-                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[20px] leading-[26px] tracking-[-0.02em] text-[#44403C]">
+              <div class="flex flex-col gap-1.5">
+                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[18px] leading-[24px] tracking-[-0.02em] text-[#44403C]">
                   Nama panggilan kamu
                 </label>
                 <input
@@ -697,13 +702,13 @@
                   id="formName"
                   required
                   placeholder="Zaid"
-                  class="w-full h-10 sm:h-10 px-3.5 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
+                  class="w-full h-10 px-3.5 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
                 />
               </div>
 
               <!-- Field 2: Email -->
-              <div class="flex flex-col gap-1.5 sm:gap-2">
-                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[20px] leading-[26px] tracking-[-0.02em] text-[#44403C]">
+              <div class="flex flex-col gap-1.5">
+                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[18px] leading-[24px] tracking-[-0.02em] text-[#44403C]">
                   Email Aktif
                 </label>
                 <input
@@ -711,13 +716,13 @@
                   id="formEmail"
                   required
                   placeholder="zaid.mujahid1504@gmail.com"
-                  class="w-full h-10 sm:h-10 px-3.5 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
+                  class="w-full h-10 px-3.5 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
                 />
               </div>
 
               <!-- Field 3: WhatsApp -->
-              <div class="flex flex-col gap-1.5 sm:gap-2">
-                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[20px] leading-[26px] tracking-[-0.02em] text-[#44403C]">
+              <div class="flex flex-col gap-1.5">
+                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[18px] leading-[24px] tracking-[-0.02em] text-[#44403C]">
                   Nomor WhatsApp aktif
                 </label>
                 <input
@@ -725,39 +730,39 @@
                   id="formWa"
                   required
                   placeholder="089745638278"
-                  class="w-full h-10 sm:h-10 px-3.5 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
+                  class="w-full h-10 px-3.5 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
                 />
               </div>
 
               <!-- Field 4: Kampus -->
-              <div class="flex flex-col gap-1.5 sm:gap-2">
-                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[20px] leading-[26px] tracking-[-0.02em] text-[#44403C]">
+              <div class="flex flex-col gap-1.5">
+                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[18px] leading-[24px] tracking-[-0.02em] text-[#44403C]">
                   Kampus / Universitas (opsional)
                 </label>
                 <input
                   type="text"
                   id="formUni"
                   placeholder="IPB University"
-                  class="w-full h-10 sm:h-10 px-3.5 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
+                  class="w-full h-10 px-3.5 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all"
                 />
               </div>
 
               <!-- Field 5: Harapan -->
-              <div class="flex flex-col gap-1.5 sm:gap-2">
-                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[20px] leading-[26px] tracking-[-0.02em] text-[#44403C]">
+              <div class="flex flex-col gap-1.5">
+                <label class="font-satoshi font-medium text-sm sm:text-base lg:text-[18px] leading-[24px] tracking-[-0.02em] text-[#44403C]">
                   Bagikan Harapanmu pada Nataku
                 </label>
                 <textarea
                   id="formExpect"
                   rows="2"
                   placeholder="Aku ingin produktif"
-                  class="w-full h-[76px] sm:h-[80px] p-3 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all resize-none"
+                  class="w-full h-[68px] sm:h-[72px] p-3 bg-white border border-[#D6D3D1] rounded-[8px] text-sm sm:text-base text-[#1F1B16] placeholder:text-[#A8A29E] focus:outline-none focus:border-[#F0441E] focus:ring-1 focus:ring-[#F0441E] transition-all resize-none"
                 ></textarea>
               </div>
             </div>
 
             <!-- Bottom Row (Figma Frame 3: gap 27px, height 40px) -->
-            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-stone-100 lg:border-t-0">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 pt-2 border-t border-stone-100 lg:border-t-0">
               <p class="font-satoshi font-medium text-[12px] sm:text-[13px] md:text-[14px] leading-[18px] sm:leading-[20px] text-[#78716C] max-w-[290px]">
                 Privasi aman. Nomor WhatsApp hanya untuk akses aplikasi dan pengujian resmi.
               </p>
