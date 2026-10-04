@@ -341,11 +341,21 @@
 
   <!-- ============================================================== -->
   <!-- 3. COMPONENT 8 SECTION: CHOREOGRAPHY & POP-UP SHOW (Figma 59:26233) -->
-  <!-- Stepper bar DELETED. Strictly clean like Figma.                -->
+  <!-- + DESKTOP - 4 QUOTE BANNER CONTINUUM (Figma 73:32098)          -->
   <!-- ============================================================== -->
-  <section id="protoSection" class="relative w-full bg-[#FFFFFF]" style="height: 340vh;">
+  <section id="protoSection" class="relative w-full bg-[#FFFFFF]" style="height: 480vh;">
+    <!-- Smooth scroll anchor for navbar "Tentang" (#quote) -->
+    <div id="quote" class="absolute pointer-events-none" style="top: 86%; width: 1px; height: 1px;"></div>
+
     <div id="protoStickyContainer" class="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden select-none">
       
+      <!-- Full Viewport Orange Circular Expansion (Iris Reveal) Layer -->
+      <div
+        id="orangeCircleIris"
+        class="absolute inset-0 pointer-events-none z-35 bg-[#F0441E]"
+        style="clip-path: circle(0% at 50% 50%); will-change: clip-path, opacity; opacity: 0;"
+      ></div>
+
       <!-- Staging Area (Full Viewport Height: h-[100dvh], fills viewport with no top/bottom padding cutoff) -->
       <div id="protoStagingArea" class="relative w-full max-w-[1280px] h-[100dvh] flex items-center justify-center">
         
@@ -385,7 +395,7 @@
         </div>
 
         <!-- Figma Scroll Indicator Track (Frame 20 / 21: 16x572px with capsule thumb) -->
-        <div class="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-3 sm:w-3.5 h-[340px] sm:h-[480px] rounded-full border border-stone-200/80 bg-white/70 p-0.5 hidden md:flex flex-col pointer-events-none z-40">
+        <div id="protoScrollTrack" class="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-3 sm:w-3.5 h-[340px] sm:h-[480px] rounded-full border border-stone-200/80 bg-white/70 p-0.5 hidden md:flex flex-col pointer-events-none z-40 transition-opacity duration-150">
           <div id="protoScrollThumb" class="w-full h-14 rounded-full bg-stone-700/60 transition-transform duration-75"></div>
         </div>
 
@@ -393,7 +403,7 @@
         <!-- PART 2: Feature Dynamic Group Re-Centering (Figma 59:26229)    -->
         <!-- Fitted padding (px-7 py-4.5), rounded-[16px], and 32px gap    -->
         <!-- ============================================================== -->
-        <div id="part2Container" class="absolute inset-0 pointer-events-none z-30">
+        <div id="part2Container" class="absolute inset-0 pointer-events-none z-30 transition-transform will-change-[transform,opacity]">
           
           <!-- Feature 1: Manajemen Tugas (Figma Frame 40: rounded-[16px], px-7 py-4.5) -->
           <div
@@ -433,35 +443,54 @@
 
         </div>
 
-      </div>
-    </div>
-  </section>
+        <!-- ============================================================== -->
+        <!-- PART 4: QUOTE BANNER CONTINUUM (Figma Desktop - 4 73:32098)   -->
+        <!-- Opsi A: Kinetic Split & Blur-to-Focus                         -->
+        <!-- ============================================================== -->
+        <div
+          id="part3QuoteContainer"
+          class="absolute inset-0 flex items-center justify-center pointer-events-none z-40 px-4 sm:px-8"
+        >
+          <div id="quoteContentWrapper" class="w-full max-w-[1100px] mx-auto flex items-center justify-between gap-4 sm:gap-8 md:gap-12 will-change-transform">
+            
+            <!-- Left Bracket (Figma Frame 44 73:32100: Vector SVG) -->
+            <div
+              id="quoteBracketLeft"
+              class="flex-shrink-0 flex items-center justify-center select-none pointer-events-none will-change-transform"
+              style="opacity: 0; transform: translateX(40px);"
+            >
+              <img
+                src="public/assets/figma_exports/quote-bracket-left.svg"
+                alt="“"
+                class="h-28 sm:h-44 md:h-60 lg:h-72 w-auto object-contain"
+              />
+            </div>
 
-  <!-- ========================================== -->
-  <!-- 4. QUOTE BANNER (Figma Desktop - 4 59:25029)-->
-  <!-- ========================================== -->
-  <section id="quote" class="w-full bg-[#F0441E] text-white py-16 sm:py-20 md:py-28 relative overflow-hidden flex items-center justify-center">
-    <div class="container-section">
-      <div class="max-w-[980px] mx-auto flex items-center justify-between gap-4 sm:gap-8 md:gap-12">
-        <div class="flex-shrink-0 flex items-center justify-center select-none pointer-events-none opacity-90">
-          <img
-            src="public/assets/figma_exports/desktop_4_quote_left.png"
-            alt="Quote Left"
-            class="h-16 sm:h-28 md:h-44 lg:h-56 w-auto object-contain"
-          />
+            <!-- Statement Typography (Figma 73:32107: Satoshi Medium 500, 64px lh:72px, -0.04em, max-w 786px) -->
+            <h2
+              id="quoteText"
+              class="flex-1 font-satoshi font-medium text-white text-[24px] sm:text-[34px] md:text-[46px] lg:text-[56px] xl:text-[64px] leading-[1.125] tracking-[-0.04em] text-left max-w-[786px] will-change-[transform,opacity,filter]"
+              style="opacity: 0; transform: translateY(36px); filter: blur(10px);"
+            >
+              Setiap pagi, Nataku Hadir Mengingatkan daftar tugas penting. Cukup Balas chat, dan langsung tercatat!
+            </h2>
+
+            <!-- Right Bracket (Figma Frame 45 73:32108: Vector SVG) -->
+            <div
+              id="quoteBracketRight"
+              class="flex-shrink-0 flex items-center justify-center select-none pointer-events-none will-change-transform"
+              style="opacity: 0; transform: translateX(-40px);"
+            >
+              <img
+                src="public/assets/figma_exports/quote-bracket-right.svg"
+                alt="”"
+                class="h-28 sm:h-44 md:h-60 lg:h-72 w-auto object-contain"
+              />
+            </div>
+
+          </div>
         </div>
 
-        <h2 class="flex-1 font-satoshi font-medium text-white text-[22px] sm:text-[32px] md:text-[44px] lg:text-[54px] leading-[1.2] tracking-tight text-left">
-          Setiap pagi, Nataku Hadir Mengingatkan daftar tugas penting. Cukup Balas chat, dan langsung tercatat!
-        </h2>
-
-        <div class="flex-shrink-0 flex items-center justify-center select-none pointer-events-none opacity-90">
-          <img
-            src="public/assets/figma_exports/desktop_4_quote_right.png"
-            alt="Quote Right"
-            class="h-16 sm:h-28 md:h-44 lg:h-56 w-auto object-contain"
-          />
-        </div>
       </div>
     </div>
   </section>
@@ -1240,22 +1269,41 @@
     const featPill1 = document.getElementById('featPill1');
     const featPill2 = document.getElementById('featPill2');
     const featPill3 = document.getElementById('featPill3');
+    const part2Container = document.getElementById('part2Container');
+    const protoScrollTrack = document.getElementById('protoScrollTrack');
+
+    // Quote Transition Elements (Desktop - 4)
+    const orangeCircleIris = document.getElementById('orangeCircleIris');
+    const quoteBracketLeft = document.getElementById('quoteBracketLeft');
+    const quoteBracketRight = document.getElementById('quoteBracketRight');
+    const quoteText = document.getElementById('quoteText');
 
     // CONTINUOUS CHOREOGRAPHY RENDER
     function renderChoreography(progress) {
       const p = Math.max(0, Math.min(1, progress));
+
+      // Scroll Indicator Track & Thumb
       if (protoScrollThumb) {
-        // Move scroll thumb inside track (track height ~480px minus thumb 56px = ~420px range)
         const trackRange = protoScrollThumb.parentElement ? (protoScrollThumb.parentElement.clientHeight - 56) : 380;
         protoScrollThumb.style.transform = `translateY(${p * Math.max(0, trackRange)}px)`;
       }
+      if (protoScrollTrack) {
+        if (p < 0.82) {
+          protoScrollTrack.style.opacity = '1';
+        } else if (p < 0.90) {
+          const tTrack = (p - 0.82) / 0.08;
+          protoScrollTrack.style.opacity = String(Math.max(0, 1 - tTrack * 1.5));
+        } else {
+          protoScrollTrack.style.opacity = '0';
+        }
+      }
 
       // ==============================================================
-      // PART 1: "Tata Semua Jadwalmu!" (0.00 -> 0.44)
+      // PART 1: "Tata Semua Jadwalmu!" (0.00 -> 0.40)
       // Motion: Headline scales from 1.08 down to smaller and fades to 0
       // 4 Cards glide from outer corners to EXACT DEAD CENTER (0, 0)
       // ==============================================================
-      if (p < 0.44) {
+      if (p < 0.40) {
         part1Container.style.opacity = '1.0';
 
         // 1. Motion on "Tata Semua Jadwalmu!": Scales smoothly and dissolves
@@ -1267,9 +1315,9 @@
 
         const currentCorners = getCornerCoords();
 
-        if (p < 0.30) {
+        if (p < 0.28) {
           // Cards gliding smoothly from cropped corners to EXACT DEAD CENTER (0, 0)
-          const tCard = p / 0.30;
+          const tCard = p / 0.28;
           const easeCard = tCard * tCard * (3 - 2 * tCard); // smooth easeInOut
           for (let i = 0; i < 4; i++) {
             const cx = currentCorners[i].x * (1 - easeCard);
@@ -1277,7 +1325,7 @@
             painCards[i].style.transform = `translate(-50%, -50%) translate3d(${cx}px, ${cy}px, 0)`;
             painCards[i].style.opacity = '1.0';
           }
-        } else if (p < 0.38) {
+        } else if (p < 0.35) {
           // Held merged exactly at DEAD CENTER (0, 0)
           for (let i = 0; i < 4; i++) {
             painCards[i].style.transform = 'translate(-50%, -50%) translate3d(0px, 0px, 0) rotate(0deg)';
@@ -1285,10 +1333,10 @@
           }
         } else {
           // Dissolving away the merged stack
-          const tDissolve = (p - 0.38) / 0.06;
+          const tDissolve = (p - 0.35) / 0.05;
           const opStack = Math.max(0, 1.0 - tDissolve);
           for (let i = 0; i < 4; i++) {
-            painCards[i].style.transform = `translate(-50%, -50%) scale(${1.0 - 0.1 * tDissolve})`;
+            painCards[i].style.transform = `translate(-50%, -50%) scale(${1.0 - 0.08 * tDissolve})`;
             painCards[i].style.opacity = opStack;
           }
         }
@@ -1297,15 +1345,12 @@
       }
 
       // ==============================================================
-      // PART 2: DYNAMIC RE-CENTERING PILL ANIMATION (Audio Revision)
-      // Step 1: Card 1 stops at center (y = 0)
-      // Step 2: Card 2 enters -> Card 1 shifts up -> combined group centered!
-      // Step 3: Card 3 enters -> Card 1 & 2 shift up -> all 3 centered!
-      // Step distance S = 118px (~86px card height + ~32px clear gap between cards)
+      // PART 2: DYNAMIC RE-CENTERING PILL ANIMATION (0.40 -> 0.82)
+      // Step distance S = 118px (~86px card height + ~32px clear gap)
       // ==============================================================
       const S = 118; // step distance
 
-      if (p < 0.44) {
+      if (p < 0.40) {
         // Not yet active
         featPill1.style.opacity = '0';
         featPill1.style.transform = 'translate(-50%, -50%) translate3d(0, 150px, 0)';
@@ -1313,12 +1358,16 @@
         featPill2.style.transform = 'translate(-50%, -50%) translate3d(0, 190px, 0)';
         featPill3.style.opacity = '0';
         featPill3.style.transform = 'translate(-50%, -50%) translate3d(0, 230px, 0)';
+        if (part2Container) {
+          part2Container.style.opacity = '1';
+          part2Container.style.transform = 'scale(1)';
+        }
       }
-      else if (p < 0.60) {
+      else if (p < 0.52) {
         // Phase 1: Card 1 slides up from 150px to DEAD CENTER (y = 0)
-        const t1 = Math.max(0, Math.min(1, (p - 0.44) / 0.14));
+        const t1 = Math.max(0, Math.min(1, (p - 0.40) / 0.12));
         const ease1 = 1 - Math.pow(1 - t1, 3);
-        const y1 = (1 - ease1) * 150; // 150 -> 0
+        const y1 = (1 - ease1) * 150;
         featPill1.style.opacity = ease1;
         featPill1.style.transform = `translate(-50%, -50%) translate3d(0, ${y1}px, 0)`;
 
@@ -1326,46 +1375,140 @@
         featPill2.style.transform = 'translate(-50%, -50%) translate3d(0, 190px, 0)';
         featPill3.style.opacity = '0';
         featPill3.style.transform = 'translate(-50%, -50%) translate3d(0, 230px, 0)';
+        if (part2Container) {
+          part2Container.style.opacity = '1';
+          part2Container.style.transform = 'scale(1)';
+        }
       }
-      else if (p < 0.76) {
+      else if (p < 0.64) {
         // Phase 2: Card 2 enters from below; Card 1 shifts UP from 0 to -S/2 (-59px)
-        // Combined 2-card group is now centered at y = 0!
-        const t2 = Math.max(0, Math.min(1, (p - 0.60) / 0.14));
+        const t2 = Math.max(0, Math.min(1, (p - 0.52) / 0.12));
         const ease2 = 1 - Math.pow(1 - t2, 3);
         
-        // Card 1 shifts from 0 to -59px
         const y1 = -ease2 * (S / 2);
         featPill1.style.opacity = '1';
         featPill1.style.transform = `translate(-50%, -50%) translate3d(0, ${y1}px, 0)`;
 
-        // Card 2 slides from 180px up to +59px
         const y2 = (1 - ease2) * 180 + ease2 * (S / 2);
         featPill2.style.opacity = ease2;
         featPill2.style.transform = `translate(-50%, -50%) translate3d(0, ${y2}px, 0)`;
 
         featPill3.style.opacity = '0';
         featPill3.style.transform = 'translate(-50%, -50%) translate3d(0, 230px, 0)';
+        if (part2Container) {
+          part2Container.style.opacity = '1';
+          part2Container.style.transform = 'scale(1)';
+        }
       }
-      else {
-        // Phase 3: Card 3 enters from below; Card 1 shifts to -S (-118px), Card 2 shifts to 0px
-        // Combined 3-card group is now centered at y = 0!
-        const t3 = Math.max(0, Math.min(1, (p - 0.76) / 0.14));
+      else if (p < 0.76) {
+        // Phase 3: Card 3 enters; Card 1 shifts to -S (-118px), Card 2 shifts to 0px
+        const t3 = Math.max(0, Math.min(1, (p - 0.64) / 0.12));
         const ease3 = 1 - Math.pow(1 - t3, 3);
 
-        // Card 1 shifts from -59px to -118px
         const y1 = - (S / 2) - ease3 * (S / 2);
         featPill1.style.opacity = '1';
         featPill1.style.transform = `translate(-50%, -50%) translate3d(0, ${y1}px, 0)`;
 
-        // Card 2 shifts from +59px to 0px
         const y2 = (S / 2) - ease3 * (S / 2);
         featPill2.style.opacity = '1';
         featPill2.style.transform = `translate(-50%, -50%) translate3d(0, ${y2}px, 0)`;
 
-        // Card 3 slides from 210px up to +118px
         const y3 = (1 - ease3) * 210 + ease3 * S;
         featPill3.style.opacity = ease3;
         featPill3.style.transform = `translate(-50%, -50%) translate3d(0, ${y3}px, 0)`;
+        if (part2Container) {
+          part2Container.style.opacity = '1';
+          part2Container.style.transform = 'scale(1)';
+        }
+      }
+      else if (p < 0.82) {
+        // RHYTHM HOLD: 3 pills cleanly centered
+        featPill1.style.opacity = '1';
+        featPill1.style.transform = `translate(-50%, -50%) translate3d(0, ${-S}px, 0)`;
+        featPill2.style.opacity = '1';
+        featPill2.style.transform = `translate(-50%, -50%) translate3d(0, 0px, 0)`;
+        featPill3.style.opacity = '1';
+        featPill3.style.transform = `translate(-50%, -50%) translate3d(0, ${S}px, 0)`;
+        if (part2Container) {
+          part2Container.style.opacity = '1';
+          part2Container.style.transform = 'scale(1)';
+        }
+      }
+      else {
+        // Fading out during Iris expansion (0.82 -> 0.90)
+        const tPillFade = Math.min(1, (p - 0.82) / 0.08);
+        const opPills = Math.max(0, 1 - tPillFade * 1.4);
+        const scalePills = 1 - tPillFade * 0.06;
+        featPill1.style.opacity = '1';
+        featPill1.style.transform = `translate(-50%, -50%) translate3d(0, ${-S}px, 0)`;
+        featPill2.style.opacity = '1';
+        featPill2.style.transform = `translate(-50%, -50%) translate3d(0, 0px, 0)`;
+        featPill3.style.opacity = '1';
+        featPill3.style.transform = `translate(-50%, -50%) translate3d(0, ${S}px, 0)`;
+        if (part2Container) {
+          part2Container.style.opacity = String(opPills);
+          part2Container.style.transform = `scale(${scalePills})`;
+        }
+      }
+
+      // ==============================================================
+      // PART 3: ORANGE CIRCULAR EXPANSION (IRIS REVEAL) (0.82 -> 0.91)
+      // ==============================================================
+      if (orangeCircleIris) {
+        if (p < 0.82) {
+          orangeCircleIris.style.clipPath = 'circle(0% at 50% 50%)';
+          orangeCircleIris.style.opacity = '0';
+        } else if (p < 0.91) {
+          const tIris = (p - 0.82) / 0.09;
+          const easeIris = tIris * tIris * (3 - 2 * tIris); // smooth easeInOut
+          const radius = easeIris * 150;
+          orangeCircleIris.style.opacity = '1';
+          orangeCircleIris.style.clipPath = `circle(${radius}% at 50% 50%)`;
+        } else {
+          orangeCircleIris.style.opacity = '1';
+          orangeCircleIris.style.clipPath = 'circle(150% at 50% 50%)';
+        }
+      }
+
+      // ==============================================================
+      // PART 4: OPSI A — EDITORIAL KINETIC SPLIT & BLUR-TO-FOCUS (0.88 -> 0.97)
+      // ==============================================================
+      if (quoteBracketLeft && quoteBracketRight && quoteText) {
+        if (p < 0.88) {
+          quoteBracketLeft.style.opacity = '0';
+          quoteBracketLeft.style.transform = 'translateX(40px)';
+          quoteBracketRight.style.opacity = '0';
+          quoteBracketRight.style.transform = 'translateX(-40px)';
+          quoteText.style.opacity = '0';
+          quoteText.style.transform = 'translateY(36px)';
+          quoteText.style.filter = 'blur(10px)';
+        } else if (p < 0.97) {
+          const tQuote = (p - 0.88) / 0.09;
+          const easeQuote = 1 - Math.pow(1 - tQuote, 3); // easeOutCubic
+
+          const xLeft = (1 - easeQuote) * 40;
+          const xRight = -(1 - easeQuote) * 40;
+          quoteBracketLeft.style.opacity = easeQuote;
+          quoteBracketLeft.style.transform = `translateX(${xLeft}px)`;
+
+          quoteBracketRight.style.opacity = easeQuote;
+          quoteBracketRight.style.transform = `translateX(${xRight}px)`;
+
+          const yText = (1 - easeQuote) * 36;
+          const blurText = (1 - easeQuote) * 10;
+          quoteText.style.opacity = easeQuote;
+          quoteText.style.transform = `translateY(${yText}px)`;
+          quoteText.style.filter = `blur(${blurText}px)`;
+        } else {
+          // RHYTHM HOLD: Fully sharp and resting (0.97 -> 1.00)
+          quoteBracketLeft.style.opacity = '1';
+          quoteBracketLeft.style.transform = 'translateX(0px)';
+          quoteBracketRight.style.opacity = '1';
+          quoteBracketRight.style.transform = 'translateX(0px)';
+          quoteText.style.opacity = '1';
+          quoteText.style.transform = 'translateY(0px)';
+          quoteText.style.filter = 'blur(0px)';
+        }
       }
     }
 

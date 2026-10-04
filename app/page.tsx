@@ -4,7 +4,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ProblemFeatureSection from '@/components/ProblemFeatureSection';
-import QuoteSection from '@/components/QuoteSection';
+// QuoteSection is now seamlessly integrated inside ProblemFeatureSection
 import PillarsSection from '@/components/PillarsSection';
 import WaitlistSection from '@/components/WaitlistSection';
 import PricingSection from '@/components/PricingSection';
@@ -18,8 +18,7 @@ export default function HomePage() {
       <HeroSection />
       {/* Component 8 Interactive Scroll Prototype (Figma 59:26233) */}
       <ProblemFeatureSection />
-      {/* Figma Desktop - 4 (59:25029) */}
-      <QuoteSection />
+      {/* Figma Desktop - 4 (73:32098) integrated inside ProblemFeatureSection */}
       {/* Figma Desktop - 10 (63:28732) */}
       <PillarsSection />
       {/* Figma Desktop - 6 (63:29441) */}
