@@ -10,152 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600;1,8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lenis Smooth Scroll (sama persis dengan solusigrafiz.vercel.app) -->
-  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js">
-    // FAQ Accordion Interactivity (Single active item rule)
-    let activeFaqIndex = null; // Awalnya semua tertutup
-
-    
-    // Pricing Interactivity (Bulanan vs Tahunan & Mulai Dulu vs On Track)
-    let currentPricingCycle = 'monthly';
-    let currentSelectedTier = 'mulai-dulu';
-
-    function setPricingCycle(cycle) {
-      currentPricingCycle = cycle;
-      const btnM = document.getElementById('btnMonthly');
-      const btnY = document.getElementById('btnYearly');
-      const iconM = document.getElementById('iconMonthly');
-      const iconY = document.getElementById('iconYearly');
-
-      if (cycle === 'monthly') {
-        btnM.className = 'flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-[#F0441E] text-white shadow-sm font-bold transition-all duration-200 cursor-pointer';
-        iconM.className = 'w-5 h-5 brightness-0 invert';
-        btnY.className = 'flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-transparent text-[#57534E] hover:text-[#23211F] font-normal transition-all duration-200 cursor-pointer';
-        iconY.className = 'w-5 h-5 opacity-70';
-      } else {
-        btnY.className = 'flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-[#F0441E] text-white shadow-sm font-bold transition-all duration-200 cursor-pointer';
-        iconY.className = 'w-5 h-5 brightness-0 invert';
-        btnM.className = 'flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-transparent text-[#57534E] hover:text-[#23211F] font-normal transition-all duration-200 cursor-pointer';
-        iconM.className = 'w-5 h-5 opacity-70';
-      }
-    }
-
-    function selectPricingTier(tier) {
-      currentSelectedTier = tier;
-      const cardM = document.getElementById('pricingCardMulai');
-      const cardO = document.getElementById('pricingCardOnTrack');
-      const flagMCont = document.getElementById('flagMulaiContainer');
-      const flagOCont = document.getElementById('flagOnTrackContainer');
-      const flagMIcon = document.getElementById('flagMulaiIcon');
-      const flagOIcon = document.getElementById('flagOnTrackIcon');
-      const titleM = document.getElementById('titleMulai');
-      const titleO = document.getElementById('titleOnTrack');
-      const taglineM = document.getElementById('taglineMulai');
-      const taglineO = document.getElementById('taglineOnTrack');
-      const descM = document.getElementById('descMulai');
-      const descO = document.getElementById('descOnTrack');
-      const priceM = document.getElementById('priceMulai');
-      const priceO = document.getElementById('priceOnTrack');
-      const divM = document.getElementById('dividerMulai');
-      const divO = document.getElementById('dividerOnTrack');
-      const featHM = document.getElementById('featureHeaderMulai');
-      const featHO = document.getElementById('featureHeaderOnTrack');
-      const featsM = document.getElementById('featuresMulaiList');
-      const featsO = document.getElementById('featuresOnTrackList');
-      const btnM = document.getElementById('btnCtaMulai');
-      const btnO = document.getElementById('btnCtaOnTrack');
-
-      if (tier === 'mulai-dulu') {
-        // Mulai Dulu Active
-        cardM.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]';
-        flagMCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#FFE4DE]';
-        flagMIcon.src = 'public/assets/figma_exports/icon-flag-active.svg';
-        titleM.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-white';
-        taglineM.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]';
-        descM.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
-        priceM.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]';
-        divM.className = 'mt-6 border-t border-[#FFF4F2]/40';
-        featHM.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#FFF4F2]';
-        featsM.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
-        btnM.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm';
-
-        // On Track Inactive
-        cardO.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40';
-        flagOCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#E7E5E4]';
-        flagOIcon.src = 'public/assets/figma_exports/icon-flag-inactive.svg';
-        titleO.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-[#44403C]';
-        taglineO.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]';
-        descO.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
-        priceO.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#44403C]';
-        divO.className = 'mt-6 border-t border-[#57534E]/30';
-        featHO.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#44403C]';
-        featsO.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
-        btnO.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300';
-      } else {
-        // On Track Active
-        cardO.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]';
-        flagOCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#FFE4DE]';
-        flagOIcon.src = 'public/assets/figma_exports/icon-flag-active.svg';
-        titleO.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-white';
-        taglineO.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]';
-        descO.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
-        priceO.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]';
-        divO.className = 'mt-6 border-t border-[#FFF4F2]/40';
-        featHO.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#FFF4F2]';
-        featsO.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
-        btnO.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm';
-
-        // Mulai Dulu Inactive
-        cardM.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40';
-        flagMCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#E7E5E4]';
-        flagMIcon.src = 'public/assets/figma_exports/icon-flag-inactive.svg';
-        titleM.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-[#44403C]';
-        taglineM.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]';
-        descM.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
-        priceM.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#44403C]';
-        divM.className = 'mt-6 border-t border-[#57534E]/30';
-        featHM.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#44403C]';
-        featsM.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
-        btnM.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300';
-      }
-    }
-
-    function toggleFaq(index) {
-      const items = document.querySelectorAll('#faqAccordion .faq-item');
-      if (!items || !items[index]) return;
-
-      if (activeFaqIndex === index) {
-        // Klik item yang sedang aktif -> tutup kembali
-        const panel = items[index].querySelector('.faq-panel');
-        const icon = items[index].querySelector('.faq-icon-wrapper');
-        const trigger = items[index].querySelector('.faq-trigger');
-        if (panel) panel.style.gridTemplateRows = '0fr';
-        if (icon) icon.style.transform = 'rotate(0deg)';
-        if (trigger) trigger.setAttribute('aria-expanded', 'false');
-        activeFaqIndex = null;
-      } else {
-        // Tutup item sebelumnya jika ada
-        if (activeFaqIndex !== null && items[activeFaqIndex]) {
-          const prevPanel = items[activeFaqIndex].querySelector('.faq-panel');
-          const prevIcon = items[activeFaqIndex].querySelector('.faq-icon-wrapper');
-          const prevTrigger = items[activeFaqIndex].querySelector('.faq-trigger');
-          if (prevPanel) prevPanel.style.gridTemplateRows = '0fr';
-          if (prevIcon) prevIcon.style.transform = 'rotate(0deg)';
-          if (prevTrigger) prevTrigger.setAttribute('aria-expanded', 'false');
-        }
-
-        // Buka item yang baru diklik
-        const panel = items[index].querySelector('.faq-panel');
-        const icon = items[index].querySelector('.faq-icon-wrapper');
-        const trigger = items[index].querySelector('.faq-trigger');
-        if (panel) panel.style.gridTemplateRows = '1fr';
-        if (icon) icon.style.transform = 'rotate(180deg)';
-        if (trigger) trigger.setAttribute('aria-expanded', 'true');
-        activeFaqIndex = index;
-      }
-    }
-
-  </script>
-  <style>
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>\n  <style>
     :root {
       --color-primary-orange: #FF5000;
     }
@@ -799,80 +654,79 @@
   <section id="pricing" class="w-full bg-[#FAFAFA] py-20 lg:py-24 relative overflow-hidden">
     <div class="w-full max-w-[1136px] mx-auto px-4 sm:px-6 lg:px-0">
       
-      <!-- Header (Figma Frame 1) -->
-      <div class="mb-10 text-left">
+      <!-- Header (Figma Desktop - 13 Frame 1) -->
+      <div class="mb-10 text-center flex flex-col items-center">
         <!-- Frame 56 Badge -->
         <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-[6px] bg-[#FFE4DE] text-[#F86D52] font-satoshi font-medium text-[14px] leading-[20px] mb-3 select-none">
           Pilihan Akses
         </div>
 
-        <h2 class="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#0F172A] mb-3">
-          Mulai gratis, upgrade saat kamu butuh asisten.
+        <h2 class="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#0F172A] mb-3 max-w-[800px] text-center">
+          Mulai Gratis, Upgrade<br class="hidden sm:inline" /> Saat Kamu Butuh Asisten.
         </h2>
         
-        <p class="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-[#23211F] tracking-[-0.01em] max-w-[900px]">
+        <p class="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-[#23211F] tracking-[-0.01em] max-w-[760px] mx-auto text-center">
           Paket standar membantumu manajemen tugas, namun asisten WhatsApp yang memastikan seluruh deadline kamu tuntas.
         </p>
       </div>
 
       <!-- Billing Toggle (Frame 57: 325x60px) -->
-      <div class="inline-flex items-center p-1.5 rounded-[8px] bg-[#FFF4F2] border border-[#FFE4DE] gap-2.5 mb-10 select-none">
-        <button
-          id="btnMonthly"
-          type="button"
-          onclick="setPricingCycle('monthly')"
-          class="flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-[#F0441E] text-white shadow-sm font-bold transition-all duration-200 cursor-pointer"
-        >
-          <img
-            src="public/assets/figma_exports/icon-calendar.svg"
-            alt=""
-            id="iconMonthly"
-            class="w-5 h-5 brightness-0 invert"
-          />
-          <span class="font-satoshi text-base sm:text-[20px] leading-[26px] tracking-[-0.02em]">
-            Bulanan
-          </span>
-        </button>
+      <div class="flex justify-center mb-10 select-none">
+        <div class="inline-flex items-center p-1.5 rounded-[8px] bg-[#FFF4F2] border border-[#FFE4DE] gap-2.5">
+          <button
+            id="btnMonthly"
+            type="button"
+            onclick="setPricingCycle('monthly')"
+            class="flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-[#F0441E] text-white shadow-sm font-bold transition-all duration-200 cursor-pointer"
+          >
+            <img
+              src="public/assets/figma_exports/icon-calendar.svg"
+              alt=""
+              id="iconMonthly"
+              class="w-5 h-5 brightness-0 invert"
+            />
+            <span class="font-satoshi text-base sm:text-[20px] leading-[26px] tracking-[-0.02em]">
+              Bulanan
+            </span>
+          </button>
 
-        <button
-          id="btnYearly"
-          type="button"
-          onclick="setPricingCycle('yearly')"
-          class="flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-transparent text-[#57534E] hover:text-[#23211F] font-normal transition-all duration-200 cursor-pointer"
-        >
-          <img
-            src="public/assets/figma_exports/icon-layer.svg"
-            alt=""
-            id="iconYearly"
-            class="w-5 h-5 opacity-70"
-          />
-          <span class="font-satoshi text-base sm:text-[20px] leading-[26px] tracking-[-0.02em]">
-            Tahunan
-          </span>
-        </button>
+          <button
+            id="btnYearly"
+            type="button"
+            onclick="setPricingCycle('yearly')"
+            class="flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] bg-transparent text-[#57534E] hover:text-[#23211F] font-normal transition-all duration-200 cursor-pointer"
+          >
+            <img
+              src="public/assets/figma_exports/icon-layer.svg"
+              alt=""
+              id="iconYearly"
+              class="w-5 h-5 opacity-70"
+            />
+            <span class="font-satoshi text-base sm:text-[20px] leading-[26px] tracking-[-0.02em]">
+              Tahunan
+            </span>
+          </button>
+        </div>
       </div>
 
       <!-- Cards Container (Frame 4: 1136x688px) -->
-      <div class="w-full rounded-[24px] bg-[#F5F5F4] border border-[#E7E5E4] p-4 sm:p-5 lg:p-6 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+      <div class="w-full rounded-[24px] bg-[#F5F5F4] border border-[#E7E5E4] p-4 sm:p-5 lg:px-5 lg:py-4 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[31px] items-stretch">
         
         <!-- CARD 1: Paket Mulai Dulu (Frame 2) -->
         <div
           id="pricingCardMulai"
           onclick="selectPricingTier('mulai-dulu')"
-          class="rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]"
+          class="rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]"
         >
           <div>
             <!-- Header Info (Frame 60) -->
             <div class="mb-6">
-              <div
-                id="flagMulaiContainer"
-                class="w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#FFE4DE]"
-              >
+              <div class="mb-4">
                 <img
                   id="flagMulaiIcon"
                   src="public/assets/figma_exports/icon-flag-active.svg"
                   alt=""
-                  class="w-5 h-5"
+                  class="w-10 h-10 select-none"
                 />
               </div>
 
@@ -885,7 +739,7 @@
 
               <p
                 id="taglineMulai"
-                class="font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]"
+                class="font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]"
               >
                 Gratis untuk Mahasiswa
               </p>
@@ -898,18 +752,18 @@
               </p>
             </div>
 
-            {/* Price Display */}
+            <!-- Price Display -->
             <div class="my-6">
               <div
                 id="priceMulai"
-                class="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]"
+                class="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]"
               >
                 Rp.XX.000,00
               </div>
               <div
                 id="dividerMulai"
-                class="mt-6 border-t border-[#FFF4F2]/40"
-              />
+                class="mt-6 border-t border-[#FFF4F2]/30"
+              ></div>
             </div>
 
             <!-- Feature List (Frame 61) -->
@@ -948,7 +802,7 @@
           <a
             id="btnCtaMulai"
             href="#waitlist"
-            class="w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm"
+            class="w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm"
           >
             Daftar Akses Dasar
           </a>
@@ -958,20 +812,17 @@
         <div
           id="pricingCardOnTrack"
           onclick="selectPricingTier('on-track')"
-          class="rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40"
+          class="rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40"
         >
           <div>
             <!-- Header Info (Frame 60) -->
             <div class="mb-6">
-              <div
-                id="flagOnTrackContainer"
-                class="w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#E7E5E4]"
-              >
+              <div class="mb-4">
                 <img
                   id="flagOnTrackIcon"
                   src="public/assets/figma_exports/icon-flag-inactive.svg"
                   alt=""
-                  class="w-5 h-5"
+                  class="w-10 h-10 select-none"
                 />
               </div>
 
@@ -984,7 +835,7 @@
 
               <p
                 id="taglineOnTrack"
-                class="font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]"
+                class="font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]"
               >
                 Paling Pas untuk Mahasiswa Aktif
               </p>
@@ -1001,14 +852,14 @@
             <div class="my-6">
               <div
                 id="priceOnTrack"
-                class="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#44403C]"
+                class="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] text-[#44403C]"
               >
                 Rp.XX.000,00
               </div>
               <div
                 id="dividerOnTrack"
-                class="mt-6 border-t border-[#57534E]/30"
-              />
+                class="mt-6 border-t border-[#57534E]/20"
+              ></div>
             </div>
 
             <!-- Feature List (Frame 61) -->
@@ -1047,9 +898,9 @@
           <a
             id="btnCtaOnTrack"
             href="#waitlist"
-            class="w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300"
+            class="w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300"
           >
-            Daftar Akses On Track
+            Daftar Akses Dasar
           </a>
         </div>
 
@@ -1664,8 +1515,6 @@
       currentSelectedTier = tier;
       const cardM = document.getElementById('pricingCardMulai');
       const cardO = document.getElementById('pricingCardOnTrack');
-      const flagMCont = document.getElementById('flagMulaiContainer');
-      const flagOCont = document.getElementById('flagOnTrackContainer');
       const flagMIcon = document.getElementById('flagMulaiIcon');
       const flagOIcon = document.getElementById('flagOnTrackIcon');
       const titleM = document.getElementById('titleMulai');
@@ -1687,56 +1536,52 @@
 
       if (tier === 'mulai-dulu') {
         // Mulai Dulu Active
-        cardM.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]';
-        flagMCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#FFE4DE]';
+        cardM.className = 'rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]';
         flagMIcon.src = 'public/assets/figma_exports/icon-flag-active.svg';
         titleM.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-white';
-        taglineM.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]';
+        taglineM.className = 'font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]';
         descM.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
-        priceM.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]';
-        divM.className = 'mt-6 border-t border-[#FFF4F2]/40';
+        priceM.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]';
+        divM.className = 'mt-6 border-t border-[#FFF4F2]/30';
         featHM.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#FFF4F2]';
         featsM.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
-        btnM.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm';
+        btnM.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm';
 
         // On Track Inactive
-        cardO.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40';
-        flagOCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#E7E5E4]';
+        cardO.className = 'rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40';
         flagOIcon.src = 'public/assets/figma_exports/icon-flag-inactive.svg';
         titleO.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-[#44403C]';
-        taglineO.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]';
+        taglineO.className = 'font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]';
         descO.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
-        priceO.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#44403C]';
-        divO.className = 'mt-6 border-t border-[#57534E]/30';
+        priceO.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] text-[#44403C]';
+        divO.className = 'mt-6 border-t border-[#57534E]/20';
         featHO.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#44403C]';
         featsO.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
-        btnO.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300';
+        btnO.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300';
       } else {
         // On Track Active
-        cardO.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]';
-        flagOCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#FFE4DE]';
+        cardO.className = 'rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer bg-[#F0441E] text-white shadow-xl scale-[1.01]';
         flagOIcon.src = 'public/assets/figma_exports/icon-flag-active.svg';
         titleO.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-white';
-        taglineO.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]';
+        taglineO.className = 'font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#FFF4F2]';
         descO.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
-        priceO.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]';
-        divO.className = 'mt-6 border-t border-[#FFF4F2]/40';
+        priceO.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] text-[#FFF4F2]';
+        divO.className = 'mt-6 border-t border-[#FFF4F2]/30';
         featHO.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#FFF4F2]';
         featsO.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#FFF4F2]';
-        btnO.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm';
+        btnO.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm';
 
         // Mulai Dulu Inactive
-        cardM.className = 'rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40';
-        flagMCont.className = 'w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors bg-[#E7E5E4]';
+        cardM.className = 'rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer bg-transparent text-[#57534E] hover:bg-stone-200/40';
         flagMIcon.src = 'public/assets/figma_exports/icon-flag-inactive.svg';
         titleM.className = 'font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 text-[#44403C]';
-        taglineM.className = 'font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]';
+        taglineM.className = 'font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 text-[#78716C]';
         descM.className = 'font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
-        priceM.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] text-[#44403C]';
-        divM.className = 'mt-6 border-t border-[#57534E]/30';
+        priceM.className = 'font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] text-[#44403C]';
+        divM.className = 'mt-6 border-t border-[#57534E]/20';
         featHM.className = 'font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 text-[#44403C]';
         featsM.className = 'space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] text-[#57534E]';
-        btnM.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300';
+        btnM.className = 'w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300';
       }
     }
 

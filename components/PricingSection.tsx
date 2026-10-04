@@ -11,73 +11,75 @@ export default function PricingSection() {
       <div className="w-full max-w-[1136px] mx-auto px-4 sm:px-6 lg:px-0">
         
         {/* Header (Figma Desktop - 13 Frame 1) */}
-        <div className="mb-10 text-left">
+        <div className="mb-10 text-center flex flex-col items-center">
           {/* Frame 56 Badge */}
           <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-[6px] bg-[#FFE4DE] text-[#F86D52] font-satoshi font-medium text-[14px] leading-[20px] mb-3 select-none">
             Pilihan Akses
           </div>
 
-          <h2 className="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#0F172A] mb-3">
-            Mulai gratis, upgrade saat kamu butuh asisten.
+          <h2 className="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#0F172A] mb-3 max-w-[800px] text-center">
+            Mulai Gratis, Upgrade<br className="hidden sm:inline" /> Saat Kamu Butuh Asisten.
           </h2>
           
-          <p className="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-[#23211F] tracking-[-0.01em] max-w-[900px]">
+          <p className="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-[#23211F] tracking-[-0.01em] max-w-[760px] mx-auto text-center">
             Paket standar membantumu manajemen tugas, namun asisten WhatsApp yang memastikan seluruh deadline kamu tuntas.
           </p>
         </div>
 
         {/* Billing Toggle (Frame 57: 325x60px) */}
-        <div className="inline-flex items-center p-1.5 rounded-[8px] bg-[#FFF4F2] border border-[#FFE4DE] gap-2.5 mb-10 select-none">
-          <button
-            type="button"
-            onClick={() => setBillingCycle('monthly')}
-            className={`flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] transition-all duration-200 cursor-pointer ${
-              billingCycle === 'monthly'
-                ? 'bg-[#F0441E] text-white shadow-sm font-bold'
-                : 'bg-transparent text-[#57534E] hover:text-[#23211F] font-normal'
-            }`}
-          >
-            <img
-              src="/assets/figma_exports/icon-calendar.svg"
-              alt=""
-              className={`w-5 h-5 transition-opacity ${
-                billingCycle === 'monthly' ? 'brightness-0 invert' : 'opacity-70'
+        <div className="flex justify-center mb-10 select-none">
+          <div className="inline-flex items-center p-1.5 rounded-[8px] bg-[#FFF4F2] border border-[#FFE4DE] gap-2.5">
+            <button
+              type="button"
+              onClick={() => setBillingCycle('monthly')}
+              className={`flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] transition-all duration-200 cursor-pointer ${
+                billingCycle === 'monthly'
+                  ? 'bg-[#F0441E] text-white shadow-sm font-bold'
+                  : 'bg-transparent text-[#57534E] hover:text-[#23211F] font-normal'
               }`}
-            />
-            <span className="font-satoshi text-base sm:text-[20px] leading-[26px] tracking-[-0.02em]">
-              Bulanan
-            </span>
-          </button>
+            >
+              <img
+                src="/assets/figma_exports/icon-calendar.svg"
+                alt=""
+                className={`w-5 h-5 transition-opacity ${
+                  billingCycle === 'monthly' ? 'brightness-0 invert' : 'opacity-70'
+                }`}
+              />
+              <span className="font-satoshi text-base sm:text-[20px] leading-[26px] tracking-[-0.02em]">
+                Bulanan
+              </span>
+            </button>
 
-          <button
-            type="button"
-            onClick={() => setBillingCycle('yearly')}
-            className={`flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] transition-all duration-200 cursor-pointer ${
-              billingCycle === 'yearly'
-                ? 'bg-[#F0441E] text-white shadow-sm font-bold'
-                : 'bg-transparent text-[#57534E] hover:text-[#23211F] font-normal'
-            }`}
-          >
-            <img
-              src="/assets/figma_exports/icon-layer.svg"
-              alt=""
-              className={`w-5 h-5 transition-opacity ${
-                billingCycle === 'yearly' ? 'brightness-0 invert' : 'opacity-70'
+            <button
+              type="button"
+              onClick={() => setBillingCycle('yearly')}
+              className={`flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] transition-all duration-200 cursor-pointer ${
+                billingCycle === 'yearly'
+                  ? 'bg-[#F0441E] text-white shadow-sm font-bold'
+                  : 'bg-transparent text-[#57534E] hover:text-[#23211F] font-normal'
               }`}
-            />
-            <span className="font-satoshi text-base sm:text-[20px] leading-[26px] tracking-[-0.02em]">
-              Tahunan
-            </span>
-          </button>
+            >
+              <img
+                src="/assets/figma_exports/icon-layer.svg"
+                alt=""
+                className={`w-5 h-5 transition-opacity ${
+                  billingCycle === 'yearly' ? 'brightness-0 invert' : 'opacity-70'
+                }`}
+              />
+              <span className="font-satoshi text-base sm:text-[20px] leading-[26px] tracking-[-0.02em]">
+                Tahunan
+              </span>
+            </button>
+          </div>
         </div>
 
         {/* Cards Container (Frame 4: 1136x688px) */}
-        <div className="w-full rounded-[24px] bg-[#F5F5F4] border border-[#E7E5E4] p-4 sm:p-5 lg:p-6 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="w-full rounded-[24px] bg-[#F5F5F4] border border-[#E7E5E4] p-4 sm:p-5 lg:px-5 lg:py-4 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[31px] items-stretch">
           
           {/* CARD 1: Paket Mulai Dulu (Frame 2) */}
           <div
             onClick={() => setSelectedTier('mulai-dulu')}
-            className={`rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer ${
+            className={`rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer ${
               selectedTier === 'mulai-dulu'
                 ? 'bg-[#F0441E] text-white shadow-xl scale-[1.01]'
                 : 'bg-transparent text-[#57534E] hover:bg-stone-200/40'
@@ -86,11 +88,7 @@ export default function PricingSection() {
             <div>
               {/* Header Info (Frame 60) */}
               <div className="mb-6">
-                <div
-                  className={`w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors ${
-                    selectedTier === 'mulai-dulu' ? 'bg-[#FFE4DE]' : 'bg-[#E7E5E4]'
-                  }`}
-                >
+                <div className="mb-4">
                   <img
                     src={
                       selectedTier === 'mulai-dulu'
@@ -98,7 +96,7 @@ export default function PricingSection() {
                         : '/assets/figma_exports/icon-flag-inactive.svg'
                     }
                     alt=""
-                    className="w-5 h-5"
+                    className="w-10 h-10 select-none"
                   />
                 </div>
 
@@ -111,7 +109,7 @@ export default function PricingSection() {
                 </h3>
 
                 <p
-                  className={`font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 ${
+                  className={`font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 ${
                     selectedTier === 'mulai-dulu' ? 'text-[#FFF4F2]' : 'text-[#78716C]'
                   }`}
                 >
@@ -130,7 +128,7 @@ export default function PricingSection() {
               {/* Price Display */}
               <div className="my-6">
                 <div
-                  className={`font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] ${
+                  className={`font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] ${
                     selectedTier === 'mulai-dulu' ? 'text-[#FFF4F2]' : 'text-[#44403C]'
                   }`}
                 >
@@ -138,7 +136,7 @@ export default function PricingSection() {
                 </div>
                 <div
                   className={`mt-6 border-t ${
-                    selectedTier === 'mulai-dulu' ? 'border-[#FFF4F2]/40' : 'border-[#57534E]/30'
+                    selectedTier === 'mulai-dulu' ? 'border-[#FFF4F2]/30' : 'border-[#57534E]/20'
                   }`}
                 />
               </div>
@@ -180,7 +178,7 @@ export default function PricingSection() {
             {/* CTA Button (Frame 62) */}
             <a
               href="#waitlist"
-              className={`w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none ${
+              className={`w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none ${
                 selectedTier === 'mulai-dulu'
                   ? 'bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm'
                   : 'bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300'
@@ -193,7 +191,7 @@ export default function PricingSection() {
           {/* CARD 2: Paket On Track (Frame 5) */}
           <div
             onClick={() => setSelectedTier('on-track')}
-            className={`rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer ${
+            className={`rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer ${
               selectedTier === 'on-track'
                 ? 'bg-[#F0441E] text-white shadow-xl scale-[1.01]'
                 : 'bg-transparent text-[#57534E] hover:bg-stone-200/40'
@@ -202,11 +200,7 @@ export default function PricingSection() {
             <div>
               {/* Header Info (Frame 60) */}
               <div className="mb-6">
-                <div
-                  className={`w-10 h-10 rounded-[6px] flex items-center justify-center mb-4 transition-colors ${
-                    selectedTier === 'on-track' ? 'bg-[#FFE4DE]' : 'bg-[#E7E5E4]'
-                  }`}
-                >
+                <div className="mb-4">
                   <img
                     src={
                       selectedTier === 'on-track'
@@ -214,7 +208,7 @@ export default function PricingSection() {
                         : '/assets/figma_exports/icon-flag-inactive.svg'
                     }
                     alt=""
-                    className="w-5 h-5"
+                    className="w-10 h-10 select-none"
                   />
                 </div>
 
@@ -227,7 +221,7 @@ export default function PricingSection() {
                 </h3>
 
                 <p
-                  className={`font-satoshi font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 ${
+                  className={`font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 ${
                     selectedTier === 'on-track' ? 'text-[#FFF4F2]' : 'text-[#78716C]'
                   }`}
                 >
@@ -246,7 +240,7 @@ export default function PricingSection() {
               {/* Price Display */}
               <div className="my-6">
                 <div
-                  className={`font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.14] tracking-[-0.03em] ${
+                  className={`font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] ${
                     selectedTier === 'on-track' ? 'text-[#FFF4F2]' : 'text-[#44403C]'
                   }`}
                 >
@@ -254,7 +248,7 @@ export default function PricingSection() {
                 </div>
                 <div
                   className={`mt-6 border-t ${
-                    selectedTier === 'on-track' ? 'border-[#FFF4F2]/40' : 'border-[#57534E]/30'
+                    selectedTier === 'on-track' ? 'border-[#FFF4F2]/30' : 'border-[#57534E]/20'
                   }`}
                 />
               </div>
@@ -296,13 +290,13 @@ export default function PricingSection() {
             {/* CTA Button (Frame 62) */}
             <a
               href="#waitlist"
-              className={`w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] leading-[28px] tracking-[-0.02em] transition-all select-none ${
+              className={`w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none ${
                 selectedTier === 'on-track'
                   ? 'bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm'
                   : 'bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300'
               }`}
             >
-              Daftar Akses On Track
+              Daftar Akses Dasar
             </a>
           </div>
 
