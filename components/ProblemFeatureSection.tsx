@@ -102,34 +102,34 @@ export default function ProblemFeatureSection() {
   }
 
   // =========================================================================
-  // PART 2: Feature Dynamic Group Re-Centering (Audio Revision)
-  // Step distance S = 72px
+  // PART 2: Feature Dynamic Group Re-Centering (Figma 59:26229)
+  // Step distance S = 118px (~86px height + ~32px clear gap)
   // =========================================================================
-  const S = 96;
-  let y1 = 140, op1 = 0;
-  let y2 = 180, op2 = 0;
-  let y3 = 220, op3 = 0;
+  const S = 118;
+  let y1 = 150, op1 = 0;
+  let y2 = 190, op2 = 0;
+  let y3 = 230, op3 = 0;
 
   if (p >= 0.44 && p < 0.60) {
     const t1 = Math.max(0, Math.min(1, (p - 0.44) / 0.14));
     const ease1 = 1 - Math.pow(1 - t1, 3);
-    y1 = (1 - ease1) * 140; // 140 -> 0 (dead center!)
+    y1 = (1 - ease1) * 150; // 150 -> 0 (dead center!)
     op1 = ease1;
   } else if (p >= 0.60 && p < 0.76) {
     const t2 = Math.max(0, Math.min(1, (p - 0.60) / 0.14));
     const ease2 = 1 - Math.pow(1 - t2, 3);
-    y1 = -ease2 * (S / 2); // 0 -> -48
+    y1 = -ease2 * (S / 2); // 0 -> -59
     op1 = 1;
-    y2 = (1 - ease2) * 160 + ease2 * (S / 2); // 160 -> +48
+    y2 = (1 - ease2) * 180 + ease2 * (S / 2); // 180 -> +59
     op2 = ease2;
   } else if (p >= 0.76) {
     const t3 = Math.max(0, Math.min(1, (p - 0.76) / 0.14));
     const ease3 = 1 - Math.pow(1 - t3, 3);
-    y1 = -(S / 2) - ease3 * (S / 2); // -48 -> -96
+    y1 = -(S / 2) - ease3 * (S / 2); // -59 -> -118
     op1 = 1;
-    y2 = (S / 2) - ease3 * (S / 2); // +48 -> 0
+    y2 = (S / 2) - ease3 * (S / 2); // +59 -> 0
     op2 = 1;
-    y3 = (1 - ease3) * 180 + ease3 * S; // 180 -> +96
+    y3 = (1 - ease3) * 210 + ease3 * S; // 210 -> +118
     op3 = ease3;
   }
 
@@ -238,51 +238,50 @@ export default function ProblemFeatureSection() {
           </div>
 
           {/* ============================================================== */}
-          {/* PART 2: Feature Dynamic Group Re-Centering (Audio Revision)    */}
-          {/* Card 1 muncul di tengah -> Card 2 geser ke tengah berdua ->   */}
-          {/* Card 3 geser ke tengah bertiga. Ukuran diperbesar signifikan.  */}
+          {/* PART 2: Feature Dynamic Group Re-Centering (Figma 59:26229)    */}
+          {/* Fitted padding (px-7 py-4), rounded-[16px], and 32px clear gap*/}
           {/* ============================================================== */}
           <div className="absolute inset-0 pointer-events-none z-30">
             
-            {/* Feature 1: Manajemen Tugas (Enlarged) */}
+            {/* Feature 1: Manajemen Tugas (Figma Frame 40: rounded-[16px], px-7 py-4) */}
             <div
-              className="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-8 sm:px-10 md:px-12 py-4.5 sm:py-5 md:py-6 rounded-[22px] sm:rounded-[26px] bg-[#F0441E] shadow-2xl select-none will-change-transform"
+              className="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-[16px] bg-[#F0441E] shadow-xl select-none will-change-transform"
               style={{
                 opacity: op1,
                 transform: `translate(-50%, -50%) translate3d(0, ${y1}px, 0)`,
               }}
             >
-              <img src="/assets/proto/icon-note.svg" alt="" className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 object-contain brightness-0 invert flex-shrink-0" />
-              <div className="font-satoshi text-2xl sm:text-[30px] md:text-[36px] lg:text-[38px] tracking-tight leading-none whitespace-nowrap">
-                <span className="text-[#FFC4B8] font-medium">Manajemen</span> <span className="text-white font-bold">Tugas</span>
+              <img src="/assets/proto/icon-note.svg" alt="" className="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+              <div className="font-satoshi text-2xl sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
+                <span className="text-[#FFC4B8] font-normal sm:font-medium">Manajemen</span> <span className="text-white font-medium sm:font-semibold">Tugas</span>
               </div>
             </div>
 
-            {/* Feature 2: Integrasi Kalender (Enlarged) */}
+            {/* Feature 2: Integrasi Kalender (Figma Frame 41: rounded-[16px], px-7 py-4) */}
             <div
-              className="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-8 sm:px-10 md:px-12 py-4.5 sm:py-5 md:py-6 rounded-[22px] sm:rounded-[26px] bg-[#F59E0B] shadow-2xl select-none will-change-transform"
+              className="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-[16px] bg-[#F59E0B] shadow-xl select-none will-change-transform"
               style={{
                 opacity: op2,
                 transform: `translate(-50%, -50%) translate3d(0, ${y2}px, 0)`,
               }}
             >
-              <img src="/assets/proto/icon-calendar.svg" alt="" className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 object-contain brightness-0 invert flex-shrink-0" />
-              <div className="font-satoshi text-2xl sm:text-[30px] md:text-[36px] lg:text-[38px] tracking-tight leading-none whitespace-nowrap">
-                <span className="text-[#FDE68A] font-medium">Integrasi</span> <span className="text-white font-bold">Kalender</span>
+              <img src="/assets/proto/icon-calendar.svg" alt="" className="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+              <div className="font-satoshi text-2xl sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
+                <span className="text-[#FDE68A] font-normal sm:font-medium">Integrasi</span> <span className="text-white font-medium sm:font-semibold">Kalender</span>
               </div>
             </div>
 
-            {/* Feature 3: Terhubung WhatsApp (Enlarged) */}
+            {/* Feature 3: Terhubung WhatsApp (Figma Frame 42: rounded-[16px], px-7 py-4) */}
             <div
-              className="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-8 sm:px-10 md:px-12 py-4.5 sm:py-5 md:py-6 rounded-[22px] sm:rounded-[26px] bg-[#019669] shadow-2xl select-none will-change-transform"
+              className="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-[16px] bg-[#019669] shadow-xl select-none will-change-transform"
               style={{
                 opacity: op3,
                 transform: `translate(-50%, -50%) translate3d(0, ${y3}px, 0)`,
               }}
             >
-              <img src="/assets/proto/icon-whatsapp.svg" alt="" className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 object-contain brightness-0 invert flex-shrink-0" />
-              <div className="font-satoshi text-2xl sm:text-[30px] md:text-[36px] lg:text-[38px] tracking-tight leading-none whitespace-nowrap">
-                <span className="text-[#A7F3D0] font-medium">Terhubung</span> <span className="text-white font-bold">WhatsApp</span>
+              <img src="/assets/proto/icon-whatsapp.svg" alt="" className="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+              <div className="font-satoshi text-2xl sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
+                <span className="text-[#A7F3D0] font-normal sm:font-medium">Terhubung</span> <span className="text-white font-medium sm:font-semibold">WhatsApp</span>
               </div>
             </div>
 

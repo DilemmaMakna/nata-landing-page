@@ -390,45 +390,44 @@
         </div>
 
         <!-- ============================================================== -->
-        <!-- PART 2: Feature Dynamic Group Re-Centering (Audio Revision)    -->
-        <!-- Card 1 muncul di tengah -> Card 2 geser ke tengah berdua ->   -->
-        <!-- Card 3 geser ke tengah bertiga. Warna kata persis Figma.      -->
+        <!-- PART 2: Feature Dynamic Group Re-Centering (Figma 59:26229)    -->
+        <!-- Fitted padding (px-7 py-4.5), rounded-[16px], and 32px gap    -->
         <!-- ============================================================== -->
         <div id="part2Container" class="absolute inset-0 pointer-events-none z-30">
           
-          <!-- Feature 1: Manajemen Tugas (Enlarged) -->
+          <!-- Feature 1: Manajemen Tugas (Figma Frame 40: rounded-[16px], px-7 py-4.5) -->
           <div
             id="featPill1"
-            class="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-8 sm:px-10 md:px-12 py-4.5 sm:py-5 md:py-6 rounded-[22px] sm:rounded-[26px] bg-[#F0441E] shadow-2xl select-none will-change-transform"
-            style="opacity: 0; transform: translate(-50%, -50%) translate3d(0, 140px, 0);"
+            class="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-[16px] bg-[#F0441E] shadow-xl select-none will-change-transform"
+            style="opacity: 0; transform: translate(-50%, -50%) translate3d(0, 150px, 0);"
           >
-            <img src="public/assets/proto/icon-note.svg" alt="" class="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 object-contain brightness-0 invert flex-shrink-0" />
-            <div class="font-satoshi text-2xl sm:text-[30px] md:text-[36px] lg:text-[38px] tracking-tight leading-none whitespace-nowrap">
-              <span class="text-[#FFC4B8] font-medium">Manajemen</span> <span class="text-white font-bold">Tugas</span>
+            <img src="public/assets/proto/icon-note.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+            <div class="font-satoshi text-2xl sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
+              <span class="text-[#FFC4B8] font-normal sm:font-medium">Manajemen</span> <span class="text-white font-medium sm:font-semibold">Tugas</span>
             </div>
           </div>
 
-          <!-- Feature 2: Integrasi Kalender (Enlarged) -->
+          <!-- Feature 2: Integrasi Kalender (Figma Frame 41: rounded-[16px], px-7 py-4.5) -->
           <div
             id="featPill2"
-            class="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-8 sm:px-10 md:px-12 py-4.5 sm:py-5 md:py-6 rounded-[22px] sm:rounded-[26px] bg-[#F59E0B] shadow-2xl select-none will-change-transform"
-            style="opacity: 0; transform: translate(-50%, -50%) translate3d(0, 180px, 0);"
+            class="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-[16px] bg-[#F59E0B] shadow-xl select-none will-change-transform"
+            style="opacity: 0; transform: translate(-50%, -50%) translate3d(0, 190px, 0);"
           >
-            <img src="public/assets/proto/icon-calendar.svg" alt="" class="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 object-contain brightness-0 invert flex-shrink-0" />
-            <div class="font-satoshi text-2xl sm:text-[30px] md:text-[36px] lg:text-[38px] tracking-tight leading-none whitespace-nowrap">
-              <span class="text-[#FDE68A] font-medium">Integrasi</span> <span class="text-white font-bold">Kalender</span>
+            <img src="public/assets/proto/icon-calendar.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+            <div class="font-satoshi text-2xl sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
+              <span class="text-[#FDE68A] font-normal sm:font-medium">Integrasi</span> <span class="text-white font-medium sm:font-semibold">Kalender</span>
             </div>
           </div>
 
-          <!-- Feature 3: Terhubung WhatsApp (Enlarged) -->
+          <!-- Feature 3: Terhubung WhatsApp (Figma Frame 42: rounded-[16px], px-7 py-4.5) -->
           <div
             id="featPill3"
-            class="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-8 sm:px-10 md:px-12 py-4.5 sm:py-5 md:py-6 rounded-[22px] sm:rounded-[26px] bg-[#019669] shadow-2xl select-none will-change-transform"
-            style="opacity: 0; transform: translate(-50%, -50%) translate3d(0, 220px, 0);"
+            class="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-[16px] bg-[#019669] shadow-xl select-none will-change-transform"
+            style="opacity: 0; transform: translate(-50%, -50%) translate3d(0, 230px, 0);"
           >
-            <img src="public/assets/proto/icon-whatsapp.svg" alt="" class="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 object-contain brightness-0 invert flex-shrink-0" />
-            <div class="font-satoshi text-2xl sm:text-[30px] md:text-[36px] lg:text-[38px] tracking-tight leading-none whitespace-nowrap">
-              <span class="text-[#A7F3D0] font-medium">Terhubung</span> <span class="text-white font-bold">WhatsApp</span>
+            <img src="public/assets/proto/icon-whatsapp.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+            <div class="font-satoshi text-2xl sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
+              <span class="text-[#A7F3D0] font-normal sm:font-medium">Terhubung</span> <span class="text-white font-medium sm:font-semibold">WhatsApp</span>
             </div>
           </div>
 
@@ -1302,69 +1301,69 @@
       // Step 1: Card 1 stops at center (y = 0)
       // Step 2: Card 2 enters -> Card 1 shifts up -> combined group centered!
       // Step 3: Card 3 enters -> Card 1 & 2 shift up -> all 3 centered!
-      // Step height S = 96px (pill height ~80px + gap ~16px)
+      // Step distance S = 118px (~86px card height + ~32px clear gap between cards)
       // ==============================================================
-      const S = 96; // step distance
+      const S = 118; // step distance
 
       if (p < 0.44) {
         // Not yet active
         featPill1.style.opacity = '0';
-        featPill1.style.transform = 'translate(-50%, -50%) translate3d(0, 140px, 0)';
+        featPill1.style.transform = 'translate(-50%, -50%) translate3d(0, 150px, 0)';
         featPill2.style.opacity = '0';
-        featPill2.style.transform = 'translate(-50%, -50%) translate3d(0, 180px, 0)';
+        featPill2.style.transform = 'translate(-50%, -50%) translate3d(0, 190px, 0)';
         featPill3.style.opacity = '0';
-        featPill3.style.transform = 'translate(-50%, -50%) translate3d(0, 220px, 0)';
+        featPill3.style.transform = 'translate(-50%, -50%) translate3d(0, 230px, 0)';
       }
       else if (p < 0.60) {
-        // Phase 1: Card 1 slides up from 140px to DEAD CENTER (y = 0)
+        // Phase 1: Card 1 slides up from 150px to DEAD CENTER (y = 0)
         const t1 = Math.max(0, Math.min(1, (p - 0.44) / 0.14));
         const ease1 = 1 - Math.pow(1 - t1, 3);
-        const y1 = (1 - ease1) * 140; // 140 -> 0
+        const y1 = (1 - ease1) * 150; // 150 -> 0
         featPill1.style.opacity = ease1;
         featPill1.style.transform = `translate(-50%, -50%) translate3d(0, ${y1}px, 0)`;
 
         featPill2.style.opacity = '0';
-        featPill2.style.transform = 'translate(-50%, -50%) translate3d(0, 180px, 0)';
+        featPill2.style.transform = 'translate(-50%, -50%) translate3d(0, 190px, 0)';
         featPill3.style.opacity = '0';
-        featPill3.style.transform = 'translate(-50%, -50%) translate3d(0, 220px, 0)';
+        featPill3.style.transform = 'translate(-50%, -50%) translate3d(0, 230px, 0)';
       }
       else if (p < 0.76) {
-        // Phase 2: Card 2 enters from below; Card 1 shifts UP from 0 to -S/2 (-48px)
+        // Phase 2: Card 2 enters from below; Card 1 shifts UP from 0 to -S/2 (-59px)
         // Combined 2-card group is now centered at y = 0!
         const t2 = Math.max(0, Math.min(1, (p - 0.60) / 0.14));
         const ease2 = 1 - Math.pow(1 - t2, 3);
         
-        // Card 1 shifts from 0 to -48px
+        // Card 1 shifts from 0 to -59px
         const y1 = -ease2 * (S / 2);
         featPill1.style.opacity = '1';
         featPill1.style.transform = `translate(-50%, -50%) translate3d(0, ${y1}px, 0)`;
 
-        // Card 2 slides from 160px up to +48px
-        const y2 = (1 - ease2) * 160 + ease2 * (S / 2);
+        // Card 2 slides from 180px up to +59px
+        const y2 = (1 - ease2) * 180 + ease2 * (S / 2);
         featPill2.style.opacity = ease2;
         featPill2.style.transform = `translate(-50%, -50%) translate3d(0, ${y2}px, 0)`;
 
         featPill3.style.opacity = '0';
-        featPill3.style.transform = 'translate(-50%, -50%) translate3d(0, 220px, 0)';
+        featPill3.style.transform = 'translate(-50%, -50%) translate3d(0, 230px, 0)';
       }
       else {
-        // Phase 3: Card 3 enters from below; Card 1 shifts to -S (-96px), Card 2 shifts to 0px
+        // Phase 3: Card 3 enters from below; Card 1 shifts to -S (-118px), Card 2 shifts to 0px
         // Combined 3-card group is now centered at y = 0!
         const t3 = Math.max(0, Math.min(1, (p - 0.76) / 0.14));
         const ease3 = 1 - Math.pow(1 - t3, 3);
 
-        // Card 1 shifts from -48px to -96px
+        // Card 1 shifts from -59px to -118px
         const y1 = - (S / 2) - ease3 * (S / 2);
         featPill1.style.opacity = '1';
         featPill1.style.transform = `translate(-50%, -50%) translate3d(0, ${y1}px, 0)`;
 
-        // Card 2 shifts from +48px to 0px
+        // Card 2 shifts from +59px to 0px
         const y2 = (S / 2) - ease3 * (S / 2);
         featPill2.style.opacity = '1';
         featPill2.style.transform = `translate(-50%, -50%) translate3d(0, ${y2}px, 0)`;
 
-        // Card 3 slides from 180px up to +96px
-        const y3 = (1 - ease3) * 180 + ease3 * S;
+        // Card 3 slides from 210px up to +118px
+        const y3 = (1 - ease3) * 210 + ease3 * S;
         featPill3.style.opacity = ease3;
         featPill3.style.transform = `translate(-50%, -50%) translate3d(0, ${y3}px, 0)`;
       }
