@@ -394,11 +394,6 @@
           </div>
         </div>
 
-        <!-- Figma Scroll Indicator Track (Frame 20 / 21: 16x572px with capsule thumb) -->
-        <div id="protoScrollTrack" class="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-3 sm:w-3.5 h-[340px] sm:h-[480px] rounded-full border border-stone-200/80 bg-white/70 p-0.5 hidden md:flex flex-col pointer-events-none z-40 transition-opacity duration-150">
-          <div id="protoScrollThumb" class="w-full h-14 rounded-full bg-stone-700/60 transition-transform duration-75"></div>
-        </div>
-
         <!-- ============================================================== -->
         <!-- PART 2: Feature Dynamic Group Re-Centering (Figma 59:26229)    -->
         <!-- Fitted padding (px-7 py-4.5), rounded-[16px], and 32px gap    -->
@@ -1288,13 +1283,11 @@
     const part1Container = document.getElementById('part1Container');
     const centerHeadline = document.getElementById('centerHeadline');
     const centerHeadlineWrapper = document.getElementById('centerHeadlineWrapper');
-    const protoScrollThumb = document.getElementById('protoScrollThumb');
 
     const featPill1 = document.getElementById('featPill1');
     const featPill2 = document.getElementById('featPill2');
     const featPill3 = document.getElementById('featPill3');
     const part2Container = document.getElementById('part2Container');
-    const protoScrollTrack = document.getElementById('protoScrollTrack');
 
     // Quote Transition Elements (Desktop - 4)
     const orangeCircleIris = document.getElementById('orangeCircleIris');
@@ -1305,22 +1298,6 @@
     // CONTINUOUS CHOREOGRAPHY RENDER
     function renderChoreography(progress) {
       const p = Math.max(0, Math.min(1, progress));
-
-      // Scroll Indicator Track & Thumb
-      if (protoScrollThumb) {
-        const trackRange = protoScrollThumb.parentElement ? (protoScrollThumb.parentElement.clientHeight - 56) : 380;
-        protoScrollThumb.style.transform = `translateY(${p * Math.max(0, trackRange)}px)`;
-      }
-      if (protoScrollTrack) {
-        if (p < 0.82) {
-          protoScrollTrack.style.opacity = '1';
-        } else if (p < 0.90) {
-          const tTrack = (p - 0.82) / 0.08;
-          protoScrollTrack.style.opacity = String(Math.max(0, 1 - tTrack * 1.5));
-        } else {
-          protoScrollTrack.style.opacity = '0';
-        }
-      }
 
       // ==============================================================
       // PART 1: "Tata Semua Jadwalmu!" (0.00 -> 0.26)

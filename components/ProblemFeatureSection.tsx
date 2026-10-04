@@ -166,14 +166,6 @@ export default function ProblemFeatureSection() {
     irisOpacity = 1;
   }
 
-  // Scroll indicator track opacity
-  let trackOpacity = 1.0;
-  if (p >= 0.60 && p < 0.68) {
-    const tTrack = (p - 0.60) / 0.08;
-    trackOpacity = Math.max(0, 1 - tTrack * 1.5);
-  } else if (p >= 0.68) {
-    trackOpacity = 0;
-  }
 
   // =========================================================================
   // PART 4: Scroll-Driven Word-by-Word Reading Highlight ("Typescript")
@@ -303,18 +295,6 @@ export default function ProblemFeatureSection() {
             </div>
           </div>
 
-          {/* Figma Scroll Indicator Track */}
-          <div
-            className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-3 sm:w-3.5 h-[340px] sm:h-[480px] rounded-full border border-stone-200/80 bg-white/70 p-0.5 hidden md:flex flex-col pointer-events-none z-40 transition-opacity duration-150"
-            style={{ opacity: trackOpacity }}
-          >
-            <div
-              className="w-full h-14 rounded-full bg-stone-700/60 transition-transform duration-75"
-              style={{
-                transform: `translateY(${p * 380}px)`,
-              }}
-            />
-          </div>
 
           {/* ============================================================== */}
           {/* PART 2: Feature Dynamic Group Re-Centering (Figma 59:26229)    */}
