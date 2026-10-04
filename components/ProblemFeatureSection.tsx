@@ -371,9 +371,9 @@ export default function ProblemFeatureSection() {
           </div>
 
           {/* ============================================================== */}
-          {/* PART 4: QUOTE BANNER CONTINUUM (Figma Desktop - 4 73:32098)   -->
-          {/* Scroll-Driven Word-by-Word Reading Highlight ("Typescript")   -->
-          {/* Refined Regular/Medium font weight (Satoshi 400/500)          -->
+          {/* PART 4: QUOTE BANNER CONTINUUM (Figma Desktop - 4 73:32098)   */}
+          {/* Scroll-Driven Word-by-Word Reading Highlight ("Typescript")   */}
+          {/* Refined Regular/Medium font weight (Satoshi 400/500)          */}
           {/* ============================================================== */}
           <div
             className="absolute inset-0 flex items-center justify-center pointer-events-none z-40 px-4 sm:px-8"
