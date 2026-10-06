@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600;1,8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lenis Smooth Scroll (sama persis dengan solusigrafiz.vercel.app) -->
-  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>\n  <style>
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  <style>
     :root {
       --color-primary-orange: #FF5000;
     }
@@ -29,12 +30,24 @@
       scroll-behavior: auto !important;
     }
 
+    html {
+      overflow-x: clip;
+      width: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    body {
+      overflow-x: clip;
+      width: 100%;
+      position: relative;
+      -webkit-overflow-scrolling: touch;
+    }
+
     body {
       font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: #FFFAF7;
       color: #1F1B16;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
     }
 
     .container-section {
@@ -87,6 +100,38 @@
       border-color: rgba(255, 255, 255, 0.5);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Scroll-driven Entrance System (Skema 1) */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+
+    /* Semantic Micro-Animations (Skema 2) */
+    @keyframes ambientFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    .animate-ambient-float {
+      animation: ambientFloat 4.2s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(240, 68, 30, 0.3); }
+      50% { box-shadow: 0 0 0 8px rgba(240, 68, 30, 0); }
+    }
+    .pulse-glow {
+      animation: pulseGlow 2.5s infinite;
     }
 
     /* Spring pop-up transition for feature pills */
@@ -158,9 +203,9 @@
         <!-- Left Column (Figma Frame 1: wider column ~640px to ensure clean 2 lines) -->
         <div class="lg:col-span-7 flex flex-col justify-center text-left">
           <!-- H1: Satoshi Medium (500), 2 lines exact, no orphan wrap -->
-          <h1 class="font-satoshi font-medium text-white text-[42px] sm:text-[56px] md:text-[70px] lg:text-[80px] xl:text-[86px] leading-[0.95] tracking-[-0.035em] mb-5 sm:mb-6">
+          <h1 class="font-satoshi font-medium text-white text-[34px] sm:text-[56px] md:text-[70px] lg:text-[80px] xl:text-[86px] leading-[0.98] sm:leading-[0.95] tracking-[-0.035em] mb-5 sm:mb-6">
             Beres tugas<br />
-            <span class="whitespace-nowrap">tanpa pusing!</span>
+            <span class="inline-block">tanpa pusing!</span>
           </h1>
 
           <!-- Subtitle (Figma 42:9090: Satoshi 400 18px / lh:28px, max-w 440px) -->
@@ -198,7 +243,7 @@
   <!-- 3. COMPONENT 8 SECTION: CHOREOGRAPHY & POP-UP SHOW (Figma 59:26233) -->
   <!-- + DESKTOP - 4 QUOTE BANNER CONTINUUM (Figma 73:32098)          -->
   <!-- ============================================================== -->
-  <section id="protoSection" class="relative w-full bg-[#FFFFFF]" style="height: 600vh;">
+  <section id="protoSection" class="relative w-full bg-[#FFFFFF]" style="height: 400vh;">
     <!-- Smooth scroll anchor for navbar "Tentang" (#quote) -->
     <div id="quote" class="absolute pointer-events-none" style="top: 75%; width: 1px; height: 1px;"></div>
 
@@ -207,7 +252,7 @@
       <!-- Full Viewport Orange Circular Expansion (Iris Reveal) Layer -->
       <div
         id="orangeCircleIris"
-        class="absolute inset-0 pointer-events-none z-35 bg-[#F0441E]"
+        class="absolute inset-0 pointer-events-none z-[35] bg-[#F0441E]"
         style="clip-path: circle(0% at 50% 50%); will-change: clip-path, opacity; opacity: 0;"
       ></div>
 
@@ -221,7 +266,7 @@
           
           <!-- Center Headline (Figma: Satoshi Medium 500, 191.47px massive size, #F0441E) -->
           <div id="centerHeadlineWrapper" class="text-center z-10 transition-transform will-change-transform px-4">
-            <h2 id="centerHeadline" class="font-satoshi font-medium text-[#F0441E] text-[58px] sm:text-[96px] md:text-[135px] lg:text-[165px] xl:text-[191px] leading-[0.91] tracking-[-0.04em] text-center select-none whitespace-nowrap">
+            <h2 id="centerHeadline" class="font-satoshi font-medium text-[#F0441E] text-[38px] sm:text-[96px] md:text-[135px] lg:text-[165px] xl:text-[191px] leading-[0.91] tracking-[-0.04em] text-center select-none">
               Tata Semua<br />
               Jadwalmu!
             </h2>
@@ -229,22 +274,22 @@
 
           <!-- 4 Pain Cards (Exact Figma sizes: ~200-224px, rounded-[12px], no tilt, cropped at edges) -->
           <!-- Card 1: Kuburan Catatan (Top-Left: Frame 25 219x192px) -->
-          <div id="painCard1" class="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[170px] sm:w-[200px] md:w-[219px]" style="z-index: 25; will-change: transform, opacity;">
+          <div id="painCard1" class="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[125px] sm:w-[200px] md:w-[219px]" style="z-index: 25; will-change: transform, opacity;">
             <img src="public/assets/proto/card-kuburan-catatan.png" alt="Kuburan Catatan" class="w-full h-auto block" />
           </div>
 
           <!-- Card 2: Overwhelmed (Top-Right: Frame 26 193x192px) -->
-          <div id="painCard2" class="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[155px] sm:w-[180px] md:w-[193px]" style="z-index: 24; will-change: transform, opacity;">
+          <div id="painCard2" class="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[115px] sm:w-[180px] md:w-[193px]" style="z-index: 24; will-change: transform, opacity;">
             <img src="public/assets/proto/card-overwhelmed.png" alt="Overwhelmed" class="w-full h-auto block" />
           </div>
 
           <!-- Card 3: Puluhan Grup (Bottom-Left: Frame 27 200x194px) -->
-          <div id="painCard3" class="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[160px] sm:w-[185px] md:w-[200px]" style="z-index: 23; will-change: transform, opacity;">
+          <div id="painCard3" class="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[120px] sm:w-[185px] md:w-[200px]" style="z-index: 23; will-change: transform, opacity;">
             <img src="public/assets/proto/card-puluhan-grup.png" alt="Puluhan Grup" class="w-full h-auto block" />
           </div>
 
           <!-- Card 4: Distraksi Medsos (Bottom-Right: Frame 28 224x206px) -->
-          <div id="painCard4" class="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[175px] sm:w-[205px] md:w-[224px]" style="z-index: 22; will-change: transform, opacity;">
+          <div id="painCard4" class="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[130px] sm:w-[205px] md:w-[224px]" style="z-index: 22; will-change: transform, opacity;">
             <img src="public/assets/proto/card-distraksi-medsos.png" alt="Distraksi Medsos" class="w-full h-auto block" />
           </div>
         </div>
@@ -258,11 +303,11 @@
           <!-- Feature 1: Manajemen Tugas (Figma Frame 40: rounded-[16px], px-7 py-4.5) -->
           <div
             id="featPill1"
-            class="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-[16px] bg-[#F0441E] shadow-xl select-none will-change-transform"
+            class="absolute left-1/2 top-1/2 inline-flex items-center gap-3 sm:gap-5 px-4 sm:px-7 md:px-8 py-2.5 sm:py-4 rounded-[14px] sm:rounded-[16px] max-w-[calc(100vw-32px)] bg-[#F0441E] shadow-xl select-none will-change-transform"
             style="opacity: 0; transform: translate(-50%, -50%) translate3d(0, 150px, 0);"
           >
-            <img src="public/assets/proto/icon-note.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
-            <div class="font-satoshi text-2xl sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
+            <img src="public/assets/proto/icon-note.svg" alt="" class="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+            <div class="font-satoshi text-lg sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
               <span class="text-[#FFC4B8] font-normal sm:font-medium">Manajemen</span> <span class="text-white font-medium sm:font-semibold">Tugas</span>
             </div>
           </div>
@@ -270,11 +315,11 @@
           <!-- Feature 2: Integrasi Kalender (Figma Frame 41: rounded-[16px], px-7 py-4.5) -->
           <div
             id="featPill2"
-            class="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-[16px] bg-[#F59E0B] shadow-xl select-none will-change-transform"
+            class="absolute left-1/2 top-1/2 inline-flex items-center gap-3 sm:gap-5 px-4 sm:px-7 md:px-8 py-2.5 sm:py-4 rounded-[14px] sm:rounded-[16px] max-w-[calc(100vw-32px)] bg-[#F59E0B] shadow-xl select-none will-change-transform"
             style="opacity: 0; transform: translate(-50%, -50%) translate3d(0, 190px, 0);"
           >
-            <img src="public/assets/proto/icon-calendar.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
-            <div class="font-satoshi text-2xl sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
+            <img src="public/assets/proto/icon-calendar.svg" alt="" class="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+            <div class="font-satoshi text-lg sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
               <span class="text-[#FDE68A] font-normal sm:font-medium">Integrasi</span> <span class="text-white font-medium sm:font-semibold">Kalender</span>
             </div>
           </div>
@@ -282,11 +327,11 @@
           <!-- Feature 3: Terhubung WhatsApp (Figma Frame 42: rounded-[16px], px-7 py-4.5) -->
           <div
             id="featPill3"
-            class="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-[16px] bg-[#019669] shadow-xl select-none will-change-transform"
+            class="absolute left-1/2 top-1/2 inline-flex items-center gap-3 sm:gap-5 px-4 sm:px-7 md:px-8 py-2.5 sm:py-4 rounded-[14px] sm:rounded-[16px] max-w-[calc(100vw-32px)] bg-[#019669] shadow-xl select-none will-change-transform"
             style="opacity: 0; transform: translate(-50%, -50%) translate3d(0, 230px, 0);"
           >
-            <img src="public/assets/proto/icon-whatsapp.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
-            <div class="font-satoshi text-2xl sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
+            <img src="public/assets/proto/icon-whatsapp.svg" alt="" class="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+            <div class="font-satoshi text-lg sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
               <span class="text-[#A7F3D0] font-normal sm:font-medium">Terhubung</span> <span class="text-white font-medium sm:font-semibold">WhatsApp</span>
             </div>
           </div>
@@ -313,14 +358,14 @@
               <img
                 src="public/assets/figma_exports/quote-bracket-left.svg"
                 alt="“"
-                class="h-28 sm:h-44 md:h-60 lg:h-72 w-auto object-contain"
+                class="h-16 sm:h-44 md:h-60 lg:h-72 w-auto object-contain"
               />
             </div>
 
             <!-- Statement Typography: Word-by-word scroll-scrubbed highlight -->
             <h2
               id="quoteText"
-              class="flex-1 font-satoshi font-normal sm:font-medium text-white text-[24px] sm:text-[34px] md:text-[44px] lg:text-[52px] xl:text-[58px] leading-[1.18] tracking-[-0.025em] text-left max-w-[800px] select-none will-change-transform"
+              class="flex-1 font-satoshi font-normal sm:font-medium text-white text-[18px] sm:text-[34px] md:text-[44px] lg:text-[52px] xl:text-[58px] leading-[1.18] tracking-[-0.025em] text-left max-w-[800px] select-none will-change-transform"
               style="opacity: 0; transform: translateY(24px);"
             >
               <span class="quote-word inline-block mr-[0.26em] transition-opacity duration-75" style="opacity: 0.28;">Setiap</span>
@@ -348,7 +393,7 @@
               <img
                 src="public/assets/figma_exports/quote-bracket-right.svg"
                 alt="”"
-                class="h-28 sm:h-44 md:h-60 lg:h-72 w-auto object-contain"
+                class="h-16 sm:h-44 md:h-60 lg:h-72 w-auto object-contain"
               />
             </div>
 
@@ -367,30 +412,34 @@
   <!-- (Figma Component 9 75:34719, Desktop 12->14) -->
   <!-- Maximized typography (64px) & visual key     -->
   <!-- ========================================== -->
-  <section id="sistem-inti" class="relative w-full bg-[#FAFAFA] text-[#0F172A]" style="height: 320vh;">
-    <!-- Sticky Pinned Viewport (Fills 100dvh with clean vertical padding and optical centering) -->
-    <div id="coreStickyContainer" class="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 lg:px-[72px] pt-14 sm:pt-16 lg:pt-16 pb-6 sm:pb-8 lg:pb-10 select-none">
-      
-      <!-- Section Header -->
-      <div class="w-full max-w-[1136px] mx-auto mb-3 sm:mb-4 lg:mb-5 text-left flex-shrink-0">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#FFE4DE] text-[#F86D52] font-satoshi font-medium text-[13px] sm:text-[14px] leading-[18px] mb-2 select-none">
+  <section id="sistem-inti" class="relative w-full bg-[#FAFAFA] text-[#0F172A]">
+    
+    <!-- Section Intro Header: Scrolls naturally past before card pinning -->
+    <div class="w-full max-w-[1280px] mx-auto pt-20 sm:pt-24 lg:pt-28 pb-8 sm:pb-10 px-5 sm:px-9 lg:px-[72px] text-left">
+      <div class="max-w-[1136px] mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#FFE4DE] text-[#F86D52] font-satoshi font-medium text-[13px] sm:text-[14px] leading-[18px] mb-3 select-none">
           Sistem Terpadu
         </div>
-        <h2 class="font-satoshi font-bold text-2xl sm:text-3xl md:text-[38px] lg:text-[44px] xl:text-[48px] leading-[1.12] text-[#0F172A] tracking-[-0.03em] mb-1.5 sm:mb-2">
+        <h2 class="font-satoshi font-bold text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] leading-[1.12] text-[#0F172A] tracking-[-0.03em] mb-3">
           3 Sistem Terpadu Untuk Harimu.
         </h2>
-        <p class="font-satoshi font-normal text-sm sm:text-base md:text-[18px] lg:text-[20px] leading-[1.38] text-[#57534E] max-w-[840px]">
+        <p class="font-satoshi font-normal text-base sm:text-lg md:text-[20px] leading-[1.4] text-[#57534E] max-w-[840px]">
           Setiap awal semester selalu bikin to-do list baru. Tiga hari pertama rajin mencatat, setelah itu aplikasinya berdebu di folder HP.
         </p>
       </div>
+    </div>
 
-      <!-- 3 Overlapping Cards Deck Container (Figma height calibrated with zero bottom overflow) -->
-      <div id="cardDeckContainer" class="relative w-full max-w-[1136px] h-[430px] sm:h-[460px] md:h-[480px] lg:h-[490px]">
+    <!-- Pinned Card Deck Runway: Viewport-filling cards with clearance for floating navbar -->
+    <div id="coreCardPinTrack" class="relative w-full" style="height: 280vh;">
+      <div id="coreStickyContainer" class="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 lg:px-[72px] pt-[76px] pb-6 sm:pb-8 select-none">
+        
+        <!-- 3 Overlapping Cards Deck Container: Fills viewport height -->
+        <div id="cardDeckContainer" class="relative w-full max-w-[1136px] h-[calc(100dvh-100px)] max-h-[660px] min-h-[460px]">
         
         <!-- Card 1: Today's Focus (Red-Orange #F0441E) - Flat, No Shadow, Maximized Content -->
         <div
           id="coreCard1"
-          class="absolute inset-x-0 top-0 w-full h-[calc(100%-48px)] rounded-[24px] sm:rounded-[28px] bg-[#F0441E] text-white overflow-hidden will-change-transform select-none shadow-none"
+          class="absolute inset-x-0 top-0 w-full h-[calc(100%-36px)] sm:h-[calc(100%-48px)] rounded-[20px] sm:rounded-[28px] bg-[#F0441E] text-white overflow-hidden will-change-transform select-none shadow-none"
           style="z-index: 10;"
         >
           <!-- Inner Dashed Border Frame (Figma Component 9 Frame 50 stroke) -->
@@ -401,13 +450,13 @@
           <div class="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-3.5 sm:py-5 lg:py-5">
             <!-- Left Text Column (Figma Frame 49: 500px width, 64px Satoshi Medium) -->
             <div class="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
-              <h3 class="font-satoshi font-medium text-white text-[28px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
+              <h3 class="font-satoshi font-medium text-white text-[22px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
                 Today's Focus
               </h3>
-              <h4 class="font-satoshi font-normal text-[#FFF4F2] text-[15px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
+              <h4 class="font-satoshi font-normal text-[#FFF4F2] text-[13px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
                 Maksimal 3 hal terpenting setiap hari.
               </h4>
-              <p class="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[13px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px]">
+              <p class="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[12px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px] ">
                 Layar utama Nataku memangkas kekacauan tugasmu dan hanya menampilkan hal yang paling wajib beres hari ini, sehingga energimu tidak habis karena overwhelmed.
               </p>
             </div>
@@ -418,7 +467,7 @@
                 <img
                   src="public/assets/figma_exports/card1_visual_container.png"
                   alt="Today's Focus UI Preview"
-                  class="w-full h-auto max-h-[250px] sm:max-h-[290px] md:max-h-[320px] lg:max-h-[350px] object-contain block select-none"
+                  class="w-full h-auto max-h-[220px] sm:max-h-[340px] md:max-h-[390px] lg:max-h-[430px] object-contain block select-none"
                 />
               </div>
             </div>
@@ -428,7 +477,7 @@
         <!-- Card 2: Calendar Integrated (Emerald Green #047857) - Flat, No Shadow, Maximized Content -->
         <div
           id="coreCard2"
-          class="absolute inset-x-0 top-0 w-full h-[calc(100%-48px)] rounded-[24px] sm:rounded-[28px] bg-[#047857] text-white overflow-hidden will-change-transform select-none shadow-none"
+          class="absolute inset-x-0 top-0 w-full h-[calc(100%-36px)] sm:h-[calc(100%-48px)] rounded-[20px] sm:rounded-[28px] bg-[#047857] text-white overflow-hidden will-change-transform select-none shadow-none"
           style="z-index: 20; transform: translateY(640px);"
         >
           <!-- Inner Dashed Border Frame -->
@@ -439,13 +488,13 @@
           <div class="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-3.5 sm:py-5 lg:py-5">
             <!-- Left Text Column -->
             <div class="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
-              <h3 class="font-satoshi font-medium text-white text-[28px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
+              <h3 class="font-satoshi font-medium text-white text-[22px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
                 Calendar Integrated
               </h3>
-              <h4 class="font-satoshi font-normal text-[#FFF4F2] text-[15px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
+              <h4 class="font-satoshi font-normal text-[#FFF4F2] text-[13px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
                 Bebas panik H-1 jam pengumpulan tugas.
               </h4>
-              <p class="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[13px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px]">
+              <p class="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[12px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px] ">
                 Indikator visual hitung mundur dengan warna jelas (kuning untuk hari ini, merah untuk mendesak). Kamu selalu tahu berapa sisa waktumu sebelum terlambat.
               </p>
             </div>
@@ -456,7 +505,7 @@
                 <img
                   src="public/assets/figma_exports/card2_visual_container.png"
                   alt="Calendar Integrated UI Preview"
-                  class="w-full h-auto max-h-[250px] sm:max-h-[290px] md:max-h-[320px] lg:max-h-[350px] object-contain block select-none"
+                  class="w-full h-auto max-h-[220px] sm:max-h-[340px] md:max-h-[390px] lg:max-h-[430px] object-contain block select-none"
                 />
               </div>
             </div>
@@ -466,7 +515,7 @@
         <!-- Card 3: WhatsApp Daily (Blue #0369A1) - Flat, No Shadow, Maximized Content -->
         <div
           id="coreCard3"
-          class="absolute inset-x-0 top-0 w-full h-[calc(100%-48px)] rounded-[24px] sm:rounded-[28px] bg-[#0369A1] text-white overflow-hidden will-change-transform select-none shadow-none"
+          class="absolute inset-x-0 top-0 w-full h-[calc(100%-36px)] sm:h-[calc(100%-48px)] rounded-[20px] sm:rounded-[28px] bg-[#0369A1] text-white overflow-hidden will-change-transform select-none shadow-none"
           style="z-index: 30; transform: translateY(640px);"
         >
           <!-- Inner Dashed Border Frame -->
@@ -477,13 +526,13 @@
           <div class="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-3.5 sm:py-5 lg:py-5">
             <!-- Left Text Column -->
             <div class="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
-              <h3 class="font-satoshi font-medium text-white text-[28px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
+              <h3 class="font-satoshi font-medium text-white text-[22px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
                 WhatsApp Daily &amp;<br class="hidden sm:inline" /> Quick Action
               </h3>
-              <h4 class="font-satoshi font-normal text-[#FFF4F2] text-[15px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
+              <h4 class="font-satoshi font-normal text-[#FFF4F2] text-[13px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
                 Asisten harian langsung di chat pribadimu.
               </h4>
-              <p class="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[13px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px]">
+              <p class="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[12px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px] ">
                 Terima rangkuman pagi setiap jam 7. Balas chat untuk mencoret tugas atau menambah agenda baru tanpa perlu menyentuh aplikasi.
               </p>
             </div>
@@ -494,7 +543,7 @@
                 <img
                   src="public/assets/figma_exports/card3_visual_container.png"
                   alt="WhatsApp Daily & Quick Action Preview"
-                  class="w-full h-auto max-h-[250px] sm:max-h-[290px] md:max-h-[320px] lg:max-h-[350px] object-contain block select-none"
+                  class="w-full h-auto max-h-[220px] sm:max-h-[340px] md:max-h-[390px] lg:max-h-[430px] object-contain block select-none"
                 />
               </div>
             </div>
@@ -503,6 +552,7 @@
 
       </div>
 
+    </div>
     </div>
   </section>
 
@@ -516,7 +566,7 @@
   <!-- ========================================== -->
   <section id="waitlist" class="w-full bg-[#FFFFFF] pt-24 pb-14 sm:pt-28 sm:pb-16 lg:py-0 lg:h-[100dvh] lg:min-h-[720px] flex items-center justify-center relative overflow-hidden select-none">
     <div class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-[72px] flex items-center justify-center lg:pt-14">
-      <div class="w-full max-w-[1136px] mx-auto flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-[42px]">
+      <div class="w-full max-w-[1136px] mx-auto flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-[42px] reveal-on-scroll">
         
         <!-- Left Coral Card (Figma Frame 1 73:32151: 598.3x572px, r=24px, #F0441E) -->
         <div class="w-full lg:w-[598px] h-full min-h-[460px] lg:h-[572px] bg-[#F0441E] rounded-[24px] px-6 sm:px-7 md:px-[27px] py-6 sm:py-7 md:py-[24px] flex flex-col justify-between text-white shadow-none select-none flex-shrink-0">
@@ -526,7 +576,7 @@
             <img
               src="public/assets/Asset.svg"
               alt="Nataku Early Access Visual"
-              class="w-full max-w-[500px] h-auto max-h-[320px] object-contain block mx-auto select-none pointer-events-none"
+              class="w-full max-w-[500px] h-auto max-h-[320px] object-contain block mx-auto select-none pointer-events-none animate-ambient-float"
             />
           </div>
 
@@ -928,7 +978,7 @@
 
         <!-- Right Column: Accordion (Frame 4: 552px, Single active item rule) -->
         <div class="lg:col-span-6 flex flex-col max-w-[552px] w-full">
-          <div id="faqAccordion" class="border border-[#E7E5E4] rounded-[12px] overflow-hidden divide-y divide-[#E7E5E4] bg-white shadow-sm">
+          <div id="faqAccordion" class="reveal-on-scroll delay-100 "border border-[#E7E5E4] rounded-[12px] overflow-hidden divide-y divide-[#E7E5E4] bg-white shadow-sm">
             
             <!-- Item 1 -->
             <div class="faq-item group">
@@ -1047,7 +1097,7 @@
   <footer class="relative w-full bg-[#D93510] text-[#FFF4F2] overflow-hidden py-16 sm:py-20 select-none">
     <!-- Giant Background Watermark Text (Figma 103:2977: Source Serif 4 700 398px, #D93F1C) -->
     <div
-      class="absolute bottom-[-15%] left-1/2 -translate-x-1/2 pointer-events-none select-none font-bold text-[180px] sm:text-[280px] md:text-[340px] lg:text-[398px] leading-none text-[#D93F1C] tracking-[-0.04em] whitespace-nowrap opacity-90 z-0"
+      class="absolute bottom-[-15%] left-1/2 -translate-x-1/2 pointer-events-none select-none font-bold text-[110px] sm:text-[280px] md:text-[340px] lg:text-[398px] leading-none text-[#D93F1C] tracking-[-0.04em] whitespace-nowrap opacity-90 z-0"
       style="font-family: 'Source Serif 4', serif;"
     >
       Nataku
@@ -1129,11 +1179,9 @@
       const w = Math.min(1280, window.innerWidth);
       const h = window.innerHeight;
 
-      // Cards bleed off the actual outer edges:
-      // Card width ~215px (half = 107px) -> offsetX puts ~55px of the card outside left/right boundary
-      // Card height ~195px (half = 97px) -> offsetY puts ~48px of the card outside top/bottom boundary
-      const offsetX = Math.max(240, (w / 2) - 55);
-      const offsetY = Math.max(180, (h / 2) - 48);
+      // ponytail: desktop uses exact original Figma formula; mobile adapts to avoid off-screen overflow
+      const offsetX = w < 640 ? Math.round((w / 2) - 62.5 + 22) : Math.max(240, (w / 2) - 55);
+      const offsetY = w < 640 ? Math.round((h / 2) - 55 + 20) : Math.max(180, (h / 2) - 48);
 
       return [
         { x: -offsetX, y: -offsetY, rot: 0 }, // Card 1: Top-Left (Kuburan Catatan)
@@ -1214,7 +1262,7 @@
       // PART 2: DYNAMIC RE-CENTERING PILL ANIMATION (0.26 -> 0.60)
       // Step distance S = 118px (~86px card height + ~32px clear gap)
       // ==============================================================
-      const S = 118; // step distance
+      const S = window.innerWidth < 640 ? 70 : 118; // ponytail: mobile pill spacing
 
       if (p < 0.26) {
         featPill1.style.opacity = '0';
@@ -1431,16 +1479,21 @@
       const p = Math.max(0, Math.min(1, progress));
       if (!coreCard2 || !coreCard3) return;
 
-      // Card 2 slides up over Card 1 (0.12 -> 0.48), resting exactly at Figma 24px step
+      const isMobile = window.innerWidth < 640;
+      const step1 = isMobile ? 18 : 24;
+      const step2 = isMobile ? 36 : 48;
+
+      // Card 2 slides up over Card 1 (0.12 -> 0.48), resting exactly at Figma 24px step (18px mobile)
       const t2 = Math.max(0, Math.min(1, (p - 0.12) / 0.34));
       const ease2 = 1 - Math.pow(1 - t2, 3);
-      const y2 = (1 - ease2) * 640 + ease2 * 24;
+      const slideDist = Math.max(700, window.innerHeight);
+      const y2 = (1 - ease2) * slideDist + ease2 * step1;
       coreCard2.style.transform = `translateY(${y2}px)`;
 
-      // Card 3 slides up over Card 2 (0.52 -> 0.88), resting exactly at Figma 48px step (2x 24px)
+      // Card 3 slides up over Card 2 (0.52 -> 0.88), resting exactly at Figma 48px step (36px mobile)
       const t3 = Math.max(0, Math.min(1, (p - 0.52) / 0.34));
       const ease3 = 1 - Math.pow(1 - t3, 3);
-      const y3 = (1 - ease3) * 640 + ease3 * 48;
+      const y3 = (1 - ease3) * slideDist + ease3 * step2;
       coreCard3.style.transform = `translateY(${y3}px)`;
     }
 
@@ -1456,8 +1509,8 @@
         }
       }
 
-      // 2. Sistem Inti Card Deck Animation (Scroll driven overlap)
-      const sistemSection = document.getElementById('sistem-inti');
+      // 2. Sistem Inti Card Deck Animation (Scroll driven overlap on pin track)
+      const sistemSection = document.getElementById('coreCardPinTrack') || document.getElementById('sistem-inti');
       if (sistemSection) {
         const rect = sistemSection.getBoundingClientRect();
         const totalScroll = sistemSection.offsetHeight - window.innerHeight;
@@ -1479,6 +1532,22 @@
       document.getElementById('waitlistForm').classList.add('hidden');
       document.getElementById('waitlistSuccess').classList.remove('hidden');
     }
+
+    // Scroll Reveal Observer for remaining sections (Skema 1 & 2)
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+        }
+      });
+    }, {
+      threshold: 0.10,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+      revealObserver.observe(el);
+    });
 
     // Initial render
     renderChoreography(0);

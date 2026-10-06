@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="relative w-full bg-[#D93510] text-[#FFF4F2] overflow-hidden py-16 sm:py-20 select-none">
       {/* Giant Background Watermark Text (Figma 103:2977: Source Serif 4 700 398px, #D93F1C) */}
       <div
-        className="absolute bottom-[-15%] left-1/2 -translate-x-1/2 pointer-events-none select-none font-serif font-bold text-[180px] sm:text-[280px] md:text-[340px] lg:text-[398px] leading-none text-[#D93F1C] tracking-[-0.04em] whitespace-nowrap opacity-90 z-0"
+        className="absolute bottom-[-15%] left-1/2 -translate-x-1/2 pointer-events-none select-none font-serif font-bold text-[110px] sm:text-[280px] md:text-[340px] lg:text-[398px] leading-none text-[#D93F1C] tracking-[-0.04em] whitespace-nowrap opacity-90 z-0"
         style={{ fontFamily: "'Source Serif 4', serif" }}
       >
         Nataku

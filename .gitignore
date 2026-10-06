@@ -35,3 +35,14 @@ next-env.d.ts
 
 # backups / scratch
 preview.html.bak
+
+# env & secrets
+.env
+.env.*
+!.env.example
+
+# backups & temp
+*.bak
+*.responsive_bak
+*_bak/
+components_responsive_bak/

@@ -47,8 +47,10 @@ export default function ProblemFeatureSection() {
     return () => window.removeEventListener('resize', updateDims);
   }, []);
 
-  const offsetX = Math.max(240, (viewportDims.w / 2) - 55);
-  const offsetY = Math.max(180, (viewportDims.h / 2) - 48);
+  // ponytail: desktop uses exact original Figma formula; mobile adapts to avoid off-screen overflow
+  const isMobile = viewportDims.w < 640;
+  const offsetX = isMobile ? Math.round((viewportDims.w / 2) - 62.5 + 22) : Math.max(240, (viewportDims.w / 2) - 55);
+  const offsetY = isMobile ? Math.round((viewportDims.h / 2) - 55 + 20) : Math.max(180, (viewportDims.h / 2) - 48);
 
   const corners = [
     { x: -offsetX, y: -offsetY, rot: 0 },
@@ -106,7 +108,7 @@ export default function ProblemFeatureSection() {
   // PART 2: Feature Dynamic Group Re-Centering (0.26 -> 0.60)
   // Step distance S = 118px (~86px height + ~32px clear gap)
   // =========================================================================
-  const S = 118;
+  const S = isMobile ? 70 : 118; // ponytail: mobile pill spacing
   let y1 = 150, op1 = 0;
   let y2 = 190, op2 = 0;
   let y3 = 230, op3 = 0;
@@ -195,7 +197,7 @@ export default function ProblemFeatureSection() {
       ref={containerRef}
       id="protoSection"
       className="relative bg-[#FFFFFF]"
-      style={{ height: '600vh' }}
+      style={{ height: '400vh' }}
     >
       {/* Smooth scroll anchor for navbar "Tentang" (#quote) */}
       <div id="quote" className="absolute pointer-events-none" style={{ top: '75%', width: 1, height: 1 }} />
@@ -205,7 +207,7 @@ export default function ProblemFeatureSection() {
         
         {/* Full Viewport Orange Iris Expansion Layer */}
         <div
-          className="absolute inset-0 pointer-events-none z-35 bg-[#F0441E]"
+          className="absolute inset-0 pointer-events-none z-[35] bg-[#F0441E]"
           style={{
             clipPath: `circle(${irisRadius}% at 50% 50%)`,
             opacity: irisOpacity,
@@ -231,7 +233,7 @@ export default function ProblemFeatureSection() {
                 opacity: headlineOpacity,
               }}
             >
-              <h2 className="font-satoshi font-medium text-[#F0441E] text-[58px] sm:text-[96px] md:text-[135px] lg:text-[165px] xl:text-[191px] leading-[0.91] tracking-[-0.04em] text-center select-none whitespace-nowrap">
+              <h2 className="font-satoshi font-medium text-[#F0441E] text-[38px] sm:text-[96px] md:text-[135px] lg:text-[165px] xl:text-[191px] leading-[0.91] tracking-[-0.04em] text-center select-none">
                 Tata Semua<br />
                 Jadwalmu!
               </h2>
@@ -239,7 +241,7 @@ export default function ProblemFeatureSection() {
 
             {/* 4 Cards Gliding to Dead Center */}
             <div
-              className="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[170px] sm:w-[200px] md:w-[219px]"
+              className="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[125px] sm:w-[200px] md:w-[219px]"
               style={{
                 transform: `translate(-50%, -50%) translate3d(${cardsInterp[0].x}px, ${cardsInterp[0].y}px, 0)`,
                 zIndex: 25,
@@ -253,7 +255,7 @@ export default function ProblemFeatureSection() {
             </div>
 
             <div
-              className="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[155px] sm:w-[180px] md:w-[193px]"
+              className="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[115px] sm:w-[180px] md:w-[193px]"
               style={{
                 transform: `translate(-50%, -50%) translate3d(${cardsInterp[1].x}px, ${cardsInterp[1].y}px, 0)`,
                 zIndex: 24,
@@ -267,7 +269,7 @@ export default function ProblemFeatureSection() {
             </div>
 
             <div
-              className="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[160px] sm:w-[185px] md:w-[200px]"
+              className="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[120px] sm:w-[185px] md:w-[200px]"
               style={{
                 transform: `translate(-50%, -50%) translate3d(${cardsInterp[2].x}px, ${cardsInterp[2].y}px, 0)`,
                 zIndex: 23,
@@ -281,7 +283,7 @@ export default function ProblemFeatureSection() {
             </div>
 
             <div
-              className="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[175px] sm:w-[205px] md:w-[224px]"
+              className="absolute left-1/2 top-1/2 shadow-lg rounded-[12px] overflow-hidden pointer-events-none w-[130px] sm:w-[205px] md:w-[224px]"
               style={{
                 transform: `translate(-50%, -50%) translate3d(${cardsInterp[3].x}px, ${cardsInterp[3].y}px, 0)`,
                 zIndex: 22,
@@ -309,42 +311,42 @@ export default function ProblemFeatureSection() {
           >
             {/* Feature 1: Manajemen Tugas */}
             <div
-              className="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-[16px] bg-[#F0441E] shadow-xl select-none will-change-transform"
+              className="absolute left-1/2 top-1/2 inline-flex items-center gap-3 sm:gap-5 px-4 sm:px-7 md:px-8 py-2.5 sm:py-4 rounded-[14px] sm:rounded-[16px] max-w-[calc(100vw-32px)] bg-[#F0441E] shadow-xl select-none will-change-transform"
               style={{
                 opacity: op1,
                 transform: `translate(-50%, -50%) translate3d(0, ${y1}px, 0)`,
               }}
             >
-              <img src="/assets/proto/icon-note.svg" alt="" className="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
-              <div className="font-satoshi text-2xl sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
+              <img src="/assets/proto/icon-note.svg" alt="" className="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+              <div className="font-satoshi text-lg sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
                 <span className="text-[#FFC4B8] font-normal sm:font-medium">Manajemen</span> <span className="text-white font-medium sm:font-semibold">Tugas</span>
               </div>
             </div>
 
             {/* Feature 2: Integrasi Kalender */}
             <div
-              className="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-[16px] bg-[#F59E0B] shadow-xl select-none will-change-transform"
+              className="absolute left-1/2 top-1/2 inline-flex items-center gap-3 sm:gap-5 px-4 sm:px-7 md:px-8 py-2.5 sm:py-4 rounded-[14px] sm:rounded-[16px] max-w-[calc(100vw-32px)] bg-[#F59E0B] shadow-xl select-none will-change-transform"
               style={{
                 opacity: op2,
                 transform: `translate(-50%, -50%) translate3d(0, ${y2}px, 0)`,
               }}
             >
-              <img src="/assets/proto/icon-calendar.svg" alt="" className="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
-              <div className="font-satoshi text-2xl sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
+              <img src="/assets/proto/icon-calendar.svg" alt="" className="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+              <div className="font-satoshi text-lg sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
                 <span className="text-[#FDE68A] font-normal sm:font-medium">Integrasi</span> <span className="text-white font-medium sm:font-semibold">Kalender</span>
               </div>
             </div>
 
             {/* Feature 3: Terhubung WhatsApp */}
             <div
-              className="absolute left-1/2 top-1/2 inline-flex items-center gap-4 sm:gap-5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 rounded-[16px] bg-[#019669] shadow-xl select-none will-change-transform"
+              className="absolute left-1/2 top-1/2 inline-flex items-center gap-3 sm:gap-5 px-4 sm:px-7 md:px-8 py-2.5 sm:py-4 rounded-[14px] sm:rounded-[16px] max-w-[calc(100vw-32px)] bg-[#019669] shadow-xl select-none will-change-transform"
               style={{
                 opacity: op3,
                 transform: `translate(-50%, -50%) translate3d(0, ${y3}px, 0)`,
               }}
             >
-              <img src="/assets/proto/icon-whatsapp.svg" alt="" className="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
-              <div className="font-satoshi text-2xl sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
+              <img src="/assets/proto/icon-whatsapp.svg" alt="" className="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+              <div className="font-satoshi text-lg sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
                 <span className="text-[#A7F3D0] font-normal sm:font-medium">Terhubung</span> <span className="text-white font-medium sm:font-semibold">WhatsApp</span>
               </div>
             </div>
@@ -371,13 +373,13 @@ export default function ProblemFeatureSection() {
                 <img
                   src="/assets/figma_exports/quote-bracket-left.svg"
                   alt="“"
-                  className="h-28 sm:h-44 md:h-60 lg:h-72 w-auto object-contain"
+                  className="h-16 sm:h-44 md:h-60 lg:h-72 w-auto object-contain"
                 />
               </div>
 
               {/* Statement Typography: Word-by-Word Scroll Highlight */}
               <h2
-                className="flex-1 font-satoshi font-normal sm:font-medium text-white text-[24px] sm:text-[34px] md:text-[44px] lg:text-[52px] xl:text-[58px] leading-[1.18] tracking-[-0.025em] text-left max-w-[800px] select-none will-change-transform"
+                className="flex-1 font-satoshi font-normal sm:font-medium text-white text-[18px] sm:text-[34px] md:text-[44px] lg:text-[52px] xl:text-[58px] leading-[1.18] tracking-[-0.025em] text-left max-w-[800px] select-none will-change-transform"
                 style={{
                   opacity: quoteContainerOpacity,
                   transform: `translateY(${yQuoteText}px)`,
@@ -420,7 +422,7 @@ export default function ProblemFeatureSection() {
                 <img
                   src="/assets/figma_exports/quote-bracket-right.svg"
                   alt="”"
-                  className="h-28 sm:h-44 md:h-60 lg:h-72 w-auto object-contain"
+                  className="h-16 sm:h-44 md:h-60 lg:h-72 w-auto object-contain"
                 />
               </div>
 
