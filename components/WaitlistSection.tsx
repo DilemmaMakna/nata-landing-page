@@ -18,12 +18,12 @@ export default function WaitlistSection() {
   };
 
   return (
-    <section id="waitlist" className="w-full bg-[#FFFFFF] pt-24 pb-14 sm:pt-28 sm:pb-16 lg:py-0 lg:h-[100dvh] lg:min-h-[720px] flex items-center justify-center relative overflow-hidden select-none">
-      <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-[72px] flex items-center justify-center lg:pt-14">
-        <div className="w-full max-w-[1136px] mx-auto flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-[42px]">
+    <section id="waitlist" className="w-full bg-[#FFFFFF] py-16 sm:py-20 lg:py-12 xl:py-16 flex items-center justify-center relative overflow-hidden select-none">
+      <div className="w-full max-w-[1280px] mx-auto px-5 sm:px-9 lg:px-8 xl:px-[72px] flex items-center justify-center">
+        <div className="w-full max-w-[1136px] mx-auto flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-8 xl:gap-[42px]">
           
           {/* Left Coral Card (Figma Frame 1 73:32151: 598.3x572px, r=24px, #F0441E) */}
-          <div className="w-full lg:w-[598px] h-full min-h-[460px] lg:h-[572px] bg-[#F0441E] rounded-[24px] px-6 sm:px-7 md:px-[27px] py-6 sm:py-7 md:py-[24px] flex flex-col justify-between text-white shadow-none select-none flex-shrink-0">
+          <div className="w-full lg:flex-1 xl:w-[598px] xl:flex-initial min-h-[460px] lg:h-[572px] bg-[#F0441E] rounded-[24px] p-6 sm:p-8 xl:p-[27px] flex flex-col justify-between text-white shadow-none select-none">
             
             {/* Visual Artwork: Asset.svg (Figma Frame 53 73:32153: 544x376px) */}
             <div className="w-full h-auto max-h-[300px] sm:max-h-[330px] flex items-center justify-center overflow-hidden flex-shrink-0">
@@ -46,7 +46,7 @@ export default function WaitlistSection() {
           </div>
 
           {/* Right Form (Figma Frame 6 73:32185: 495.7x572px, gap 52px) */}
-          <div className="w-full lg:w-[496px] h-full min-h-[480px] lg:h-[572px] flex flex-col justify-between flex-shrink-0">
+          <div className="w-full lg:flex-1 xl:w-[496px] xl:flex-initial min-h-[480px] lg:h-[572px] flex flex-col justify-between">
             {submitted ? (
               <div className="bg-[#FFF4F2] border border-[#F0441E]/30 rounded-[20px] p-8 text-center my-auto">
                 <div className="w-12 h-12 rounded-full bg-[#F0441E] text-white flex items-center justify-center mx-auto mb-4 text-2xl shadow-none">

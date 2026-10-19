@@ -40,14 +40,16 @@ export default function Navbar() {
         </Link>
 
         {/* Clean Nav Links (Figma 42:10363: gap 28px, Satoshi 400/500, NOT BOLD) */}
-        <nav className="hidden md:flex items-center gap-7 font-satoshi font-normal sm:font-medium text-[14px] sm:text-[15px] leading-[20px] text-[#FFF4F2]/90 tracking-[-0.01em]">
-          <Link href="#hero" className="hover:text-white transition-colors">
+        <nav className={`hidden md:flex items-center gap-7 font-satoshi font-normal sm:font-medium text-[14px] sm:text-[15px] leading-[20px] tracking-[-0.01em] transition-colors duration-300 ${
+            scrolled ? 'text-[#57534E]' : 'text-[#FFF4F2]/90'
+          }`}>
+          <Link href="#hero" className={`transition-colors ${scrolled ? 'hover:text-[#F0441E]' : 'hover:text-white'}`}>
             Beranda
           </Link>
-          <Link href="#quote" className="hover:text-white transition-colors">
+          <Link href="#quote" className={`transition-colors ${scrolled ? 'hover:text-[#F0441E]' : 'hover:text-white'}`}>
             Tentang
           </Link>
-          <Link href="#sistem-inti" className="hover:text-white transition-colors">
+          <Link href="#sistem-inti" className={`transition-colors ${scrolled ? 'hover:text-[#F0441E]' : 'hover:text-white'}`}>
             Sistem Inti
           </Link>
         </nav>

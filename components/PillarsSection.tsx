@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { TodayFocusVisual, CalendarVisual, WhatsAppVisual } from './PillarVisuals';
 
 export default function PillarsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -26,9 +27,13 @@ export default function PillarsSection() {
 
   const p = progress;
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [slideDist, setSlideDist] = useState<number>(800);
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 640);
+    const check = () => {
+      setIsMobile(window.innerWidth < 640);
+      setSlideDist(Math.max(700, window.innerHeight));
+    };
     check();
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
@@ -40,7 +45,6 @@ export default function PillarsSection() {
   // Card 2 slides up over Card 1 (0.12 -> 0.48), resting at step1 (24px desktop, 18px mobile)
   const t2 = Math.max(0, Math.min(1, (p - 0.12) / 0.34));
   const ease2 = 1 - Math.pow(1 - t2, 3);
-  const slideDist = typeof window !== 'undefined' ? Math.max(700, window.innerHeight) : 800;
   const y2 = (1 - ease2) * slideDist + ease2 * step1;
 
   // Card 3 slides up over Card 2 (0.52 -> 0.88), resting at step2 (48px desktop, 36px mobile)
@@ -81,7 +85,7 @@ export default function PillarsSection() {
               <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="22" fill="none" stroke="#9BA2B8" strokeWidth="1.5" strokeDasharray="12 12" strokeOpacity="0.85" />
             </svg>
 
-            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-3.5 sm:py-5 lg:py-5">
+            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-6 sm:py-8 lg:py-10">
               <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
                 <h3 className="font-satoshi font-medium text-white text-[22px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
                   Today's Focus
@@ -94,13 +98,7 @@ export default function PillarsSection() {
                 </p>
               </div>
               <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
-                <div className="relative w-full max-w-[500px] flex items-center justify-center">
-                  <img
-                    src="/assets/figma_exports/card1_visual_container.png"
-                    alt="Today's Focus UI Preview"
-                    className="w-full h-auto max-h-[220px] sm:max-h-[340px] md:max-h-[390px] lg:max-h-[430px] object-contain block select-none"
-                  />
-                </div>
+                <TodayFocusVisual />
               </div>
             </div>
           </div>
@@ -118,7 +116,7 @@ export default function PillarsSection() {
               <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="22" fill="none" stroke="#9BA2B8" strokeWidth="1.5" strokeDasharray="12 12" strokeOpacity="0.85" />
             </svg>
 
-            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-3.5 sm:py-5 lg:py-5">
+            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-6 sm:py-8 lg:py-10">
               <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
                 <h3 className="font-satoshi font-medium text-white text-[22px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
                   Calendar Integrated
@@ -131,13 +129,7 @@ export default function PillarsSection() {
                 </p>
               </div>
               <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
-                <div className="relative w-full max-w-[500px] flex items-center justify-center">
-                  <img
-                    src="/assets/figma_exports/card2_visual_container.png"
-                    alt="Calendar Integrated UI Preview"
-                    className="w-full h-auto max-h-[220px] sm:max-h-[340px] md:max-h-[390px] lg:max-h-[430px] object-contain block select-none"
-                  />
-                </div>
+                <CalendarVisual />
               </div>
             </div>
           </div>
@@ -155,7 +147,7 @@ export default function PillarsSection() {
               <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="22" fill="none" stroke="#9BA2B8" strokeWidth="1.5" strokeDasharray="12 12" strokeOpacity="0.85" />
             </svg>
 
-            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-3.5 sm:py-5 lg:py-5">
+            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-6 sm:py-8 lg:py-10">
               <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
                 <h3 className="font-satoshi font-medium text-white text-[22px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
                   WhatsApp Daily &amp;<br className="hidden sm:inline" /> Quick Action
@@ -168,13 +160,7 @@ export default function PillarsSection() {
                 </p>
               </div>
               <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
-                <div className="relative w-full max-w-[500px] flex items-center justify-center">
-                  <img
-                    src="/assets/figma_exports/card3_visual_container.png"
-                    alt="WhatsApp Daily & Quick Action Preview"
-                    className="w-full h-auto max-h-[220px] sm:max-h-[340px] md:max-h-[390px] lg:max-h-[430px] object-contain block select-none"
-                  />
-                </div>
+                <WhatsAppVisual />
               </div>
             </div>
           </div>

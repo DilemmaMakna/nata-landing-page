@@ -1,19 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..800;1,8..60,400..800&display=swap');
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import "tailwindcss";
+/* Trigger CSS recompile */
+
+@theme {
+  --font-satoshi: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-inter: 'Inter', sans-serif;
+  --color-primary-orange: #FF5000;
+}
 
 :root {
   --color-primary-orange: #FF5000;
   --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@layer base {
+  *, ::before, ::after {
+    box-sizing: border-box;
+  }
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  width: 100%;
 }
 
 body {
@@ -21,7 +32,9 @@ body {
   background-color: #FFFAF7;
   color: #1F1B16;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  position: relative;
 }
 
 /* Unified Global Section Container */
@@ -76,4 +89,46 @@ body {
 .fade-in-section.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Semantic Micro-Animations & Buttons from Figma Prototype */
+.btn-frosted {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+}
+
+.btn-frosted:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes ambientFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-ambient-float {
+  animation: ambientFloat 4.2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(240, 68, 30, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(240, 68, 30, 0); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s infinite;
 }

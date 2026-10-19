@@ -1,0 +1,18 @@
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nataku.id').replace(/\/$/, '');
+export const SITE_NAME = 'Nataku';
+export const SITE_TITLE = 'Nataku — Bikin Tugas Kuliah Beneran Beres';
+export const SITE_DESCRIPTION =
+  'Nataku menyatukan jadwal kuliah dan tugasmu ke dalam satu alur rapi. Setiap pagi disapa lewat WhatsApp, selesaikan tugas tanpa ribet buka-tutup aplikasi.';
+export const COMPANY = {
+  name: 'PT Masih Dilemma Makna',
+  brand: 'Lemma',
+  url: 'https://dilemma-makna.com',
+  email: 'marketing@dilemma-makna.com',
+  phone: '+62-813-8360-0844',
+  address: {
+    streetAddress: 'Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya, Bogor Barat',
+    addressLocality: 'Kota Bogor',
+    addressRegion: 'Jawa Barat',
+    addressCountry: 'ID',
+  },
+};

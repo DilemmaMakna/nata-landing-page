@@ -26,7 +26,7 @@ export default function HeroSection() {
       {/* 2-Column Exact Figma Container: max-w-[1280px], 72px padding on desktop, locked 1136px grid */}
       <div className="w-full max-w-[1280px] mx-auto px-5 sm:px-9 lg:px-[72px] relative z-10 pt-24 sm:pt-28 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center w-full">
-          
+
           {/* Left Column (Figma Frame 1: wider column ~640px to ensure clean 2 lines) */}
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
             {/* H1: Satoshi Medium (500), 2 lines exact, no orphan wrap */}
@@ -60,7 +60,7 @@ export default function HeroSection() {
                 width={712}
                 height={541}
                 priority
-                className="w-full h-auto object-contain select-none"
+                className="w-full h-auto scale-175 object-contain select-none"
               />
             </div>
           </div>

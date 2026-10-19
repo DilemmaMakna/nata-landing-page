@@ -3,9 +3,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const QUOTE_WORDS = [
-  "Setiap", "pagi,", "Nataku", "Hadir", "Mengingatkan",
-  "daftar", "tugas", "penting.", "Cukup", "Balas", "chat,",
-  "dan", "langsung", "tercatat!"
+  "Setiap", "pagi,", "Nataku", "ingatkan", "tugas", "prioritasmu",
+  "lewat", "WhatsApp.", "Cukup", "balas", "chat,", "tugas",
+  "langsung", "tercatat."
 ];
 
 export default function ProblemFeatureSection() {
@@ -379,7 +379,7 @@ export default function ProblemFeatureSection() {
 
               {/* Statement Typography: Word-by-Word Scroll Highlight */}
               <h2
-                className="flex-1 font-satoshi font-normal sm:font-medium text-white text-[18px] sm:text-[34px] md:text-[44px] lg:text-[52px] xl:text-[58px] leading-[1.18] tracking-[-0.025em] text-left max-w-[800px] select-none will-change-transform"
+                className="flex-1 font-satoshi font-normal sm:font-medium text-white text-[18px] sm:text-[34px] md:text-[44px] lg:text-[52px] xl:text-[58px] leading-[1.18] tracking-[-0.025em] text-left max-w-[800px] select-text pointer-events-auto cursor-text will-change-transform"
                 style={{
                   opacity: quoteContainerOpacity,
                   transform: `translateY(${yQuoteText}px)`,
@@ -400,9 +400,10 @@ export default function ProblemFeatureSection() {
                   return (
                     <span
                       key={idx}
-                      className="inline-block mr-[0.26em] transition-opacity duration-75"
+                      className="inline-block transition-opacity duration-75"
                       style={{
                         opacity: quoteContainerOpacity > 0 ? wordOp : 0,
+                        marginRight: '0.28em',
                       }}
                     >
                       {w}

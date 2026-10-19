@@ -16,9 +16,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-[#FFFAF7]">
       <Navbar />
       <HeroSection />
-      {/* Component 8 Interactive Scroll Prototype (Figma 59:26233) */}
       <ProblemFeatureSection />
-      {/* Figma Desktop - 4 (73:32098) integrated inside ProblemFeatureSection */}
       {/* Figma Desktop - 10 (63:28732) */}
       <PillarsSection />
       {/* Figma Desktop - 6 (63:29441) */}

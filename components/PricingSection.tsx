@@ -2,16 +2,18 @@
 
 import React, { useState } from 'react';
 
-export default function PricingSection() {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
+export default function PricingSection({ className = '' }: { className?: string } = {}) {
   const [selectedTier, setSelectedTier] = useState<'mulai-dulu' | 'on-track'>('mulai-dulu');
 
+  const isMulaiActive = selectedTier === 'mulai-dulu';
+  const isOnTrackActive = selectedTier === 'on-track';
+
   return (
-    <section id="pricing" className="w-full bg-[#FAFAFA] py-20 lg:py-24 relative overflow-hidden">
+    <section id="pricing" className={`w-full ${className} bg-[#FAFAFA] py-20 lg:py-24 relative overflow-hidden`}>
       <div className="w-full max-w-[1136px] mx-auto px-4 sm:px-6 lg:px-0">
-        
+
         {/* Header (Figma Desktop - 13 Frame 1) */}
-        <div className="mb-10 text-center flex flex-col items-center">
+        <div className="mb-12 text-center flex flex-col items-center">
           {/* Frame 56 Badge */}
           <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-[6px] bg-[#FFE4DE] text-[#F86D52] font-satoshi font-medium text-[14px] leading-[20px] mb-3 select-none">
             Pilihan Akses
@@ -20,78 +22,32 @@ export default function PricingSection() {
           <h2 className="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#0F172A] mb-3 max-w-[800px] text-center">
             Mulai Gratis, Upgrade<br className="hidden sm:inline" /> Saat Kamu Butuh Asisten.
           </h2>
-          
+
           <p className="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-[#23211F] tracking-[-0.01em] max-w-[760px] mx-auto text-center">
             Paket standar membantumu manajemen tugas, namun asisten WhatsApp yang memastikan seluruh deadline kamu tuntas.
           </p>
         </div>
 
-        {/* Billing Toggle (Frame 57: 325x60px) */}
-        <div className="flex justify-center mb-10 select-none">
-          <div className="inline-flex items-center p-1.5 rounded-[8px] bg-[#FFF4F2] border border-[#FFE4DE] gap-2.5">
-            <button
-              type="button"
-              onClick={() => setBillingCycle('monthly')}
-              className={`flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] transition-all duration-200 cursor-pointer ${
-                billingCycle === 'monthly'
-                  ? 'bg-[#F0441E] text-white shadow-sm font-bold'
-                  : 'bg-transparent text-[#57534E] hover:text-[#23211F] font-normal'
-              }`}
-            >
-              <img
-                src="/assets/figma_exports/icon-calendar.svg"
-                alt=""
-                className={`w-5 h-5 transition-opacity ${
-                  billingCycle === 'monthly' ? 'brightness-0 invert' : 'opacity-70'
-                }`}
-              />
-              <span className="font-satoshi text-base sm:text-[20px] leading-[26px] tracking-[-0.02em]">
-                Bulanan
-              </span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setBillingCycle('yearly')}
-              className={`flex items-center justify-center gap-2 px-4 py-2 rounded-[4px] transition-all duration-200 cursor-pointer ${
-                billingCycle === 'yearly'
-                  ? 'bg-[#F0441E] text-white shadow-sm font-bold'
-                  : 'bg-transparent text-[#57534E] hover:text-[#23211F] font-normal'
-              }`}
-            >
-              <img
-                src="/assets/figma_exports/icon-layer.svg"
-                alt=""
-                className={`w-5 h-5 transition-opacity ${
-                  billingCycle === 'yearly' ? 'brightness-0 invert' : 'opacity-70'
-                }`}
-              />
-              <span className="font-satoshi text-base sm:text-[20px] leading-[26px] tracking-[-0.02em]">
-                Tahunan
-              </span>
-            </button>
-          </div>
-        </div>
-
         {/* Cards Container (Frame 4: 1136x688px) */}
         <div className="w-full rounded-[24px] bg-[#F5F5F4] border border-[#E7E5E4] p-4 sm:p-5 lg:px-5 lg:py-4 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[31px] items-stretch">
-          
+
           {/* CARD 1: Paket Mulai Dulu (Frame 2) */}
           <div
+            id="pricingCardMulai"
             onClick={() => setSelectedTier('mulai-dulu')}
-            className={`rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer ${
-              selectedTier === 'mulai-dulu'
-                ? 'bg-[#F0441E] text-white shadow-xl scale-[1.01]'
-                : 'bg-transparent text-[#57534E] hover:bg-stone-200/40'
-            }`}
+            className={`rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer ${isMulaiActive
+              ? 'bg-[#F0441E] text-white shadow-xl scale-[1.01]'
+              : 'bg-transparent text-[#57534E] hover:bg-stone-200/40'
+              }`}
           >
             <div>
               {/* Header Info (Frame 60) */}
               <div className="mb-6">
                 <div className="mb-4">
                   <img
+                    id="flagMulaiIcon"
                     src={
-                      selectedTier === 'mulai-dulu'
+                      isMulaiActive
                         ? '/assets/figma_exports/icon-flag-active.svg'
                         : '/assets/figma_exports/icon-flag-inactive.svg'
                     }
@@ -101,25 +57,25 @@ export default function PricingSection() {
                 </div>
 
                 <h3
-                  className={`font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 ${
-                    selectedTier === 'mulai-dulu' ? 'text-white' : 'text-[#44403C]'
-                  }`}
+                  id="titleMulai"
+                  className={`font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 ${isMulaiActive ? 'text-white' : 'text-[#44403C]'
+                    }`}
                 >
                   Paket Mulai Dulu
                 </h3>
 
                 <p
-                  className={`font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 ${
-                    selectedTier === 'mulai-dulu' ? 'text-[#FFF4F2]' : 'text-[#78716C]'
-                  }`}
+                  id="taglineMulai"
+                  className={`font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 ${isMulaiActive ? 'text-[#FFF4F2]' : 'text-[#78716C]'
+                    }`}
                 >
-                  Gratis untuk Mahasiswa
+                  Paling pas untuk Kenalan sama Nataku
                 </p>
 
                 <p
-                  className={`font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] ${
-                    selectedTier === 'mulai-dulu' ? 'text-[#FFF4F2]' : 'text-[#57534E]'
-                  }`}
+                  id="descMulai"
+                  className={`font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] ${isMulaiActive ? 'text-[#FFF4F2]' : 'text-[#57534E]'
+                    }`}
                 >
                   Untuk kamu yang ingin merapikan tugas dan memantau deadline secara mandiri di ponsel Android.
                 </p>
@@ -128,32 +84,49 @@ export default function PricingSection() {
               {/* Price Display */}
               <div className="my-6">
                 <div
-                  className={`font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] ${
-                    selectedTier === 'mulai-dulu' ? 'text-[#FFF4F2]' : 'text-[#44403C]'
-                  }`}
+                  id="priceMulai"
+                  className={`font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] ${isMulaiActive ? 'text-[#FFF4F2]' : 'text-[#44403C]'
+                    }`}
                 >
-                  Rp.XX.000,00
+                  <div className="flex items-center gap-3 mb-1">
+                    <span
+                      className={`font-satoshi font-medium text-base sm:text-[20px] leading-[26px] line-through decoration-2 ${isMulaiActive ? 'text-[#FFF4F2]/70' : 'text-[#A8A29E]'
+                        }`}
+                    >
+                      Rp25.000
+                    </span>
+                    <span
+                      className={`px-2.5 py-0.5 rounded-[6px] font-satoshi font-bold text-[13px] leading-[20px] tracking-normal ${isMulaiActive ? 'bg-[#FFE4DE] text-[#F0441E]' : 'bg-[#FFE4DE] text-[#F86D52]'
+                        }`}
+                    >
+                      Diskon 40%
+                    </span>
+                  </div>
+                  <div className="flex items-baseline gap-2">
+                    <span>Rp15.000</span>
+                    <span className="font-medium text-base sm:text-[20px] tracking-normal opacity-80">/ bulan</span>
+                  </div>
                 </div>
                 <div
-                  className={`mt-6 border-t ${
-                    selectedTier === 'mulai-dulu' ? 'border-[#FFF4F2]/30' : 'border-[#57534E]/20'
-                  }`}
+                  id="dividerMulai"
+                  className={`mt-6 border-t ${isMulaiActive ? 'border-[#FFF4F2]/30' : 'border-[#57534E]/20'
+                    }`}
                 />
               </div>
 
               {/* Feature List (Frame 61) */}
               <div className="mb-8">
                 <h4
-                  className={`font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 ${
-                    selectedTier === 'mulai-dulu' ? 'text-[#FFF4F2]' : 'text-[#44403C]'
-                  }`}
+                  id="featureHeaderMulai"
+                  className={`font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 ${isMulaiActive ? 'text-[#FFF4F2]' : 'text-[#44403C]'
+                    }`}
                 >
                   Yang kamu dapatkan:
                 </h4>
                 <ul
-                  className={`space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] ${
-                    selectedTier === 'mulai-dulu' ? 'text-[#FFF4F2]' : 'text-[#57534E]'
-                  }`}
+                  id="featuresMulaiList"
+                  className={`space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] ${isMulaiActive ? 'text-[#FFF4F2]' : 'text-[#57534E]'
+                    }`}
                 >
                   <li className="flex items-start gap-2.5">
                     <span className="opacity-75">•</span>
@@ -177,12 +150,12 @@ export default function PricingSection() {
 
             {/* CTA Button (Frame 62) */}
             <a
+              id="btnCtaMulai"
               href="#waitlist"
-              className={`w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none ${
-                selectedTier === 'mulai-dulu'
-                  ? 'bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm'
-                  : 'bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300'
-              }`}
+              className={`w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none ${isMulaiActive
+                ? 'bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm'
+                : 'bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300'
+                }`}
             >
               Daftar Akses Dasar
             </a>
@@ -190,20 +163,21 @@ export default function PricingSection() {
 
           {/* CARD 2: Paket On Track (Frame 5) */}
           <div
+            id="pricingCardOnTrack"
             onClick={() => setSelectedTier('on-track')}
-            className={`rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer ${
-              selectedTier === 'on-track'
-                ? 'bg-[#F0441E] text-white shadow-xl scale-[1.01]'
-                : 'bg-transparent text-[#57534E] hover:bg-stone-200/40'
-            }`}
+            className={`rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer ${isOnTrackActive
+              ? 'bg-[#F0441E] text-white shadow-xl scale-[1.01]'
+              : 'bg-transparent text-[#57534E] hover:bg-stone-200/40'
+              }`}
           >
             <div>
               {/* Header Info (Frame 60) */}
               <div className="mb-6">
                 <div className="mb-4">
                   <img
+                    id="flagOnTrackIcon"
                     src={
-                      selectedTier === 'on-track'
+                      isOnTrackActive
                         ? '/assets/figma_exports/icon-flag-active.svg'
                         : '/assets/figma_exports/icon-flag-inactive.svg'
                     }
@@ -213,25 +187,25 @@ export default function PricingSection() {
                 </div>
 
                 <h3
-                  className={`font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 ${
-                    selectedTier === 'on-track' ? 'text-white' : 'text-[#44403C]'
-                  }`}
+                  id="titleOnTrack"
+                  className={`font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 ${isOnTrackActive ? 'text-white' : 'text-[#44403C]'
+                    }`}
                 >
                   Paket On Track
                 </h3>
 
                 <p
-                  className={`font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 ${
-                    selectedTier === 'on-track' ? 'text-[#FFF4F2]' : 'text-[#78716C]'
-                  }`}
+                  id="taglineOnTrack"
+                  className={`font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 ${isOnTrackActive ? 'text-[#FFF4F2]' : 'text-[#78716C]'
+                    }`}
                 >
                   Paling Pas untuk Mahasiswa Aktif
                 </p>
 
                 <p
-                  className={`font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] ${
-                    selectedTier === 'on-track' ? 'text-[#FFF4F2]' : 'text-[#57534E]'
-                  }`}
+                  id="descOnTrack"
+                  className={`font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] ${isOnTrackActive ? 'text-[#FFF4F2]' : 'text-[#57534E]'
+                    }`}
                 >
                   Untuk kamu yang punya jadwal padat dan butuh asisten yang menyapa dan mencatat langsung dari WhatsApp.
                 </p>
@@ -240,32 +214,32 @@ export default function PricingSection() {
               {/* Price Display */}
               <div className="my-6">
                 <div
-                  className={`font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] ${
-                    selectedTier === 'on-track' ? 'text-[#FFF4F2]' : 'text-[#44403C]'
-                  }`}
+                  id="priceOnTrack"
+                  className={`font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] ${isOnTrackActive ? 'text-[#FFF4F2]' : 'text-[#44403C]'
+                    }`}
                 >
-                  Rp.XX.000,00
+                  SOON
                 </div>
                 <div
-                  className={`mt-6 border-t ${
-                    selectedTier === 'on-track' ? 'border-[#FFF4F2]/30' : 'border-[#57534E]/20'
-                  }`}
+                  id="dividerOnTrack"
+                  className={`mt-6 border-t ${isOnTrackActive ? 'border-[#FFF4F2]/30' : 'border-[#57534E]/20'
+                    }`}
                 />
               </div>
 
               {/* Feature List (Frame 61) */}
               <div className="mb-8">
                 <h4
-                  className={`font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 ${
-                    selectedTier === 'on-track' ? 'text-[#FFF4F2]' : 'text-[#44403C]'
-                  }`}
+                  id="featureHeaderOnTrack"
+                  className={`font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 ${isOnTrackActive ? 'text-[#FFF4F2]' : 'text-[#44403C]'
+                    }`}
                 >
                   Yang kamu dapatkan:
                 </h4>
                 <ul
-                  className={`space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] ${
-                    selectedTier === 'on-track' ? 'text-[#FFF4F2]' : 'text-[#57534E]'
-                  }`}
+                  id="featuresOnTrackList"
+                  className={`space-y-2 font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] ${isOnTrackActive ? 'text-[#FFF4F2]' : 'text-[#57534E]'
+                    }`}
                 >
                   <li className="flex items-start gap-2.5">
                     <span className="opacity-75">•</span>
@@ -289,19 +263,19 @@ export default function PricingSection() {
 
             {/* CTA Button (Frame 62) */}
             <a
+              id="btnCtaOnTrack"
               href="#waitlist"
-              className={`w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none ${
-                selectedTier === 'on-track'
-                  ? 'bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm'
-                  : 'bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300'
-              }`}
+              aria-label="Paket On Track segera hadir, gabung antrean"
+              className={`w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none ${isOnTrackActive
+                ? 'bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm'
+                : 'bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300'
+                }`}
             >
-              Daftar Akses Dasar
+              Segera Hadir
             </a>
           </div>
 
         </div>
-
       </div>
     </section>
   );
