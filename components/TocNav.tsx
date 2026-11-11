@@ -78,7 +78,7 @@ export default function TocNav({ headings }: { headings: LegalHeading[] }) {
       <aside className="hidden lg:block">
         <nav
           aria-label={t.doc.onThisPage}
-          className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pr-1 [scrollbar-width:thin]"
+          className="max-h-[calc(100vh-8rem)] overflow-y-auto pr-1 [scrollbar-width:thin]"
         >
           <div className="mb-3 flex items-center gap-2 px-3 text-[14px] font-medium text-[#1F1B16]">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">

@@ -6,9 +6,9 @@ export const SECURITY_EN = `# Nataku Data Security Policy
 **Last updated:** 22 October 2026
 **Version:** 1.0
 
-This document describes the technical and organizational measures applied by PT Masih Dilemma Makna (Lemma Studio), NIB 1105260028169, to protect the personal data of Nataku users. It complements the Privacy Policy and the Terms and Conditions of Service.
+This document describes the technical and organizational measures applied by PT Masih Dilemma Makna (Lemma Bercerita), NIB 1105260028169, to protect the personal data of Nataku users. It complements the Privacy Policy and the Terms and Conditions of Service.
 
-Operator: PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya Village, Bogor Barat District, Bogor City, West Java Province, Indonesia. Security and DPO contact: legal@dilemma-makna.com
+Operator: PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya Village, Bogor Barat District, Bogor City, West Java Province, Indonesia. Security and DPO contact: hello@dilemma-makna.com
 
 ## 1. Security Principles
 
@@ -66,7 +66,7 @@ We do not store card numbers, PINs, or digital wallet credentials. Payments are 
 
 ## 8. Incident Response
 
-1. **Detection and triage:** incidents are reported to legal@dilemma-makna.com or found through monitoring, then assessed for severity.
+1. **Detection and triage:** incidents are reported to hello@dilemma-makna.com or found through monitoring, then assessed for severity.
 2. **Containment:** affected access or systems are isolated, and credentials are rotated where needed.
 3. **Investigation:** determining the cause, the affected data, and the number of users.
 4. **Notification:** if an incident results in a personal data protection failure, we notify affected users and the competent authority in writing within 3 x 24 hours of discovery, as required by PDP Law No. 27/2022. The notice includes the data exposed, the time and chronology, the impact, and the handling and recovery steps.
@@ -96,7 +96,7 @@ We never ask for your password, OTP code, or PIN via WhatsApp, email, or phone.
 
 ## 12. Vulnerability Reporting
 
-If you find a security flaw in Nataku, report it responsibly to legal@dilemma-makna.com with the subject "Security Report". Include a description, reproduction steps, and the impact. We will acknowledge the report and follow up. Please do not access other users' data, do not carry out attacks that disrupt the service, and allow reasonable time for a fix before public disclosure.
+If you find a security flaw in Nataku, report it responsibly to hello@dilemma-makna.com with the subject "Security Report". Include a description, reproduction steps, and the impact. We will acknowledge the report and follow up. Please do not access other users' data, do not carry out attacks that disrupt the service, and allow reasonable time for a fix before public disclosure.
 
 ## 13. Review and Changes
 
@@ -104,7 +104,7 @@ This policy is reviewed at least every 12 months or when a significant system ch
 
 ## 14. Contact
 
-- Security and DPO: legal@dilemma-makna.com
+- Security and DPO: hello@dilemma-makna.com
 - Website: dilemma-makna.com
 - Phone/WhatsApp: +62 813-8360-0844
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya Village, Bogor Barat District, Bogor City, West Java Province, Indonesia

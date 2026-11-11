@@ -30,7 +30,7 @@ Kode dirancang dengan prinsip **modular, strongly typed, dan zero-spaghetti** ag
 │   ├── PillarsSection.tsx        # 3 Sistem Inti (Today's Focus, Calendar, WhatsApp Quick Action)
 │   ├── LegalDocument.tsx         # Renderer markdown server-side untuk halaman /legal/[doc]
 │   ├── DeleteAccountForm.tsx     # Formulir web hapus akun & data (/delete-account)
-│   └── Footer.tsx                # Footer brand resmi dengan logo Nataku & atribusi Lemma Studio
+│   └── Footer.tsx                # Footer brand resmi dengan logo Nataku & atribusi Lemma Bercerita
 ├── public/
 │   └── assets/                   # Aset resolusi tinggi diekstrak langsung dari Figma API (2x retina)
 │       ├── hero-bg.png           # Background radiant energetic orange Figma
@@ -58,7 +58,7 @@ Seluruh bagian landing page dibangun persis 1:1 mengikuti node dan varian di Fig
 | **03** | **Quote Statement** | `59:25029` (`Desktop - 4`) | Background solid oranye `#F0441E`, typografi Satoshi 64px, diapit ikon bracket kutip resmi (`Frame 44` & `Frame 45`). |
 | **04** | **3 Sistem Inti** | `63:28732` (`Desktop - 10`) | 3 kartu fitur lebar radius 28px dengan visual UI resolusi tinggi (Today's Focus `#F0441E`, Calendar `#047857`, WhatsApp Quick Action `#0369A1`). |
 | **05** | **Waitlist Form** | `63:29441` (`Desktop - 6`) | Split card: Box kiri oranye Coral `#F0441E` + Box kanan 5 field input (Nama, Email, WhatsApp, Kampus, Harapan) dengan pesan privasi aman. |
-| **06** | **Brand Footer** | Custom Brand Standard | Dilengkapi logo resmi Nataku, tautan navigasi instan antar-section, dan atribusi Lemma Studio. |
+| **06** | **Brand Footer** | Custom Brand Standard | Dilengkapi logo resmi Nataku, tautan navigasi instan antar-section, dan atribusi Lemma Bercerita. |
 
 ---
 

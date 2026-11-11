@@ -3,7 +3,7 @@
 > Nataku adalah aplikasi manajemen tugas dan jadwal kuliah untuk mahasiswa dan pelajar di Indonesia. Setiap pagi jam 7 Nataku menyapa lewat WhatsApp, dan kamu bisa mencoret atau menambah tugas hanya dengan membalas chat.
 
 Situs resmi: https://nataku.dilemma-makna.com
-Dikembangkan oleh Lemma Studio (PT Masih Dilemma Makna), Bogor, Indonesia — https://dilemma-makna.com
+Dikembangkan oleh Lemma Bercerita (PT Masih Dilemma Makna), Bogor, Indonesia — https://dilemma-makna.com
 
 ## Apa itu Nataku?
 
@@ -73,12 +73,12 @@ Kebijakan Privasi ini menjelaskan bagaimana data pribadi Anda dikumpulkan, digun
 
 Pengendali Data Pribadi adalah:
 
-- Nama badan hukum: PT Masih Dilemma Makna (dikenal dengan nama dagang Lemma Studio)
+- Nama badan hukum: PT Masih Dilemma Makna (dikenal dengan nama dagang Lemma Bercerita)
 - Alamat: Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat
 - Nomor Induk Berusaha (NIB): 1105260028169
 - Situs web: dilemma-makna.com
 - Telepon/WhatsApp: +62 813-8360-0844
-- Kontak Pelindungan Data (DPO): legal@dilemma-makna.com
+- Kontak Pelindungan Data (DPO): hello@dilemma-makna.com
 
 Kami memproses data pribadi sesuai Undang-Undang No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP) dan peraturan turunannya, serta ketentuan kebijakan Google Play, termasuk formulir Data Safety.
 
@@ -175,7 +175,7 @@ Cara menggunakan hak:
 - Hapus akun: Pengaturan > Hapus Akun di aplikasi.
 - Hapus akun dan data tanpa membuka aplikasi: gunakan [formulir penghapusan akun](/delete-account).
 - Berhenti dari WhatsApp Digest: matikan di Pengaturan atau balas "STOP" ke nomor resmi Nataku.
-- Permintaan lain: email ke legal@dilemma-makna.com atau lihat [Pusat Bantuan](/support). Kami menanggapi paling lambat 3 x 24 jam untuk permintaan akses dan menyelesaikannya paling lambat 30 hari, sesuai ketentuan yang berlaku.
+- Permintaan lain: email ke hello@dilemma-makna.com atau lihat [Pusat Bantuan](/support). Kami menanggapi paling lambat 3 x 24 jam untuk permintaan akses dan menyelesaikannya paling lambat 30 hari, sesuai ketentuan yang berlaku.
 
 ## 9. Pesan WhatsApp
 
@@ -185,7 +185,7 @@ Cara menggunakan hak:
 
 ## 10. Pengguna di Bawah Umur
 
-Layanan ditujukan bagi mahasiswa dan pelajar. Pengguna di bawah 18 tahun wajib memiliki persetujuan orang tua atau wali yang sah. Kami tidak dengan sengaja memproses data anak tanpa persetujuan tersebut. Jika Anda orang tua atau wali dan menduga hal ini terjadi, hubungi legal@dilemma-makna.com untuk penghapusan data.
+Layanan ditujukan bagi mahasiswa dan pelajar. Pengguna di bawah 18 tahun wajib memiliki persetujuan orang tua atau wali yang sah. Kami tidak dengan sengaja memproses data anak tanpa persetujuan tersebut. Jika Anda orang tua atau wali dan menduga hal ini terjadi, hubungi hello@dilemma-makna.com untuk penghapusan data.
 
 ## 11. Cookie dan Teknologi Serupa
 
@@ -199,7 +199,7 @@ Kami dapat memperbarui kebijakan ini. Perubahan material akan diberitahukan mela
 
 Pertanyaan, keluhan, atau permintaan terkait data pribadi:
 
-- Petugas Pelindungan Data (DPO): legal@dilemma-makna.com
+- Petugas Pelindungan Data (DPO): hello@dilemma-makna.com
 - Situs web: dilemma-makna.com
 - Telepon/WhatsApp: +62 813-8360-0844
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat
@@ -216,7 +216,7 @@ Jika Anda merasa hak Anda tidak terpenuhi, Anda dapat mengadukan ke lembaga peli
 
 ## 1. Para Pihak dan Penerimaan
 
-Syarat dan Ketentuan ini adalah perjanjian antara Anda ("Pengguna") dan PT Masih Dilemma Makna (dikenal dengan nama dagang Lemma Studio), perseroan terbatas yang berkedudukan di Kota Bogor, Jawa Barat, Indonesia, NIB 1105260028169 ("Kami"), selaku penyedia aplikasi Nataku ("Layanan").
+Syarat dan Ketentuan ini adalah perjanjian antara Anda ("Pengguna") dan PT Masih Dilemma Makna (dikenal dengan nama dagang Lemma Bercerita), perseroan terbatas yang berkedudukan di Kota Bogor, Jawa Barat, Indonesia, NIB 1105260028169 ("Kami"), selaku penyedia aplikasi Nataku ("Layanan").
 
 Dengan membuat akun atau menggunakan Layanan, Anda menyatakan telah membaca, memahami, dan menyetujui dokumen ini beserta [Kebijakan Privasi Nataku](/legal/privacy) dan [Kebijakan Keamanan Data Nataku](/legal/security). Jika tidak setuju, mohon jangan menggunakan Layanan.
 
@@ -269,9 +269,9 @@ Anda tetap memiliki hak atas data yang Anda masukkan (tugas, jadwal, agenda, hab
 
 ## 7. Hak Kekayaan Intelektual
 
-Karakter visual maskot Nata, identitas visual, logo, nama dan merek Nataku, kode sumber, antarmuka, dan algoritma penilaian Skor Produktivitas adalah milik PT Masih Dilemma Makna (Lemma Studio) dan dilindungi hukum hak cipta, merek, dan rahasia dagang di Indonesia.
+Karakter visual maskot Nata, identitas visual, logo, nama dan merek Nataku, kode sumber, antarmuka, dan algoritma penilaian Skor Produktivitas adalah milik PT Masih Dilemma Makna (Lemma Bercerita) dan dilindungi hukum hak cipta, merek, dan rahasia dagang di Indonesia.
 
-Kami memberi Anda lisensi pribadi, terbatas, non-eksklusif, tidak dapat dialihkan, dan dapat dicabut untuk memakai aplikasi. Tidak ada hak lain yang diberikan. Permohonan lisensi resmi dapat diajukan ke legal@dilemma-makna.com.
+Kami memberi Anda lisensi pribadi, terbatas, non-eksklusif, tidak dapat dialihkan, dan dapat dicabut untuk memakai aplikasi. Tidak ada hak lain yang diberikan. Permohonan lisensi resmi dapat diajukan ke hello@dilemma-makna.com.
 
 ## 8. Langganan, Pembayaran, dan Refund
 
@@ -324,7 +324,7 @@ Ketentuan ini tunduk pada hukum Republik Indonesia. Sengketa diselesaikan terleb
 
 ## 14. Kontak
 
-- Tim Hukum dan Dukungan: legal@dilemma-makna.com
+- Tim Hukum dan Dukungan: hello@dilemma-makna.com
 - Situs web: dilemma-makna.com
 - Telepon/WhatsApp: +62 813-8360-0844
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat
@@ -337,9 +337,9 @@ Ketentuan ini tunduk pada hukum Republik Indonesia. Sengketa diselesaikan terleb
 **Pembaruan terakhir:** 22 Oktober 2026
 **Versi:** 1.0
 
-Dokumen ini menjelaskan langkah teknis dan organisasi yang diterapkan PT Masih Dilemma Makna (Lemma Studio), NIB 1105260028169, untuk melindungi data pribadi pengguna Nataku. Dokumen ini melengkapi Kebijakan Privasi dan Syarat & Ketentuan Layanan.
+Dokumen ini menjelaskan langkah teknis dan organisasi yang diterapkan PT Masih Dilemma Makna (Lemma Bercerita), NIB 1105260028169, untuk melindungi data pribadi pengguna Nataku. Dokumen ini melengkapi Kebijakan Privasi dan Syarat & Ketentuan Layanan.
 
-Penyelenggara: PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat. Kontak keamanan dan DPO: legal@dilemma-makna.com
+Penyelenggara: PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat. Kontak keamanan dan DPO: hello@dilemma-makna.com
 
 ## 1. Prinsip Keamanan
 
@@ -397,7 +397,7 @@ Kami tidak menyimpan nomor kartu, PIN, atau kredensial dompet digital. Pembayara
 
 ## 8. Penanganan Insiden
 
-1. **Deteksi dan triase:** insiden dilaporkan ke legal@dilemma-makna.com atau ditemukan lewat pemantauan, lalu dinilai tingkat keparahannya.
+1. **Deteksi dan triase:** insiden dilaporkan ke hello@dilemma-makna.com atau ditemukan lewat pemantauan, lalu dinilai tingkat keparahannya.
 2. **Penahanan:** akses atau sistem terdampak diisolasi, kredensial dirotasi bila perlu.
 3. **Investigasi:** menentukan penyebab, data terdampak, dan jumlah pengguna.
 4. **Pemberitahuan:** bila insiden mengakibatkan kegagalan pelindungan data pribadi, Kami memberi tahu pengguna terdampak dan lembaga berwenang secara tertulis paling lambat 3 x 24 jam sejak diketahui, sesuai UU PDP No. 27/2022. Pemberitahuan memuat data yang terungkap, waktu dan kronologi, dampak, serta langkah penanganan dan pemulihan.
@@ -427,7 +427,7 @@ Kami tidak pernah meminta kata sandi, kode OTP, atau PIN Anda melalui WhatsApp, 
 
 ## 12. Pelaporan Kerentanan
 
-Jika Anda menemukan celah keamanan pada Nataku, laporkan secara bertanggung jawab ke legal@dilemma-makna.com dengan subjek "Laporan Keamanan". Sertakan deskripsi, langkah reproduksi, dan dampak. Kami akan mengakui laporan dan menindaklanjutinya. Mohon tidak mengakses data pengguna lain, tidak melakukan serangan yang mengganggu layanan, dan memberi waktu wajar untuk perbaikan sebelum pengungkapan publik.
+Jika Anda menemukan celah keamanan pada Nataku, laporkan secara bertanggung jawab ke hello@dilemma-makna.com dengan subjek "Laporan Keamanan". Sertakan deskripsi, langkah reproduksi, dan dampak. Kami akan mengakui laporan dan menindaklanjutinya. Mohon tidak mengakses data pengguna lain, tidak melakukan serangan yang mengganggu layanan, dan memberi waktu wajar untuk perbaikan sebelum pengungkapan publik.
 
 ## 13. Tinjauan dan Perubahan
 
@@ -435,7 +435,7 @@ Kebijakan ini ditinjau minimal setiap 12 bulan atau saat terjadi perubahan siste
 
 ## 14. Kontak
 
-- Keamanan dan DPO: legal@dilemma-makna.com
+- Keamanan dan DPO: hello@dilemma-makna.com
 - Situs web: dilemma-makna.com
 - Telepon/WhatsApp: +62 813-8360-0844
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat

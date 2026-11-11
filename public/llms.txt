@@ -19,4 +19,4 @@ Catatan: Paket Mulai Dulu Rp15.000 per bulan (diskon dari Rp25.000). Paket On Tr
 ## Optional
 
 - [Versi lengkap untuk LLM](https://nataku.dilemma-makna.com/llms-full.txt): beranda dan seluruh dokumen legal dalam satu berkas
-- [Lemma Studio](https://dilemma-makna.com): pengembang Nataku
+- [Lemma Bercerita](https://dilemma-makna.com): pengembang Nataku

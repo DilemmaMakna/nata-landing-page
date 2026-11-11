@@ -326,7 +326,7 @@ const en: Messages = {
   },
 
   footer: {
-    about: 'Nataku is an independent digital product, built with care by Lemma Studio (PT Masih Dilemma Makna).',
+    about: 'Nataku is an independent digital product, built with care by Lemma Bercerita (PT Masih Dilemma Makna).',
     madeBy: 'Made by',
     lemma: 'Lemma designs and builds digital products that mean something.',
     links: 'Support Links',

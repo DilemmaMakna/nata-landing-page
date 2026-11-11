@@ -10,12 +10,12 @@ Kebijakan Privasi ini menjelaskan bagaimana data pribadi Anda dikumpulkan, digun
 
 Pengendali Data Pribadi adalah:
 
-- Nama badan hukum: PT Masih Dilemma Makna (dikenal dengan nama dagang Lemma Studio)
+- Nama badan hukum: PT Masih Dilemma Makna (dikenal dengan nama dagang Lemma Bercerita)
 - Alamat: Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat
 - Nomor Induk Berusaha (NIB): 1105260028169
 - Situs web: dilemma-makna.com
 - Telepon/WhatsApp: +62 813-8360-0844
-- Kontak Pelindungan Data (DPO): legal@dilemma-makna.com
+- Kontak Pelindungan Data (DPO): hello@dilemma-makna.com
 
 Kami memproses data pribadi sesuai Undang-Undang No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP) dan peraturan turunannya, serta ketentuan kebijakan Google Play, termasuk formulir Data Safety.
 
@@ -112,7 +112,7 @@ Cara menggunakan hak:
 - Hapus akun: Pengaturan > Hapus Akun di aplikasi.
 - Hapus akun dan data tanpa membuka aplikasi: gunakan [formulir penghapusan akun](/delete-account).
 - Berhenti dari WhatsApp Digest: matikan di Pengaturan atau balas "STOP" ke nomor resmi Nataku.
-- Permintaan lain: email ke legal@dilemma-makna.com atau lihat [Pusat Bantuan](/support). Kami menanggapi paling lambat 3 x 24 jam untuk permintaan akses dan menyelesaikannya paling lambat 30 hari, sesuai ketentuan yang berlaku.
+- Permintaan lain: email ke hello@dilemma-makna.com atau lihat [Pusat Bantuan](/support). Kami menanggapi paling lambat 3 x 24 jam untuk permintaan akses dan menyelesaikannya paling lambat 30 hari, sesuai ketentuan yang berlaku.
 
 ## 9. Pesan WhatsApp
 
@@ -122,7 +122,7 @@ Cara menggunakan hak:
 
 ## 10. Pengguna di Bawah Umur
 
-Layanan ditujukan bagi mahasiswa dan pelajar. Pengguna di bawah 18 tahun wajib memiliki persetujuan orang tua atau wali yang sah. Kami tidak dengan sengaja memproses data anak tanpa persetujuan tersebut. Jika Anda orang tua atau wali dan menduga hal ini terjadi, hubungi legal@dilemma-makna.com untuk penghapusan data.
+Layanan ditujukan bagi mahasiswa dan pelajar. Pengguna di bawah 18 tahun wajib memiliki persetujuan orang tua atau wali yang sah. Kami tidak dengan sengaja memproses data anak tanpa persetujuan tersebut. Jika Anda orang tua atau wali dan menduga hal ini terjadi, hubungi hello@dilemma-makna.com untuk penghapusan data.
 
 ## 11. Cookie dan Teknologi Serupa
 
@@ -136,7 +136,7 @@ Kami dapat memperbarui kebijakan ini. Perubahan material akan diberitahukan mela
 
 Pertanyaan, keluhan, atau permintaan terkait data pribadi:
 
-- Petugas Pelindungan Data (DPO): legal@dilemma-makna.com
+- Petugas Pelindungan Data (DPO): hello@dilemma-makna.com
 - Situs web: dilemma-makna.com
 - Telepon/WhatsApp: +62 813-8360-0844
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat

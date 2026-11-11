@@ -68,7 +68,7 @@ export default function DocShell({
           <div className="min-w-0 lg:col-start-1 lg:row-start-1">
             <div className="rounded-[24px] border border-[#EDE6E0] bg-white p-6 sm:p-10">{children}</div>
           </div>
-          {aside && <div className="order-first lg:order-none lg:col-start-2 lg:row-start-1">{aside}</div>}
+          {aside && <div className="order-first lg:sticky lg:top-24 lg:order-none lg:col-start-2 lg:row-start-1 lg:self-start">{aside}</div>}
         </div>
       </main>
 

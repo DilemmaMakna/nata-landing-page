@@ -43,7 +43,7 @@ Reviewer Google/Apple tidak bisa mendaftar lewat WhatsApp/verifikasi email Anda,
 
 - Sumber utama: `docs/PRIVASI.md`, `docs/KEAMANAN DATA.md`, `docs/LAYANAN.md` (pemilik produk). Dokumen yang tampil di situs ada di `public/legal/*.md` (Indonesia) dan `lib/legal-en/*.ts` (Inggris). `lib/legal-content.ts` dibangkitkan dari `public/legal/*.md`.
 - Terjemahan Inggris dibuat tanpa peninjauan hukum. Teks Indonesia yang berlaku; minta penasihat hukum meninjau versi Inggris sebelum submit.
-- Kontak legal/DPO memakai `legal@dilemma-makna.com`; kontak dukungan umum memakai `hello@dilemma-makna.com`.
+- Semua kontak (legal, DPO, dukungan) memakai `hello@dilemma-makna.com`.
 - Masih ada satu placeholder di Syarat dan Ketentuan Pasal 12: `[PENGADILAN NEGERI YANG BERWENANG]`. Isi sebelum submit.
 - `docs/LAYANAN.md` memuat asumsi biaya dan margin internal serta fitur backlog, jadi tidak dipublikasikan utuh. Yang dipakai hanya paket dan harga (Mulai Dulu gratis, On Track Rp26.000, Level Up Rp49.000) di Syarat dan Ketentuan.
 - Bagian harga di landing (`components/PricingSection.tsx`, `components/JsonLd.tsx`, `public/index.md`, `public/llms*.txt`) masih memakai Rp15.000 / Rp25.000 dan belum menampilkan Level Up. Samakan sebelum submit.

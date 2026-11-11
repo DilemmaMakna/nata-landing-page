@@ -12,10 +12,10 @@ export const metadata: Metadata = {
   keywords: [
     'to-do list mahasiswa', 'manajemen tugas kuliah', 'aplikasi tugas kuliah', 'pengingat tugas whatsapp',
     'whatsapp bot tugas', 'jadwal kuliah', 'pengingat deadline tugas', 'aplikasi produktivitas mahasiswa',
-    'nataku', 'lemma studio',
+    'nataku', 'lemma bercerita',
   ],
-  authors: [{ name: 'Lemma Studio', url: 'https://dilemma-makna.com' }],
-  creator: 'Lemma Studio',
+  authors: [{ name: 'Lemma Bercerita', url: 'https://dilemma-makna.com' }],
+  creator: 'Lemma Bercerita',
   publisher: 'PT Masih Dilemma Makna',
   category: 'productivity',
   alternates: {

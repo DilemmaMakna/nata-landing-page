@@ -1,9 +1,9 @@
 Kebijakan Keamanan Data Nataku
 Berlaku sejak: 28 September 2026 Pembaruan terakhir: 22 Oktober 2026 Versi: 1.0
 
-Dokumen ini menjelaskan langkah teknis dan organisasi yang diterapkan PT Masih Dilemma Makna (Lemma Studio), NIB 1105260028169, untuk melindungi data pribadi pengguna Nataku. Dokumen ini melengkapi Kebijakan Privasi dan Syarat & Ketentuan Layanan.
+Dokumen ini menjelaskan langkah teknis dan organisasi yang diterapkan PT Masih Dilemma Makna (Lemma Bercerita), NIB 1105260028169, untuk melindungi data pribadi pengguna Nataku. Dokumen ini melengkapi Kebijakan Privasi dan Syarat & Ketentuan Layanan.
 
-Penyelenggara: PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat. Kontak keamanan dan DPO: legal@dilemma-makna.com
+Penyelenggara: PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat. Kontak keamanan dan DPO: hello@dilemma-makna.com
 
 1. Prinsip Keamanan
 Minimisasi data: hanya mengumpulkan data yang diperlukan untuk fitur inti (nama, email, nomor WhatsApp, data produktivitas).
@@ -46,7 +46,7 @@ Log keamanan dan kesalahan dikumpulkan tanpa memuat konten pribadi yang tidak pe
 Kesalahan dan performa dipantau dengan Sentry.
 Pencadangan dilakukan setiap hari dan disimpan selama 90 hari.
 8. Penanganan Insiden
-Deteksi dan triase: insiden dilaporkan ke legal@dilemma-makna.com atau ditemukan lewat pemantauan, lalu dinilai tingkat keparahannya.
+Deteksi dan triase: insiden dilaporkan ke hello@dilemma-makna.com atau ditemukan lewat pemantauan, lalu dinilai tingkat keparahannya.
 Penahanan: akses atau sistem terdampak diisolasi, kredensial dirotasi bila perlu.
 Investigasi: menentukan penyebab, data terdampak, dan jumlah pengguna.
 Pemberitahuan: bila insiden mengakibatkan kegagalan pelindungan data pribadi, Kami memberi tahu pengguna terdampak dan lembaga berwenang secara tertulis paling lambat 3 x 24 jam sejak diketahui, sesuai UU PDP No. 27/2022. Pemberitahuan memuat data yang terungkap, waktu dan kronologi, dampak, serta langkah penanganan dan pemulihan.
@@ -68,13 +68,13 @@ Segera lapor jika menduga akun diakses pihak lain.
 Kami tidak pernah meminta kata sandi, kode OTP, atau PIN Anda melalui WhatsApp, email, atau telepon.
 
 12. Pelaporan Kerentanan
-Jika Anda menemukan celah keamanan pada Nataku, laporkan secara bertanggung jawab ke legal@dilemma-makna.com dengan subjek "Laporan Keamanan". Sertakan deskripsi, langkah reproduksi, dan dampak. Kami akan mengakui laporan dan menindaklanjutinya. Mohon tidak mengakses data pengguna lain, tidak melakukan serangan yang mengganggu layanan, dan memberi waktu wajar untuk perbaikan sebelum pengungkapan publik.
+Jika Anda menemukan celah keamanan pada Nataku, laporkan secara bertanggung jawab ke hello@dilemma-makna.com dengan subjek "Laporan Keamanan". Sertakan deskripsi, langkah reproduksi, dan dampak. Kami akan mengakui laporan dan menindaklanjutinya. Mohon tidak mengakses data pengguna lain, tidak melakukan serangan yang mengganggu layanan, dan memberi waktu wajar untuk perbaikan sebelum pengungkapan publik.
 
 13. Tinjauan dan Perubahan
 Kebijakan ini ditinjau minimal setiap 12 bulan atau saat terjadi perubahan sistem yang signifikan. Perubahan material diumumkan melalui aplikasi atau email.
 
 14. Kontak
-Keamanan dan DPO: legal@dilemma-makna.com
+Keamanan dan DPO: hello@dilemma-makna.com
 Situs web: dilemma-makna.com
 Telepon/WhatsApp: +62 813-8360-0844
 PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat

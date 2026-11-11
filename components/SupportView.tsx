@@ -51,7 +51,7 @@ export default function SupportView() {
 
       <section className="mt-10 text-[14px] leading-[1.65] text-[#57534E]">
         <h2 className="mb-1 text-[16px] font-bold text-[#1F1B16]">{s.developer}</h2>
-        {COMPANY.name} (Lemma Studio)<br />
+        {COMPANY.name} (Lemma Bercerita)<br />
         {a.streetAddress}, {a.addressLocality}, {a.addressRegion}
       </section>
     </DocShell>

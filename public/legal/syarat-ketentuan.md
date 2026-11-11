@@ -6,7 +6,7 @@
 
 ## 1. Para Pihak dan Penerimaan
 
-Syarat dan Ketentuan ini adalah perjanjian antara Anda ("Pengguna") dan PT Masih Dilemma Makna (dikenal dengan nama dagang Lemma Studio), perseroan terbatas yang berkedudukan di Kota Bogor, Jawa Barat, Indonesia, NIB 1105260028169 ("Kami"), selaku penyedia aplikasi Nataku ("Layanan").
+Syarat dan Ketentuan ini adalah perjanjian antara Anda ("Pengguna") dan PT Masih Dilemma Makna (dikenal dengan nama dagang Lemma Bercerita), perseroan terbatas yang berkedudukan di Kota Bogor, Jawa Barat, Indonesia, NIB 1105260028169 ("Kami"), selaku penyedia aplikasi Nataku ("Layanan").
 
 Dengan membuat akun atau menggunakan Layanan, Anda menyatakan telah membaca, memahami, dan menyetujui dokumen ini beserta [Kebijakan Privasi Nataku](/legal/privacy) dan [Kebijakan Keamanan Data Nataku](/legal/security). Jika tidak setuju, mohon jangan menggunakan Layanan.
 
@@ -59,9 +59,9 @@ Anda tetap memiliki hak atas data yang Anda masukkan (tugas, jadwal, agenda, hab
 
 ## 7. Hak Kekayaan Intelektual
 
-Karakter visual maskot Nata, identitas visual, logo, nama dan merek Nataku, kode sumber, antarmuka, dan algoritma penilaian Skor Produktivitas adalah milik PT Masih Dilemma Makna (Lemma Studio) dan dilindungi hukum hak cipta, merek, dan rahasia dagang di Indonesia.
+Karakter visual maskot Nata, identitas visual, logo, nama dan merek Nataku, kode sumber, antarmuka, dan algoritma penilaian Skor Produktivitas adalah milik PT Masih Dilemma Makna (Lemma Bercerita) dan dilindungi hukum hak cipta, merek, dan rahasia dagang di Indonesia.
 
-Kami memberi Anda lisensi pribadi, terbatas, non-eksklusif, tidak dapat dialihkan, dan dapat dicabut untuk memakai aplikasi. Tidak ada hak lain yang diberikan. Permohonan lisensi resmi dapat diajukan ke legal@dilemma-makna.com.
+Kami memberi Anda lisensi pribadi, terbatas, non-eksklusif, tidak dapat dialihkan, dan dapat dicabut untuk memakai aplikasi. Tidak ada hak lain yang diberikan. Permohonan lisensi resmi dapat diajukan ke hello@dilemma-makna.com.
 
 ## 8. Langganan, Pembayaran, dan Refund
 
@@ -114,7 +114,7 @@ Ketentuan ini tunduk pada hukum Republik Indonesia. Sengketa diselesaikan terleb
 
 ## 14. Kontak
 
-- Tim Hukum dan Dukungan: legal@dilemma-makna.com
+- Tim Hukum dan Dukungan: hello@dilemma-makna.com
 - Situs web: dilemma-makna.com
 - Telepon/WhatsApp: +62 813-8360-0844
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat

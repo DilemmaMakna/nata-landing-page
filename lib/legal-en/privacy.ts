@@ -12,12 +12,12 @@ This Privacy Policy explains how your personal data is collected, used, stored, 
 
 The Personal Data Controller is:
 
-- Legal entity: PT Masih Dilemma Makna (trading as Lemma Studio)
+- Legal entity: PT Masih Dilemma Makna (trading as Lemma Bercerita)
 - Address: Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya Village, Bogor Barat District, Bogor City, West Java Province, Indonesia
 - Business Identification Number (NIB): 1105260028169
 - Website: dilemma-makna.com
 - Phone/WhatsApp: +62 813-8360-0844
-- Data Protection Contact (DPO): legal@dilemma-makna.com
+- Data Protection Contact (DPO): hello@dilemma-makna.com
 
 We process personal data in accordance with Indonesian Law No. 27 of 2022 on Personal Data Protection (the PDP Law) and its implementing regulations, as well as Google Play policies, including the Data Safety form.
 
@@ -114,7 +114,7 @@ How to exercise your rights:
 - Delete your account: Settings > Delete Account in the app.
 - Delete your account and data without opening the app: use the [account deletion form](/delete-account).
 - Stop the WhatsApp Digest: turn it off in Settings or reply "STOP" to the official Nataku number.
-- Other requests: email legal@dilemma-makna.com or see the [Help Center](/support). We respond within 3 x 24 hours to access requests and complete them within 30 days at the latest, in line with applicable regulations.
+- Other requests: email hello@dilemma-makna.com or see the [Help Center](/support). We respond within 3 x 24 hours to access requests and complete them within 30 days at the latest, in line with applicable regulations.
 
 ## 9. WhatsApp Messages
 
@@ -124,7 +124,7 @@ How to exercise your rights:
 
 ## 10. Users Under the Age of 18
 
-The Service is intended for university and school students. Users under 18 must have the consent of a parent or legal guardian. We do not knowingly process a child's data without that consent. If you are a parent or guardian and believe this has happened, contact legal@dilemma-makna.com to have the data deleted.
+The Service is intended for university and school students. Users under 18 must have the consent of a parent or legal guardian. We do not knowingly process a child's data without that consent. If you are a parent or guardian and believe this has happened, contact hello@dilemma-makna.com to have the data deleted.
 
 ## 11. Cookies and Similar Technologies
 
@@ -138,7 +138,7 @@ We may update this policy. Material changes will be announced in the app or by e
 
 Questions, complaints, or requests about personal data:
 
-- Data Protection Officer (DPO): legal@dilemma-makna.com
+- Data Protection Officer (DPO): hello@dilemma-makna.com
 - Website: dilemma-makna.com
 - Phone/WhatsApp: +62 813-8360-0844
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya Village, Bogor Barat District, Bogor City, West Java Province, Indonesia

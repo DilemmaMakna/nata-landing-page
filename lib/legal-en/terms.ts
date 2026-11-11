@@ -8,7 +8,7 @@ export const TERMS_EN = `# Nataku Terms and Conditions of Service
 
 ## 1. Parties and Acceptance
 
-These Terms and Conditions are an agreement between you (the "User") and PT Masih Dilemma Makna (trading as Lemma Studio), a limited liability company domiciled in Bogor City, West Java, Indonesia, NIB 1105260028169 ("We"), as the provider of the Nataku app (the "Service").
+These Terms and Conditions are an agreement between you (the "User") and PT Masih Dilemma Makna (trading as Lemma Bercerita), a limited liability company domiciled in Bogor City, West Java, Indonesia, NIB 1105260028169 ("We"), as the provider of the Nataku app (the "Service").
 
 By creating an account or using the Service, you confirm that you have read, understood, and agreed to this document together with the [Nataku Privacy Policy](/legal/privacy) and the [Nataku Data Security Policy](/legal/security). If you do not agree, please do not use the Service.
 
@@ -61,9 +61,9 @@ You retain rights to the data you enter (tasks, schedules, agenda, habits). You 
 
 ## 7. Intellectual Property Rights
 
-The visual character of the Nata mascot, visual identity, logo, the Nataku name and brand, source code, interface, and the Productivity Score scoring algorithm are the property of PT Masih Dilemma Makna (Lemma Studio) and are protected by copyright, trademark, and trade secret law in Indonesia.
+The visual character of the Nata mascot, visual identity, logo, the Nataku name and brand, source code, interface, and the Productivity Score scoring algorithm are the property of PT Masih Dilemma Makna (Lemma Bercerita) and are protected by copyright, trademark, and trade secret law in Indonesia.
 
-We grant you a personal, limited, non-exclusive, non-transferable, and revocable license to use the app. No other rights are granted. Requests for an official license can be sent to legal@dilemma-makna.com.
+We grant you a personal, limited, non-exclusive, non-transferable, and revocable license to use the app. No other rights are granted. Requests for an official license can be sent to hello@dilemma-makna.com.
 
 ## 8. Subscriptions, Payments, and Refunds
 
@@ -116,7 +116,7 @@ These terms are governed by the laws of the Republic of Indonesia. Disputes are 
 
 ## 14. Contact
 
-- Legal and Support Team: legal@dilemma-makna.com
+- Legal and Support Team: hello@dilemma-makna.com
 - Website: dilemma-makna.com
 - Phone/WhatsApp: +62 813-8360-0844
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya Village, Bogor Barat District, Bogor City, West Java Province, Indonesia

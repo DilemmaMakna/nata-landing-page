@@ -1,5 +1,5 @@
 Layanan Nataku
-Pemilik produk: PT Masih Dilemma Makna (Lemma Studio) | NIB 1105260028169 Kontak: legal@dilemma-makna.com Versi dokumen: 1.2 | Tanggal: 22 Oktober 2026
+Pemilik produk: PT Masih Dilemma Makna (Lemma Bercerita) | NIB 1105260028169 Kontak: hello@dilemma-makna.com Versi dokumen: 1.2 | Tanggal: 22 Oktober 2026
 
 1. Ringkasan layanan
 Nataku adalah aplikasi pengelola prioritas untuk mahasiswa dan pengurus organisasi. Aplikasi ini mengumpulkan tugas, agenda, kebiasaan, keuangan, dan dokumen di satu tempat, dan terhubung dengan WhatsApp sebagai saluran utama pengingat dan input.
