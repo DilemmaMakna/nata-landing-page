@@ -1,4 +1,4 @@
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nataku.id').replace(/\/$/, '');
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nataku.dilemma-makna.com').replace(/\/$/, '');
 export const SITE_NAME = 'Nataku';
 export const SITE_TITLE = 'Nataku — Bikin Tugas Kuliah Beneran Beres';
 export const SITE_DESCRIPTION =
@@ -7,7 +7,7 @@ export const COMPANY = {
   name: 'PT Masih Dilemma Makna',
   brand: 'Lemma',
   url: 'https://dilemma-makna.com',
-  email: 'marketing@dilemma-makna.com',
+  email: 'hello@dilemma-makna.com',
   phone: '+62-813-8360-0844',
   address: {
     streetAddress: 'Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya, Bogor Barat',
@@ -15,4 +15,13 @@ export const COMPANY = {
     addressRegion: 'Jawa Barat',
     addressCountry: 'ID',
   },
+};
+
+// Kanal dukungan publik. Dipakai /support dan /delete-account (syarat Play Store / App Store).
+export const SUPPORT = {
+  email: COMPANY.email,
+  whatsappUrl: 'https://wa.me/6281383600844',
+  whatsappLabel: '+62 813-8360-0844',
+  responseTime: '3 x 24 jam (hari kerja)',
+  deletionDeadline: '30 hari',
 };

@@ -1,10 +1,17 @@
 'use client';
+import ProtectedContact from '@/components/ui/ProtectedContact';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import LanguageMenu from '@/components/LanguageMenu';
+import MegaMenu from '@/components/MegaMenu';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+/** `solid`: dipakai di halaman dalam (tanpa hero oranye), navbar langsung tampil dalam gaya "scrolled". */
+export default function Navbar({ solid = false }: { solid?: boolean }) {
+  const { t } = useLocale();
+  const [scrolledRaw, setScrolled] = useState(false);
+  const scrolled = scrolledRaw || solid;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,14 +25,14 @@ export default function Navbar() {
     <header className="fixed top-4 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-300">
       {/* Figma Container:margin (42:10352: 1136x60px, rounded-[12px], glass effect) */}
       <div
-        className={`pointer-events-auto w-[92%] max-w-[1136px] h-[54px] sm:h-[60px] rounded-[12px] px-4 sm:px-6 flex items-center justify-between transition-all duration-300 ${
+        className={`pointer-events-auto relative w-[92%] max-w-[1136px] h-[54px] sm:h-[60px] rounded-[12px] px-4 sm:px-6 flex items-center justify-between transition-all duration-300 ${
           scrolled
             ? 'bg-white/85 backdrop-blur-xl border border-stone-200/80 shadow-[0_8px_24px_rgba(0,0,0,0.06)] text-[#1F1B16]'
             : 'bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-none'
         }`}
       >
         {/* Brand Logo SVG (Adapts color: White on Hero, Orange #F0441E on Scrolled) */}
-        <Link href="#hero" className="flex items-center select-none group focus:outline-none">
+        <Link href="/#hero" className="flex items-center select-none group focus:outline-none">
           <svg
             className={`h-7 sm:h-[30px] w-auto transition-colors duration-300 ${
               scrolled ? 'text-[#F0441E]' : 'text-[#FFF4F2]'
@@ -39,32 +46,24 @@ export default function Navbar() {
           </svg>
         </Link>
 
-        {/* Clean Nav Links (Figma 42:10363: gap 28px, Satoshi 400/500, NOT BOLD) */}
-        <nav className={`hidden md:flex items-center gap-7 font-satoshi font-normal sm:font-medium text-[14px] sm:text-[15px] leading-[20px] tracking-[-0.01em] transition-colors duration-300 ${
-            scrolled ? 'text-[#57534E]' : 'text-[#FFF4F2]/90'
-          }`}>
-          <Link href="#hero" className={`transition-colors ${scrolled ? 'hover:text-[#F0441E]' : 'hover:text-white'}`}>
-            Beranda
-          </Link>
-          <Link href="#quote" className={`transition-colors ${scrolled ? 'hover:text-[#F0441E]' : 'hover:text-white'}`}>
-            Tentang
-          </Link>
-          <Link href="#sistem-inti" className={`transition-colors ${scrolled ? 'hover:text-[#F0441E]' : 'hover:text-white'}`}>
-            Sistem Inti
-          </Link>
-        </nav>
+        <MegaMenu scrolled={scrolled} />
 
+        <div className="order-2 ml-auto flex items-center gap-1.5 sm:gap-2 md:ml-0">
+        <LanguageMenu light={!scrolled} />
         {/* CTA Button (Figma 42:10369: rounded-[6px], bg-white/10, NO SHADOW, NOT full rounded) */}
-        <Link
-          href="#waitlist"
-          className={`h-9 px-4 rounded-[6px] font-satoshi font-medium text-[15px] tracking-[-0.01em] transition-all duration-200 flex items-center justify-center whitespace-nowrap shadow-none ${
+        <ProtectedContact
+          channel="nataku" navigate
+
+
+          className={`h-9 px-4 rounded-[6px] font-satoshi font-medium text-[15px] tracking-[-0.01em] transition-all duration-200 max-sm:hidden flex items-center justify-center whitespace-nowrap shadow-none ${
             scrolled
               ? 'bg-[#F0441E] hover:bg-[#D93815] text-white'
               : 'bg-white/10 hover:bg-white/20 border border-white/20 text-[#FFF4F2] hover:text-white'
           }`}
         >
-          Daftar Antrean
-        </Link>
+          {t.nav.cta}
+        </ProtectedContact>
+        </div>
       </div>
     </header>
   );

@@ -8,16 +8,17 @@
 
 Syarat dan Ketentuan ini adalah perjanjian antara Anda ("Pengguna") dan PT Masih Dilemma Makna (dikenal dengan nama dagang Lemma Studio), perseroan terbatas yang berkedudukan di Kota Bogor, Jawa Barat, Indonesia, NIB 1105260028169 ("Kami"), selaku penyedia aplikasi Nataku ("Layanan").
 
-Dengan membuat akun atau menggunakan Layanan, Anda menyatakan telah membaca, memahami, dan menyetujui dokumen ini beserta [Kebijakan Privasi Nataku](#) dan [Kebijakan Keamanan Data Nataku](#). Jika tidak setuju, mohon jangan menggunakan Layanan.
+Dengan membuat akun atau menggunakan Layanan, Anda menyatakan telah membaca, memahami, dan menyetujui dokumen ini beserta [Kebijakan Privasi Nataku](/legal/privacy) dan [Kebijakan Keamanan Data Nataku](/legal/security). Jika tidak setuju, mohon jangan menggunakan Layanan.
 
 ## 2. Deskripsi Layanan
 
 Nataku adalah aplikasi manajemen prioritas untuk mahasiswa dan pelajar. Fitur utamanya meliputi pengelolaan tugas, jadwal kuliah, agenda, kebiasaan harian (habits), Skor Produktivitas, serta pengingat melalui WhatsApp Daily Digest.
 
-Layanan tersedia dalam dua tingkat:
+Layanan tersedia dalam tiga paket:
 
-- **Mulai Aja Dulu!** (gratis): fitur dasar.
-- **On Track** (berbayar): fitur lanjutan seperti WhatsApp Daily Digest 2 arah, unlimited habit streaks, dan cloud sync prioritas.
+- **Mulai Dulu** (gratis): Productivity Dashboard, kalender, Productivity Scoring, pengingat harian di dalam aplikasi, dan daftar tugas tanpa batas jumlah.
+- **On Track** (berbayar, Rp26.000 per bulan): seluruh fitur Mulai Dulu ditambah integrasi WhatsApp, yaitu menambah, mengubah, dan menyelesaikan tugas dari WhatsApp, pengingat harian lewat WhatsApp, dan konektor pengingat produktivitas berbasis AI.
+- **Level Up** (berbayar, Rp49.000 per bulan): seluruh fitur On Track, dengan kuota dan fitur lanjutan untuk pengguna aktif dan pengurus organisasi sebagaimana diumumkan di aplikasi.
 
 Kami dapat menambah, mengubah, atau menghentikan fitur dengan pemberitahuan wajar.
 
@@ -58,15 +59,15 @@ Anda tetap memiliki hak atas data yang Anda masukkan (tugas, jadwal, agenda, hab
 
 ## 7. Hak Kekayaan Intelektual
 
-Karakter visual maskot Nata, identitas visual, logo, nama dan merek Nataku, kode sumber, antarmuka, dan algoritma penilaian Skor Produktivitas adalah milik PT Masih Dilemma Makna (Lemma Studio) dan dilindungi hukum hak cipta, merek, dan rahasia dagang di Indonesia. [JIKA SUDAH TERDAFTAR di DJKI, cantumkan nomor pendaftaran]
+Karakter visual maskot Nata, identitas visual, logo, nama dan merek Nataku, kode sumber, antarmuka, dan algoritma penilaian Skor Produktivitas adalah milik PT Masih Dilemma Makna (Lemma Studio) dan dilindungi hukum hak cipta, merek, dan rahasia dagang di Indonesia.
 
-Kami memberi Anda lisensi pribadi, terbatas, non-eksklusif, tidak dapat dialihkan, dan dapat dicabut untuk memakai aplikasi. Tidak ada hak lain yang diberikan. Permohonan lisensi resmi dapat diajukan ke marketing@dilemma-makna.com.
+Kami memberi Anda lisensi pribadi, terbatas, non-eksklusif, tidak dapat dialihkan, dan dapat dicabut untuk memakai aplikasi. Tidak ada hak lain yang diberikan. Permohonan lisensi resmi dapat diajukan ke legal@dilemma-makna.com.
 
 ## 8. Langganan, Pembayaran, dan Refund
 
 ### 8.1 Harga dan penagihan
 
-Paket On Track ditagih berulang sebesar Rp 29.000/bulan, atau paket tahunan dengan potongan sekitar 17%, secara otomatis melalui metode bayar akun Google Play Anda (GoPay, DANA, OVO, Saldo Play, kartu debit/kredit). Google Play memproses penagihan dalam rentang 24 jam sebelum siklus langganan aktif berakhir. Harga sudah termasuk pajak sesuai ketentuan yang berlaku. [PASTIKAN sesuai pengaturan harga di Play Console]
+Paket On Track ditagih berulang sebesar Rp26.000 per bulan dan paket Level Up sebesar Rp49.000 per bulan, secara otomatis melalui metode bayar akun Google Play Anda (GoPay, DANA, OVO, Saldo Play, kartu debit/kredit). Google Play memproses penagihan dalam rentang 24 jam sebelum siklus langganan aktif berakhir. Harga sudah termasuk pajak sesuai ketentuan yang berlaku.
 
 ### 8.2 Perubahan harga
 
@@ -74,11 +75,11 @@ Perubahan harga akan diberitahukan sebelumnya sesuai kebijakan Google Play, dan 
 
 ### 8.3 Pembatalan
 
-Anda dapat membatalkan perpanjangan otomatis kapan saja tanpa denda: buka Google Play Store, pilih Langganan, pilih Nataku On Track, lalu ketuk Batalkan langganan. Menghapus aplikasi atau akun tidak otomatis membatalkan langganan.
+Anda dapat membatalkan perpanjangan otomatis kapan saja tanpa denda: buka Google Play Store, pilih Langganan, pilih paket Nataku yang Anda langgan (On Track atau Level Up), lalu ketuk Batalkan langganan. Menghapus aplikasi atau akun tidak otomatis membatalkan langganan.
 
 ### 8.4 Akses setelah pembatalan
 
-Fitur On Track tetap berfungsi normal hingga akhir periode tagihan berjalan. Setelah itu akun beralih ke tier gratis (Mulai Aja Dulu!). Data rekap semester dan tugas Anda tidak dihapus, hanya disesuaikan dengan batas tier gratis.
+Fitur berbayar tetap berfungsi normal hingga akhir periode tagihan berjalan. Setelah itu akun beralih ke paket gratis (Mulai Dulu). Data rekap semester dan tugas Anda tidak dihapus, hanya disesuaikan dengan batas tier gratis.
 
 ### 8.5 Refund 48 jam
 
@@ -113,7 +114,7 @@ Ketentuan ini tunduk pada hukum Republik Indonesia. Sengketa diselesaikan terleb
 
 ## 14. Kontak
 
-- Tim Hukum dan Dukungan: marketing@dilemma-makna.com
+- Tim Hukum dan Dukungan: legal@dilemma-makna.com
 - Situs web: dilemma-makna.com
 - Telepon/WhatsApp: +62 813-8360-0844
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat

@@ -1,8 +1,11 @@
 'use client';
+import ProtectedContact from '@/components/ui/ProtectedContact';
 
 import React, { useState } from 'react';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 
 export default function PricingSection({ className = '' }: { className?: string } = {}) {
+  const { t } = useLocale();
   const [selectedTier, setSelectedTier] = useState<'mulai-dulu' | 'on-track'>('mulai-dulu');
 
   const isMulaiActive = selectedTier === 'mulai-dulu';
@@ -16,15 +19,15 @@ export default function PricingSection({ className = '' }: { className?: string 
         <div className="mb-12 text-center flex flex-col items-center">
           {/* Frame 56 Badge */}
           <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-[6px] bg-[#FFE4DE] text-[#F86D52] font-satoshi font-medium text-[14px] leading-[20px] mb-3 select-none">
-            Pilihan Akses
+            {t.pricing.badge}
           </div>
 
           <h2 className="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#0F172A] mb-3 max-w-[800px] text-center">
-            Mulai Gratis, Upgrade<br className="hidden sm:inline" /> Saat Kamu Butuh Asisten.
+            {t.pricing.title[0]}<br className="hidden sm:inline" /> {t.pricing.title[1]}
           </h2>
 
           <p className="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-[#23211F] tracking-[-0.01em] max-w-[760px] mx-auto text-center">
-            Paket standar membantumu manajemen tugas, namun asisten WhatsApp yang memastikan seluruh deadline kamu tuntas.
+            {t.pricing.sub}
           </p>
         </div>
 
@@ -34,8 +37,7 @@ export default function PricingSection({ className = '' }: { className?: string 
           {/* CARD 1: Paket Mulai Dulu (Frame 2) */}
           <div
             id="pricingCardMulai"
-            onClick={() => setSelectedTier('mulai-dulu')}
-            className={`rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer ${isMulaiActive
+            className={`rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 ${isMulaiActive
               ? 'bg-[#F0441E] text-white shadow-xl scale-[1.01]'
               : 'bg-transparent text-[#57534E] hover:bg-stone-200/40'
               }`}
@@ -61,7 +63,7 @@ export default function PricingSection({ className = '' }: { className?: string 
                   className={`font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 ${isMulaiActive ? 'text-white' : 'text-[#44403C]'
                     }`}
                 >
-                  Paket Mulai Dulu
+                  <button type="button" className="cursor-pointer text-left" aria-pressed={isMulaiActive} onClick={() => setSelectedTier('mulai-dulu')}>{t.pricing.start.name}</button>
                 </h3>
 
                 <p
@@ -69,7 +71,7 @@ export default function PricingSection({ className = '' }: { className?: string 
                   className={`font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 ${isMulaiActive ? 'text-[#FFF4F2]' : 'text-[#78716C]'
                     }`}
                 >
-                  Paling pas untuk Kenalan sama Nataku
+                  {t.pricing.start.tagline}
                 </p>
 
                 <p
@@ -77,7 +79,7 @@ export default function PricingSection({ className = '' }: { className?: string 
                   className={`font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] ${isMulaiActive ? 'text-[#FFF4F2]' : 'text-[#57534E]'
                     }`}
                 >
-                  Untuk kamu yang ingin merapikan tugas dan memantau deadline secara mandiri di ponsel Android.
+                  {t.pricing.start.desc}
                 </p>
               </div>
 
@@ -99,12 +101,12 @@ export default function PricingSection({ className = '' }: { className?: string 
                       className={`px-2.5 py-0.5 rounded-[6px] font-satoshi font-bold text-[13px] leading-[20px] tracking-normal ${isMulaiActive ? 'bg-[#FFE4DE] text-[#F0441E]' : 'bg-[#FFE4DE] text-[#F86D52]'
                         }`}
                     >
-                      Diskon 40%
+                      {t.pricing.start.discount}
                     </span>
                   </div>
                   <div className="flex items-baseline gap-2">
                     <span>Rp15.000</span>
-                    <span className="font-medium text-base sm:text-[20px] tracking-normal opacity-80">/ bulan</span>
+                    <span className="font-medium text-base sm:text-[20px] tracking-normal opacity-80">{t.pricing.start.perMonth}</span>
                   </div>
                 </div>
                 <div
@@ -121,7 +123,7 @@ export default function PricingSection({ className = '' }: { className?: string 
                   className={`font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 ${isMulaiActive ? 'text-[#FFF4F2]' : 'text-[#44403C]'
                     }`}
                 >
-                  Yang kamu dapatkan:
+                  {t.pricing.youGet}
                 </h4>
                 <ul
                   id="featuresMulaiList"
@@ -130,42 +132,43 @@ export default function PricingSection({ className = '' }: { className?: string 
                 >
                   <li className="flex items-start gap-2.5">
                     <span className="opacity-75">•</span>
-                    <span>Akses aplikasi Android Nataku</span>
+                    <span>{t.pricing.start.items[0]}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="opacity-75">•</span>
-                    <span>Dashboard Today's Focus</span>
+                    <span>{t.pricing.start.items[1]}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="opacity-75">•</span>
-                    <span>Hitung mundur batas waktu tugas</span>
+                    <span>{t.pricing.start.items[2]}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="opacity-75">•</span>
-                    <span>Pelacakan Skor Produktivitas harian</span>
+                    <span>{t.pricing.start.items[3]}</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             {/* CTA Button (Frame 62) */}
-            <a
+            <ProtectedContact
               id="btnCtaMulai"
-              href="#waitlist"
+              channel="nataku" navigate
+
+
               className={`w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none ${isMulaiActive
                 ? 'bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm'
                 : 'bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300'
                 }`}
             >
-              Daftar Akses Dasar
-            </a>
+              {t.pricing.start.cta}
+            </ProtectedContact>
           </div>
 
           {/* CARD 2: Paket On Track (Frame 5) */}
           <div
             id="pricingCardOnTrack"
-            onClick={() => setSelectedTier('on-track')}
-            className={`rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 cursor-pointer ${isOnTrackActive
+            className={`rounded-[28px] p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between transition-all duration-300 ${isOnTrackActive
               ? 'bg-[#F0441E] text-white shadow-xl scale-[1.01]'
               : 'bg-transparent text-[#57534E] hover:bg-stone-200/40'
               }`}
@@ -191,7 +194,7 @@ export default function PricingSection({ className = '' }: { className?: string 
                   className={`font-satoshi font-medium text-3xl sm:text-[40px] leading-[1.2] tracking-[-0.03em] mb-1 ${isOnTrackActive ? 'text-white' : 'text-[#44403C]'
                     }`}
                 >
-                  Paket On Track
+                  <button type="button" className="cursor-pointer text-left" aria-pressed={isOnTrackActive} onClick={() => setSelectedTier('on-track')}>{t.pricing.track.name}</button>
                 </h3>
 
                 <p
@@ -199,7 +202,7 @@ export default function PricingSection({ className = '' }: { className?: string 
                   className={`font-satoshi italic font-normal text-sm sm:text-[18px] leading-[24px] tracking-[-0.01em] mb-3 ${isOnTrackActive ? 'text-[#FFF4F2]' : 'text-[#78716C]'
                     }`}
                 >
-                  Paling Pas untuk Mahasiswa Aktif
+                  {t.pricing.track.tagline}
                 </p>
 
                 <p
@@ -207,7 +210,7 @@ export default function PricingSection({ className = '' }: { className?: string 
                   className={`font-satoshi font-medium text-sm sm:text-[18px] leading-[28px] ${isOnTrackActive ? 'text-[#FFF4F2]' : 'text-[#57534E]'
                     }`}
                 >
-                  Untuk kamu yang punya jadwal padat dan butuh asisten yang menyapa dan mencatat langsung dari WhatsApp.
+                  {t.pricing.track.desc}
                 </p>
               </div>
 
@@ -218,7 +221,7 @@ export default function PricingSection({ className = '' }: { className?: string 
                   className={`font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] ${isOnTrackActive ? 'text-[#FFF4F2]' : 'text-[#44403C]'
                     }`}
                 >
-                  SOON
+                  {t.pricing.track.price}
                 </div>
                 <div
                   id="dividerOnTrack"
@@ -234,7 +237,7 @@ export default function PricingSection({ className = '' }: { className?: string 
                   className={`font-satoshi font-medium text-base sm:text-[18px] leading-[28px] mb-3 ${isOnTrackActive ? 'text-[#FFF4F2]' : 'text-[#44403C]'
                     }`}
                 >
-                  Yang kamu dapatkan:
+                  {t.pricing.youGet}
                 </h4>
                 <ul
                   id="featuresOnTrackList"
@@ -243,36 +246,38 @@ export default function PricingSection({ className = '' }: { className?: string 
                 >
                   <li className="flex items-start gap-2.5">
                     <span className="opacity-75">•</span>
-                    <span>Semua fitur Paket Mulai Dulu</span>
+                    <span>{t.pricing.track.items[0]}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="opacity-75">•</span>
-                    <span>Pengiriman pesan WhatsApp Daily Digest setiap pagi</span>
+                    <span>{t.pricing.track.items[1]}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="opacity-75">•</span>
-                    <span>Balas chat WhatsApp untuk coret dan tambah tugas</span>
+                    <span>{t.pricing.track.items[2]}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="opacity-75">•</span>
-                    <span>Pengingat batas waktu mendesak langsung ke nomor pribadimu</span>
+                    <span>{t.pricing.track.items[3]}</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             {/* CTA Button (Frame 62) */}
-            <a
+            <ProtectedContact
               id="btnCtaOnTrack"
-              href="#waitlist"
-              aria-label="Paket On Track segera hadir, gabung antrean"
+              channel="nataku" navigate
+
+
+              aria-label={t.pricing.track.aria}
               className={`w-full py-4 px-6 rounded-[8px] flex items-center justify-center font-inter font-semibold text-lg sm:text-[22px] lg:text-[24px] leading-[30px] tracking-[-0.02em] transition-all select-none ${isOnTrackActive
                 ? 'bg-[#FFE4DE] text-[#F0441E] hover:bg-white shadow-sm'
                 : 'bg-[#E7E5E4] text-[#57534E] hover:bg-stone-300'
                 }`}
             >
-              Segera Hadir
-            </a>
+              {t.pricing.track.cta}
+            </ProtectedContact>
           </div>
 
         </div>

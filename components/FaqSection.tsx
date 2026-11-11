@@ -2,9 +2,12 @@
 
 import React, { useState } from 'react';
 
-import { faqs } from '@/lib/faq';
+import { faqsFor } from '@/lib/faq';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 
 export default function FaqSection() {
+  const { t, locale } = useLocale();
+  const faqs = faqsFor(locale);
   // Aturan interaktif: Awalnya tertutup semua (null)
   // Maksimal 1 aktif bergantian
   const [openIdx, setOpenIdx] = useState<number | null>(null);
@@ -24,10 +27,10 @@ export default function FaqSection() {
           {/* Sisi Kiri: Header (Figma Frame 1: 552px) */}
           <div className="lg:col-span-6 flex flex-col justify-start max-w-[552px]">
             <h2 className="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#F0441E] mb-3">
-              Tanya Jawab
+              {t.faq.title}
             </h2>
             <p className="font-satoshi font-normal text-base sm:text-lg lg:text-[20px] leading-[26px] text-[#23211F] tracking-[-0.02em]">
-              Setiap awal semester selalu bikin to-do list baru. Tiga hari pertama rajin mencatat, setelah itu aplikasinya berdebu di folder HP.
+              {t.faq.intro}
             </p>
           </div>
 

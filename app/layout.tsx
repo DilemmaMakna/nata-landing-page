@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import JsonLd from '@/components/JsonLd';
+import { LocaleProvider } from '@/lib/i18n/LocaleProvider';
 import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -61,7 +62,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600;1,8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body>
-        {children}
+        <LocaleProvider>{children}</LocaleProvider>
         <JsonLd />
       </body>
     </html>

@@ -1,9 +1,11 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 import { TodayFocusVisual, CalendarVisual, WhatsAppVisual } from './PillarVisuals';
 
 export default function PillarsSection() {
+  const { t } = useLocale();
   const containerRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState<number>(0);
 
@@ -58,13 +60,13 @@ export default function PillarsSection() {
       <div className="w-full max-w-[1280px] mx-auto pt-20 sm:pt-24 lg:pt-28 pb-8 sm:pb-10 px-5 sm:px-9 lg:px-[72px] text-left">
         <div className="max-w-[1136px] mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#FFE4DE] text-[#F86D52] font-satoshi font-medium text-[13px] sm:text-[14px] leading-[18px] mb-3 select-none">
-            Sistem Terpadu
+            {t.pillars.badge}
           </div>
           <h2 className="font-satoshi font-bold text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] leading-[1.12] text-[#0F172A] tracking-[-0.03em] mb-3">
-            3 Sistem Terpadu Untuk Harimu.
+            {t.pillars.title}
           </h2>
           <p className="font-satoshi font-normal text-base sm:text-lg md:text-[20px] leading-[1.4] text-[#57534E] max-w-[840px]">
-            Setiap awal semester selalu bikin to-do list baru. Tiga hari pertama rajin mencatat, setelah itu aplikasinya berdebu di folder HP.
+            {t.pillars.intro}
           </p>
         </div>
       </div>
@@ -91,10 +93,10 @@ export default function PillarsSection() {
                   Today's Focus
                 </h3>
                 <h4 className="font-satoshi font-normal text-[#FFF4F2] text-[13px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
-                  Maksimal 3 hal terpenting setiap hari.
+                  {t.pillars.focus.tagline}
                 </h4>
                 <p className="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[12px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px] ">
-                  Layar utama Nataku memangkas kekacauan tugasmu dan hanya menampilkan hal yang paling wajib beres hari ini, sehingga energimu tidak habis karena overwhelmed.
+                  {t.pillars.focus.body}
                 </p>
               </div>
               <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
@@ -122,10 +124,10 @@ export default function PillarsSection() {
                   Calendar Integrated
                 </h3>
                 <h4 className="font-satoshi font-normal text-[#FFF4F2] text-[13px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
-                  Bebas panik H-1 jam pengumpulan tugas.
+                  {t.pillars.calendar.tagline}
                 </h4>
                 <p className="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[12px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px] ">
-                  Indikator visual hitung mundur dengan warna jelas (kuning untuk hari ini, merah untuk mendesak). Kamu selalu tahu berapa sisa waktumu sebelum terlambat.
+                  {t.pillars.calendar.body}
                 </p>
               </div>
               <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
@@ -153,10 +155,10 @@ export default function PillarsSection() {
                   WhatsApp Daily &amp;<br className="hidden sm:inline" /> Quick Action
                 </h3>
                 <h4 className="font-satoshi font-normal text-[#FFF4F2] text-[13px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
-                  Asisten harian langsung di chat pribadimu.
+                  {t.pillars.whatsapp.tagline}
                 </h4>
                 <p className="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[12px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px] ">
-                  Terima rangkuman pagi setiap jam 7. Balas chat untuk mencoret tugas atau menambah agenda baru tanpa perlu menyentuh aplikasi.
+                  {t.pillars.whatsapp.body}
                 </p>
               </div>
               <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">

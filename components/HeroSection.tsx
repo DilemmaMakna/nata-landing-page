@@ -1,16 +1,19 @@
 'use client';
+import ProtectedContact from '@/components/ui/ProtectedContact';
 
 import React from 'react';
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 import Image from 'next/image';
 
 export default function HeroSection() {
+  const { t } = useLocale();
   return (
     <section id="hero" className="hero-bg relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden select-none">
       {/* Background radiant energetic orange & texture */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
         style={{
-          backgroundImage: "url('/assets/hero-bg.png')",
+          backgroundImage: "url('/assets/hero-bg.webp')",
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
         }}
@@ -31,23 +34,25 @@ export default function HeroSection() {
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
             {/* H1: Satoshi Medium (500), 2 lines exact, no orphan wrap */}
             <h1 className="font-satoshi font-medium text-white text-[42px] sm:text-[56px] md:text-[70px] lg:text-[80px] xl:text-[86px] leading-[0.95] tracking-[-0.035em] mb-5 sm:mb-6">
-              Beres tugas<br />
-              <span className="whitespace-nowrap">tanpa pusing!</span>
+              {t.hero.h1a}<br />
+              <span className="whitespace-nowrap">{t.hero.h1b}</span>
             </h1>
 
             {/* Subtitle (Figma 42:9090: Satoshi 400 18px / lh:28px, max-w 440px) */}
             <p className="text-[#FFF4F2] font-satoshi font-normal text-sm sm:text-base md:text-[18px] leading-[28px] max-w-[440px] mb-6 sm:mb-8 opacity-95">
-              Nataku menyatukan jadwal kuliah dan tugas ke dalam satu alur rapi. Cukup lewat WhatsApp, bereskan tugas tanpa ribet buka-tutup aplikasi.
+              {t.hero.sub}
             </p>
 
             {/* CTA Button (Figma Frame 3 42:9091: 176x36px, rounded-[6px], bg-white/10, NO SHADOW) */}
             <div>
-              <a
-                href="#waitlist"
+              <ProtectedContact
+                channel="nataku" navigate
+
+
                 className="inline-flex items-center justify-center px-4 py-2 rounded-[6px] bg-white/10 hover:bg-white/20 border border-white/20 text-white font-satoshi font-medium text-[16px] leading-[24px] tracking-[-0.01em] transition-colors select-none no-underline shadow-none"
               >
-                Amankan Akses Awal
-              </a>
+                {t.hero.cta}
+              </ProtectedContact>
             </div>
           </div>
 
@@ -55,8 +60,8 @@ export default function HeroSection() {
           <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end">
             <div className="relative w-full max-w-[500px] lg:max-w-[522px] flex items-center justify-center lg:justify-end">
               <Image
-                src="/assets/hero-right-phones.png"
-                alt="Tampilan Antarmuka Nataku di 3 Smartphone"
+                src="/assets/hero-right-phones.webp"
+                alt={t.hero.alt}
                 width={712}
                 height={541}
                 priority

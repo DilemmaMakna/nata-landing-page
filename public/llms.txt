@@ -1,21 +1,22 @@
 # Nataku
 
-> Nataku adalah aplikasi manajemen tugas dan jadwal kuliah untuk mahasiswa dan pelajar Indonesia. Fitur utama: layar Today's Focus (maksimal 3 prioritas per hari), kalender dengan hitung mundur deadline, dan asisten WhatsApp yang mengirim rangkuman jam 7 pagi serta menerima balasan untuk mencoret atau menambah tugas. Saat ini tersedia untuk Android melalui antrean awal (waitlist). Dikembangkan oleh Lemma Studio (PT Masih Dilemma Makna), Bogor.
+> Nataku adalah aplikasi manajemen tugas dan jadwal kuliah untuk mahasiswa dan pelajar Indonesia. Fitur utama: layar Today's Focus (maksimal 3 prioritas per hari), kalender dengan hitung mundur deadline, dan asisten WhatsApp yang mengirim rangkuman jam 7 pagi serta menerima balasan untuk mencoret atau menambah tugas. Saat ini tersedia untuk Android melalui antrean awal (waitlist). Dikembangkan oleh Lemma Bercerita (PT Masih Dilemma Makna), Bogor.
 
 Catatan: Paket Mulai Dulu Rp15.000 per bulan (diskon dari Rp25.000). Paket On Track (fitur WhatsApp) segera hadir. iOS belum tersedia.
 
 ## Halaman utama
 
-- [Beranda Nataku (Markdown)](https://nataku.id/index.md): ringkasan produk, fitur, harga, dan tanya jawab dalam satu halaman
-- [Daftar antrean awal](https://nataku.id/#waitlist): formulir waitlist akses Android
+- [Beranda Nataku (Markdown)](https://nataku.dilemma-makna.com/index.md): ringkasan produk, fitur, harga, dan tanya jawab dalam satu halaman
+- [Pusat Bantuan](https://nataku.dilemma-makna.com/support): kontak dukungan dan tanya jawab
+- [Hapus Akun dan Data](https://nataku.dilemma-makna.com/delete-account): formulir penghapusan akun dan data
 
 ## Dokumen legal
 
-- [Kebijakan Privasi](https://nataku.id/legal/kebijakan-privasi.md): data apa yang dikumpulkan, dasar pemrosesan, hak pengguna sesuai UU PDP
-- [Syarat dan Ketentuan](https://nataku.id/legal/syarat-ketentuan.md): perjanjian layanan, paket, akun, dan batasan
-- [Kebijakan Keamanan Data](https://nataku.id/legal/keamanan-data.md): langkah keamanan dan penanganan insiden
+- [Kebijakan Privasi](https://nataku.dilemma-makna.com/legal/privacy): data apa yang dikumpulkan, dasar pemrosesan, hak pengguna sesuai UU PDP
+- [Syarat dan Ketentuan](https://nataku.dilemma-makna.com/legal/terms): perjanjian layanan, paket, akun, dan batasan
+- [Kebijakan Keamanan Data](https://nataku.dilemma-makna.com/legal/security): langkah keamanan dan penanganan insiden
 
 ## Optional
 
-- [Versi lengkap untuk LLM](https://nataku.id/llms-full.txt): beranda dan seluruh dokumen legal dalam satu berkas
+- [Versi lengkap untuk LLM](https://nataku.dilemma-makna.com/llms-full.txt): beranda dan seluruh dokumen legal dalam satu berkas
 - [Lemma Studio](https://dilemma-makna.com): pengembang Nataku

@@ -15,7 +15,7 @@ Pengendali Data Pribadi adalah:
 - Nomor Induk Berusaha (NIB): 1105260028169
 - Situs web: dilemma-makna.com
 - Telepon/WhatsApp: +62 813-8360-0844
-- Kontak Pelindungan Data (DPO): marketing@dilemma-makna.com
+- Kontak Pelindungan Data (DPO): legal@dilemma-makna.com
 
 Kami memproses data pribadi sesuai Undang-Undang No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP) dan peraturan turunannya, serta ketentuan kebijakan Google Play, termasuk formulir Data Safety.
 
@@ -62,10 +62,12 @@ Nataku tidak pernah menjual, menyewakan, atau membagikan data profil dan kebiasa
 
 Kami hanya melibatkan penyedia layanan (prosesor data) yang diperlukan untuk menjalankan Layanan, dengan perjanjian yang mewajibkan mereka menjaga kerahasiaan dan keamanan data:
 
-- Penyedia infrastruktur cloud dan hosting.
+- Penyedia infrastruktur cloud dan hosting (Oracle Cloud dan Google Cloud).
 - Penyedia pesan WhatsApp (WhatsApp Business Platform / Meta atau penyedia resmi perantara) untuk mengirim pengingat.
 - Google Play Billing untuk pembayaran dan langganan.
 - Penyedia email transaksional untuk verifikasi akun.
+- Google Firebase Cloud Messaging untuk mengirim notifikasi push ke perangkat Anda. Judul tugas dan isi pengingat, serta pengenal tugas, ikut dikirim melalui layanan ini.
+- Sentry untuk pemantauan kesalahan dan performa aplikasi.
 
 Kami juga dapat mengungkapkan data jika diwajibkan oleh hukum, putusan pengadilan, atau permintaan resmi dari instansi berwenang.
 
@@ -77,7 +79,7 @@ Sebagian penyedia layanan di atas dapat memproses data di luar Indonesia. Dalam 
 
 - Data akun dan konten disimpan selama akun Anda aktif.
 - Setelah Anda menghapus akun, data pribadi dihapus atau dianonimkan dalam jangka waktu wajar, kecuali harus disimpan lebih lama untuk kewajiban hukum (misalnya catatan transaksi).
-- Rincian masa retensi tercantum pada [Kebijakan Keamanan Data Nataku](#).
+- Rincian masa retensi tercantum pada [Kebijakan Keamanan Data Nataku](/legal/security).
 
 ## 7. Keamanan Data
 
@@ -88,7 +90,7 @@ Kami menerapkan langkah teknis dan organisasi untuk melindungi data Anda. Ringka
 - Akses internal mengikuti prinsip hak akses minimum dan dicatat.
 - Kami tidak menyimpan nomor kartu atau kredensial pembayaran Anda.
 
-Rincian lengkap tersedia pada [Kebijakan Keamanan Data Nataku](#).
+Rincian lengkap tersedia pada [Kebijakan Keamanan Data Nataku](/legal/security).
 
 Tidak ada sistem yang sepenuhnya kebal. Jika terjadi kegagalan pelindungan data pribadi, kami akan memberi tahu Anda dan lembaga berwenang secara tertulis paling lambat 3 x 24 jam sejak insiden diketahui, sesuai UU PDP.
 
@@ -108,8 +110,9 @@ Anda berhak untuk:
 Cara menggunakan hak:
 
 - Hapus akun: Pengaturan > Hapus Akun di aplikasi.
+- Hapus akun dan data tanpa membuka aplikasi: gunakan [formulir penghapusan akun](/delete-account).
 - Berhenti dari WhatsApp Digest: matikan di Pengaturan atau balas "STOP" ke nomor resmi Nataku.
-- Permintaan lain: email ke marketing@dilemma-makna.com. Kami menanggapi paling lambat 3 x 24 jam untuk permintaan akses dan menyelesaikannya paling lambat 30 hari, sesuai ketentuan yang berlaku.
+- Permintaan lain: email ke legal@dilemma-makna.com atau lihat [Pusat Bantuan](/support). Kami menanggapi paling lambat 3 x 24 jam untuk permintaan akses dan menyelesaikannya paling lambat 30 hari, sesuai ketentuan yang berlaku.
 
 ## 9. Pesan WhatsApp
 
@@ -119,7 +122,7 @@ Cara menggunakan hak:
 
 ## 10. Pengguna di Bawah Umur
 
-Layanan ditujukan bagi mahasiswa dan pelajar. Pengguna di bawah 18 tahun wajib memiliki persetujuan orang tua atau wali yang sah. Kami tidak dengan sengaja memproses data anak tanpa persetujuan tersebut. Jika Anda orang tua atau wali dan menduga hal ini terjadi, hubungi marketing@dilemma-makna.com untuk penghapusan data.
+Layanan ditujukan bagi mahasiswa dan pelajar. Pengguna di bawah 18 tahun wajib memiliki persetujuan orang tua atau wali yang sah. Kami tidak dengan sengaja memproses data anak tanpa persetujuan tersebut. Jika Anda orang tua atau wali dan menduga hal ini terjadi, hubungi legal@dilemma-makna.com untuk penghapusan data.
 
 ## 11. Cookie dan Teknologi Serupa
 
@@ -133,7 +136,7 @@ Kami dapat memperbarui kebijakan ini. Perubahan material akan diberitahukan mela
 
 Pertanyaan, keluhan, atau permintaan terkait data pribadi:
 
-- Petugas Pelindungan Data (DPO): marketing@dilemma-makna.com
+- Petugas Pelindungan Data (DPO): legal@dilemma-makna.com
 - Situs web: dilemma-makna.com
 - Telepon/WhatsApp: +62 813-8360-0844
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat

@@ -1,6 +1,6 @@
 # Nataku — Landing Page (Dev Mode)
 > **Spesifikasi Produksi & Panduan Serah Terima (CTO & Engineering Team)**  
-> **Organisasi**: Lemma Studio (PT Masih Dilemma Makna)  
+> **Organisasi**: Lemma Bercerita (PT Masih Dilemma Makna)  
 > **Framework**: Next.js 14 (App Router) + TypeScript + Tailwind CSS / Vanilla Design Tokens  
 > **Figma Source**: File `wGMrNf1YoDXwzrJpYGTe9q` | Frame `Desktop - 8` (`42:9086`) & Section `Trial Dev` (`63:27018`)  
 > **Status**: Production Ready, Tested & Vercel Deployable  
@@ -15,8 +15,11 @@ Kode dirancang dengan prinsip **modular, strongly typed, dan zero-spaghetti** ag
 05_dev_mode/
 ├── app/
 │   ├── api/
-│   │   └── waitlist/
-│   │       └── route.ts          # Endpoint pendaftaran waitlist (validasi nomor & sanitasi)
+│   │   ├── contact-details/route.ts  # Kontak terproteksi (email/WhatsApp tidak ada di HTML statis)
+│   │   └── delete-request/route.ts   # Menerima permintaan hapus akun -> DELETION_WEBHOOK_URL
+│   ├── legal/[doc]/page.tsx      # Privacy / Terms / Security sebagai halaman sendiri (bukan modal)
+│   ├── support/page.tsx          # Support URL untuk Play Store & App Store
+│   ├── delete-account/page.tsx   # Halaman hapus akun (syarat kebijakan Play Store)
 │   ├── globals.css               # Design tokens, typography (Satoshi), layout rules
 │   ├── layout.tsx                # Metadata SEO, OpenGraph, viewport 100dvh
 │   └── page.tsx                  # Komposisi landing page terintegrasi
@@ -24,9 +27,9 @@ Kode dirancang dengan prinsip **modular, strongly typed, dan zero-spaghetti** ag
 │   ├── Navbar.tsx                # Floating glassmorphism navbar (scroll-aware theme adapt)
 │   ├── HeroSection.tsx           # Hero 100dvh, 3D phones mockup, frosted glass CTA button
 │   ├── ProblemFeatureSection.tsx # Translasi Component 8 (5-state interactive prototype & scroll)
-│   ├── QuoteSection.tsx          # Statement banner oranye (#F0441E) dengan quote bracket Figma
 │   ├── PillarsSection.tsx        # 3 Sistem Inti (Today's Focus, Calendar, WhatsApp Quick Action)
-│   ├── WaitlistSection.tsx       # Form registrasi lead 2 kolom (Desktop - 6) terhubung ke API
+│   ├── LegalDocument.tsx         # Renderer markdown server-side untuk halaman /legal/[doc]
+│   ├── DeleteAccountForm.tsx     # Formulir web hapus akun & data (/delete-account)
 │   └── Footer.tsx                # Footer brand resmi dengan logo Nataku & atribusi Lemma Studio
 ├── public/
 │   └── assets/                   # Aset resolusi tinggi diekstrak langsung dari Figma API (2x retina)

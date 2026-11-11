@@ -1,14 +1,11 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-
-const QUOTE_WORDS = [
-  "Setiap", "pagi,", "Nataku", "ingatkan", "tugas", "prioritasmu",
-  "lewat", "WhatsApp.", "Cukup", "balas", "chat,", "tugas",
-  "langsung", "tercatat."
-];
+import { useLocale } from '@/lib/i18n/LocaleProvider';
 
 export default function ProblemFeatureSection() {
+  const { t } = useLocale();
+  const QUOTE_WORDS = t.problem.quote;
   const containerRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState<number>(0);
 
@@ -234,8 +231,7 @@ export default function ProblemFeatureSection() {
               }}
             >
               <h2 className="font-satoshi font-medium text-[#F0441E] text-[38px] sm:text-[96px] md:text-[135px] lg:text-[165px] xl:text-[191px] leading-[0.91] tracking-[-0.04em] text-center select-none">
-                Tata Semua<br />
-                Jadwalmu!
+                {t.problem.headline[0]}<br />{t.problem.headline[1]}
               </h2>
             </div>
 
@@ -248,8 +244,8 @@ export default function ProblemFeatureSection() {
               }}
             >
               <img
-                src="/assets/proto/card-kuburan-catatan.png"
-                alt="Kuburan Catatan"
+                src="/assets/proto/card-kuburan-catatan.webp"
+                alt={t.problem.alts[0]}
                 className="w-full h-auto block"
               />
             </div>
@@ -262,8 +258,8 @@ export default function ProblemFeatureSection() {
               }}
             >
               <img
-                src="/assets/proto/card-overwhelmed.png"
-                alt="Overwhelmed"
+                src="/assets/proto/card-overwhelmed.webp"
+                alt={t.problem.alts[1]}
                 className="w-full h-auto block"
               />
             </div>
@@ -276,8 +272,8 @@ export default function ProblemFeatureSection() {
               }}
             >
               <img
-                src="/assets/proto/card-puluhan-grup.png"
-                alt="Puluhan Grup"
+                src="/assets/proto/card-puluhan-grup.webp"
+                alt={t.problem.alts[2]}
                 className="w-full h-auto block"
               />
             </div>
@@ -290,8 +286,8 @@ export default function ProblemFeatureSection() {
               }}
             >
               <img
-                src="/assets/proto/card-distraksi-medsos.png"
-                alt="Distraksi Medsos"
+                src="/assets/proto/card-distraksi-medsos.webp"
+                alt={t.problem.alts[3]}
                 className="w-full h-auto block"
               />
             </div>
@@ -319,7 +315,7 @@ export default function ProblemFeatureSection() {
             >
               <img src="/assets/proto/icon-note.svg" alt="" className="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
               <div className="font-satoshi text-lg sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
-                <span className="text-[#FFC4B8] font-normal sm:font-medium">Manajemen</span> <span className="text-white font-medium sm:font-semibold">Tugas</span>
+                <span className="text-[#FFC4B8] font-normal sm:font-medium">{t.problem.features[0][0]}</span> <span className="text-white font-medium sm:font-semibold">{t.problem.features[0][1]}</span>
               </div>
             </div>
 
@@ -333,7 +329,7 @@ export default function ProblemFeatureSection() {
             >
               <img src="/assets/proto/icon-calendar.svg" alt="" className="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
               <div className="font-satoshi text-lg sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
-                <span className="text-[#FDE68A] font-normal sm:font-medium">Integrasi</span> <span className="text-white font-medium sm:font-semibold">Kalender</span>
+                <span className="text-[#FDE68A] font-normal sm:font-medium">{t.problem.features[1][0]}</span> <span className="text-white font-medium sm:font-semibold">{t.problem.features[1][1]}</span>
               </div>
             </div>
 
@@ -347,7 +343,7 @@ export default function ProblemFeatureSection() {
             >
               <img src="/assets/proto/icon-whatsapp.svg" alt="" className="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
               <div className="font-satoshi text-lg sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
-                <span className="text-[#A7F3D0] font-normal sm:font-medium">Terhubung</span> <span className="text-white font-medium sm:font-semibold">WhatsApp</span>
+                <span className="text-[#A7F3D0] font-normal sm:font-medium">{t.problem.features[2][0]}</span> <span className="text-white font-medium sm:font-semibold">{t.problem.features[2][1]}</span>
               </div>
             </div>
           </div>
