@@ -35,7 +35,10 @@ export default function Footer() {
                 alt=""
                 className="h-10 w-10 object-contain [filter:brightness(0)_saturate(100%)_invert(34%)_sepia(98%)_saturate(3300%)_hue-rotate(2deg)]"
               />
-              <span className="text-3xl font-bold leading-[56px] tracking-[-0.04em] sm:text-4xl lg:text-[48px]" style={SERIF}>
+              <span
+                className="text-3xl font-bold leading-[56px] tracking-[-0.04em] sm:text-4xl lg:text-[48px]"
+                style={SERIF}
+              >
                 Nataku
               </span>
             </a>
@@ -66,11 +69,21 @@ export default function Footer() {
           <div className="flex flex-col lg:col-span-3 lg:pt-2">
             <span className={labelCls}>{t.footer.links}</span>
             <div className="flex flex-col gap-3 font-satoshi text-[15px] leading-[20px] text-[#44403C]">
-              <Link href="/legal/privacy" className={linkCls}>{t.footer.privacy}</Link>
-              <Link href="/legal/terms" className={linkCls}>{t.footer.terms}</Link>
-              <Link href="/legal/security" className={linkCls}>{t.footer.security}</Link>
-              <Link href="/support" className={linkCls}>{t.footer.support}</Link>
-              <Link href="/delete-account" className={linkCls}>{t.footer.delete}</Link>
+              <Link href="/legal/privacy" className={linkCls}>
+                {t.footer.privacy}
+              </Link>
+              <Link href="/legal/terms" className={linkCls}>
+                {t.footer.terms}
+              </Link>
+              <Link href="/legal/security" className={linkCls}>
+                {t.footer.security}
+              </Link>
+              <Link href="/support" className={linkCls}>
+                {t.footer.support}
+              </Link>
+              <Link href="/delete-account" className={linkCls}>
+                {t.footer.delete}
+              </Link>
               <ProtectedContact channel="nataku" className={linkCls} />
             </div>
           </div>
@@ -79,13 +92,29 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-14 flex flex-col gap-4 font-satoshi text-xs text-[#78716C] sm:flex-row sm:items-center sm:justify-between md:mt-16">
           <span>{t.footer.rights}</span>
-          <a href="#top" className="group inline-flex w-fit items-center gap-2 text-[#1F1B16] transition-colors hover:text-[#FF5000]">
+          <a
+            href="#top"
+            className="group inline-flex w-fit items-center gap-2 text-[#1F1B16] transition-colors hover:text-[#FF5000]"
+          >
             <span className="relative">
               {t.footer.top}
               <span className="absolute -bottom-0.5 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-300 group-hover:origin-left group-hover:scale-x-100" />
             </span>
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="transition-transform duration-300 group-hover:-translate-y-1">
-              <path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+              className="transition-transform duration-300 group-hover:-translate-y-1"
+            >
+              <path
+                d="M8 13V3M3.5 7.5 8 3l4.5 4.5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </a>
         </div>

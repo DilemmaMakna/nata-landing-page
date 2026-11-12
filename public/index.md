@@ -26,7 +26,7 @@ Asisten harian langsung di chat pribadimu. Terima rangkuman pagi setiap jam 7. B
 
 | Paket | Harga | Isi |
 |---|---|---|
-| Paket Mulai Dulu | Rp15.000 per bulan (diskon dari Rp25.000) | Akses aplikasi Android, dashboard Today's Focus, hitung mundur batas waktu tugas, pelacakan Skor Produktivitas harian |
+| Paket Mulai Dulu | Gratis | Akses aplikasi Android, dashboard Today's Focus, hitung mundur batas waktu tugas, pelacakan Skor Produktivitas harian |
 | Paket On Track | Segera hadir | Semua fitur Mulai Dulu, WhatsApp Daily Digest setiap pagi, balas chat WhatsApp untuk coret dan tambah tugas, pengingat batas waktu mendesak ke nomor pribadi |
 
 ## Tanya jawab
@@ -56,5 +56,5 @@ Kunjungi https://nataku.dilemma-makna.com/support atau chat WhatsApp untuk menda
 ## Kontak
 
 - Email: hello@dilemma-makna.com
-- WhatsApp: +62 813-8360-0844
+- WhatsApp: +62 851-4492-2167
 - Alamat: Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya, Bogor Barat, Kota Bogor, Jawa Barat

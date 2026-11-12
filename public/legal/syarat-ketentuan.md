@@ -103,7 +103,7 @@ Kami dapat memperbarui ketentuan ini. Perubahan material diberitahukan melalui a
 
 ## 12. Hukum yang Berlaku dan Penyelesaian Sengketa
 
-Ketentuan ini tunduk pada hukum Republik Indonesia. Sengketa diselesaikan terlebih dahulu secara musyawarah dalam 30 hari sejak pemberitahuan tertulis. Jika tidak tercapai, sengketa diselesaikan melalui [PENGADILAN NEGERI YANG BERWENANG], tanpa mengurangi hak Anda sebagai konsumen untuk mengadu ke Badan Penyelesaian Sengketa Konsumen (BPSK) atau lembaga berwenang lainnya.
+Ketentuan ini tunduk pada hukum Republik Indonesia. Sengketa diselesaikan terlebih dahulu secara musyawarah dalam 30 hari sejak pemberitahuan tertulis. Jika tidak tercapai, sengketa diselesaikan melalui Pengadilan Negeri Bogor, tanpa mengurangi hak Anda sebagai konsumen untuk mengadu ke Badan Penyelesaian Sengketa Konsumen (BPSK) atau lembaga berwenang lainnya.
 
 ## 13. Ketentuan Umum
 
@@ -116,5 +116,5 @@ Ketentuan ini tunduk pada hukum Republik Indonesia. Sengketa diselesaikan terleb
 
 - Tim Hukum dan Dukungan: hello@dilemma-makna.com
 - Situs web: dilemma-makna.com
-- Telepon/WhatsApp: +62 813-8360-0844
+- Telepon/WhatsApp: +62 851-4492-2167
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat

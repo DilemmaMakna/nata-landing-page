@@ -36,7 +36,7 @@ export const TOKENS = {
     },
     warning: {
       50: '#F3AE54', // Amber Countdown
-    }
+    },
   },
   typography: {
     display: "'Source Serif 4', Georgia, serif",
@@ -45,5 +45,5 @@ export const TOKENS = {
   transitions: {
     figmaBezier: 'cubic-bezier(0.534, 0, 0.58, 1)',
     spring: 'cubic-bezier(0.2, 0.8, 0.2, 1)',
-  }
+  },
 } as const;

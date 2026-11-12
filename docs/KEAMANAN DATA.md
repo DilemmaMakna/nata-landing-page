@@ -76,5 +76,5 @@ Kebijakan ini ditinjau minimal setiap 12 bulan atau saat terjadi perubahan siste
 14. Kontak
 Keamanan dan DPO: hello@dilemma-makna.com
 Situs web: dilemma-makna.com
-Telepon/WhatsApp: +62 813-8360-0844
+Telepon/WhatsApp: +62 851-4492-2167
 PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat

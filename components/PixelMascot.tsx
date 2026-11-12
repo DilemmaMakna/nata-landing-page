@@ -72,14 +72,17 @@ function buildPaths(frame: 0 | 1, blink: boolean): [Ch, string][] {
     let x = 0;
     while (x < row.length) {
       const c = row[x];
-      if (c === '.') { x++; continue; }
+      if (c === '.') {
+        x++;
+        continue;
+      }
       let len = 1;
       while (row[x + len] === c) len++;
       d[c as Ch] = (d[c as Ch] ?? '') + `M${x} ${y}h${len}v1h-${len}z`;
       x += len;
     }
   });
-  const out = (Object.entries(d) as [Ch, string][]);
+  const out = Object.entries(d) as [Ch, string][];
   cache.set(key, out);
   return out;
 }

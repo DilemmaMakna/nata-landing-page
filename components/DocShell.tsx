@@ -39,7 +39,9 @@ export default function DocShell({
       <Navbar solid />
 
       <main className="mx-auto max-w-[1136px] px-5 pb-24 pt-28 sm:px-6 sm:pt-32 lg:px-0">
-        <span className="inline-flex rounded-[6px] bg-[#FFE4DE] px-2.5 py-1 text-[12px] font-medium leading-[16px] text-[#D93510]">{eyebrow}</span>
+        <span className="inline-flex rounded-[6px] bg-[#FFE4DE] px-2.5 py-1 text-[12px] font-medium leading-[16px] text-[#D93510]">
+          {eyebrow}
+        </span>
         <h1 className="mt-3 text-[34px] font-bold leading-[1.1] tracking-[-0.035em] sm:text-[48px]">{title}</h1>
         {intro && <p className="mt-4 max-w-[640px] text-[17px] leading-[1.6] text-[#57534E]">{intro}</p>}
 
@@ -63,12 +65,18 @@ export default function DocShell({
           ))}
         </nav>
 
-        {/* `aside` dipasang sekali; di mobile tampil di atas konten (order-first), di desktop jadi kolom kanan. */}
-        <div className={`mt-8 flex flex-col ${aside ? 'lg:grid lg:grid-cols-[minmax(0,1fr)_260px] lg:items-start lg:gap-10' : ''}`}>
-          <div className="min-w-0 lg:col-start-1 lg:row-start-1">
+        {/* `aside` dipasang sekali; di mobile tampil di atas konten (order-first), di desktop jadi kolom kiri sticky. */}
+        <div
+          className={`mt-8 flex flex-col ${aside ? 'lg:grid lg:grid-cols-[260px_minmax(0,1fr)] lg:items-start lg:gap-10' : ''}`}
+        >
+          <div className="min-w-0 lg:col-start-2 lg:row-start-1">
             <div className="rounded-[24px] border border-[#EDE6E0] bg-white p-6 sm:p-10">{children}</div>
           </div>
-          {aside && <div className="order-first lg:sticky lg:top-24 lg:order-none lg:col-start-2 lg:row-start-1 lg:self-start">{aside}</div>}
+          {aside && (
+            <div className="order-first lg:sticky lg:top-24 lg:order-none lg:col-start-1 lg:row-start-1 lg:self-start">
+              {aside}
+            </div>
+          )}
         </div>
       </main>
 

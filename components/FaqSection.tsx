@@ -17,13 +17,9 @@ export default function FaqSection() {
   };
 
   return (
-    <section
-      id="faq"
-      className="w-full bg-[#FFFFFF] py-20 lg:py-24 relative overflow-hidden"
-    >
+    <section id="faq" className="w-full bg-[#FFFFFF] py-20 lg:py-24 relative overflow-hidden">
       <div className="w-full max-w-[1136px] mx-auto px-4 sm:px-6 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
-          
           {/* Sisi Kiri: Header (Figma Frame 1: 552px) */}
           <div className="lg:col-span-6 flex flex-col justify-start max-w-[552px]">
             <h2 className="font-satoshi font-bold text-3xl sm:text-4xl lg:text-[48px] leading-[1.16] tracking-tight text-[#F0441E] mb-3">
@@ -77,7 +73,7 @@ export default function FaqSection() {
                     <div
                       className="grid transition-all duration-300 ease-in-out"
                       style={{
-                        gridTemplateRows: isOpen ? '1fr' : '0fr'
+                        gridTemplateRows: isOpen ? '1fr' : '0fr',
                       }}
                     >
                       <div className="overflow-hidden">
@@ -94,5 +90,5 @@ export default function FaqSection() {
         </div>
       </div>
     </section>
-);
+  );
 }

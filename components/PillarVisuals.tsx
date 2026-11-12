@@ -65,7 +65,13 @@ export function TodayFocusVisual() {
           <div className="font-serif text-[15px] leading-none">Skor Mingguan</div>
           <div className="mt-1 flex items-center gap-1.5">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M4 12 12 4M6 4h6v6" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                d="M4 12 12 4M6 4h6v6"
+                stroke="#fff"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
             <span className="text-[26px] font-bold leading-none tracking-[-0.02em]">4 Point</span>
           </div>
@@ -144,8 +150,24 @@ export function CalendarVisual() {
         <div className="flex items-center justify-between border-b border-[#F1ECE8] pb-2">
           <span className="font-serif text-[16px] font-medium text-[#1F1B16]">Desember 2025</span>
           <span className="flex gap-3 text-[#78716C]">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3 5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="m6 3 5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M10 3 5 8l5 5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path
+                d="m6 3 5 5-5 5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </span>
         </div>
         <div className="mt-2 grid grid-cols-7 gap-1.5 text-center text-[10px] text-[#A8A29E]">
@@ -183,20 +205,34 @@ export function CalendarVisual() {
         <div className="mt-2 flex gap-2 text-center text-[9px] text-[#A8A29E]">
           <div>
             <div>Sen</div>
-            <div className="mt-1 flex h-[28px] w-[26px] items-center justify-center rounded-[6px] bg-[#F5F2EF] text-[11px] text-[#44403C]">26</div>
+            <div className="mt-1 flex h-[28px] w-[26px] items-center justify-center rounded-[6px] bg-[#F5F2EF] text-[11px] text-[#44403C]">
+              26
+            </div>
           </div>
           <div>
             <div className="font-medium text-[#FF6A33]">Sel</div>
-            <div className="mt-1 flex h-[28px] w-[26px] items-center justify-center rounded-[6px] bg-[#FF6A33] text-[11px] font-medium text-white">26</div>
+            <div className="mt-1 flex h-[28px] w-[26px] items-center justify-center rounded-[6px] bg-[#FF6A33] text-[11px] font-medium text-white">
+              26
+            </div>
           </div>
           <div>
             <div>Rab</div>
-            <div className="mt-1 flex h-[28px] w-[26px] items-center justify-center rounded-[6px] bg-[#F5F2EF] text-[11px] text-[#44403C]">26</div>
+            <div className="mt-1 flex h-[28px] w-[26px] items-center justify-center rounded-[6px] bg-[#F5F2EF] text-[11px] text-[#44403C]">
+              26
+            </div>
           </div>
         </div>
       </div>
       <div className="absolute left-[355px] top-[142px] flex w-[145px] items-center gap-2 overflow-hidden rounded-[10px] bg-[#FF6A33] px-3 py-3 text-[9px] text-white">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0"><path d="M8 2 1.5 13.5h13L8 2Zm0 4.5v3.5m0 1.7v.1" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
+          <path
+            d="M8 2 1.5 13.5h13L8 2Zm0 4.5v3.5m0 1.7v.1"
+            stroke="#fff"
+            strokeWidth="1.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
         <div className="min-w-0 flex-1">
           <div className="whitespace-nowrap">Luangkan Waktu</div>
           <div className="mt-1 h-[3px] rounded-full bg-white/40" />
@@ -226,7 +262,15 @@ export function WhatsAppVisual() {
       {/* Main chat window */}
       <div className="absolute left-0 top-0 w-[300px] overflow-hidden rounded-[10px] bg-[#EAE3DC] shadow-[0_8px_28px_rgba(0,0,0,0.18)]">
         <div className="flex items-center gap-2 bg-[#075E54] px-3 py-2.5 text-white">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 8H3m4.5-4.5L3 8l4.5 4.5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M13 8H3m4.5-4.5L3 8l4.5 4.5"
+              stroke="#fff"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
           <span className="flex h-7 w-7 items-center justify-center rounded-[8px] bg-[#FFF4F2]">
             <span className="h-3.5 w-3.5 rounded-[3px] bg-[#075E54]" />
           </span>

@@ -10,7 +10,7 @@ Nama badan hukum: PT Masih Dilemma Makna (dikenal dengan nama dagang Lemma Berce
 Alamat: Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat
 Nomor Induk Berusaha (NIB): 1105260028169
 Situs web: dilemma-makna.com
-Telepon/WhatsApp: +62 813-8360-0844
+Telepon/WhatsApp: +62 851-4492-2167
 Kontak Pelindungan Data (DPO): hello@dilemma-makna.com
 Kami memproses data pribadi sesuai Undang-Undang No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP) dan peraturan turunannya, serta ketentuan kebijakan Google Play, termasuk formulir Data Safety.
 
@@ -106,6 +106,6 @@ Pertanyaan, keluhan, atau permintaan terkait data pribadi:
 
 Petugas Pelindungan Data (DPO): hello@dilemma-makna.com
 Situs web: dilemma-makna.com
-Telepon/WhatsApp: +62 813-8360-0844
+Telepon/WhatsApp: +62 851-4492-2167
 PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Desa/Kelurahan Balumbang Jaya, Kec. Bogor Barat, Kota Bogor, Provinsi Jawa Barat
 Jika Anda merasa hak Anda tidak terpenuhi, Anda dapat mengadukan ke lembaga pelindungan data pribadi yang berwenang di Indonesia.

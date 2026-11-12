@@ -38,18 +38,44 @@ export default function LanguageMenu({ light }: { light: boolean }) {
           light ? 'text-[#FFF4F2] hover:bg-white/15' : 'text-[#57534E] hover:bg-[#F5F2EF]'
         }`}
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
           <circle cx="12" cy="12" r="9" />
           <path d="M3 12h18M12 3c2.6 2.4 4 5.6 4 9s-1.4 6.6-4 9c-2.6-2.4-4-5.6-4-9s1.4-6.6 4-9Z" />
         </svg>
         <span className="uppercase">{locale}</span>
-        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true" className={`transition-transform ${open ? 'rotate-180' : ''}`}>
-          <path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 12 12"
+          fill="none"
+          aria-hidden="true"
+          className={`transition-transform ${open ? 'rotate-180' : ''}`}
+        >
+          <path
+            d="m2.5 4.5 3.5 3.5 3.5-3.5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       </button>
 
       {open && (
-        <ul role="menu" className="absolute right-0 top-[calc(100%+8px)] z-10 min-w-[170px] overflow-hidden rounded-[12px] border border-stone-200 bg-white p-1 shadow-[0_12px_32px_rgba(0,0,0,0.12)]">
+        <ul
+          role="menu"
+          className="absolute right-0 top-[calc(100%+8px)] z-10 min-w-[170px] overflow-hidden rounded-[12px] border border-stone-200 bg-white p-1 shadow-[0_12px_32px_rgba(0,0,0,0.12)]"
+        >
           {OPTIONS.map((l) => (
             <li key={l} role="none">
               <button
@@ -67,7 +93,13 @@ export default function LanguageMenu({ light }: { light: boolean }) {
                 {t.lang[l]}
                 {l === locale && (
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="m3.5 8.5 3 3 6-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path
+                      d="m3.5 8.5 3 3 6-7"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 )}
               </button>

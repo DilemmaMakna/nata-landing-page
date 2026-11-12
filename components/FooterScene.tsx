@@ -173,16 +173,26 @@ export default function FooterScene() {
   const allDone = count === N;
 
   return (
-    <div ref={laneRef} className="relative h-[176px] w-full select-none" role="img" aria-label="Nata, maskot Nataku, mencentang daftar tugas">
+    <div
+      ref={laneRef}
+      className="relative h-[176px] w-full select-none"
+      role="img"
+      aria-label="Nata, maskot Nataku, mencentang daftar tugas"
+    >
       {/* Meter Skor Produktivitas */}
       <div className="absolute left-0 top-0 flex items-center gap-2 font-satoshi text-[12px] text-[#57534E]">
         <span className="flex gap-[3px]" aria-hidden="true">
           {done.map((d, i) => (
-            <i key={i} className={`block h-[10px] w-[10px] border-2 transition-colors duration-200 ${d ? 'border-[#1F8A5B] bg-[#1F8A5B]' : 'border-[#1F1B16]/30 bg-transparent'}`} />
+            <i
+              key={i}
+              className={`block h-[10px] w-[10px] border-2 transition-colors duration-200 ${d ? 'border-[#1F8A5B] bg-[#1F8A5B]' : 'border-[#1F1B16]/30 bg-transparent'}`}
+            />
           ))}
         </span>
         <span className="font-medium">{allDone ? t.footer.scene.done : t.footer.scene.score}</span>
-        <span className="tabular-nums text-[#A8A29E]">{count}/{N}</span>
+        <span className="tabular-nums text-[#A8A29E]">
+          {count}/{N}
+        </span>
       </div>
 
       {/* Lantai */}
@@ -201,13 +211,21 @@ export default function FooterScene() {
         tasks.map((f, i) => {
           const d = done[i];
           return (
-            <div key={i} className="absolute" style={{ left: sw / 2 + f * Math.max(0, width - sw), bottom: FLOOR, transform: 'translateX(-50%)' }}>
+            <div
+              key={i}
+              className="absolute"
+              style={{ left: sw / 2 + f * Math.max(0, width - sw), bottom: FLOOR, transform: 'translateX(-50%)' }}
+            >
               <div
                 className={`flex h-[34px] w-[58px] items-center gap-1.5 border-2 px-1.5 transition-colors duration-200 ${
-                  d ? 'border-[#1F8A5B] bg-[#E3F6EC] shadow-[3px_3px_0_#1F8A5B]' : 'border-[#1F1B16] bg-white shadow-[3px_3px_0_#1F1B16]'
+                  d
+                    ? 'border-[#1F8A5B] bg-[#E3F6EC] shadow-[3px_3px_0_#1F8A5B]'
+                    : 'border-[#1F1B16] bg-white shadow-[3px_3px_0_#1F1B16]'
                 }`}
               >
-                <span className={`flex h-[16px] w-[16px] shrink-0 items-center justify-center border-2 ${d ? 'border-[#1F8A5B] bg-[#1F8A5B]' : 'border-[#1F1B16]'}`}>
+                <span
+                  className={`flex h-[16px] w-[16px] shrink-0 items-center justify-center border-2 ${d ? 'border-[#1F8A5B] bg-[#1F8A5B]' : 'border-[#1F1B16]'}`}
+                >
                   {d && <CheckPixel />}
                 </span>
                 <span className="flex flex-col gap-[3px]" aria-hidden="true">
@@ -215,7 +233,11 @@ export default function FooterScene() {
                   <i className={`block h-[3px] w-[11px] ${d ? 'bg-[#1F8A5B]/50' : 'bg-[#1F1B16]/30'}`} />
                 </span>
               </div>
-              {d && <span className="pm-plus absolute -top-1 left-1/2 font-satoshi text-[12px] font-bold text-[#1F8A5B]">+1</span>}
+              {d && (
+                <span className="pm-plus absolute -top-1 left-1/2 font-satoshi text-[12px] font-bold text-[#1F8A5B]">
+                  +1
+                </span>
+              )}
             </div>
           );
         })}
@@ -223,14 +245,21 @@ export default function FooterScene() {
       {/* Nata */}
       <div ref={spriteRef} className="absolute left-0 will-change-transform" style={{ bottom: FLOOR, width: sw }}>
         <div ref={flipRef}>
-          <div className={mood === 'hop' ? 'pm-hop' : mood === 'cheer' ? 'pm-cheer' : ''} style={mood === 'walk' ? { transform: `translateY(${bob}px)` } : undefined}>
+          <div
+            className={mood === 'hop' ? 'pm-hop' : mood === 'cheer' ? 'pm-cheer' : ''}
+            style={mood === 'walk' ? { transform: `translateY(${bob}px)` } : undefined}
+          >
             <PixelMascot px={px} frame={frame} blink={blink} />
           </div>
         </div>
         {mood === 'cheer' && (
           <div className="pointer-events-none absolute left-1/2 top-0" aria-hidden="true">
             {SPARKS.map((s, i) => (
-              <i key={i} className="pm-spark absolute block h-[6px] w-[6px]" style={{ left: s.x, background: s.c, animationDelay: `${s.d}s` }} />
+              <i
+                key={i}
+                className="pm-spark absolute block h-[6px] w-[6px]"
+                style={{ left: s.x, background: s.c, animationDelay: `${s.d}s` }}
+              />
             ))}
           </div>
         )}
