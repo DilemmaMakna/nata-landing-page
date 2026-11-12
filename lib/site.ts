@@ -25,3 +25,9 @@ export const SUPPORT = {
   responseTime: '3 x 24 jam (hari kerja)',
   deletionDeadline: '30 hari',
 };
+
+// Link toko untuk tombol CTA navbar. Placeholder sampai listing Play Store dan App Store live.
+export const STORE_LINKS = {
+  android: 'https://play.google.com/store/apps/details?id=com.lemma.nataku',
+  ios: 'https://apps.apple.com/app/nataku/id0000000000',
+};

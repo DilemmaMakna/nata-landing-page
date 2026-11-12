@@ -1,5 +1,5 @@
 'use client';
-import ProtectedContact from '@/components/ui/ProtectedContact';
+import AppDownloadDialog from '@/components/AppDownloadDialog';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -51,10 +51,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
         <div className="order-2 ml-auto flex items-center gap-1.5 sm:gap-2 md:ml-0">
         <LanguageMenu light={!scrolled} />
         {/* CTA Button (Figma 42:10369: rounded-[6px], bg-white/10, NO SHADOW, NOT full rounded) */}
-        <ProtectedContact
-          channel="nataku" navigate
-
-
+        <AppDownloadDialog
           className={`h-9 px-4 rounded-[6px] font-satoshi font-medium text-[15px] tracking-[-0.01em] transition-all duration-200 max-sm:hidden flex items-center justify-center whitespace-nowrap shadow-none ${
             scrolled
               ? 'bg-[#F0441E] hover:bg-[#D93815] text-white'
@@ -62,7 +59,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
           }`}
         >
           {t.nav.cta}
-        </ProtectedContact>
+        </AppDownloadDialog>
         </div>
       </div>
     </header>
