@@ -21,12 +21,14 @@ export async function POST(request: Request) {
   } catch {
     return reply({ error: 'Forbidden' }, 403);
   }
-  if (!request.headers.get('content-type')?.includes('application/json')) return reply({ error: 'Unsupported media type' }, 415);
+  if (!request.headers.get('content-type')?.includes('application/json'))
+    return reply({ error: 'Unsupported media type' }, 415);
 
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
   const now = Date.now();
   const hit = hits.get(ip);
-  if (hit && hit.until > now && hit.count >= 5) return reply({ error: 'Terlalu banyak percobaan. Coba lagi beberapa menit lagi.' }, 429);
+  if (hit && hit.until > now && hit.count >= 5)
+    return reply({ error: 'Terlalu banyak percobaan. Coba lagi beberapa menit lagi.' }, 429);
   if (!hit || hit.until <= now) {
     if (hits.size >= 5000) hits.delete(hits.keys().next().value!);
     hits.set(ip, { count: 1, until: now + 10 * 60_000 });
@@ -45,8 +47,10 @@ export async function POST(request: Request) {
     const scope = b.scope === 'data' ? 'data' : 'account';
     const reason = typeof b.reason === 'string' ? b.reason.trim().slice(0, 500) : '';
 
-    if (!EMAIL.test(email) || email.length > 254) return reply({ error: 'Masukkan email akun Nataku yang valid.' }, 400);
-    if (whatsapp && (whatsapp.length < 9 || whatsapp.length > 15)) return reply({ error: 'Format nomor WhatsApp tidak valid.' }, 400);
+    if (!EMAIL.test(email) || email.length > 254)
+      return reply({ error: 'Masukkan email akun Nataku yang valid.' }, 400);
+    if (whatsapp && (whatsapp.length < 9 || whatsapp.length > 15))
+      return reply({ error: 'Format nomor WhatsApp tidak valid.' }, 400);
     if (b.confirm !== true) return reply({ error: 'Centang pernyataan konfirmasi untuk melanjutkan.' }, 400);
 
     const entry = {

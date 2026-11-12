@@ -76,99 +76,140 @@ export default function PillarsSection() {
         <div className="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 lg:px-[72px] pt-[76px] pb-6 sm:pb-8 select-none">
           {/* 3 Overlapping Cards Deck Container: Fills viewport height */}
           <div className="relative w-full max-w-[1136px] h-[calc(100dvh-100px)] max-h-[660px] min-h-[460px]">
-          
-          {/* Card 1: Today's Focus (Red-Orange #F0441E) - Flat, No Shadow, Maximized Content */}
-          <div
-            className="absolute inset-x-0 top-0 w-full h-[calc(100%-36px)] sm:h-[calc(100%-48px)] rounded-[20px] sm:rounded-[28px] bg-[#F0441E] text-white overflow-hidden will-change-transform select-none shadow-none"
-            style={{ zIndex: 10 }}
-          >
-            {/* Inner Dashed Border Frame */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 p-3 sm:p-4 lg:p-5" preserveAspectRatio="none">
-              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="22" fill="none" stroke="#9BA2B8" strokeWidth="1.5" strokeDasharray="12 12" strokeOpacity="0.85" />
-            </svg>
+            {/* Card 1: Today's Focus (Red-Orange #F0441E) - Flat, No Shadow, Maximized Content */}
+            <div
+              className="absolute inset-x-0 top-0 w-full h-[calc(100%-36px)] sm:h-[calc(100%-48px)] rounded-[20px] sm:rounded-[28px] bg-[#F0441E] text-white overflow-hidden will-change-transform select-none shadow-none"
+              style={{ zIndex: 10 }}
+            >
+              {/* Inner Dashed Border Frame */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none z-10 p-3 sm:p-4 lg:p-5"
+                preserveAspectRatio="none"
+              >
+                <rect
+                  x="1"
+                  y="1"
+                  width="calc(100% - 2px)"
+                  height="calc(100% - 2px)"
+                  rx="22"
+                  fill="none"
+                  stroke="#9BA2B8"
+                  strokeWidth="1.5"
+                  strokeDasharray="12 12"
+                  strokeOpacity="0.85"
+                />
+              </svg>
 
-            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-6 sm:py-8 lg:py-10">
-              <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
-                <h3 className="font-satoshi font-medium text-white text-[22px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
-                  Today's Focus
-                </h3>
-                <h4 className="font-satoshi font-normal text-[#FFF4F2] text-[13px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
-                  {t.pillars.focus.tagline}
-                </h4>
-                <p className="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[12px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px] ">
-                  {t.pillars.focus.body}
-                </p>
+              <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-6 sm:py-8 lg:py-10">
+                <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
+                  <h3 className="font-satoshi font-medium text-white text-[22px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
+                    Today's Focus
+                  </h3>
+                  <h4 className="font-satoshi font-normal text-[#FFF4F2] text-[13px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
+                    {t.pillars.focus.tagline}
+                  </h4>
+                  <p className="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[12px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px] ">
+                    {t.pillars.focus.body}
+                  </p>
+                </div>
+                <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
+                  <TodayFocusVisual />
+                </div>
               </div>
-              <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
-                <TodayFocusVisual />
+            </div>
+
+            {/* Card 2: Calendar Integrated (Emerald Green #047857) - Flat, No Shadow, Maximized Content */}
+            <div
+              className="absolute inset-x-0 top-0 w-full h-[calc(100%-36px)] sm:h-[calc(100%-48px)] rounded-[20px] sm:rounded-[28px] bg-[#047857] text-white overflow-hidden will-change-transform select-none shadow-none"
+              style={{
+                zIndex: 20,
+                transform: `translateY(${y2}px)`,
+              }}
+            >
+              {/* Inner Dashed Border Frame */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none z-10 p-3 sm:p-4 lg:p-5"
+                preserveAspectRatio="none"
+              >
+                <rect
+                  x="1"
+                  y="1"
+                  width="calc(100% - 2px)"
+                  height="calc(100% - 2px)"
+                  rx="22"
+                  fill="none"
+                  stroke="#9BA2B8"
+                  strokeWidth="1.5"
+                  strokeDasharray="12 12"
+                  strokeOpacity="0.85"
+                />
+              </svg>
+
+              <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-6 sm:py-8 lg:py-10">
+                <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
+                  <h3 className="font-satoshi font-medium text-white text-[22px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
+                    Calendar Integrated
+                  </h3>
+                  <h4 className="font-satoshi font-normal text-[#FFF4F2] text-[13px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
+                    {t.pillars.calendar.tagline}
+                  </h4>
+                  <p className="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[12px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px] ">
+                    {t.pillars.calendar.body}
+                  </p>
+                </div>
+                <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
+                  <CalendarVisual />
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: WhatsApp Daily (Blue #0369A1) - Flat, No Shadow, Maximized Content */}
+            <div
+              className="absolute inset-x-0 top-0 w-full h-[calc(100%-36px)] sm:h-[calc(100%-48px)] rounded-[20px] sm:rounded-[28px] bg-[#0369A1] text-white overflow-hidden will-change-transform select-none shadow-none"
+              style={{
+                zIndex: 30,
+                transform: `translateY(${y3}px)`,
+              }}
+            >
+              {/* Inner Dashed Border Frame */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none z-10 p-3 sm:p-4 lg:p-5"
+                preserveAspectRatio="none"
+              >
+                <rect
+                  x="1"
+                  y="1"
+                  width="calc(100% - 2px)"
+                  height="calc(100% - 2px)"
+                  rx="22"
+                  fill="none"
+                  stroke="#9BA2B8"
+                  strokeWidth="1.5"
+                  strokeDasharray="12 12"
+                  strokeOpacity="0.85"
+                />
+              </svg>
+
+              <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-6 sm:py-8 lg:py-10">
+                <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
+                  <h3 className="font-satoshi font-medium text-white text-[22px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
+                    WhatsApp Daily &amp;
+                    <br className="hidden sm:inline" /> Quick Action
+                  </h3>
+                  <h4 className="font-satoshi font-normal text-[#FFF4F2] text-[13px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
+                    {t.pillars.whatsapp.tagline}
+                  </h4>
+                  <p className="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[12px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px] ">
+                    {t.pillars.whatsapp.body}
+                  </p>
+                </div>
+                <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
+                  <WhatsAppVisual />
+                </div>
               </div>
             </div>
           </div>
-
-          {/* Card 2: Calendar Integrated (Emerald Green #047857) - Flat, No Shadow, Maximized Content */}
-          <div
-            className="absolute inset-x-0 top-0 w-full h-[calc(100%-36px)] sm:h-[calc(100%-48px)] rounded-[20px] sm:rounded-[28px] bg-[#047857] text-white overflow-hidden will-change-transform select-none shadow-none"
-            style={{
-              zIndex: 20,
-              transform: `translateY(${y2}px)`,
-            }}
-          >
-            {/* Inner Dashed Border Frame */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 p-3 sm:p-4 lg:p-5" preserveAspectRatio="none">
-              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="22" fill="none" stroke="#9BA2B8" strokeWidth="1.5" strokeDasharray="12 12" strokeOpacity="0.85" />
-            </svg>
-
-            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-6 sm:py-8 lg:py-10">
-              <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
-                <h3 className="font-satoshi font-medium text-white text-[22px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
-                  Calendar Integrated
-                </h3>
-                <h4 className="font-satoshi font-normal text-[#FFF4F2] text-[13px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
-                  {t.pillars.calendar.tagline}
-                </h4>
-                <p className="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[12px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px] ">
-                  {t.pillars.calendar.body}
-                </p>
-              </div>
-              <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
-                <CalendarVisual />
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3: WhatsApp Daily (Blue #0369A1) - Flat, No Shadow, Maximized Content */}
-          <div
-            className="absolute inset-x-0 top-0 w-full h-[calc(100%-36px)] sm:h-[calc(100%-48px)] rounded-[20px] sm:rounded-[28px] bg-[#0369A1] text-white overflow-hidden will-change-transform select-none shadow-none"
-            style={{
-              zIndex: 30,
-              transform: `translateY(${y3}px)`,
-            }}
-          >
-            {/* Inner Dashed Border Frame */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 p-3 sm:p-4 lg:p-5" preserveAspectRatio="none">
-              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="22" fill="none" stroke="#9BA2B8" strokeWidth="1.5" strokeDasharray="12 12" strokeOpacity="0.85" />
-            </svg>
-
-            <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center h-full px-6 sm:px-9 lg:px-12 py-6 sm:py-8 lg:py-10">
-              <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-4">
-                <h3 className="font-satoshi font-medium text-white text-[22px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-[-0.035em] mb-2 sm:mb-2.5">
-                  WhatsApp Daily &amp;<br className="hidden sm:inline" /> Quick Action
-                </h3>
-                <h4 className="font-satoshi font-normal text-[#FFF4F2] text-[13px] sm:text-[19px] md:text-[21px] xl:text-[23px] leading-[1.26] tracking-tight mb-2 sm:mb-2.5">
-                  {t.pillars.whatsapp.tagline}
-                </h4>
-                <p className="font-satoshi font-normal sm:font-medium text-[#FFF4F2]/90 text-[12px] sm:text-[15px] md:text-[17px] xl:text-[19px] leading-[1.38] max-w-[500px] ">
-                  {t.pillars.whatsapp.body}
-                </p>
-              </div>
-              <div className="lg:col-span-6 flex items-center justify-center lg:justify-end h-full py-1">
-                <WhatsAppVisual />
-              </div>
-            </div>
-          </div>
-
         </div>
-      </div>
       </div>
     </section>
   );

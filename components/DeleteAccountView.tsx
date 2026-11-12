@@ -18,7 +18,11 @@ export default function DeleteAccountView() {
         <div className="space-y-8 text-[15px] leading-[1.65] text-[#57534E]">
           <section>
             <h2 className={h2}>{d.way1}</h2>
-            <p>{d.way1Body[0]}<strong>{d.way1Body[1]}</strong>{d.way1Body[2]}</p>
+            <p>
+              {d.way1Body[0]}
+              <strong>{d.way1Body[1]}</strong>
+              {d.way1Body[2]}
+            </p>
           </section>
           <section>
             <h2 className={h2}>{d.way2}</h2>
@@ -27,16 +31,31 @@ export default function DeleteAccountView() {
           <section>
             <h2 className={h2}>{d.deleted}</h2>
             <ul className="list-disc space-y-1 pl-5 marker:text-[#FF5000]">
-              {d.deletedItems.map((x) => <li key={x}>{x}</li>)}
+              {d.deletedItems.map((x) => (
+                <li key={x}>{x}</li>
+              ))}
             </ul>
           </section>
           <section>
             <h2 className={h2}>{d.kept}</h2>
-            <p>{d.keptBody}<Link href="/legal/privacy" className={link}>{d.privacyLink}</Link>.</p>
+            <p>
+              {d.keptBody}
+              <Link href="/legal/privacy" className={link}>
+                {d.privacyLink}
+              </Link>
+              .
+            </p>
           </section>
           <p>
-            {d.helpPre}<a href={`mailto:${SUPPORT.email}`} className={link}>{SUPPORT.email}</a>{d.helpMid}
-            <Link href="/support" className={link}>{d.helpLink}</Link>.
+            {d.helpPre}
+            <a href={`mailto:${SUPPORT.email}`} className={link}>
+              {SUPPORT.email}
+            </a>
+            {d.helpMid}
+            <Link href="/support" className={link}>
+              {d.helpLink}
+            </Link>
+            .
           </p>
         </div>
 

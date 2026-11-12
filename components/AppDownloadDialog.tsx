@@ -27,11 +27,20 @@ export default function AppDownloadDialog({ className, children }: { className: 
 
   return (
     <>
-      <button type="button" className={className} onClick={() => setOpen(true)} aria-haspopup="dialog" aria-expanded={open}>
+      <button
+        type="button"
+        className={className}
+        onClick={() => setOpen(true)}
+        aria-haspopup="dialog"
+        aria-expanded={open}
+      >
         {children}
       </button>
       {open && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#1F1B16]/50 p-5" onClick={() => setOpen(false)}>
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-[#1F1B16]/50 p-5"
+          onClick={() => setOpen(false)}
+        >
           <div
             role="dialog"
             aria-modal="true"

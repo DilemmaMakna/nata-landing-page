@@ -55,9 +55,20 @@ const id = {
       ['Terhubung', 'WhatsApp'],
     ],
     quote: [
-      'Setiap', 'pagi,', 'Nataku', 'ingatkan', 'tugas', 'prioritasmu',
-      'lewat', 'WhatsApp.', 'Cukup', 'balas', 'chat,', 'tugas',
-      'langsung', 'tercatat.',
+      'Setiap',
+      'pagi,',
+      'Nataku',
+      'ingatkan',
+      'tugas',
+      'prioritasmu',
+      'lewat',
+      'WhatsApp.',
+      'Cukup',
+      'balas',
+      'chat,',
+      'tugas',
+      'langsung',
+      'tercatat.',
     ],
   },
 
@@ -121,7 +132,8 @@ const id = {
   },
 
   footer: {
-    about: 'Nataku adalah produk digital mandiri yang dikembangkan dengan penuh perhatian oleh Lemma Bercerita (PT Masih Dilemma Makna).',
+    about:
+      'Nataku adalah produk digital mandiri yang dikembangkan dengan penuh perhatian oleh Lemma Bercerita (PT Masih Dilemma Makna).',
     madeBy: 'Dibuat oleh',
     lemma: 'Lemma merancang dan membangun produk digital yang bermakna.',
     links: 'Tautan Pendukung',
@@ -200,7 +212,8 @@ const id = {
       'Pengaturan dan riwayat Daily Digest WhatsApp.',
     ],
     kept: 'Apa yang mungkin disimpan',
-    keptBody: 'Catatan transaksi dan data lain yang wajib kami simpan menurut hukum dapat dipertahankan sebatas waktu yang diwajibkan, lalu dihapus atau dianonimkan. Rinciannya ada di ',
+    keptBody:
+      'Catatan transaksi dan data lain yang wajib kami simpan menurut hukum dapat dipertahankan sebatas waktu yang diwajibkan, lalu dihapus atau dianonimkan. Rinciannya ada di ',
     privacyLink: 'Kebijakan Privasi',
     helpPre: 'Butuh bantuan? Email ',
     helpMid: ' atau kunjungi ',
@@ -283,9 +296,27 @@ const en: Messages = {
       ['WhatsApp', 'Connected'],
     ],
     quote: [
-      'Every', 'morning,', 'Nataku', 'reminds', 'you', 'of', 'your', 'priority', 'tasks',
-      'on', 'WhatsApp.', 'Just', 'reply', 'to', 'the', 'chat,', 'and', 'tasks',
-      'are', 'logged', 'instantly.',
+      'Every',
+      'morning,',
+      'Nataku',
+      'reminds',
+      'you',
+      'of',
+      'your',
+      'priority',
+      'tasks',
+      'on',
+      'WhatsApp.',
+      'Just',
+      'reply',
+      'to',
+      'the',
+      'chat,',
+      'and',
+      'tasks',
+      'are',
+      'logged',
+      'instantly.',
     ],
   },
 
@@ -317,7 +348,7 @@ const en: Messages = {
       name: 'Starter Plan',
       tagline: 'Best for getting to know Nataku',
       desc: 'For those who want to tidy up their tasks and track deadlines on their own on an Android phone.',
-      
+
       perMonth: '/ month',
       items: [
         'Access to the Nataku Android app',
@@ -429,7 +460,8 @@ const en: Messages = {
       'WhatsApp Daily Digest settings and history.',
     ],
     kept: 'What may be retained',
-    keptBody: 'Transaction records and other data we are legally required to keep may be retained for the legally required period, then deleted or anonymized. Details are in the ',
+    keptBody:
+      'Transaction records and other data we are legally required to keep may be retained for the legally required period, then deleted or anonymized. Details are in the ',
     privacyLink: 'Privacy Policy',
     helpPre: 'Need help? Email ',
     helpMid: ' or visit the ',
@@ -441,7 +473,8 @@ const en: Messages = {
       waOpt: '(optional, if used for the Daily Digest)',
       scope: 'What to delete',
       scopeAccount: 'Account and all data',
-      scopeAccountDesc: 'Your account is closed permanently along with your tasks, schedules, habits, and WhatsApp number.',
+      scopeAccountDesc:
+        'Your account is closed permanently along with your tasks, schedules, habits, and WhatsApp number.',
       scopeData: 'Specific data only',
       scopeDataDesc: 'Your account stays active. Describe the data to delete in the notes field below.',
       note: 'Notes',

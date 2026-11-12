@@ -7,11 +7,13 @@ import type { LegalDocId } from '@/lib/legal-content';
 const META: Record<LegalDocId, { title: string; description: string }> = {
   privacy: {
     title: 'Kebijakan Privasi',
-    description: 'Bagaimana Nataku mengumpulkan, menggunakan, menyimpan, dan melindungi data pribadi Anda, termasuk hak Anda atas data tersebut.',
+    description:
+      'Bagaimana Nataku mengumpulkan, menggunakan, menyimpan, dan melindungi data pribadi Anda, termasuk hak Anda atas data tersebut.',
   },
   terms: {
     title: 'Syarat dan Ketentuan',
-    description: 'Syarat dan ketentuan penggunaan layanan Nataku, termasuk langganan, pembayaran, dan batasan tanggung jawab.',
+    description:
+      'Syarat dan ketentuan penggunaan layanan Nataku, termasuk langganan, pembayaran, dan batasan tanggung jawab.',
   },
   security: {
     title: 'Keamanan Data',

@@ -46,14 +46,14 @@ export default function ProblemFeatureSection() {
 
   // ponytail: desktop uses exact original Figma formula; mobile adapts to avoid off-screen overflow
   const isMobile = viewportDims.w < 640;
-  const offsetX = isMobile ? Math.round((viewportDims.w / 2) - 62.5 + 22) : Math.max(240, (viewportDims.w / 2) - 55);
-  const offsetY = isMobile ? Math.round((viewportDims.h / 2) - 55 + 20) : Math.max(180, (viewportDims.h / 2) - 48);
+  const offsetX = isMobile ? Math.round(viewportDims.w / 2 - 62.5 + 22) : Math.max(240, viewportDims.w / 2 - 55);
+  const offsetY = isMobile ? Math.round(viewportDims.h / 2 - 55 + 20) : Math.max(180, viewportDims.h / 2 - 48);
 
   const corners = [
     { x: -offsetX, y: -offsetY, rot: 0 },
-    { x: offsetX,  y: -offsetY, rot: 0 },
-    { x: -offsetX, y: offsetY,  rot: 0 },
-    { x: offsetX,  y: offsetY,  rot: 0 },
+    { x: offsetX, y: -offsetY, rot: 0 },
+    { x: -offsetX, y: offsetY, rot: 0 },
+    { x: offsetX, y: offsetY, rot: 0 },
   ];
 
   // =========================================================================
@@ -71,8 +71,8 @@ export default function ProblemFeatureSection() {
     headlineScale = Math.max(0, 1.0 - 0.45 * tHead);
     headlineOpacity = Math.max(0, 1.0 - tHead * 1.3);
 
-    if (p < 0.20) {
-      const tCard = p / 0.20;
+    if (p < 0.2) {
+      const tCard = p / 0.2;
       const easeCard = tCard * tCard * (3 - 2 * tCard);
       cardsInterp = corners.map((c) => ({
         x: c.x * (1 - easeCard),
@@ -106,21 +106,26 @@ export default function ProblemFeatureSection() {
   // Step distance S = 118px (~86px height + ~32px clear gap)
   // =========================================================================
   const S = isMobile ? 70 : 118; // ponytail: mobile pill spacing
-  let y1 = 150, op1 = 0;
-  let y2 = 190, op2 = 0;
-  let y3 = 230, op3 = 0;
+  let y1 = 150,
+    op1 = 0;
+  let y2 = 190,
+    op2 = 0;
+  let y3 = 230,
+    op3 = 0;
   let part2Opacity = 1.0;
   let part2Scale = 1.0;
 
   if (p < 0.26) {
-    op1 = 0; op2 = 0; op3 = 0;
+    op1 = 0;
+    op2 = 0;
+    op3 = 0;
   } else if (p < 0.36) {
-    const t1 = Math.max(0, Math.min(1, (p - 0.26) / 0.10));
+    const t1 = Math.max(0, Math.min(1, (p - 0.26) / 0.1));
     const ease1 = 1 - Math.pow(1 - t1, 3);
     y1 = (1 - ease1) * 150;
     op1 = ease1;
   } else if (p < 0.46) {
-    const t2 = Math.max(0, Math.min(1, (p - 0.36) / 0.10));
+    const t2 = Math.max(0, Math.min(1, (p - 0.36) / 0.1));
     const ease2 = 1 - Math.pow(1 - t2, 3);
     y1 = -ease2 * (S / 2);
     op1 = 1;
@@ -131,22 +136,28 @@ export default function ProblemFeatureSection() {
     const ease3 = 1 - Math.pow(1 - t3, 3);
     y1 = -(S / 2) - ease3 * (S / 2);
     op1 = 1;
-    y2 = (S / 2) - ease3 * (S / 2);
+    y2 = S / 2 - ease3 * (S / 2);
     op2 = 1;
     y3 = (1 - ease3) * 210 + ease3 * S;
     op3 = ease3;
-  } else if (p < 0.60) {
-    y1 = -S; op1 = 1;
-    y2 = 0;  op2 = 1;
-    y3 = S;  op3 = 1;
+  } else if (p < 0.6) {
+    y1 = -S;
+    op1 = 1;
+    y2 = 0;
+    op2 = 1;
+    y3 = S;
+    op3 = 1;
   } else {
     // Fade out during Iris expansion (0.60 -> 0.70)
-    const tPillFade = Math.min(1, (p - 0.60) / 0.08);
+    const tPillFade = Math.min(1, (p - 0.6) / 0.08);
     part2Opacity = Math.max(0, 1 - tPillFade * 1.4);
     part2Scale = 1 - tPillFade * 0.06;
-    y1 = -S; op1 = 1;
-    y2 = 0;  op2 = 1;
-    y3 = S;  op3 = 1;
+    y1 = -S;
+    op1 = 1;
+    y2 = 0;
+    op2 = 1;
+    y3 = S;
+    op3 = 1;
   }
 
   // =========================================================================
@@ -155,16 +166,15 @@ export default function ProblemFeatureSection() {
   let irisRadius = 0;
   let irisOpacity = 0;
 
-  if (p >= 0.60 && p < 0.70) {
-    const tIris = (p - 0.60) / 0.10;
+  if (p >= 0.6 && p < 0.7) {
+    const tIris = (p - 0.6) / 0.1;
     const easeIris = tIris * tIris * (3 - 2 * tIris);
     irisRadius = easeIris * 150;
     irisOpacity = 1;
-  } else if (p >= 0.70) {
+  } else if (p >= 0.7) {
     irisRadius = 150;
     irisOpacity = 1;
   }
-
 
   // =========================================================================
   // PART 4: Scroll-Driven Word-by-Word Reading Highlight ("Typescript")
@@ -190,18 +200,12 @@ export default function ProblemFeatureSection() {
   }
 
   return (
-    <section
-      ref={containerRef}
-      id="protoSection"
-      className="relative bg-[#FFFFFF]"
-      style={{ height: '400vh' }}
-    >
+    <section ref={containerRef} id="protoSection" className="relative bg-[#FFFFFF]" style={{ height: '400vh' }}>
       {/* Smooth scroll anchor for navbar "Tentang" (#quote) */}
       <div id="quote" className="absolute pointer-events-none" style={{ top: '75%', width: 1, height: 1 }} />
 
       {/* Sticky Pinned Viewport */}
       <div className="sticky top-0 w-full h-[100dvh] flex flex-col justify-center items-center overflow-hidden select-none">
-        
         {/* Full Viewport Orange Iris Expansion Layer */}
         <div
           className="absolute inset-0 pointer-events-none z-[35] bg-[#F0441E]"
@@ -214,7 +218,6 @@ export default function ProblemFeatureSection() {
 
         {/* Staging Area (Full Viewport Height: h-[100dvh]) */}
         <div className="relative w-full max-w-[1280px] h-[100dvh] flex items-center justify-center">
-          
           {/* ============================================================== */}
           {/* PART 1: "Tata Semua Jadwalmu!" (Orange Text) + 4 Bleeding Cards */}
           {/* ============================================================== */}
@@ -231,7 +234,9 @@ export default function ProblemFeatureSection() {
               }}
             >
               <h2 className="font-satoshi font-medium text-[#F0441E] text-[38px] sm:text-[96px] md:text-[135px] lg:text-[165px] xl:text-[191px] leading-[0.91] tracking-[-0.04em] text-center select-none">
-                {t.problem.headline[0]}<br />{t.problem.headline[1]}
+                {t.problem.headline[0]}
+                <br />
+                {t.problem.headline[1]}
               </h2>
             </div>
 
@@ -257,11 +262,7 @@ export default function ProblemFeatureSection() {
                 zIndex: 24,
               }}
             >
-              <img
-                src="/assets/proto/card-overwhelmed.webp"
-                alt={t.problem.alts[1]}
-                className="w-full h-auto block"
-              />
+              <img src="/assets/proto/card-overwhelmed.webp" alt={t.problem.alts[1]} className="w-full h-auto block" />
             </div>
 
             <div
@@ -271,11 +272,7 @@ export default function ProblemFeatureSection() {
                 zIndex: 23,
               }}
             >
-              <img
-                src="/assets/proto/card-puluhan-grup.webp"
-                alt={t.problem.alts[2]}
-                className="w-full h-auto block"
-              />
+              <img src="/assets/proto/card-puluhan-grup.webp" alt={t.problem.alts[2]} className="w-full h-auto block" />
             </div>
 
             <div
@@ -292,7 +289,6 @@ export default function ProblemFeatureSection() {
               />
             </div>
           </div>
-
 
           {/* ============================================================== */}
           {/* PART 2: Feature Dynamic Group Re-Centering (Figma 59:26229)    */}
@@ -313,9 +309,14 @@ export default function ProblemFeatureSection() {
                 transform: `translate(-50%, -50%) translate3d(0, ${y1}px, 0)`,
               }}
             >
-              <img src="/assets/proto/icon-note.svg" alt="" className="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+              <img
+                src="/assets/proto/icon-note.svg"
+                alt=""
+                className="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0"
+              />
               <div className="font-satoshi text-lg sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
-                <span className="text-[#FFC4B8] font-normal sm:font-medium">{t.problem.features[0][0]}</span> <span className="text-white font-medium sm:font-semibold">{t.problem.features[0][1]}</span>
+                <span className="text-[#FFC4B8] font-normal sm:font-medium">{t.problem.features[0][0]}</span>{' '}
+                <span className="text-white font-medium sm:font-semibold">{t.problem.features[0][1]}</span>
               </div>
             </div>
 
@@ -327,9 +328,14 @@ export default function ProblemFeatureSection() {
                 transform: `translate(-50%, -50%) translate3d(0, ${y2}px, 0)`,
               }}
             >
-              <img src="/assets/proto/icon-calendar.svg" alt="" className="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+              <img
+                src="/assets/proto/icon-calendar.svg"
+                alt=""
+                className="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0"
+              />
               <div className="font-satoshi text-lg sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
-                <span className="text-[#FDE68A] font-normal sm:font-medium">{t.problem.features[1][0]}</span> <span className="text-white font-medium sm:font-semibold">{t.problem.features[1][1]}</span>
+                <span className="text-[#FDE68A] font-normal sm:font-medium">{t.problem.features[1][0]}</span>{' '}
+                <span className="text-white font-medium sm:font-semibold">{t.problem.features[1][1]}</span>
               </div>
             </div>
 
@@ -341,9 +347,14 @@ export default function ProblemFeatureSection() {
                 transform: `translate(-50%, -50%) translate3d(0, ${y3}px, 0)`,
               }}
             >
-              <img src="/assets/proto/icon-whatsapp.svg" alt="" className="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0" />
+              <img
+                src="/assets/proto/icon-whatsapp.svg"
+                alt=""
+                className="w-6 h-6 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain brightness-0 invert flex-shrink-0"
+              />
               <div className="font-satoshi text-lg sm:text-[32px] md:text-[38px] lg:text-[42px] tracking-tight leading-none whitespace-nowrap">
-                <span className="text-[#A7F3D0] font-normal sm:font-medium">{t.problem.features[2][0]}</span> <span className="text-white font-medium sm:font-semibold">{t.problem.features[2][1]}</span>
+                <span className="text-[#A7F3D0] font-normal sm:font-medium">{t.problem.features[2][0]}</span>{' '}
+                <span className="text-white font-medium sm:font-semibold">{t.problem.features[2][1]}</span>
               </div>
             </div>
           </div>
@@ -353,11 +364,8 @@ export default function ProblemFeatureSection() {
           {/* Scroll-Driven Word-by-Word Reading Highlight ("Typescript")   */}
           {/* Refined Regular/Medium font weight (Satoshi 400/500)          */}
           {/* ============================================================== */}
-          <div
-            className="absolute inset-0 flex items-center justify-center pointer-events-none z-40 px-4 sm:px-8"
-          >
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-40 px-4 sm:px-8">
             <div className="w-full max-w-[1100px] mx-auto flex items-center justify-between gap-4 sm:gap-8 md:gap-12 will-change-transform">
-              
               {/* Left Bracket */}
               <div
                 className="flex-shrink-0 flex items-center justify-center select-none pointer-events-none will-change-transform"
@@ -422,10 +430,8 @@ export default function ProblemFeatureSection() {
                   className="h-16 sm:h-44 md:h-60 lg:h-72 w-auto object-contain"
                 />
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </section>

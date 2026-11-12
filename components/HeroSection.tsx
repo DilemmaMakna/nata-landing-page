@@ -8,7 +8,10 @@ import Image from 'next/image';
 export default function HeroSection() {
   const { t } = useLocale();
   return (
-    <section id="hero" className="hero-bg relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden select-none">
+    <section
+      id="hero"
+      className="hero-bg relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden select-none"
+    >
       {/* Background radiant energetic orange & texture */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
@@ -29,12 +32,12 @@ export default function HeroSection() {
       {/* 2-Column Exact Figma Container: max-w-[1280px], 72px padding on desktop, locked 1136px grid */}
       <div className="w-full max-w-[1280px] mx-auto px-5 sm:px-9 lg:px-[72px] relative z-10 pt-24 sm:pt-28 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center w-full">
-
           {/* Left Column (Figma Frame 1: wider column ~640px to ensure clean 2 lines) */}
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
             {/* H1: Satoshi Medium (500), 2 lines exact, no orphan wrap */}
             <h1 className="font-satoshi font-medium text-white text-[42px] sm:text-[56px] md:text-[70px] lg:text-[80px] xl:text-[86px] leading-[0.95] tracking-[-0.035em] mb-5 sm:mb-6">
-              {t.hero.h1a}<br />
+              {t.hero.h1a}
+              <br />
               <span className="whitespace-nowrap">{t.hero.h1b}</span>
             </h1>
 
@@ -46,8 +49,8 @@ export default function HeroSection() {
             {/* CTA Button (Figma Frame 3 42:9091: 176x36px, rounded-[6px], bg-white/10, NO SHADOW) */}
             <div>
               <ProtectedContact
-                channel="nataku" navigate
-
+                channel="nataku"
+                navigate
 
                 className="inline-flex items-center justify-center px-4 py-2 rounded-[6px] bg-white/10 hover:bg-white/20 border border-white/20 text-white font-satoshi font-medium text-[16px] leading-[24px] tracking-[-0.01em] transition-colors select-none no-underline shadow-none"
               >
@@ -69,7 +72,6 @@ export default function HeroSection() {
               />
             </div>
           </div>
-
         </div>
       </div>
     </section>
