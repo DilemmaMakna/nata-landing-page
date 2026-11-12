@@ -25,6 +25,14 @@ export default function LegalView({ doc }: { doc: LegalDocId }) {
       current={`/legal/${doc}`}
       aside={<TocNav key={`${doc}-${locale}`} headings={headings} />}
     >
+      <section className="mb-8 rounded-[16px] bg-[#FFFAF7] p-5 ring-1 ring-[#EDE6E0]" aria-labelledby="legal-summary">
+        <h2 id="legal-summary" className="text-[16px] font-bold text-[#1F1B16]">{t.doc.summaryTitle}</h2>
+        <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[15px] leading-[1.6] text-[#57534E]">
+          {t.doc.summary[doc].map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
+      </section>
       <LegalDocument source={body} />
     </DocShell>
   );

@@ -137,6 +137,23 @@ const id = {
 
   doc: {
     legalEyebrow: 'Dokumen Legal',
+    summaryTitle: 'Ringkasan',
+    summary: {
+      privacy: [
+        'Kami mengumpulkan nama, email, nomor WhatsApp (jika Daily Digest aktif), dan konten yang Anda masukkan.',
+        'Data dipakai untuk menjalankan Nataku, termasuk pengingat harian.',
+        'Hak Anda atas data pribadi dijelaskan di bagian 8.',
+      ],
+      terms: [
+        'Paket Mulai Dulu gratis. On Track Rp26.000 dan Level Up Rp49.000 per bulan, ditagih lewat Google Play.',
+        'Pembatalan langganan dilakukan di Google Play Store.',
+        'Refund dalam 48 jam pertama diproses lewat Google Play Refund Center.',
+      ],
+      security: [
+        'Bagian ini membahas perlindungan data saat dikirim dan disimpan, kontrol akses, penanganan insiden, dan penghapusan aman.',
+        'Lapor kerentanan ke hello@dilemma-makna.com.',
+      ],
+    },
     onThisPage: 'Di halaman ini',
     tocMobile: 'Daftar isi',
     tabs: {
@@ -349,6 +366,23 @@ const en: Messages = {
 
   doc: {
     legalEyebrow: 'Legal Document',
+    summaryTitle: 'Summary',
+    summary: {
+      privacy: [
+        'We collect your name, email, WhatsApp number (if Daily Digest is on), and the content you enter.',
+        'We use the data to run Nataku, including daily reminders.',
+        'Your data rights are described in section 8.',
+      ],
+      terms: [
+        'The Mulai Dulu plan is free. On Track is Rp26,000 and Level Up is Rp49,000 per month, billed through Google Play.',
+        'Cancel a subscription in the Google Play Store.',
+        'Refunds within the first 48 hours go through the Google Play Refund Center.',
+      ],
+      security: [
+        'Sections cover data protection in transit and at rest, access control, incident handling, and secure deletion.',
+        'Report vulnerabilities to hello@dilemma-makna.com.',
+      ],
+    },
     onThisPage: 'On this page',
     tocMobile: 'Table of contents',
     tabs: {

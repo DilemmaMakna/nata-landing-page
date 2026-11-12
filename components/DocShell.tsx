@@ -63,12 +63,12 @@ export default function DocShell({
           ))}
         </nav>
 
-        {/* `aside` dipasang sekali; di mobile tampil di atas konten (order-first), di desktop jadi kolom kanan. */}
-        <div className={`mt-8 flex flex-col ${aside ? 'lg:grid lg:grid-cols-[minmax(0,1fr)_260px] lg:items-start lg:gap-10' : ''}`}>
-          <div className="min-w-0 lg:col-start-1 lg:row-start-1">
+        {/* `aside` dipasang sekali; di mobile tampil di atas konten (order-first), di desktop jadi kolom kiri sticky. */}
+        <div className={`mt-8 flex flex-col ${aside ? 'lg:grid lg:grid-cols-[260px_minmax(0,1fr)] lg:items-start lg:gap-10' : ''}`}>
+          <div className="min-w-0 lg:col-start-2 lg:row-start-1">
             <div className="rounded-[24px] border border-[#EDE6E0] bg-white p-6 sm:p-10">{children}</div>
           </div>
-          {aside && <div className="order-first lg:sticky lg:top-24 lg:order-none lg:col-start-2 lg:row-start-1 lg:self-start">{aside}</div>}
+          {aside && <div className="order-first lg:sticky lg:top-24 lg:order-none lg:col-start-1 lg:row-start-1 lg:self-start">{aside}</div>}
         </div>
       </main>
 
