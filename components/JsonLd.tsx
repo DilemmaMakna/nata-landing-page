@@ -43,7 +43,7 @@ const graph = {
       offers: {
         '@type': 'Offer',
         name: 'Paket Mulai Dulu',
-        price: '15000',
+        price: '0',
         priceCurrency: 'IDR',
         availability: 'https://schema.org/PreOrder',
       },

@@ -8,7 +8,7 @@ export const COMPANY = {
   brand: 'Lemma',
   url: 'https://dilemma-makna.com',
   email: 'hello@dilemma-makna.com',
-  phone: '+62-813-8360-0844',
+  phone: '+62-851-4492-2167',
   address: {
     streetAddress: 'Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya, Bogor Barat',
     addressLocality: 'Kota Bogor',
@@ -20,8 +20,8 @@ export const COMPANY = {
 // Kanal dukungan publik. Dipakai /support dan /delete-account (syarat Play Store / App Store).
 export const SUPPORT = {
   email: COMPANY.email,
-  whatsappUrl: 'https://wa.me/6281383600844',
-  whatsappLabel: '+62 813-8360-0844',
+  whatsappUrl: 'https://wa.me/6285144922167',
+  whatsappLabel: '+62 851-4492-2167',
   responseTime: '3 x 24 jam (hari kerja)',
   deletionDeadline: '30 hari',
 };

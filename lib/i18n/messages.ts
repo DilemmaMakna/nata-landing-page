@@ -85,7 +85,6 @@ const id = {
       name: 'Paket Mulai Dulu',
       tagline: 'Paling pas untuk Kenalan sama Nataku',
       desc: 'Untuk kamu yang ingin merapikan tugas dan memantau deadline secara mandiri di ponsel Android.',
-      discount: 'Diskon 40%',
       perMonth: '/ bulan',
       items: [
         'Akses aplikasi Android Nataku',
@@ -293,7 +292,7 @@ const en: Messages = {
       name: 'Starter Plan',
       tagline: 'Best for getting to know Nataku',
       desc: 'For those who want to tidy up their tasks and track deadlines on their own on an Android phone.',
-      discount: '40% off',
+      
       perMonth: '/ month',
       items: [
         'Access to the Nataku Android app',

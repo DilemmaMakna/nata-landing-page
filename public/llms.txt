@@ -2,7 +2,7 @@
 
 > Nataku adalah aplikasi manajemen tugas dan jadwal kuliah untuk mahasiswa dan pelajar Indonesia. Fitur utama: layar Today's Focus (maksimal 3 prioritas per hari), kalender dengan hitung mundur deadline, dan asisten WhatsApp yang mengirim rangkuman jam 7 pagi serta menerima balasan untuk mencoret atau menambah tugas. Saat ini tersedia untuk Android melalui antrean awal (waitlist). Dikembangkan oleh Lemma Bercerita (PT Masih Dilemma Makna), Bogor.
 
-Catatan: Paket Mulai Dulu Rp15.000 per bulan (diskon dari Rp25.000). Paket On Track (fitur WhatsApp) segera hadir. iOS belum tersedia.
+Catatan: Paket Mulai Dulu Gratis. Paket On Track (fitur WhatsApp) segera hadir. iOS belum tersedia.
 
 ## Halaman utama
 

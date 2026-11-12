@@ -16,7 +16,7 @@ The Personal Data Controller is:
 - Address: Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya Village, Bogor Barat District, Bogor City, West Java Province, Indonesia
 - Business Identification Number (NIB): 1105260028169
 - Website: dilemma-makna.com
-- Phone/WhatsApp: +62 813-8360-0844
+- Phone/WhatsApp: +62 851-4492-2167
 - Data Protection Contact (DPO): hello@dilemma-makna.com
 
 We process personal data in accordance with Indonesian Law No. 27 of 2022 on Personal Data Protection (the PDP Law) and its implementing regulations, as well as Google Play policies, including the Data Safety form.
@@ -140,7 +140,7 @@ Questions, complaints, or requests about personal data:
 
 - Data Protection Officer (DPO): hello@dilemma-makna.com
 - Website: dilemma-makna.com
-- Phone/WhatsApp: +62 813-8360-0844
+- Phone/WhatsApp: +62 851-4492-2167
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya Village, Bogor Barat District, Bogor City, West Java Province, Indonesia
 
 If you feel your rights have not been fulfilled, you may file a complaint with the competent personal data protection authority in Indonesia.

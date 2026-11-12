@@ -106,6 +106,6 @@ This policy is reviewed at least every 12 months or when a significant system ch
 
 - Security and DPO: hello@dilemma-makna.com
 - Website: dilemma-makna.com
-- Phone/WhatsApp: +62 813-8360-0844
+- Phone/WhatsApp: +62 851-4492-2167
 - PT Masih Dilemma Makna, Jl. Jayadewata Blok N IX No. 28, Balumbang Jaya Village, Bogor Barat District, Bogor City, West Java Province, Indonesia
 `;

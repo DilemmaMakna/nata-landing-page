@@ -90,23 +90,8 @@ export default function PricingSection({ className = '' }: { className?: string 
                   className={`font-satoshi font-bold text-3xl sm:text-4xl lg:text-[56px] leading-[1.14] tracking-[-0.03em] ${isMulaiActive ? 'text-[#FFF4F2]' : 'text-[#44403C]'
                     }`}
                 >
-                  <div className="flex items-center gap-3 mb-1">
-                    <span
-                      className={`font-satoshi font-medium text-base sm:text-[20px] leading-[26px] line-through decoration-2 ${isMulaiActive ? 'text-[#FFF4F2]/70' : 'text-[#A8A29E]'
-                        }`}
-                    >
-                      Rp25.000
-                    </span>
-                    <span
-                      className={`px-2.5 py-0.5 rounded-[6px] font-satoshi font-bold text-[13px] leading-[20px] tracking-normal ${isMulaiActive ? 'bg-[#FFE4DE] text-[#F0441E]' : 'bg-[#FFE4DE] text-[#F86D52]'
-                        }`}
-                    >
-                      {t.pricing.start.discount}
-                    </span>
-                  </div>
                   <div className="flex items-baseline gap-2">
-                    <span>Rp15.000</span>
-                    <span className="font-medium text-base sm:text-[20px] tracking-normal opacity-80">{t.pricing.start.perMonth}</span>
+                    <span>Gratis</span>
                   </div>
                 </div>
                 <div
