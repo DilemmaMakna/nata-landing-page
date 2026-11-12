@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "singleQuote": true,
+  "printWidth": 120,
+  "trailingComma": "all",
+  "semi": true,
+  "ignorePatterns": ["public/**", "docs/**", "preview.html", "card_exploration/**", "types/**", "lib/legal-content.ts"]
+}
