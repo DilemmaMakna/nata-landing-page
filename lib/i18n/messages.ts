@@ -125,6 +125,18 @@ const id = {
     },
   },
 
+  compliance: {
+    eyebrow: 'Tentang Nataku',
+    title: 'Produktivitas mahasiswa, bukan pembuat gambar.',
+    purpose:
+      'Nataku adalah aplikasi produktivitas independen dari Lemma Bercerita (PT Masih Dilemma Makna), dibuat untuk membantu mahasiswa mengatur tugas, jadwal kuliah, dan pengingat melalui WhatsApp.',
+    safetyTitle: 'Komitmen penggunaan Google API',
+    safetyBody:
+      'Nataku tidak menggunakan Google API untuk membuat, mengubah, atau menyebarkan gambar intim non-konsensual (AI NCII). Nataku tidak menyediakan atau mendukung fitur semacam itu.',
+    developer: 'Nataku dimiliki dan dioperasikan oleh PT Masih Dilemma Makna. Detail pengelolaan data tersedia di',
+    privacy: 'Kebijakan Privasi',
+  },
+
   faq: {
     title: 'Tanya Jawab',
     intro:
@@ -372,6 +384,19 @@ const en: Messages = {
       cta: 'Ask About On Track',
       aria: 'Ask about the On Track plan via WhatsApp',
     },
+  },
+
+  compliance: {
+    eyebrow: 'About Nataku',
+    title: 'Student productivity, not image generation.',
+    purpose:
+      'Nataku is an independent productivity app by Lemma Bercerita (PT Masih Dilemma Makna), built to help students organize assignments, class schedules, and WhatsApp reminders.',
+    safetyTitle: 'Our Google API commitment',
+    safetyBody:
+      'Nataku does not use Google APIs to create, edit, or distribute non-consensual intimate imagery (AI NCII). Nataku does not provide or support those features.',
+    developer:
+      'Nataku is owned and operated by PT Masih Dilemma Makna. Details about data handling are available in our',
+    privacy: 'Privacy Policy',
   },
 
   faq: {

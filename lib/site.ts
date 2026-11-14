@@ -2,7 +2,7 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nataku.dil
 export const SITE_NAME = 'Nataku';
 export const SITE_TITLE = 'Nataku — Bikin Tugas Kuliah Beneran Beres';
 export const SITE_DESCRIPTION =
-  'Nataku menyatukan jadwal kuliah dan tugasmu ke dalam satu alur rapi. Setiap pagi disapa lewat WhatsApp, selesaikan tugas tanpa ribet buka-tutup aplikasi.';
+  'Nataku adalah aplikasi produktivitas mahasiswa untuk mengatur tugas, jadwal kuliah, dan pengingat WhatsApp dalam satu alur rapi.';
 export const COMPANY = {
   name: 'PT Masih Dilemma Makna',
   brand: 'Lemma',

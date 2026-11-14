@@ -1,9 +1,13 @@
 # Nataku — Bikin Tugas Kuliah Beneran Beres
 
-> Nataku adalah aplikasi manajemen tugas dan jadwal kuliah untuk mahasiswa dan pelajar di Indonesia. Setiap pagi jam 7 Nataku menyapa lewat WhatsApp, dan kamu bisa mencoret atau menambah tugas hanya dengan membalas chat.
+> Nataku adalah aplikasi produktivitas independen untuk membantu mahasiswa dan pelajar di Indonesia mengatur tugas, jadwal kuliah, dan pengingat WhatsApp. Setiap pagi jam 7 Nataku menyapa lewat WhatsApp, dan kamu bisa mencoret atau menambah tugas hanya dengan membalas chat.
 
 Situs resmi: https://nataku.dilemma-makna.com
 Dikembangkan oleh Lemma Bercerita (PT Masih Dilemma Makna), Bogor, Indonesia — https://dilemma-makna.com
+
+## Komitmen keamanan dan penggunaan Google API
+
+Nataku tidak menggunakan Google API untuk membuat, mengubah, atau menyebarkan gambar intim non-konsensual (AI NCII). Nataku tidak menyediakan atau mendukung fitur tersebut. Nataku adalah aplikasi produktivitas mahasiswa; tujuan utamanya adalah membantu pengguna mengelola tugas, jadwal kuliah, dan pengingat.
 
 ## Apa itu Nataku?
 
