@@ -3,8 +3,8 @@
 export const PRIVACY_EN = `# Nataku Privacy Policy
 
 **Effective:** 28 September 2026
-**Last updated:** 22 October 2026
-**Version:** 1.0
+**Last updated:** 15 November 2026
+**Version:** 1.1
 
 ## 1. Introduction and Identity of the Data Controller
 
@@ -45,6 +45,18 @@ We process personal data in accordance with Indonesian Law No. 27 of 2022 on Per
 
 We do not ask for specific categories of personal data (such as health, biometric, or financial data) and we do not access your contacts, gallery, or location.
 
+### 2.5 Data from your Google account
+
+If you sign in with Google or connect Google Calendar and Google Tasks, we request the following permissions from Google, only for the features you use:
+
+- openid, email, and basic profile (name and profile picture) to sign you in and create your account. Scopes: openid, email, profile.
+- https://www.googleapis.com/auth/calendar.events to read, create, and change events in your Google Calendar, at your request.
+- https://www.googleapis.com/auth/tasks to read, create, and change tasks in your Google Tasks, at your request.
+
+We only take the Google data needed to show and sync the schedules and tasks you choose. We do not use this data for advertising, we do not sell it, we do not use it to build profiles for other parties, and we do not use it to train artificial intelligence or machine learning models. Our use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.
+
+You can revoke access at any time at https://myaccount.google.com/permissions. Once access is revoked, syncing stops. Google data already stored on our servers is deleted together with your account, as described in section 6.
+
 ## 3. Purposes and Basis of Processing
 
 | Purpose | Data used | Basis of processing |
@@ -54,6 +66,7 @@ We do not ask for specific categories of personal data (such as health, biometri
 | Calculating the Productivity Score (weighting 60% Tasks, 25% Agenda, 15% Streak) | Productivity activity | Performance of a contract |
 | Sending reminders and the Daily Digest via WhatsApp | WhatsApp number, tasks, schedules | Explicit consent |
 | Managing subscriptions and user support | Subscription status, email | Performance of a contract |
+| Syncing schedules and tasks from Google Calendar and Google Tasks | Google events and tasks you allow | Performance of a service at your request |
 | Security, abuse prevention, and improving the Service | Technical data | Legitimate interests and legal obligation |
 
 We do not use your data for other purposes without your consent. If a purpose changes, we will notify you and ask for new consent where required.
