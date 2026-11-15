@@ -108,3 +108,9 @@ Proyek ini telah dikonfigurasi agar **100% kompatibel dengan Vercel Zero-Config 
 2. Root Directory: `05_dev_mode` (atau atur sesuai konfigurasi monorepo).
 3. Framework Preset: `Next.js`.
 4. Klik **Deploy** — Vercel akan otomatis mendeteksi konfigurasi App Router dan mengoptimasi seluruh rute statis serta API route.
+
+## License
+
+Proprietary software. Copyright (c) 2026 PT Masih Dilemma Makna (trading as Lemma Bercerita). All rights reserved.
+
+This repository is not open source. Access, copying, modification, redistribution, and reverse engineering are prohibited except as the [Software License Agreement](LICENSE.md) permits. Third-party components keep their own licences.
