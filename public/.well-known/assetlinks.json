@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.lemma.nataku",
+      "sha256_cert_fingerprints": [
+        "0A:B6:C4:B5:39:E0:9F:24:B1:8B:D0:C1:51:BB:3A:37:5D:98:24:81:9A:C7:8B:B2:CF:7B:B1:7E:3A:33:FE:61"
+      ]
+    }
+  }
+]
